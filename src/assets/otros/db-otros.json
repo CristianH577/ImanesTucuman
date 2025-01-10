@@ -1,0 +1,182 @@
+{
+  "electricidad": {
+    "1": {
+      "name": "Bornera Botón 2 Vías",
+      "img_name": "bornera_boton-2",
+      "price": "150",
+      "info": {
+        "medidas": "20x17x13mm",
+        "cables": "0.5-2.5mm",
+        "amperaje": "10A",
+        "materiales": "PVC"
+      },
+      "peso": "1.75g"
+    },
+    "2": {
+      "name": "Bornera Clip 2 Vías",
+      "img_name": "bornera_clip-2",
+      "price": "1450",
+      "info": {
+        "medidas": "40x25x15mm",
+        "cables": "0.5-2.5mm",
+        "amperaje": "25A",
+        "materiales": "ABS"
+      },
+      "peso": "8g"
+    },
+    "3": {
+      "name": "Bornera Clip 3 Vías",
+      "img_name": "bornera_clip-3",
+      "price": "2020",
+      "info": {
+        "medidas": "41x31x15mm",
+        "cables": "0.5-2.5mm",
+        "amperaje": "25A",
+        "materiales": "ABS"
+      },
+      "peso": "11.4g"
+    },
+    "4": {
+      "name": "Empalme Clip 2 Cables",
+      "img_name": "empalme_clip-2",
+      "price": "580",
+      "info": {
+        "medidas": "20x12x14mm",
+        "cables": "0.5-2.5mm",
+        "amperaje": "25A",
+        "materiales": "ABS"
+      }
+    },
+    "5": {
+      "name": "Empalme Clip 3 Cables",
+      "img_name": "empalme_clip-3",
+      "price": "760",
+      "info": {
+        "medidas": "20x16x14mm",
+        "cables": "0.5-2.5mm",
+        "amperaje": "25A",
+        "materiales": "ABS"
+      }
+    },
+    "6": {
+      "name": "Empalme Clip 5 Cables",
+      "img_name": "empalme_clip-5",
+      "price": "1150",
+      "info": {
+        "medidas": "20x26x14mm",
+        "cables": "0.5-2.5mm",
+        "amperaje": "25A",
+        "materiales": "ABS"
+      }
+    },
+    "7": {
+      "name": "Empalme Rápido 1 a 2 Cables",
+      "img_name": "empalme-1a2",
+      "price": "400",
+      "info": {
+        "medidas": "27x24x16mm",
+        "cables": "0.5-2.5mm",
+        "amperaje": "25A",
+        "materiales": "PVC"
+      },
+      "peso": "3g"
+    },
+    "8": {
+      "name": "Empalme Rápido 3 Cables",
+      "img_name": "empalme_rapido_3",
+      "price": "750",
+      "info": {
+        "marca": "Hellermann Tyton",
+        "medidas": "16.5x16.5x7.7mm",
+        "cables": "0.5-2.5mm",
+        "amperaje": "24A",
+        "materiales": "Policarbonato"
+      },
+      "modelo": "Helacon Plus"
+    }
+  },
+  "imanes": {
+    "1": {
+      "name": "Imán en tira flexible 9x2mm",
+      "img_name": "tira_flexible",
+      "prices": [1400, 1200],
+      "table_qtts": [0, 10],
+      "price_measure": "m",
+      "info": {
+        "fuerza": "28gr/cm",
+        "x10m": "$1200/m"
+      },
+      "description": "Imantado de una cara. Usado frecuentemente para hacer mosquiteros y manualidades"
+    },
+    "2": {
+      "name": "Imán en tira flexible 13x1,7mm",
+      "img_name": "tira_flexible-13",
+      "prices": [1600, 1400],
+      "table_qtts": [0, 10],
+      "price_measure": "m",
+      "info": {
+        "fuerza": "32gr/cm",
+        "x10m": "$1400/m"
+      },
+      "description": "Imantado de una cara. Usado frecuentemente para hacer mosquiteros y manualidades"
+    },
+    "3": {
+      "name": "Kluster",
+      "img_name": "kluster",
+      "price": 12500,
+      "description": "Juego de 20 piedras de hematita magnetizadas y pulidas de 35mm de largo y 13mm de diámetro central + cuerda de polipropileno"
+    },
+    "4": {
+      "nostock": true,
+      "name": "Neocube",
+      "img_name": "neocube",
+      "price": 18500,
+      "info": {
+        "medidas": "3x3x3cm"
+      },
+      "description": "216 imanes esféricos de 5mm de diámetro. Multicolor(6 colores distintos)"
+    },
+    "5": {
+      "name": "Neocube Dorado",
+      "img_name": "neocube-dorado",
+      "price": 18500,
+      "info": {
+        "medidas": "3x3x3cm"
+      },
+      "description": "216 imanes esféricos de 5mm de diámetro de color dorado"
+    },
+    "6": {
+      "name": "Imán cerámico 60x8x6mm",
+      "price": 3800,
+      "img_name": "iman-ceramico-60",
+      "info": {
+        "gauss": 4000,
+        "temperatura": "Hasta 250°C"
+      },
+      "description": "Frecuentemente usado para soportar puertas de hornos que no cierran bien"
+    },
+    "7": {
+      "name": "Imán cerámico 25x14x5mm",
+      "price": 2100,
+      "img_name": "iman-ceramico-25",
+      "info": {
+        "gauss": 4000,
+        "temperatura": "Hasta 200°C"
+      }
+    }
+  },
+  "otros": {
+    "1": {
+      "name": "Sales de polifosfato",
+      "img_name": "sales_polifosfato",
+      "price": 25000,
+      "price_measure": "kg",
+      "info": {
+        "marca": "Siliphos",
+        "diámetro": "20mm",
+        "Calidad Alimentaria": "",
+        "rendimiento": "8-12meses en tanque de 1000L y 6-8 meses en boya"
+      }
+    }
+  }
+}

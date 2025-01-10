@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "calvera";
+    src: url("./assets/fonts/Calvera.ttf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "menulis";
+    src: url("./assets/fonts/menulis.ttf");
+    font-display: swap;
+  }
+}
+
+html {
+  overflow: hidden;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+.bg-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}

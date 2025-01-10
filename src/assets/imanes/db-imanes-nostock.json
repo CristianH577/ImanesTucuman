@@ -1,0 +1,20 @@
+{
+  "redondos": {
+    "50x24x10": {
+      "stock": true,
+      "table_qtts": 3,
+      "table_prices_cat": 4,
+      "prices": [21000, 20700, 20250, 19500],
+      "peso": 0
+    }
+  },
+  "arandelas": {},
+  "esferas": {
+    "5": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [155, 140, 130, 110],
+      "peso": 0.4
+    }
+  }
+}

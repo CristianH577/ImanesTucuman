@@ -1,0 +1,388 @@
+{
+  "redondos": {
+    "2x2": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [115, 105, 100, 85],
+      "peso": 0,
+      "fuerza": 0,
+      "gauss": 0
+    },
+    "2x4": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [135, 125, 110, 100],
+      "peso": 0,
+      "fuerza": 0,
+      "gauss": 0
+    },
+    "3x1": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [115, 105, 95, 80],
+      "peso": 0,
+      "fuerza": 90,
+      "gauss": 3355
+    },
+    "3x2": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [120, 110, 100, 90],
+      "peso": 0.14,
+      "fuerza": 180,
+      "gauss": 4840
+    },
+    "4x1": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [125, 115, 100, 90],
+      "peso": 0.1,
+      "fuerza": 0,
+      "gauss": 0
+    },
+    "4x2": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [130, 120, 105, 95],
+      "peso": 0.18,
+      "fuerza": 0,
+      "gauss": 0
+    },
+    "5x1": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [125, 115, 105, 90],
+      "peso": 0.15,
+      "fuerza": 180,
+      "gauss": 2200
+    },
+    "5x2": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [135, 125, 115, 100],
+      "peso": 0.3,
+      "fuerza": 390,
+      "gauss": 3000
+    },
+    "5x4": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [190, 175, 160, 140],
+      "peso": 0.7,
+      "fuerza": 660,
+      "gauss": 3750
+    },
+    "5x5": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [220, 200, 185, 160],
+      "peso": 4.5,
+      "fuerza": 760,
+      "gauss": 4000
+    },
+    "7x1.5": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [180, 170, 150, 130],
+      "peso": 0.45
+    },
+    "7x5": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [440, 405, 370, 320],
+      "peso": 1.5,
+      "fuerza": 0,
+      "gauss": 0
+    },
+    "9x1.5": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [235, 215, 195, 170],
+      "peso": 0.75
+    },
+    "9x2.5": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [360, 330, 300, 260],
+      "peso": 1.25
+    },
+    "10x2": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [390, 360, 325, 280],
+      "peso": 1.2,
+      "fuerza": 1000,
+      "gauss": 2245
+    },
+    "10x3": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [500, 470, 415, 360],
+      "peso": 1.75,
+      "fuerza": 1500,
+      "gauss": 2950
+    },
+    "10x4": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [675, 640, 560, 490],
+      "peso": 2.4,
+      "fuerza": 1900,
+      "gauss": 3380
+    },
+    "10x5": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [840, 770, 700, 605],
+      "peso": 3,
+      "fuerza": 2400,
+      "gauss": 3295
+    },
+    "10x10": {
+      "table_qtts": 2,
+      "table_prices_cat": 8,
+      "prices": [1150, 1080, 975, 845],
+      "peso": 6,
+      "fuerza": 3400,
+      "gauss": 4600
+    },
+    "10x20": {
+      "table_qtts": 2,
+      "table_prices_cat": 7,
+      "prices": [2100, 1900, 1800, 1550],
+      "peso": 12
+    },
+    "11x4": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [860, 790, 720, 620],
+      "peso": 3
+    },
+    "11x5": {
+      "table_qtts": 2,
+      "table_prices_cat": 8,
+      "prices": [1000, 900, 825, 715],
+      "peso": 3.7,
+      "fuerza": 2800,
+      "gauss": 3765
+    },
+    "12x3": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [860, 785, 715, 620],
+      "peso": 2.6,
+      "fuerza": 2000,
+      "gauss": 2735
+    },
+    "12x5": {
+      "table_qtts": 2,
+      "table_prices_cat": 8,
+      "prices": [1100, 1000, 900, 750],
+      "peso": 4.3,
+      "fuerza": 3200,
+      "gauss": 3570
+    },
+    "15x2": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [950, 860, 780, 675],
+      "peso": 2.6,
+      "fuerza": 1700,
+      "gauss": 2100
+    },
+    "15x5": {
+      "table_qtts": 2,
+      "table_prices_cat": 8,
+      "prices": [1400, 1300, 1170, 1015],
+      "peso": 6.5,
+      "fuerza": 4500,
+      "gauss": 3400
+    },
+    "20x2": {
+      "table_qtts": 2,
+      "table_prices_cat": 8,
+      "prices": [1200, 1100, 1000, 870],
+      "peso": 5,
+      "fuerza": 2300,
+      "gauss": 270
+    },
+    "20x5": {
+      "table_qtts": 2,
+      "table_prices_cat": 7,
+      "prices": [2400, 2250, 2100, 1820],
+      "peso": 12,
+      "fuerza": 6400,
+      "gauss": 2950
+    },
+    "25x2": {
+      "table_qtts": 2,
+      "table_prices_cat": 8,
+      "prices": [1775, 1625, 1500, 1300],
+      "peso": 7.5
+    },
+    "25x2.5": {
+      "table_qtts": 2,
+      "table_prices_cat": 7,
+      "prices": [2000, 1900, 1800, 1550],
+      "peso": 9.5
+    },
+    "30x5": {
+      "table_qtts": 3,
+      "table_prices_cat": 5,
+      "prices": [5150, 5000, 4800, 4450],
+      "peso": 27.5,
+      "fuerza": 10800,
+      "gauss": 3125
+    },
+    "35x4": {
+      "table_qtts": 3,
+      "table_prices_cat": 5,
+      "prices": [5350, 5170, 5000, 4600]
+    },
+    "35x5": {
+      "table_qtts": 3,
+      "table_prices_cat": 5,
+      "prices": [5800, 5600, 5400, 5000],
+      "peso": 36.5,
+      "fuerza": 13000,
+      "gauss": 1800
+    },
+    "37x5": {
+      "table_qtts": 3,
+      "table_prices_cat": 5,
+      "prices": [6000, 5800, 5600, 5200]
+    },
+    "40x5": {
+      "table_qtts": 3,
+      "table_prices_cat": 4,
+      "prices": [6400, 6350, 6200, 6000],
+      "peso": 46.5,
+      "fuerza": 117000,
+      "gauss": 3000
+    },
+    "54x3": {
+      "table_qtts": 3,
+      "table_prices_cat": 4,
+      "prices": [8250, 8150, 8000, 7650],
+      "peso": 74
+    }
+  },
+  "cuadrados": {
+    "10x5x2": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [470, 430, 390, 340],
+      "peso": 0.9
+    },
+    "10x8x3": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [500, 460, 420, 365],
+      "peso": 1.9
+    },
+    "14.5x7x2": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [600, 545, 500, 430],
+      "peso": 1.6
+    },
+    "15x10x5": {
+      "table_qtts": 2,
+      "table_prices_cat": 8,
+      "prices": [1300, 1200, 1100, 950],
+      "peso": 5.6,
+      "fuerza": 4100,
+      "gauss": 3300
+    },
+    "25x10x2": {
+      "table_qtts": 2,
+      "table_prices_cat": 8,
+      "prices": [1250, 1150, 1050, 900],
+      "peso": 4
+    },
+    "28x20x3": {
+      "table_qtts": 2,
+      "table_prices_cat": 7,
+      "prices": [2050, 1900, 1800, 1550]
+    },
+    "30x10x10": {
+      "table_qtts": 3,
+      "table_prices_cat": 6,
+      "prices": [3680, 3450, 3220, 3000],
+      "peso": 22.5,
+      "fuerza": 9600,
+      "gauss": 4600
+    },
+    "30x20x5": {
+      "table_qtts": 3,
+      "table_prices_cat": 5,
+      "prices": [4950, 4800, 4600, 4300],
+      "peso": 24,
+      "fuerza": 9400,
+      "gauss": 2960
+    },
+    "40x10x5": {
+      "table_qtts": 3,
+      "table_prices_cat": 6,
+      "prices": [4600, 4350, 4050, 3750],
+      "peso": 15.5,
+      "fuerza": 9100,
+      "gauss": 3420
+    },
+    "40x20x5": {
+      "table_qtts": 3,
+      "table_prices_cat": 4,
+      "prices": [7700, 7575, 7400, 7150],
+      "peso": 31.5,
+      "fuerza": 10100,
+      "gauss": 2000
+    },
+    "50x10x3": {
+      "table_qtts": 3,
+      "table_prices_cat": 6,
+      "prices": [3500, 3300, 3050, 2850],
+      "peso": 13
+    },
+    "50x20x10": {
+      "table_qtts": 3,
+      "table_prices_cat": 4,
+      "prices": [16800, 16560, 16200, 15600],
+      "peso": 75,
+      "fuerza": 21200,
+      "gauss": 3300
+    },
+    "50x24x10": {
+      "stock": true,
+      "table_qtts": 3,
+      "table_prices_cat": 4,
+      "prices": [21000, 20700, 20250, 19500],
+      "peso": 0
+    }
+  },
+  "arandelas": {
+    "8x3_6a3.5": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [450, 415, 375, 325],
+      "peso": 0.7
+    },
+    "12x3_6a3.5": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [700, 645, 585, 510],
+      "peso": 2.25
+    },
+    "15x3_7a3.5": {
+      "table_qtts": 1,
+      "table_prices_cat": 8,
+      "prices": [1000, 910, 825, 715],
+      "peso": 3.7
+    },
+    "20x4_11a4.5": {
+      "table_qtts": 2,
+      "table_prices_cat": 8,
+      "prices": [1700, 1570, 1425, 1235],
+      "peso": 0
+    }
+  }
+}
