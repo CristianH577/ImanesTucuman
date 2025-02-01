@@ -5,7 +5,7 @@ function BannerDefault({ image, title, text }) {
     <section className="w-full h-full bg-radial from-custom2-10 to-custom2 text-white flex justify-center pb-20 pt-24 ">
       <div className="flex flex-col justify-center sm:grid grid-cols-1 gap-6 md:grid-cols-2 text-center md:flex-row max-w-[1200px] items-center px-2 sm:px-4">
         <article
-          className="flex items-center justify-center h-full max-h-[320px] sm:h-[320px] shadow-black hover:shadow-custom1/80 transition-all"
+          className="flex items-center justify-center w-full h-full max-h-[320px] sm:h-[320px] shadow-black hover:shadow-custom1/80 transition-all"
           style={{
             filter: "drop-shadow(2px 4px 6px var(--tw-shadow-color))",
           }}

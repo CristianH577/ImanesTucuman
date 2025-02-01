@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import SlideCustom from "./SlideCustom";
 
-function SliderCustom({ items, id }) {
+function SliderCustom({ items, id, className }) {
   const button_class = `absolute h-full top-0 w-12 z-30 bg-content2 bg-opacity-0 hover:bg-opacity-30 dark:bg-content1 dark:bg-opacity-0 dark:hover:bg-opacity-30 cursor-pointer ${
     items.length === 1 ? "hidden" : ""
   }`;
@@ -42,33 +42,13 @@ function SliderCustom({ items, id }) {
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-    // eslint-disable-next-line
-  }, []);
-
-  // const [isInView, setIsInView] = useState(0);
-  // const handleScrollStop = () => {
-  //   console.log("handleScrollStop", isInView);
-  //   if (idx !== isInView) setIdx(isInView);
-  // };
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     clearTimeout(containerRef.current.scrollTimeout);
-  //     containerRef.current.scrollTimeout = setTimeout(handleScrollStop, 300);
-  //   };
-
-  //   const container = containerRef?.current;
-  //   if (container) container.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     if (container) container.addEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+  }, [idx]);
 
   return (
     <motion.section
       id={id || "slider"}
       data-slot="slider"
-      className="w-full relative"
+      className={`w-full relative`}
       initial={{ clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)" }}
       animate={{
         clipPath:
@@ -80,15 +60,12 @@ function SliderCustom({ items, id }) {
       <div
         ref={containerRef}
         data-slot="container"
-        className="w-screen flex overflow-x-scroll overflow-y-hidden scroll-smooth scrollbar-hide"
+        className={`w-screen flex overflow-x-scroll overflow-y-hidden scroll-smooth scrollbar-hide ${
+          className || ""
+        }`}
       >
         {items.map((item, i) => (
-          <SlideCustom
-            key={i}
-            content={item}
-            // onView={() => setIsInView(i)}
-            // i={i}
-          />
+          <SlideCustom key={i} content={item} />
         ))}
       </div>
 

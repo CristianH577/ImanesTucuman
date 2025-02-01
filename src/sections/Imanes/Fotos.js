@@ -87,6 +87,8 @@ function Fotos({ link }) {
               <Image
                 src={contextImg(`./fotos/${e?.medida}.webp`)}
                 loading="lazy"
+                width={200}
+                height={200}
                 className="object-cover h-full w-full max-h-[200px] max-w-[200px] "
                 removeWrapper
               />
@@ -135,6 +137,8 @@ function Fotos({ link }) {
               removeWrapper
               loading="lazy"
               className="w-full h-full"
+              width={200}
+              height={200}
             />
           </Button>
         </Tooltip>

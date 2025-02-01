@@ -5,9 +5,11 @@ import { Button, Input } from "@nextui-org/react";
 import { MdDelete } from "react-icons/md";
 
 import db from "../../assets/imanes/db-imanes.json";
+import db_prices from "../../assets/imanes/db-imanes-prices.json";
 import db_otros from "../../assets/otros/db-otros.json";
+import db_arrastre from "../../assets/imanes/db-imanes-arrastre.json";
 
-function List({ cart, makeDiscount }) {
+function List({ cart, makeDiscount, downloading }) {
   const priceTableCategories = {
     1: [1, 20, 50, 100],
     2: [1, 10, 25, 50],
@@ -45,19 +47,20 @@ function List({ cart, makeDiscount }) {
 
         if (drt[0] in db) {
           const db_data = db?.[drt[0]][drt[1]];
-          const qtts = priceTableCategories?.[db_data?.table_qtts || 1];
+          const qtts = priceTableCategories?.[db_data?.qtts_cat || 1];
+          const prices = db_prices?.[drt[0]][drt[1]]?.prices;
           for (let i = qtts.length - 1; i >= 0; i--) {
             if (qtt >= qtts[i]) {
-              price = db_data?.prices[i];
+              price = prices[i];
               break;
             }
           }
-        } else {
+        } else if (drt[0] in db_otros) {
           const db_data = db_otros?.[drt[0]][drt[1]];
           price = db_data?.price;
 
           if (db_data?.prices) {
-            const qtts = db_data?.table_qtts || [0];
+            const qtts = db_data?.qtts_cat || [0];
             for (let i = qtts.length - 1; i >= 0; i--) {
               if (qtt >= qtts[i]) {
                 price = db_data?.prices[i];
@@ -65,6 +68,9 @@ function List({ cart, makeDiscount }) {
               }
             }
           }
+        } else if (drt[0] === "de_arrastre") {
+          const db_data = db_arrastre?.[drt[1]];
+          price = db_data?.price;
         }
 
         new_cart[drt[0]][drt[1]].qtt = qtt;
@@ -115,24 +121,25 @@ function List({ cart, makeDiscount }) {
 
         if (cat in db) {
           const db_data = db?.[cat]?.[key];
-          const qtts = priceTableCategories?.[db_data?.table_qtts || 1];
+          const qtts = priceTableCategories?.[db_data?.qtts_cat || 1];
+          const prices = db_prices?.[cat]?.[key]?.prices;
 
           for (let i = qtts.length - 1; i >= 0; i--) {
             if (obj.qtt >= qtts[i]) {
-              price = db_data?.prices[i];
+              price = prices[i];
               break;
             }
           }
 
           if (obj?.discount) {
-            price_discount = db_data?.prices[0] * (1 - obj?.discount);
+            price_discount = prices[0] * (1 - obj?.discount);
           }
-        } else {
+        } else if (cat in db_otros) {
           const db_data = db_otros?.[cat]?.[key];
           price = db_data?.price || 0;
 
           if (db_data?.prices) {
-            const qtts = db_data?.table_qtts || [0];
+            const qtts = db_data?.qtts_cat || [0];
             for (let i = qtts.length - 1; i >= 0; i--) {
               if (obj.qtt >= qtts[i]) {
                 price = db_data?.prices[i];
@@ -150,6 +157,13 @@ function List({ cart, makeDiscount }) {
           if (db_data?.price_measure) {
             new_cart[cat][key].price_measure = db_data?.price_measure;
           }
+        } else if (cat === "de_arrastre") {
+          const db_data = db_arrastre?.[key];
+          price = db_data?.price || 0;
+
+          if (obj?.discount) price_discount = price * (1 - obj?.discount);
+
+          new_cart[cat][key].name = key + "mm";
         }
 
         new_cart[cat][key].price = price;
@@ -195,8 +209,13 @@ function List({ cart, makeDiscount }) {
             Object.keys(cart.value).map((cat) => (
               <Fragment key={cat}>
                 <tr>
-                  <td colSpan={4} className="capitalize border-b-3">
-                    {cat}
+                  <td
+                    colSpan={4}
+                    className={`capitalize italic border-b-3 ${
+                      downloading ? "border-black" : ""
+                    }`}
+                  >
+                    {cat.replace("_", " ")}
                   </td>
                 </tr>
 
@@ -213,7 +232,7 @@ function List({ cart, makeDiscount }) {
                           name={key}
                           type="number"
                           size="sm"
-                          className="text-foreground w-24 dark"
+                          className={`w-24 ${downloading ? "light" : "dark"}`}
                           classNames={{
                             inputWrapper:
                               "border-b-2 border-custom1 bg-transparent rounded-none",
@@ -231,7 +250,9 @@ function List({ cart, makeDiscount }) {
                           size="sm"
                           color=""
                           variant=""
-                          className="hover:scale-110"
+                          className={`hover:scale-110 ${
+                            downloading ? "hidden" : ""
+                          }`}
                           onPress={() => handleDelete([cat, key])}
                         >
                           <MdDelete className="text-danger text-2xl navidad:text-custom1" />

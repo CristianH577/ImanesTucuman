@@ -6,8 +6,6 @@ import {
   NavbarContent,
   NavbarItem,
   NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
   Link,
   SelectItem,
   Select,
@@ -17,17 +15,21 @@ import {
 
 import Logo from "../components/Logo";
 import Redes from "../components/Redes";
+import MenuMovilDrawer from "./NavbarCustom/MenuMovilDrawer";
 
 import { IoIosSunny, IoMdMoon } from "react-icons/io";
 import { FaShoppingCart, FaWhatsapp } from "react-icons/fa";
 
 function NavbarCustom({ theme, links, onOpenCart, cartLength }) {
-  const menu_items = ["formas", "imanes", "otros", "faqs", "contacto"];
+  const menu_items = [
+    "formas",
+    "imanes",
+    "otros",
+    "caracteristicas",
+    "faqs",
+    "contacto",
+  ];
   const text_class = "text-custom1 navidad:text-custom1--10";
-
-  const menu_items_movil = ["inicio", ...menu_items];
-  const text_class_movil =
-    "text-custom2 dark:text-custom1 navidad:text-custom1-5";
 
   const icons = {
     light: <IoIosSunny className="text-yellow-400" />,
@@ -36,11 +38,15 @@ function NavbarCustom({ theme, links, onOpenCart, cartLength }) {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleLinkMobile = (id) => {
+  const handleLink = (id) => {
     const element = document.querySelector("#" + id);
     if (element) {
       element.scrollIntoView();
       setIsMenuOpen(false);
+
+      setTimeout(() => {
+        element.scrollIntoView();
+      }, 700);
     }
   };
 
@@ -48,9 +54,10 @@ function NavbarCustom({ theme, links, onOpenCart, cartLength }) {
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       isMenuOpen={isMenuOpen}
+      // position="static"
       className="z-50 bg-transparent fixed top-0 "
       classNames={{
-        item: "font-bold ",
+        item: "font-bold",
         wrapper: "max-xs:gap-2 max-xs:px-2",
       }}
     >
@@ -58,17 +65,12 @@ function NavbarCustom({ theme, links, onOpenCart, cartLength }) {
         <li className="h-full">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Cerrar menu" : "Abrir menu"}
-            className={`sm:hidden ${text_class}`}
+            className={`md:hidden ${text_class}`}
           />
         </li>
 
         <NavbarItem>
           <NavbarBrand className="hidden xs:block">
-            {/* <motion.div
-              initial={{ y: "-100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ ease: "easeOut", duration: 0.5 }}
-            > */}
             <Link
               className="hover:scale-110 transition-all flex items-center"
               href="#inicio"
@@ -85,12 +87,11 @@ function NavbarCustom({ theme, links, onOpenCart, cartLength }) {
                 }}
               />
             </Link>
-            {/* </motion.div> */}
           </NavbarBrand>
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden md:flex gap-4" justify="center">
         {menu_items.map((item) => (
           <NavbarItem key={item}>
             <Link
@@ -99,6 +100,7 @@ function NavbarCustom({ theme, links, onOpenCart, cartLength }) {
               style={{
                 textShadow: "1px 1px 2px black",
               }}
+              onPress={() => handleLink(item)}
             >
               {item}
             </Link>
@@ -107,7 +109,7 @@ function NavbarCustom({ theme, links, onOpenCart, cartLength }) {
       </NavbarContent>
 
       <NavbarContent justify="end" className="gap-2 ">
-        <NavbarItem className="hidden md:block">
+        <NavbarItem className="hidden sm:block md:hidden lg:block">
           <Redes
             classNames={{
               link: `p-1 bg-transparent shadow-none text-2xl ${text_class}`,
@@ -190,32 +192,12 @@ function NavbarCustom({ theme, links, onOpenCart, cartLength }) {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu className="navidad:bg-custom2/70 font-[menulis] capitalize">
-        {menu_items_movil.map((item) => (
-          <NavbarMenuItem key={`${item}`}>
-            <Link
-              color="foreground"
-              size="lg"
-              href={`#${item}`}
-              className={` w-full border-b p-2 ${text_class_movil} group relative`}
-              onPress={() => handleLinkMobile(item)}
-            >
-              <span className="absolute bottom-0 left-0 w-0 h-full bg-gradient-to-r from-custom1/80 to-custom1/30 dark:from-custom2-10/80 dark:to-custom2-10/30 navidad:from-custom2-10/80 navidad:to-custom2-10/30 transition-all duration-300 group-hover:w-full -z-10" />
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-custom1 dark:bg-custom2-10 transition-all duration-300 group-hover:w-full" />
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-
-        <NavbarMenuItem>
-          <Redes
-            className="flex-wrap px-2"
-            classNames={{
-              link: `p-2 bg-transparent shadow-none text-3xl ${text_class_movil}`,
-            }}
-          />
-        </NavbarMenuItem>
-      </NavbarMenu>
+      <MenuMovilDrawer
+        menuItems={menu_items}
+        handleLink={handleLink}
+        isOpen={isMenuOpen}
+        onOpenChange={() => setIsMenuOpen(!isMenuOpen)}
+      />
     </Navbar>
   );
 }

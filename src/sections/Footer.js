@@ -5,6 +5,7 @@ import { Card, Divider, Image } from "@nextui-org/react";
 
 import Logo from "../components/Logo";
 import Redes from "../components/Redes";
+import CustomLink from "../components/CustomLink";
 
 import { FaMapMarkedAlt, FaRegCalendar } from "react-icons/fa";
 
@@ -14,25 +15,34 @@ function Footer({ links }) {
   const items = [
     {
       icon: <FaMapMarkedAlt size={24} />,
-      text: "9 de julio 4900, S.M. de Tucumán, Tucumán",
+      text: (
+        <>
+          9 de julio 4900, S.M. de Tucumán, Tucumán
+          {/* <br />{" "}
+          <span className="text-small text-neutral-400">
+            No es local. Solo retiro.
+          </span> */}
+        </>
+      ),
+      subtext: (
+        <span className="text-small text-neutral-400">
+          No es local. Solo retiro.
+        </span>
+      ),
     },
     {
       icon: <FaRegCalendar size={22} />,
       text: (
         <>
           Lunes a Sábados(
-          <a
+          <CustomLink
             href={
               links?.whatsapp +
               "&text=Hola. Quiero consultar por los horarios de atención."
             }
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-custom1 navidad:text-custom1-4 hover:text-custom1-3 hover:border-b"
-            title="Consultar horarios por Whatsapp"
-          >
-            Consultar
-          </a>
+            title="Consultar horarios por Wharsapp"
+            text="Consultar"
+          />
           )
         </>
       ),
@@ -46,7 +56,7 @@ function Footer({ links }) {
     <footer
       id="contacto"
       ref={ref}
-      className="bg-gradient-to-b from-custom2-4 to-custom2 text-white w-full flex flex-col items-center px-2 pt-20 pb-4 gap-4 shadow-inner relative"
+      className="bg-gradient-to-b from-custom2-4 to-custom2 text-white w-full flex flex-col items-center px-2 pt-20 pb-4 sm:pt-12 gap-4 shadow-inner relative"
       style={{
         minHeight: isInView ? 0 : "100vh",
       }}
@@ -56,15 +66,11 @@ function Footer({ links }) {
           <div className="text-xl max-w-[500px] text-center font-semibold bg-custom2-10/50 p-4 rounded-lg mb-2 shadow-md">
             Para mejorar, lo invitamos a realizar una breve encuesta sobre el
             sitio{" "}
-            <a
+            <CustomLink
               href={links?.["form_encuesta-20250109"]}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-custom1 hover:text-custom1-3 hover:border-b"
               title="Link a encuesta"
-            >
-              visitando este enlace
-            </a>
+              text="visitando este enlace"
+            />
             .
           </div>
 
@@ -111,6 +117,7 @@ function Footer({ links }) {
                   src={qr}
                   alt="QR del link al chat de Whatsapp"
                   shadow="md"
+                  height={150}
                   className="h-[150px] sm:h-[125px] border-3 border-divider dark:border-background from-custom1 to-custom1-6 navidad:from-custom1--6 navidad:to-custom1"
                   removeWrapper
                   style={{
@@ -136,9 +143,9 @@ function Footer({ links }) {
               whileInView="visible"
             >
               {items.map((item, i) => (
-                <motion.div
+                <motion.span
                   key={i}
-                  className="flex flex-col justify-center items-center gap-2 xs:flex-row"
+                  className="flex flex-col justify-self-center"
                   variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 1, y: 0 },
@@ -146,9 +153,12 @@ function Footer({ links }) {
                   initial="hidden"
                   whileInView="visible"
                 >
-                  {item.icon}
-                  <p>{item.text}</p>
-                </motion.div>
+                  <span className="inline-flex space-x-2 ">
+                    {item.icon}
+                    <p>{item.text}</p>
+                  </span>
+                  {item?.subtext && item?.subtext}
+                </motion.span>
               ))}
             </motion.div>
           </div>
@@ -158,16 +168,20 @@ function Footer({ links }) {
           <div className="flex gap-1 text-neutral-500 navidad:text-neutral-400 self-center">
             <p>2024</p>
 
-            <a
-              href="https://github.com/CristianH577"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:boder-b border-neutral-400"
-              title="Ir a perfil de Github"
-            >
-              <span className="font-mono">©</span>
-              VerdeAve
-            </a>
+            <div>
+              Diseñado por{" "}
+              <CustomLink
+                href="https://github.com/CristianH577"
+                className="hover:boder-b border-neutral-400 text-inherit"
+                title="Ir a perfil de Github"
+                text={
+                  <>
+                    <span className="font-mono">©</span>
+                    VerdeAve
+                  </>
+                }
+              />
+            </div>
           </div>
         </>
       )}

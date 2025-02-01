@@ -100,7 +100,7 @@
       "name": "Imán en tira flexible 9x2mm",
       "img_name": "tira_flexible",
       "prices": [1400, 1200],
-      "table_qtts": [0, 10],
+      "qtts_cat": [0, 10],
       "price_measure": "m",
       "info": {
         "fuerza": "28gr/cm",
@@ -112,7 +112,7 @@
       "name": "Imán en tira flexible 13x1,7mm",
       "img_name": "tira_flexible-13",
       "prices": [1600, 1400],
-      "table_qtts": [0, 10],
+      "qtts_cat": [0, 10],
       "price_measure": "m",
       "info": {
         "fuerza": "32gr/cm",

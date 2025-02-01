@@ -1,11 +1,12 @@
 import { SVGMancha, SVGTextoImanes, SVGTextoTucuman } from "../assets/svgs";
 
-function Logo({ id, classNames, className, styles }) {
+function Logo({ id, classNames, className, styles, style }) {
   return (
     <span
       className={`font-['calvera'] flex items-center justify-center relative select-none ${
         className || ""
       }`}
+      style={style}
     >
       <SVGTextoImanes
         id={`${id || "logo"}_back`}

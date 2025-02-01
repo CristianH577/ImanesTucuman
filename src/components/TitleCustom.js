@@ -4,14 +4,11 @@ import { SVGMancha } from "../assets/svgs";
 
 function TitleCustom({
   title,
-  scaleX,
-  scaleY,
   titleClassName,
   classNames,
   id,
   animation,
   className,
-  ...props
 }) {
   return (
     <motion.div

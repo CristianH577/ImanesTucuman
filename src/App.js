@@ -11,6 +11,7 @@ const Banners = lazy(() => import("./sections/Banners"));
 const Formas = lazy(() => import("./sections/Formas"));
 const Imanes = lazy(() => import("./sections/Imanes"));
 const Otros = lazy(() => import("./sections/Otros"));
+const Caracteristicas = lazy(() => import("./sections/Caracteristicas"));
 const Faqs = lazy(() => import("./sections/Faqs"));
 
 const Footer = lazy(() => import("./sections/Footer"));
@@ -24,6 +25,7 @@ function App() {
     <Formas />,
     <Imanes links={links} cart={{ value: cart, set: setCart }} />,
     <Otros cart={{ value: cart, set: setCart }} />,
+    <Caracteristicas />,
     <Faqs links={links} />,
   ];
 
@@ -36,7 +38,8 @@ function App() {
   };
 
   return (
-    <div className="bg-content2 dark:bg-content1 text-foreground font-[menulis] min-h-screen overflow-x-hidden overflow-auto h-[100vh] scroll-smooth sm:scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6 ">
+    <div className="bg-content2 dark:bg-content1 text-foreground font-[menulis] min-h-screen overflow-x-hidden overflow-auto h-[100vh] scroll-smooth sm:scrollbar scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6 ">
+      {/* scrollbar-thumb-rounded-full scrollbar-track-rounded-full */}
       <Suspense>
         <NavbarCustom
           theme={{ value: theme, set: handleTheme }}

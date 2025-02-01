@@ -42,7 +42,7 @@ function Banners() {
   const items = [
     <BannerDefault
       image={
-        <div className="relative flex items-center justify-center h-full">
+        <div className="relative flex items-center justify-center h-full w-full">
           {icons.map((icon, i) => (
             <span key={i}>{icon}</span>
           ))}
@@ -54,12 +54,15 @@ function Banners() {
             }}
           />
 
+          {/* <span className="w-full h-full min-w-[320px] min-h-[320px] bg-danger" /> */}
+
           <Image
             // src={contextImg(`./banners/portada.webp`)}
             src={portada}
             removeWrapper
             loading="eager"
-            className="object-contain"
+            height={320}
+            className="object-contain h-full"
             alt="Varios tipos de imanes"
             // srcSet={`
             //   ${contextImg(`./banners/portada-50.webp`)} 373w,
@@ -99,14 +102,47 @@ function Banners() {
             src={contextImg(`./otros/imanes/iman-ceramico-60.webp`)}
             loading="lazy"
             removeWrapper
+            height={320}
             className="object-contain "
-            alt="Imán cerámico para horno"
+            alt="Imán cerámico"
           />
         </motion.a>
       }
       title={"Imán cerámico"}
       text={
-        "Su alta resistencia a la temperatura y a la corrosión le permiten ser usados en hornos"
+        "Tienen alta resistencia a la temperatura y corrosión, esto le permiten ser usados en exteriores y hornos"
+      }
+    />,
+
+    <BannerDefault
+      image={
+        <motion.a
+          className="z-10"
+          variants={{
+            hidden: { scale: 0, opacity: 0 },
+            visible: {
+              scale: 1,
+              opacity: 1,
+            },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.3 }}
+          href="#imanes"
+        >
+          <Image
+            src={contextImg(`./formas/de_arrastre.webp`)}
+            loading="lazy"
+            removeWrapper
+            height={300}
+            className="object-contain "
+            alt="Imán de arrastre"
+          />
+        </motion.a>
+      }
+      title="Imán de Arrastre"
+      text={
+        "O imán de pesca. Tiene un cáncamo cerrado que permite su sujeción y posterior tracción"
       }
     />,
 
@@ -130,15 +166,14 @@ function Banners() {
             src={contextImg(`./otros/imanes/kluster.webp`)}
             loading="lazy"
             removeWrapper
+            height={320}
             className="object-contain "
             alt="Imanes ovalados + cuerda"
           />
         </motion.a>
       }
       title={"kluster"}
-      text={
-        "Juego de 20 piedras de hematita magnetizadas y pulidas + cuerda de polipropileno"
-      }
+      text={"Juego de 20 piedras ovaladas de hematita magnetizadas y pulidas"}
     />,
 
     <BannerDefault
@@ -161,6 +196,7 @@ function Banners() {
             src={contextImg(`./otros/imanes/neocube-dorado.webp`)}
             loading="lazy"
             removeWrapper
+            height={320}
             className="object-contain "
             alt="Cubo de imanes esfericos dorados"
           />
@@ -229,7 +265,13 @@ function Banners() {
     />,
   ];
 
-  return <SliderCustom id="inicio" items={items} className="min-h-[500px]" />;
+  return (
+    <SliderCustom
+      id="inicio"
+      items={items}
+      className="min-h-[600px] xs:min-h-[700px] sm:min-h-[500px]"
+    />
+  );
 }
 
 export default Banners;

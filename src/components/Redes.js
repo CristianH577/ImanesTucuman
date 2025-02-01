@@ -17,7 +17,7 @@ import { FaSignalMessenger } from "react-icons/fa6";
 
 import links from "../assets/links.json";
 
-function Redes({ classNames, className, slice }) {
+function Redes({ classNames, className, slice, variants }) {
   const redes = [
     {
       id: "facebook",
@@ -60,6 +60,7 @@ function Redes({ classNames, className, slice }) {
       label: "Encuesta",
     },
   ];
+
   return (
     <motion.div
       className={`flex gap-2 justify-center items-center ${className || ""}`}
@@ -84,16 +85,18 @@ function Redes({ classNames, className, slice }) {
       {redes.slice(0, slice || redes.length).map((item, i) => (
         <motion.div
           key={i}
-          variants={{
-            hidden: {
-              opacity: 0,
-              scale: 1.5,
-            },
-            visible: {
-              opacity: 1,
-              scale: 1,
-            },
-          }}
+          variants={
+            variants || {
+              hidden: {
+                opacity: 0,
+                scale: 1.5,
+              },
+              visible: {
+                opacity: 1,
+                scale: 1,
+              },
+            }
+          }
           whileTap={{
             rotate: 360,
           }}
