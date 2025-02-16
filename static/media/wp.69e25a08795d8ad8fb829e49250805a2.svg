@@ -1,0 +1,382 @@
+<svg id="svgQrWrapper" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300"
+    style="width: 100%; height: 100%; background-color: transparent;">
+    <svg>
+        <g transform="translate(9, 9)scale(0.95)" fill="none">
+            <svg width="300" height="300">
+                <style>.background-color{ fill: #fff; }.dot-color{ fill: #000000;
+                    }.corners-square-color-0-0{ fill: #000000; }.corners-dot-color-0-0{ fill:
+                    #000000; }.corners-square-color-1-0{ fill: #000000; }.corners-dot-color-1-0{
+                    fill: #000000; }.corners-square-color-0-1{ fill: #000000;
+                    }.corners-dot-color-0-1{ fill: #000000; }</style>
+                <defs />
+                <g class="dot-color">
+                    <path d="M 5 125v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,10,130)" />
+                    <path d="M 5 145v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,10,150)" />
+                    <path d="M 5 155v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,10,160)" />
+                    <path d="M 5 185v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(-90,10,190)" />
+                    <path d="M 5 195v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,10,200)" />
+                    <rect x="15" y="125" width="10" height="10" transform="rotate(0,20,130)" />
+                    <rect x="15" y="155" width="10" height="10" transform="rotate(0,20,160)" />
+                    <path d="M 15 165v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,20,170)" />
+                    <path d="M 15 185v 10h 10v -5a 5 5, 0, 0, 0, -5 -5" transform="rotate(0,20,190)" />
+                    <path d="M 15 195v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,20,200)" />
+                    <path d="M 25 95v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(-90,30,100)" />
+                    <rect x="25" y="105" width="10" height="10" transform="rotate(0,30,110)" />
+                    <rect x="25" y="115" width="10" height="10" transform="rotate(0,30,120)" />
+                    <rect x="25" y="125" width="10" height="10" transform="rotate(0,30,130)" />
+                    <rect x="25" y="135" width="10" height="10" transform="rotate(0,30,140)" />
+                    <rect x="25" y="145" width="10" height="10" transform="rotate(0,30,150)" />
+                    <path d="M 25 155v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,30,160)" />
+                    <path d="M 25 175v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,30,180)" />
+                    <path d="M 35 85v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,40,90)" />
+                    <rect x="35" y="95" width="10" height="10" transform="rotate(0,40,100)" />
+                    <rect x="35" y="105" width="10" height="10" transform="rotate(0,40,110)" />
+                    <rect x="35" y="115" width="10" height="10" transform="rotate(0,40,120)" />
+                    <path d="M 35 165v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,40,170)" />
+                    <rect x="35" y="175" width="10" height="10" transform="rotate(0,40,180)" />
+                    <rect x="35" y="185" width="10" height="10" transform="rotate(0,40,190)" />
+                    <path d="M 35 195v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,40,200)" />
+                    <path d="M 45 115v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,50,120)" />
+                    <circle cx="50" cy="140" r="5" transform="rotate(0,50,140)" />
+                    <circle cx="50" cy="160" r="5" transform="rotate(0,50,160)" />
+                    <path d="M 45 175v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,50,180)" />
+                    <path d="M 45 205v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,50,210)" />
+                    <path d="M 55 85v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,60,90)" />
+                    <path d="M 55 165v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,60,170)" />
+                    <rect x="55" y="205" width="10" height="10" transform="rotate(0,60,210)" />
+                    <rect x="65" y="85" width="10" height="10" transform="rotate(0,70,90)" />
+                    <circle cx="70" cy="110" r="5" transform="rotate(0,70,110)" />
+                    <path d="M 65 125v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,70,130)" />
+                    <circle cx="70" cy="150" r="5" transform="rotate(0,70,150)" />
+                    <rect x="65" y="165" width="10" height="10" transform="rotate(0,70,170)" />
+                    <path d="M 65 185v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,70,190)" />
+                    <rect x="65" y="205" width="10" height="10" transform="rotate(0,70,210)" />
+                    <path d="M 75 85v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,80,90)" />
+                    <path d="M 75 115v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(-90,80,120)" />
+                    <rect x="75" y="125" width="10" height="10" transform="rotate(0,80,130)" />
+                    <path d="M 75 155v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(-90,80,160)" />
+                    <path d="M 75 165v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,80,170)" />
+                    <rect x="75" y="185" width="10" height="10" transform="rotate(0,80,190)" />
+                    <rect x="75" y="205" width="10" height="10" transform="rotate(0,80,210)" />
+                    <path d="M 85 15v 10h 10v -5a 5 5, 0, 0, 0, -5 -5" transform="rotate(-90,90,20)" />
+                    <path d="M 85 25v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,90,30)" />
+                    <circle cx="90" cy="70" r="5" transform="rotate(0,90,70)" />
+                    <path d="M 85 105v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,90,110)" />
+                    <rect x="85" y="115" width="10" height="10" transform="rotate(0,90,120)" />
+                    <rect x="85" y="125" width="10" height="10" transform="rotate(0,90,130)" />
+                    <rect x="85" y="135" width="10" height="10" transform="rotate(0,90,140)" />
+                    <rect x="85" y="145" width="10" height="10" transform="rotate(0,90,150)" />
+                    <path d="M 85 155v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,90,160)" />
+                    <path d="M 85 175v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,90,180)" />
+                    <rect x="85" y="185" width="10" height="10" transform="rotate(0,90,190)" />
+                    <rect x="85" y="195" width="10" height="10" transform="rotate(0,90,200)" />
+                    <path d="M 85 205v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,90,210)" />
+                    <path d="M 85 225v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,90,230)" />
+                    <path d="M 85 235v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,90,240)" />
+                    <path d="M 85 255v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,90,260)" />
+                    <path d="M 95 5v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,100,10)" />
+                    <path d="M 95 15v 10h 10v -5a 5 5, 0, 0, 0, -5 -5" transform="rotate(90,100,20)" />
+                    <path d="M 95 35v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,100,40)" />
+                    <rect x="95" y="45" width="10" height="10" transform="rotate(0,100,50)" />
+                    <path d="M 95 55v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,100,60)" />
+                    <circle cx="100" cy="80" r="5" transform="rotate(0,100,80)" />
+                    <path d="M 95 95v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,100,100)" />
+                    <path d="M 95 115v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(0,100,120)" />
+                    <path d="M 95 125v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,100,130)" />
+                    <rect x="95" y="185" width="10" height="10" transform="rotate(0,100,190)" />
+                    <path d="M 95 215v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,100,220)" />
+                    <path d="M 95 235v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,100,240)" />
+                    <path d="M 95 255v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(0,100,260)" />
+                    <rect x="95" y="265" width="10" height="10" transform="rotate(0,100,270)" />
+                    <rect x="95" y="275" width="10" height="10" transform="rotate(0,100,280)" />
+                    <path d="M 95 285v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,100,290)" />
+                    <path d="M 105 45v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,110,50)" />
+                    <circle cx="110" cy="70" r="5" transform="rotate(0,110,70)" />
+                    <path d="M 105 95v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,110,100)" />
+                    <circle cx="110" cy="160" r="5" transform="rotate(0,110,160)" />
+                    <path d="M 105 175v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,110,180)" />
+                    <rect x="105" y="185" width="10" height="10" transform="rotate(0,110,190)" />
+                    <rect x="105" y="195" width="10" height="10" transform="rotate(0,110,200)" />
+                    <rect x="105" y="205" width="10" height="10" transform="rotate(0,110,210)" />
+                    <path d="M 105 215v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,110,220)" />
+                    <circle cx="110" cy="250" r="5" transform="rotate(0,110,250)" />
+                    <path d="M 105 285v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,110,290)" />
+                    <path d="M 115 15v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,120,20)" />
+                    <path d="M 115 25v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,120,30)" />
+                    <path d="M 115 105v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,120,110)" />
+                    <path d="M 115 185v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,120,190)" />
+                    <path d="M 115 225v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,120,230)" />
+                    <circle cx="120" cy="260" r="5" transform="rotate(0,120,260)" />
+                    <circle cx="130" cy="40" r="5" transform="rotate(0,130,40)" />
+                    <path d="M 125 55v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(-90,130,60)" />
+                    <path d="M 125 65v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,130,70)" />
+                    <path d="M 125 85v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,130,90)" />
+                    <rect x="125" y="95" width="10" height="10" transform="rotate(0,130,100)" />
+                    <path d="M 125 105v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,130,110)" />
+                    <path d="M 125 205v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(-90,130,210)" />
+                    <rect x="125" y="215" width="10" height="10" transform="rotate(0,130,220)" />
+                    <rect x="125" y="225" width="10" height="10" transform="rotate(0,130,230)" />
+                    <path d="M 125 265v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,130,270)" />
+                    <path d="M 125 275v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,130,280)" />
+                    <circle cx="140" cy="30" r="5" transform="rotate(0,140,30)" />
+                    <path d="M 135 55v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,140,60)" />
+                    <path d="M 135 185v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,140,190)" />
+                    <rect x="135" y="195" width="10" height="10" transform="rotate(0,140,200)" />
+                    <path d="M 135 205v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,140,210)" />
+                    <rect x="135" y="225" width="10" height="10" transform="rotate(0,140,230)" />
+                    <path d="M 135 255v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,140,260)" />
+                    <path d="M 135 285v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,140,290)" />
+                    <circle cx="150" cy="70" r="5" transform="rotate(0,150,70)" />
+                    <path d="M 145 195v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,150,200)" />
+                    <path d="M 145 215v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(-90,150,220)" />
+                    <path d="M 145 225v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,150,230)" />
+                    <rect x="145" y="255" width="10" height="10" transform="rotate(0,150,260)" />
+                    <rect x="145" y="265" width="10" height="10" transform="rotate(0,150,270)" />
+                    <rect x="145" y="275" width="10" height="10" transform="rotate(0,150,280)" />
+                    <path d="M 145 285v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,150,290)" />
+                    <path d="M 155 5v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,160,10)" />
+                    <path d="M 155 15v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,160,20)" />
+                    <path d="M 155 35v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,160,40)" />
+                    <path d="M 155 45v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,160,50)" />
+                    <path d="M 155 75v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,160,80)" />
+                    <path d="M 155 85v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,160,90)" />
+                    <circle cx="160" cy="110" r="5" transform="rotate(0,160,110)" />
+                    <path d="M 155 205v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,160,210)" />
+                    <path d="M 155 215v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,160,220)" />
+                    <path d="M 155 255v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,160,260)" />
+                    <path d="M 155 275v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,160,280)" />
+                    <path d="M 165 25v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,170,30)" />
+                    <path d="M 165 55v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,170,60)" />
+                    <path d="M 165 65v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,170,70)" />
+                    <rect x="165" y="85" width="10" height="10" transform="rotate(0,170,90)" />
+                    <circle cx="170" cy="230" r="5" transform="rotate(0,170,230)" />
+                    <circle cx="170" cy="250" r="5" transform="rotate(0,170,250)" />
+                    <rect x="175" y="25" width="10" height="10" transform="rotate(0,180,30)" />
+                    <path d="M 175 45v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,180,50)" />
+                    <path d="M 175 75v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,180,80)" />
+                    <path d="M 175 85v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,180,90)" />
+                    <path d="M 175 205v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,180,210)" />
+                    <path d="M 175 215v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,180,220)" />
+                    <circle cx="180" cy="240" r="5" transform="rotate(0,180,240)" />
+                    <path d="M 175 285v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,180,290)" />
+                    <path d="M 185 5v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,190,10)" />
+                    <rect x="185" y="15" width="10" height="10" transform="rotate(0,190,20)" />
+                    <rect x="185" y="25" width="10" height="10" transform="rotate(0,190,30)" />
+                    <path d="M 185 45v 10h 10v -5a 5 5, 0, 0, 0, -5 -5" transform="rotate(0,190,50)" />
+                    <rect x="185" y="55" width="10" height="10" transform="rotate(0,190,60)" />
+                    <path d="M 185 65v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,190,70)" />
+                    <path d="M 185 125v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,190,130)" />
+                    <path d="M 185 145v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,190,150)" />
+                    <path d="M 185 155v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,190,160)" />
+                    <path d="M 185 185v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,190,190)" />
+                    <path d="M 185 195v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,190,200)" />
+                    <path d="M 185 245v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,190,250)" />
+                    <circle cx="190" cy="270" r="5" transform="rotate(0,190,270)" />
+                    <rect x="185" y="285" width="10" height="10" transform="rotate(0,190,290)" />
+                    <path d="M 195 25v 10h 10v -5a 5 5, 0, 0, 0, -5 -5" transform="rotate(0,200,30)" />
+                    <path d="M 195 35v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,200,40)" />
+                    <path d="M 195 55v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,200,60)" />
+                    <path d="M 195 75v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,200,80)" />
+                    <rect x="195" y="85" width="10" height="10" transform="rotate(0,200,90)" />
+                    <rect x="195" y="95" width="10" height="10" transform="rotate(0,200,100)" />
+                    <path d="M 195 105v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,200,110)" />
+                    <rect x="195" y="125" width="10" height="10" transform="rotate(0,200,130)" />
+                    <path d="M 195 135v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,200,140)" />
+                    <path d="M 195 205v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(-90,200,210)" />
+                    <rect x="195" y="215" width="10" height="10" transform="rotate(0,200,220)" />
+                    <path d="M 195 225v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,200,230)" />
+                    <rect x="195" y="245" width="10" height="10" transform="rotate(0,200,250)" />
+                    <path d="M 195 255v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,200,260)" />
+                    <path d="M 195 285v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,200,290)" />
+                    <path d="M 205 5v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,210,10)" />
+                    <path d="M 205 15v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,210,20)" />
+                    <path d="M 205 35v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,210,40)" />
+                    <circle cx="210" cy="70" r="5" transform="rotate(0,210,70)" />
+                    <path d="M 205 95v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,210,100)" />
+                    <path d="M 205 125v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(0,210,130)" />
+                    <path d="M 205 135v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,210,140)" />
+                    <path d="M 205 155v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(-90,210,160)" />
+                    <path d="M 205 165v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,210,170)" />
+                    <path d="M 205 185v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,210,190)" />
+                    <rect x="205" y="195" width="10" height="10" transform="rotate(0,210,200)" />
+                    <rect x="205" y="205" width="10" height="10" transform="rotate(0,210,210)" />
+                    <rect x="205" y="215" width="10" height="10" transform="rotate(0,210,220)" />
+                    <rect x="205" y="225" width="10" height="10" transform="rotate(0,210,230)" />
+                    <rect x="205" y="235" width="10" height="10" transform="rotate(0,210,240)" />
+                    <rect x="205" y="245" width="10" height="10" transform="rotate(0,210,250)" />
+                    <path d="M 205 265v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,210,270)" />
+                    <path d="M 205 275v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,210,280)" />
+                    <circle cx="220" cy="90" r="5" transform="rotate(0,220,90)" />
+                    <circle cx="220" cy="110" r="5" transform="rotate(0,220,110)" />
+                    <rect x="215" y="155" width="10" height="10" transform="rotate(0,220,160)" />
+                    <path d="M 215 165v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,220,170)" />
+                    <rect x="215" y="205" width="10" height="10" transform="rotate(0,220,210)" />
+                    <rect x="215" y="245" width="10" height="10" transform="rotate(0,220,250)" />
+                    <path d="M 215 255v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,220,260)" />
+                    <path d="M 215 285v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,220,290)" />
+                    <circle cx="230" cy="100" r="5" transform="rotate(0,230,100)" />
+                    <circle cx="230" cy="120" r="5" transform="rotate(0,230,120)" />
+                    <circle cx="230" cy="140" r="5" transform="rotate(0,230,140)" />
+                    <rect x="225" y="155" width="10" height="10" transform="rotate(0,230,160)" />
+                    <path d="M 225 175v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,230,180)" />
+                    <path d="M 225 185v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,230,190)" />
+                    <rect x="225" y="205" width="10" height="10" transform="rotate(0,230,210)" />
+                    <circle cx="230" cy="230" r="5" transform="rotate(0,230,230)" />
+                    <rect x="225" y="245" width="10" height="10" transform="rotate(0,230,250)" />
+                    <rect x="225" y="255" width="10" height="10" transform="rotate(0,230,260)" />
+                    <path d="M 225 265v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,230,270)" />
+                    <rect x="225" y="285" width="10" height="10" transform="rotate(0,230,290)" />
+                    <circle cx="240" cy="110" r="5" transform="rotate(0,240,110)" />
+                    <path d="M 235 125v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,240,130)" />
+                    <rect x="235" y="155" width="10" height="10" transform="rotate(0,240,160)" />
+                    <rect x="235" y="185" width="10" height="10" transform="rotate(0,240,190)" />
+                    <rect x="235" y="195" width="10" height="10" transform="rotate(0,240,200)" />
+                    <rect x="235" y="205" width="10" height="10" transform="rotate(0,240,210)" />
+                    <rect x="235" y="245" width="10" height="10" transform="rotate(0,240,250)" />
+                    <path d="M 235 255v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,240,260)" />
+                    <path d="M 235 275v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,240,280)" />
+                    <path d="M 235 285v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,240,290)" />
+                    <rect x="245" y="125" width="10" height="10" transform="rotate(0,250,130)" />
+                    <path d="M 245 155v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(0,250,160)" />
+                    <rect x="245" y="165" width="10" height="10" transform="rotate(0,250,170)" />
+                    <rect x="245" y="175" width="10" height="10" transform="rotate(0,250,180)" />
+                    <rect x="245" y="185" width="10" height="10" transform="rotate(0,250,190)" />
+                    <rect x="245" y="195" width="10" height="10" transform="rotate(0,250,200)" />
+                    <rect x="245" y="205" width="10" height="10" transform="rotate(0,250,210)" />
+                    <rect x="245" y="215" width="10" height="10" transform="rotate(0,250,220)" />
+                    <rect x="245" y="225" width="10" height="10" transform="rotate(0,250,230)" />
+                    <rect x="245" y="235" width="10" height="10" transform="rotate(0,250,240)" />
+                    <rect x="245" y="245" width="10" height="10" transform="rotate(0,250,250)" />
+                    <path d="M 255 105v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(-90,260,110)" />
+                    <rect x="255" y="115" width="10" height="10" transform="rotate(0,260,120)" />
+                    <rect x="255" y="125" width="10" height="10" transform="rotate(0,260,130)" />
+                    <rect x="255" y="165" width="10" height="10" transform="rotate(0,260,170)" />
+                    <rect x="255" y="175" width="10" height="10" transform="rotate(0,260,180)" />
+                    <rect x="255" y="185" width="10" height="10" transform="rotate(0,260,190)" />
+                    <rect x="255" y="195" width="10" height="10" transform="rotate(0,260,200)" />
+                    <path d="M 255 205v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,260,210)" />
+                    <path d="M 255 235v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(0,260,240)" />
+                    <rect x="255" y="245" width="10" height="10" transform="rotate(0,260,250)" />
+                    <path d="M 255 265v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,260,270)" />
+                    <path d="M 255 275v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,260,280)" />
+                    <path d="M 265 85v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,270,90)" />
+                    <rect x="265" y="105" width="10" height="10" transform="rotate(0,270,110)" />
+                    <path d="M 265 125v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,270,130)" />
+                    <rect x="265" y="165" width="10" height="10" transform="rotate(0,270,170)" />
+                    <path d="M 265 215v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(180,270,220)" />
+                    <path d="M 265 245v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(0,270,250)" />
+                    <path d="M 265 255v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(180,270,260)" />
+                    <path d="M 265 275v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(0,270,280)" />
+                    <path d="M 265 285v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,270,290)" />
+                    <path d="M 275 85v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,280,90)" />
+                    <path d="M 275 105v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,280,110)" />
+                    <path d="M 275 145v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,280,150)" />
+                    <rect x="275" y="155" width="10" height="10" transform="rotate(0,280,160)" />
+                    <rect x="275" y="165" width="10" height="10" transform="rotate(0,280,170)" />
+                    <path d="M 275 205v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(-90,280,210)" />
+                    <path d="M 275 215v 10h 10v -5a 5 5, 0, 0, 0, -5 -5"
+                        transform="rotate(90,280,220)" />
+                    <path d="M 275 255v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,280,260)" />
+                    <circle cx="290" cy="120" r="5" transform="rotate(0,290,120)" />
+                    <circle cx="290" cy="140" r="5" transform="rotate(0,290,140)" />
+                    <path d="M 285 165v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,290,170)" />
+                    <path d="M 285 205v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(0,290,210)" />
+                    <path d="M 285 225v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(-90,290,230)" />
+                    <rect x="285" y="235" width="10" height="10" transform="rotate(0,290,240)" />
+                    <path d="M 285 245v 10h 5a 5 5, 0, 0, 0, 0 -10" transform="rotate(90,290,250)" />
+                    <circle cx="290" cy="290" r="5" transform="rotate(0,290,290)" />
+                </g>
+                <g class="corners-square-color-0-0">
+                    <path clip-rule="evenodd"
+                        d="M 5 15v 50a 10 10, 0, 0, 0, 10 10h 50a 10 10, 0, 0, 0, 10 -10v -50a 10 10, 0, 0, 0, -10 -10h -50a 10 10, 0, 0, 0, -10 10zM 20 15h 40a 5 5, 0, 0, 1, 5 5v 40a 5 5, 0, 0, 1, -5 5h -40a 5 5, 0, 0, 1, -5 -5v -40a 5 5, 0, 0, 1, 5 -5z"
+                        transform="rotate(0,40,40)" />
+                </g>
+                <g class="corners-dot-color-0-0">
+                    <rect x="25" y="25" width="30" height="30" rx="7.5" ry="7.5"
+                        transform="rotate(0,40,40)" />
+                </g>
+                <g class="corners-square-color-1-0">
+                    <path clip-rule="evenodd"
+                        d="M 225 15v 50a 10 10, 0, 0, 0, 10 10h 50a 10 10, 0, 0, 0, 10 -10v -50a 10 10, 0, 0, 0, -10 -10h -50a 10 10, 0, 0, 0, -10 10zM 240 15h 40a 5 5, 0, 0, 1, 5 5v 40a 5 5, 0, 0, 1, -5 5h -40a 5 5, 0, 0, 1, -5 -5v -40a 5 5, 0, 0, 1, 5 -5z"
+                        transform="rotate(90,260,40)" />
+                </g>
+                <g class="corners-dot-color-1-0">
+                    <rect x="245" y="25" width="30" height="30" rx="7.5" ry="7.5"
+                        transform="rotate(90,260,40)" />
+                </g>
+                <g class="corners-square-color-0-1">
+                    <path clip-rule="evenodd"
+                        d="M 5 235v 50a 10 10, 0, 0, 0, 10 10h 50a 10 10, 0, 0, 0, 10 -10v -50a 10 10, 0, 0, 0, -10 -10h -50a 10 10, 0, 0, 0, -10 10zM 20 235h 40a 5 5, 0, 0, 1, 5 5v 40a 5 5, 0, 0, 1, -5 5h -40a 5 5, 0, 0, 1, -5 -5v -40a 5 5, 0, 0, 1, 5 -5z"
+                        transform="rotate(-90,40,260)" />
+                </g>
+                <g class="corners-dot-color-0-1">
+                    <rect x="25" y="245" width="30" height="30" rx="7.5" ry="7.5"
+                        transform="rotate(-90,40,260)" />
+                </g>
+                <svg id="whatsAppLogotype" xmlns="http://www.w3.org/2000/svg" version="1.1" x="117"
+                    y="117" viewBox="0 0 50 50" width="66px" height="66px">
+                    <rect width="50" height="50" fill="url(#asnap)" rx="15" />
+                    <path fill="#fff"
+                        d="M35.652 14.217A14.235 14.235 0 0 0 25.49 10c-7.917 0-14.366 6.449-14.373 14.366 0 2.535.662 5.002 1.915 7.186L11 39l7.62-1.998a14.38 14.38 0 0 0 6.87 1.75h.007c7.916 0 14.365-6.45 14.372-14.373a14.316 14.316 0 0 0-4.217-10.162ZM25.49 36.32c-2.15 0-4.252-.579-6.084-1.668l-.434-.261-4.52 1.185 1.206-4.41-.283-.455a11.892 11.892 0 0 1-1.826-6.352c0-6.573 5.36-11.934 11.948-11.934a11.89 11.89 0 0 1 8.447 3.5 11.883 11.883 0 0 1 3.493 8.447C37.43 30.966 32.07 36.32 25.49 36.32Zm6.552-8.943c-.358-.18-2.122-1.048-2.453-1.172-.33-.117-.572-.179-.806.18-.241.358-.93 1.17-1.137 1.405-.207.241-.42.269-.778.09-.359-.18-1.516-.558-2.887-1.785-1.068-.95-1.785-2.129-1.998-2.487-.207-.358-.021-.552.158-.73.159-.16.358-.42.538-.628.179-.206.24-.358.358-.599.117-.241.062-.448-.028-.627-.09-.18-.806-1.95-1.109-2.666-.29-.703-.586-.607-.806-.614-.207-.013-.448-.013-.69-.013-.24 0-.626.09-.957.447-.33.359-1.254 1.227-1.254 2.998 0 1.77 1.289 3.472 1.468 3.713.179.241 2.528 3.866 6.132 5.423.854.372 1.523.592 2.046.758.861.275 1.64.234 2.26.144.689-.103 2.122-.868 2.425-1.708.297-.841.297-1.558.207-1.71-.09-.15-.33-.24-.689-.42Z" />
+                    <defs>
+                        <linearGradient id="asnap" x1="50" x2="50" y1="50" y2="0"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#20B038" />
+                            <stop offset="1" stop-color="#60D66A" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </svg>
+        </g>
+    </svg>
+</svg>
