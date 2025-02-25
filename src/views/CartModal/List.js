@@ -129,13 +129,17 @@ function List({ cart, makeDiscount, downloading }) {
         if (cat in dbImanes) {
           // ordeno por medida
           const items_ = Object.keys(items)
-            .sort((a, b) => dbImanes[cat][a]?.A - dbImanes[cat][b]?.A)
-            .sort((a, b) => dbImanes[cat][a]?.B - dbImanes[cat][b]?.B)
+            .sort(
+              (a, b) =>
+                dbImanes[cat][a]?.A - dbImanes[cat][b]?.A ||
+                dbImanes[cat][a]?.B - dbImanes[cat][b]?.B
+            )
             .reduce((acc, key) => {
               acc[key] = items[key];
               return acc;
             }, {});
           cart_[cat] = items_;
+          console.log(cart_[cat]);
           //******************************
 
           const db_data = dbImanes?.[cat]?.[key];
