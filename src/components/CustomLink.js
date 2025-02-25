@@ -1,4 +1,4 @@
-function CustomLink({ href, title, text, className, target }) {
+function CustomLink({ href, title, text, className, target, icon }) {
   return (
     <a
       href={href || null}
@@ -6,11 +6,12 @@ function CustomLink({ href, title, text, className, target }) {
       rel="noopener noreferrer"
       title={title || ""}
       aria-label={title || ""}
-      className={`text-custom1 navidad:text-custom1-4 hover:text-custom1-3 hover:border-b ${
-        className || ""
-      }`}
+      className={`text-custom1 navidad:text-custom1-4 hover:text-custom1-3 hover:underline ${
+        icon ? "inline-flex items-center gap-1" : ""
+      } ${className || ""}`}
     >
       {text || "Link"}
+      {icon ? icon : null}
     </a>
   );
 }

@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+// , useInView
 
 import { Skeleton } from "@nextui-org/react";
 
@@ -11,12 +12,16 @@ function SectionView({ children, ...props }) {
     threshold: 0.3,
     once: true,
   });
+  // const isInView = true;
 
   return (
     <motion.section
       id={props?.id || ""}
       ref={ref}
       className={props?.className || ""}
+      // className={`w-full max-w-[1200px] flex flex-col items-center gap-6 place-self-center  ${
+      //   props?.className || ""
+      // }`}
       style={props?.style || {}}
       variants={{
         hidden: {},
@@ -31,6 +36,7 @@ function SectionView({ children, ...props }) {
       animate={isInView && "visible"}
     >
       <Skeleton
+        // className="w-full max-w-[1200px] flex flex-col items-center gap-6 place-self-center"
         isLoaded={isInView}
         className="w-full rounded-lg dark:bg-transparent data-[view=false]:min-h-[180vh] xs:data-[view=false]:min-h-[150vh] md:data-[view=false]:min-h-[100vh] data-[view=true]:min-h-[20vh]"
         classNames={{

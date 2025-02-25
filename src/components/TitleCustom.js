@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { SVGMancha } from "../assets/svgs";
+import { SVGMancha } from "../consts/svgs";
 
 function TitleCustom({
   title,
@@ -33,9 +33,6 @@ function TitleCustom({
         className={`absolute from-custom1/80 to-custom1--8/80 w-full h-full ${
           classNames?.svg || ""
         }`}
-        // style={{
-        //   transform: `scaleX(${scaleX || 1}) scaleY(${scaleY || 1})`,
-        // }}
       />
     </motion.div>
   );

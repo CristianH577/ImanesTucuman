@@ -1,0 +1,200 @@
+import { useState } from "react";
+import { handleLink } from "../libs/functions";
+
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenuToggle,
+  Link,
+  Button,
+  Badge,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  Tooltip,
+} from "@nextui-org/react";
+
+import Logo from "../components/Logo";
+import Redes from "../components/Redes";
+import MenuMovilDrawer from "./NavbarCustom/MenuMovilDrawer";
+import ThemeSwitch from "./NavbarCustom/ThemeSwitch";
+
+import { FaShoppingCart, FaWhatsapp } from "react-icons/fa";
+import { FaGear } from "react-icons/fa6";
+
+import { sectionIDs, links } from "../consts/consts";
+
+function NavbarCustom({ theme, onOpenCart, cartLength, font }) {
+  const text_class = "text-custom1 navidad:text-custom1--10";
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
+      className="z-50 bg-transparent fixed top-0 "
+      classNames={{
+        item: "font-bold",
+        wrapper: "max-xs:gap-2 max-xs:px-2",
+      }}
+    >
+      <NavbarContent>
+        <li className="h-full">
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Cerrar menu" : "Abrir menu"}
+            className={`md:hidden ${text_class}`}
+          />
+        </li>
+
+        <NavbarItem>
+          <NavbarBrand className="hidden xs:block">
+            <Link
+              className="hover:scale-110 transition-all flex items-center"
+              href="#inicio"
+              onPress={() => setIsMenuOpen(false)}
+              style={{
+                filter: "drop-shadow(-4px 0px 6px black)",
+              }}
+              aria-label="Ir al inicio de la pagina"
+            >
+              <Logo
+                id="navbar_logo"
+                classNames={{
+                  svgA: "h-full w-auto max-h-[44px]",
+                }}
+              />
+            </Link>
+          </NavbarBrand>
+        </NavbarItem>
+      </NavbarContent>
+
+      <NavbarContent className="hidden md:flex gap-4" justify="center">
+        {sectionIDs.map((item) => (
+          <NavbarItem key={item}>
+            <Link
+              href={`#${item}`}
+              className={`hover:scale-110 transition-all capitalize ${text_class}`}
+              style={{
+                textShadow: "1px 1px 2px black",
+              }}
+              onPress={() => handleLink(item)}
+            >
+              {item}
+            </Link>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
+
+      <NavbarContent justify="end" className="gap-2 ">
+        <NavbarItem className="hidden sm:block md:hidden lg:block">
+          <Redes
+            classNames={{
+              link: `p-1 bg-transparent shadow-none text-2xl ${text_class}`,
+            }}
+            slice={2}
+          />
+        </NavbarItem>
+
+        <NavbarItem>
+          <Dropdown
+            classNames={{
+              content: "min-w-0 p-0 border-2 border-custom1-5 overflow-hidden",
+            }}
+          >
+            <DropdownTrigger>
+              <Button
+                isIconOnly
+                variant=""
+                className="text-neutral-400 hover:scale-110 transition-all"
+                aria-label="Configuraciones"
+              >
+                <FaGear className="text-2xl" />
+              </Button>
+            </DropdownTrigger>
+
+            <DropdownMenu
+              aria-label="Configuraciones"
+              closeOnSelect={false}
+              classNames={{
+                base: "p-0",
+              }}
+            >
+              <DropdownItem textValue="theme">
+                <ThemeSwitch
+                  isSelected={theme.value === "dark"}
+                  onValueChange={(e) => {
+                    const theme_ = e ? "dark" : "light";
+                    theme.set(theme_);
+                  }}
+                />
+              </DropdownItem>
+
+              <DropdownItem textValue="font" className="p-0">
+                <Button
+                  isIconOnly
+                  className="uppercase font-bold bg-transparent w-full"
+                  onPress={font.set}
+                >
+                  {font.value}
+                </Button>
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Tooltip
+            content="Carrito"
+            className="border-2 border-custom1-5"
+            classNames={{
+              content: "dark:text-white text-center font-semibold",
+            }}
+          >
+            <Button
+              isIconOnly
+              variant=""
+              className="overflow-visible hover:scale-110 transition-all"
+              onPress={onOpenCart}
+            >
+              <Badge
+                content={cartLength > 9 ? "+9" : cartLength}
+                isInvisible={cartLength < 1}
+                size="sm"
+                className="border-custom1-2 bg-custom2-10 text-white"
+              >
+                <FaShoppingCart
+                  className="text-neutral-500 data-[active=true]:text-custom1 text-2xl"
+                  data-active={cartLength > 0}
+                />
+              </Badge>
+            </Button>
+          </Tooltip>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Link
+            href={links?.whatsapp}
+            target="_blank"
+            className="flex items-center cursor-pointer hover:scale-110 transition-all"
+            aria-label="Consulte por Whatsapp"
+          >
+            <FaWhatsapp className="text-success navidad:text-custom--10 text-2xl" />
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+
+      <MenuMovilDrawer
+        menuItems={sectionIDs}
+        // sectionsLoaded={sectionsLoaded}
+        isOpen={isMenuOpen}
+        onOpenChange={() => setIsMenuOpen(!isMenuOpen)}
+      />
+    </Navbar>
+  );
+}
+
+export default NavbarCustom;

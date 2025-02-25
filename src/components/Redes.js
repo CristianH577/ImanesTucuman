@@ -15,9 +15,11 @@ import {
 } from "react-icons/si";
 import { FaSignalMessenger } from "react-icons/fa6";
 
-import links from "../assets/links.json";
+import { links } from "../consts/consts";
 
 function Redes({ classNames, className, slice, variants }) {
+  // const contextImgs = require.context("../assets/redes/", true);
+
   const redes = [
     {
       id: "facebook",
@@ -27,36 +29,43 @@ function Redes({ classNames, className, slice, variants }) {
     {
       id: "instagram",
       icon: <FaInstagram />,
+      // src: contextImgs("./logo-insta.webp"),
       label: "Instagram",
     },
     {
       id: "googlemaps",
       icon: <SiGooglestreetview />,
+      // src: contextImgs("./logo-googlemaps.webp"),
       label: "Ubicación",
     },
     {
       id: "telegram",
       icon: <FaTelegramPlane />,
+      // className="text-[#0088cc]"
       label: "Telegram",
     },
     {
       id: "signal",
       icon: <FaSignalMessenger />,
+      // className="text-sky-500"
       label: "Signal",
     },
     {
       id: "catalogo",
       icon: <FaRegFilePdf />,
+
       label: "Catalogo",
     },
     {
       id: "mercadoshops",
       icon: <SiMercadopago />,
+      // src: contextImgs("./logo-ms.webp"),
       label: "Tienda Online",
     },
     {
       id: "form_encuesta-20250109",
       icon: <SiGoogleforms />,
+      // className="text-purple-500"
       label: "Encuesta",
     },
   ];
@@ -112,12 +121,25 @@ function Redes({ classNames, className, slice, variants }) {
             <Link
               href={links?.[item?.id] || "#contacto"}
               target={links?.[item?.id] ? "_blank" : "_self"}
-              className={`bg-neutral-200/20 rounded-full text-white p-2 cursor-pointer transition-all shadow-md hover:bg-custom1 hover:text-custom2  ${
+              className={`bg-neutral-200/20 rounded-full text-white p-2 cursor-pointer transition-all shadow-md hover:bg-custom1 hover:text-custom2 ${
                 classNames?.link || ""
               }`}
               aria-label={item?.label}
             >
-              {item.icon}
+              {item?.icon}
+              {/* {showImgs && item?.src ? (
+                <img
+                  src={item?.src}
+                  alt={`Logo de ${item?.id}`}
+                  className="object-contain"
+                  style={{
+                    width: 36,
+                    height: 36,
+                  }}
+                />
+              ) : (
+                item?.icon
+              )} */}
             </Link>
           </Tooltip>
         </motion.div>

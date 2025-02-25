@@ -1,7 +1,7 @@
 {
   "name": "imanestuc-app",
   "homepage": "https://imanestucuman.com.ar",
-  "version": "0.5.2",
+  "version": "0.5.35",
   "private": true,
   "dependencies": {
     "@nextui-org/react": "^2.6.10",

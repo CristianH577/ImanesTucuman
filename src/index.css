@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import "tailwindcss"; */
 
 @layer base {
   @font-face {
@@ -16,15 +17,27 @@
   }
 }
 
+:root {
+  --font-size: medium;
+}
+
 html {
   overflow: hidden;
-  scroll-behavior: smooth;
   height: 100%;
 }
 body {
   margin: 0;
+  font-size: var(--font-size);
 }
 
 .bg-radial {
   background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+.clip-diagonal-y {
+  clip-path: polygon(0 0, 100% 4rem, 100% calc(100% - 4rem), 0 100%);
+}
+
+.fix-input {
+  font-size: var(--font-size) !important;
 }

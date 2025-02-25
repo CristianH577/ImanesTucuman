@@ -32,3 +32,7 @@ src/z
 src/PDF
 src/components/Component.js
 src/sections/NavbarCustom/MenuMovil.js
+src/assets/imanes/db-imanes-nostock.json
+src/sections/NavbarCustom/ThemeSelect.js
+postcss.config.js
+src/assets/redes

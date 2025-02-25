@@ -1,12 +1,31 @@
-import { SVGMancha, SVGTextoImanes, SVGTextoTucuman } from "../assets/svgs";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
-function Logo({ id, classNames, className, styles, style }) {
+import { Skeleton } from "@nextui-org/react";
+
+import { SVGMancha, SVGTextoImanes, SVGTextoTucuman } from "../consts/svgs";
+
+function Logo({ id, classNames, className, styles }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    threshold: 0.3,
+    once: true,
+  });
+
   return (
-    <span
-      className={`font-['calvera'] flex items-center justify-center relative select-none ${
-        className || ""
-      }`}
-      style={style}
+    <Skeleton
+      ref={ref}
+      isLoaded={isInView}
+      className="dark:bg-transparent w-fit overflow-hidden before:hidden place-self-center"
+      // className={`font-['calvera'] flex items-center justify-center relative select-none ${
+      //   className || ""
+      // }`}
+      classNames={{
+        content: `font-['calvera'] relative select-none flex items-center justify-center self-center ${
+          className || ""
+        }`,
+      }}
+      style={{}}
     >
       <SVGTextoImanes
         id={`${id || "logo"}_back`}
@@ -34,40 +53,7 @@ function Logo({ id, classNames, className, styles, style }) {
           classNames?.svgB || ""
         }`}
       />
-
-      {/* <div
-        data-slot="logoCenterContainer"
-        className={`absolute flex items-center justify-center w-full h-full max-h-[60%] ${
-          classNames?.logoCenterContainer || ""
-        }`}
-      >
-        <div
-          data-slot="logoCenterSubContainer"
-          className={`relative flex items-center justify-center w-3/5 h-full z-10 ${
-            classNames?.logoCenterSubContainer || ""
-          }`}
-        >
-          <SVGTextoTucuman
-            id={`${id || "logo"}_front`}
-            data-slot="svgB"
-            className={`h-1/2 w-full tracking-[0.4em] z-10 overflow-visible ${
-              classNames?.svgB || ""
-            }`}
-          />
-
-          <SVGMancha
-            id={`${id || "logo"}_midle`}
-            data-slot="svgC"
-            className={`absolute from-custom1--8/60 to-custom1--9/60 h-full w-full navidad:to-custom1--3/60 navidad:from-custom1--6/60 ${
-              classNames?.svgC || ""
-            }`}
-            style={{
-              ...styles?.svgC,
-            }}
-          />
-        </div>
-      </div> */}
-    </span>
+    </Skeleton>
   );
 }
 
