@@ -1,28 +1,23 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-// , useInView
 
 import { Skeleton } from "@nextui-org/react";
 
 import TitleCustom from "../components/TitleCustom";
 
-function SectionView({ children, ...props }) {
+function ViewDefault({ children, ...props }) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     threshold: 0.3,
     once: true,
   });
-  // const isInView = true;
 
   return (
     <motion.section
-      id={props?.id || ""}
+      id={props?.id || null}
       ref={ref}
-      className={props?.className || ""}
-      // className={`w-full max-w-[1200px] flex flex-col items-center gap-6 place-self-center  ${
-      //   props?.className || ""
-      // }`}
-      style={props?.style || {}}
+      className={props?.className || null}
+      style={props?.style || null}
       variants={{
         hidden: {},
         visible: {
@@ -36,22 +31,21 @@ function SectionView({ children, ...props }) {
       animate={isInView && "visible"}
     >
       <Skeleton
-        // className="w-full max-w-[1200px] flex flex-col items-center gap-6 place-self-center"
         isLoaded={isInView}
-        className="w-full rounded-lg dark:bg-transparent data-[view=false]:min-h-[180vh] xs:data-[view=false]:min-h-[150vh] md:data-[view=false]:min-h-[100vh] data-[view=true]:min-h-[20vh]"
+        className="w-full rounded-lg dark:bg-transparent"
         classNames={{
-          content:
-            "w-full max-w-[1200px] flex flex-col items-center gap-6 place-self-center",
+          content: `w-full max-w-[1200px] h-full flex flex-col items-center gap-6 place-self-center pt-16 ${
+            props?.classNames?.content || ""
+          }`,
         }}
-        data-view={isInView}
       >
         {isInView && props?.title && (
           <TitleCustom
             title={props?.title}
             animation={{
               variants: {
-                hidden: { scale: 0, opacity: 0 },
-                visible: { scale: 1, opacity: 1 },
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
               },
             }}
           />
@@ -63,4 +57,4 @@ function SectionView({ children, ...props }) {
   );
 }
 
-export default SectionView;
+export default ViewDefault;

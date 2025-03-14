@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { handleLink } from "../libs/functions";
+
+import { links, fontsValues, navItems } from "../consts/siteConfig";
 
 import {
   Navbar,
@@ -24,13 +25,32 @@ import ThemeSwitch from "./NavbarCustom/ThemeSwitch";
 
 import { FaShoppingCart, FaWhatsapp } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
+import { IoMenu } from "react-icons/io5";
 
-import { sectionIDs, links } from "../consts/consts";
-
-function NavbarCustom({ theme, onOpenCart, cartLength, font }) {
-  const text_class = "text-custom1 navidad:text-custom1--10";
+function NavbarCustom({ cartLength, onOpenCart }) {
+  const text_class = "text-custom1";
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("light");
+  const [font, setFont] = useState("md");
+
+  const handleTheme = (val) => {
+    if (val) {
+      document.body.classList?.remove(theme);
+      setTheme(val);
+      document.body.classList?.add(val);
+    }
+  };
+  const handleFont = () => {
+    let i = fontsValues.findIndex((e) => e.key === font);
+    i += 1;
+    if (i > fontsValues.length - 1) i = 0;
+    setFont(fontsValues[i].key);
+    document.documentElement.style.setProperty(
+      "--font-size",
+      fontsValues[i].value
+    );
+  };
 
   return (
     <Navbar
@@ -43,28 +63,28 @@ function NavbarCustom({ theme, onOpenCart, cartLength, font }) {
       }}
     >
       <NavbarContent>
-        <li className="h-full">
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Cerrar menu" : "Abrir menu"}
-            className={`md:hidden ${text_class}`}
-          />
-        </li>
+        {/* <li className="h-full"> */}
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Cerrar menu" : "Abrir menu"}
+          className={`md:hidden w-10 hover:text-secondary-700 transition-all ${text_class}`}
+          icon={<IoMenu className="h-full w-fit" />}
+        />
+        {/* </li> */}
 
         <NavbarItem>
           <NavbarBrand className="hidden xs:block">
             <Link
-              className="hover:scale-110 transition-all flex items-center"
-              href="#inicio"
-              onPress={() => setIsMenuOpen(false)}
-              style={{
-                filter: "drop-shadow(-4px 0px 6px black)",
+              className="hover:scale-105 transition-all flex items-center cursor-pointer"
+              href="#"
+              onPress={() => {
+                setIsMenuOpen(false);
               }}
               aria-label="Ir al inicio de la pagina"
             >
               <Logo
                 id="navbar_logo"
                 classNames={{
-                  svgA: "h-full w-auto max-h-[44px]",
+                  svgA: "h-full w-auto max-h-[36px]",
                 }}
               />
             </Link>
@@ -73,17 +93,16 @@ function NavbarCustom({ theme, onOpenCart, cartLength, font }) {
       </NavbarContent>
 
       <NavbarContent className="hidden md:flex gap-4" justify="center">
-        {sectionIDs.map((item) => (
-          <NavbarItem key={item}>
+        {navItems.map((item) => (
+          <NavbarItem key={item.id}>
             <Link
-              href={`#${item}`}
+              href={`#${item.id}`}
               className={`hover:scale-110 transition-all capitalize ${text_class}`}
               style={{
-                textShadow: "1px 1px 2px black",
+                textShadow: "1px 1px 1px black",
               }}
-              onPress={() => handleLink(item)}
             >
-              {item}
+              {item.label}
             </Link>
           </NavbarItem>
         ))}
@@ -93,7 +112,7 @@ function NavbarCustom({ theme, onOpenCart, cartLength, font }) {
         <NavbarItem className="hidden sm:block md:hidden lg:block">
           <Redes
             classNames={{
-              link: `p-1 bg-transparent shadow-none text-2xl ${text_class}`,
+              link: `p-1 bg-transparent shadow-none text-2xl`,
             }}
             slice={2}
           />
@@ -125,10 +144,10 @@ function NavbarCustom({ theme, onOpenCart, cartLength, font }) {
             >
               <DropdownItem textValue="theme">
                 <ThemeSwitch
-                  isSelected={theme.value === "dark"}
+                  isSelected={theme === "dark"}
                   onValueChange={(e) => {
                     const theme_ = e ? "dark" : "light";
-                    theme.set(theme_);
+                    handleTheme(theme_);
                   }}
                 />
               </DropdownItem>
@@ -137,9 +156,9 @@ function NavbarCustom({ theme, onOpenCart, cartLength, font }) {
                 <Button
                   isIconOnly
                   className="uppercase font-bold bg-transparent w-full"
-                  onPress={font.set}
+                  onPress={handleFont}
                 >
-                  {font.value}
+                  {font}
                 </Button>
               </DropdownItem>
             </DropdownMenu>
@@ -182,14 +201,13 @@ function NavbarCustom({ theme, onOpenCart, cartLength, font }) {
             className="flex items-center cursor-pointer hover:scale-110 transition-all"
             aria-label="Consulte por Whatsapp"
           >
-            <FaWhatsapp className="text-success navidad:text-custom--10 text-2xl" />
+            <FaWhatsapp className="text-success text-2xl" />
           </Link>
         </NavbarItem>
       </NavbarContent>
 
       <MenuMovilDrawer
-        menuItems={sectionIDs}
-        // sectionsLoaded={sectionsLoaded}
+        navItems={navItems}
         isOpen={isMenuOpen}
         onOpenChange={() => setIsMenuOpen(!isMenuOpen)}
       />

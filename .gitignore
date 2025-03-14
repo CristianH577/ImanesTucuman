@@ -31,4 +31,9 @@ src/PDF
 src/components/Component.js
 src/assets/redes
 
+src/views/Home/Banners
+src/views/Home/Banners.js
+src/assets/banners
+
+back
 postcss.config.js

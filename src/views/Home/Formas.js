@@ -2,10 +2,8 @@ import { motion } from "framer-motion";
 
 import { Image } from "@nextui-org/react";
 
-import SectionView from "../components/SectionView";
-
 function Formas() {
-  const contextImg = require.context("../assets/formas", true);
+  const contextImg = require.context("../../assets/formas", true);
 
   const items = [
     { id: "plano", label: "Redondo Plano", width: 280, height: 244 },
@@ -26,7 +24,7 @@ function Formas() {
   ];
 
   return (
-    <SectionView id="formas" title="Formas" className="py-16 px-4 sm:px-16">
+    <>
       <motion.div
         className="text-center"
         variants={{
@@ -43,7 +41,7 @@ function Formas() {
         {items.map((item) => (
           <div
             key={item.id}
-            className="bg-neutral-500/20 rounded-lg p-4 sm:p-8 max-w-[360px] max-h-[360px] flex items-center justify-center relative select-none shadow-small group/item"
+            className="bg-neutral-500/20 rounded-lg p-4 sm:p-8 max-w-[400px] xs:min-h-[150px] max-h-[400px] flex items-center justify-center relative select-none shadow-small group/item"
           >
             <motion.div
               variants={{
@@ -61,8 +59,6 @@ function Formas() {
                 src={contextImg(`./${item.id}.webp`)}
                 removeWrapper
                 loading="lazy"
-                // width={item.width}
-                // height={item.height}
                 width="100%"
                 height="fit-content"
                 className="group-hover/item:blur-sm"
@@ -81,7 +77,7 @@ function Formas() {
           </div>
         ))}
       </article>
-    </SectionView>
+    </>
   );
 }
 

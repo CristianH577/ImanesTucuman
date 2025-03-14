@@ -44,14 +44,7 @@ function Receipt({ downloading, cart, refReceipt, setConditions, conditions }) {
       }`}
       ref={refReceipt}
     >
-      <span
-        className="flex justify-center py-2"
-        style={{
-          filter: "drop-shadow(2px 4px 6px black)",
-        }}
-      >
-        <Logo className="max-w-72" />
-      </span>
+      <Logo className="max-w-72 my-2" />
 
       <section className="flex flex-col items-center">
         <Select

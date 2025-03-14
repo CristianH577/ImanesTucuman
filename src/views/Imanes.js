@@ -1,9 +1,9 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useOutletContext } from "react-router";
 
 import { Tabs, Tab, Spinner } from "@nextui-org/react";
 
-import SectionView from "../components/SectionView";
 import TablePrices from "./Imanes/TablePrices";
 import Fotos from "./Imanes/Fotos";
 import DragMagnets from "./Imanes/DragMagnets";
@@ -15,12 +15,9 @@ import {
   SVGRedondo,
   SVGCuadradoFresado,
 } from "../consts/svgs";
-
-import { dbImanes } from "../consts/dbs";
-
 const ModalSize = lazy(() => import("./Imanes/ModalSize"));
 
-function Imanes({ links, cart }) {
+function Imanes() {
   const date_price = "20/01/25";
 
   const formas_data = {
@@ -51,78 +48,65 @@ function Imanes({ links, cart }) {
     },
   };
 
+  const context = useOutletContext();
   const [comparative, setComparative] = useState(false);
   const [tab, setTab] = useState("redondos");
   const [data, setData] = useState(false);
 
-  const handleAdd = (cat, size, qtt = 1, discount = 0) => {
-    const new_cart = structuredClone(cart.value);
-    if (!new_cart.hasOwnProperty(cat)) new_cart[cat] = {};
-    new_cart[cat][size] = {
-      qtt: parseInt(qtt),
-      discount: parseFloat(discount),
-    };
-
-    cart.set(new_cart);
-  };
   const showMore = (cat) => {
-    const new_data = structuredClone(data);
-    new_data[cat].rows = Object.entries(dbImanes?.[cat]).slice(
+    const data_ = structuredClone(data);
+    data_[cat].rows = Object.entries(context.db?.[cat]).slice(
       0,
-      new_data[cat].rows.length + 10
+      data_[cat].rows.length + 10
     );
-    setData(new_data);
+    setData(data_);
   };
 
   useEffect(() => {
     const new_data = {};
-    Object.entries(dbImanes).forEach(([cat, items]) => {
+
+    Object.entries(context.db).forEach(([cat, items]) => {
       new_data[cat] = {
         total: Object.entries(items).length,
         rows: Object.entries(items).slice(0, 10),
       };
     });
+
     setData(new_data);
-  }, []);
+  }, [context.db]);
 
   return (
-    <SectionView
-      id="imanes"
-      title="Imanes"
-      className="bg-radial from-custom2-4 to-custom2 text-white py-24 px-2 sm:px-4 clip-diagonal-y"
-    >
+    <>
       <motion.article
         className="max-w-[80%] text-center space-y-4 font-semibold"
         variants={{
-          hidden: { opacity: 0, scale: 0 },
-          visible: { opacity: 1, scale: 1 },
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
         }}
       >
         <p>
-          Todos los imanes presentados en las tablas son de neodimio de alta
-          potencia y sus medidas están en milímetros.
+          <i>Todos</i> los imanes presentados en las tablas son de{" "}
+          <i>neodimio</i> de alta potencia y sus medidas están en{" "}
+          <i>milímetros</i>.
+          <br />
+          <br />
+          Las medidas que están <span className="line-through">
+            tachadas
+          </span>{" "}
+          es por falta de stock.
+          <br />
           <br />
           Seleccione la forma que le interese y revise las medidas y precios. En
           la tabla podrá ver que varia el precio por unidad según la cantidad.
           <br />
+          <br />
           Consulte por medidas no listadas.
         </p>
 
-        <p className="text-custom1-3 navidad:text-custom1-4 inline-flex">
+        <p className="text-secondary-700 inline-flex">
           Presione en las medidas para ver una comparación de tamaños en
           pantalla o en los precios para agregar artículos al carrito.
         </p>
-
-        {/* <div
-              className="inline-flex text-center items-center gap-2 text-3xl text-danger font-bold"
-              style={{
-                filter: "drop-shadow(2px 4px 6px black)",
-              }}
-            >
-              <GiChainsaw size={64} className="text-yellow-400" />
-              <p>Paso la motosierra del León!</p>
-              <SVGEscarapela size={64} />
-            </div> */}
 
         <p className="text-sm text-neutral-400">
           Los precios pueden variar: {date_price}.
@@ -134,39 +118,37 @@ function Imanes({ links, cart }) {
             <a href="#contacto" className="italic hover:text-custom1-4">
               redes
             </a>{" "}
-            desde el 1 hasta el 31 de diciembre.
           </p> */}
       </motion.article>
 
       <motion.article
-        className="w-full text-center"
+        className="w-full text-center md:flex flex-col items-center"
         variants={{
-          hidden: { opacity: 0, x: "-100%" },
-          visible: { opacity: 1, x: 0 },
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
         }}
       >
         <Tabs
           aria-label="Categorias del imanes"
           classNames={{
             tabList:
-              "bg-gradient-to-t from-custom1 to-custom1-3 navidad:from-custom1--8 navidad:to-custom1 flex-wrap justify-center shadow-md ",
+              "bg-gradient-to-t from-custom1 to-custom1-3 flex-wrap justify-center shadow-md ",
             tabContent:
               "text-custom2 font-bold group-data-[selected=true]:text-white",
             cursor: "bg-gradient-to-t from-custom2 to-custom2-10",
-            panel: "mt-4 min-h-[1100px] flex flex-col sm:items-center",
+            panel: "mt-4 flex flex-col items-center gap-2 w-full",
             tab: "w-fit",
           }}
           selectedKey={tab}
           onSelectionChange={setTab}
-          destroyInactiveTabPanel={false}
         >
-          {Object.keys(dbImanes).map((cat) => (
+          {Object.keys(context.db).map((cat) => (
             <Tab key={cat} title={formas_data?.[cat]?.label}>
               <motion.div
                 className="flex items-center justify-center h-[250px] font-bold"
                 variants={{
-                  hidden: { opacity: 0, scale: 0 },
-                  visible: { opacity: 1, scale: 1 },
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1 },
                 }}
                 initial="hidden"
                 whileInView="visible"
@@ -177,7 +159,7 @@ function Imanes({ links, cart }) {
               <TablePrices
                 cat={cat}
                 setComparative={setComparative}
-                handleAdd={handleAdd}
+                handleAdd={context?.cart?.add}
                 formas_data={formas_data}
                 data={data?.[cat]}
                 showMore={showMore}
@@ -187,13 +169,13 @@ function Imanes({ links, cart }) {
 
           <Tab key="drag" title="De arrastre">
             <DragMagnets
-              handleAdd={handleAdd}
+              handleAdd={context?.cart?.add}
               setComparative={setComparative}
             />
           </Tab>
 
           <Tab key="photos" title="FOTOS">
-            <Fotos link={links?.fotos} />
+            <Fotos link={context?.links?.fotos} />
           </Tab>
         </Tabs>
       </motion.article>
@@ -202,14 +184,14 @@ function Imanes({ links, cart }) {
         <Suspense
           fallback={
             <span className="absolute w-full h-full flex items-center justify-center bg-black/50 inset-0 z-50 rounded-xl">
-              <Spinner />
+              <Spinner color="secondary" />
             </span>
           }
         >
           <ModalSize isOpen={comparative} setIsOpen={setComparative} />
         </Suspense>
       )}
-    </SectionView>
+    </>
   );
 }
 

@@ -1,3 +1,7 @@
+import { motion } from "framer-motion";
+
+import { Image } from "@nextui-org/react";
+
 import CustomLink from "../../components/CustomLink";
 
 import { MdOutlineMapsHomeWork } from "react-icons/md";
@@ -8,28 +12,46 @@ import { FaMotorcycle } from "react-icons/fa6";
 import { SiGooglemaps } from "react-icons/si";
 import { FiExternalLink } from "react-icons/fi";
 
+import mapImg from "../../assets/faqs/map.webp";
+import mapImgMin from "../../assets/faqs/map-min.webp";
+import { useState } from "react";
+
 function Envios({ links }) {
+  const imgObj_default = { src: mapImgMin, min: true };
+  const [mapImgObj, setMapImgObj] = useState(imgObj_default);
+
+  const handleMapImg = () => {
+    let set = imgObj_default;
+    if (mapImgObj.min) {
+      set = {
+        src: mapImg,
+        min: false,
+      };
+    }
+
+    setMapImgObj(set);
+  };
+
   const link_class = "text-custom1--8 dark:text-custom1";
   const lista_envios = [
     {
       icon: <MdOutlineMapsHomeWork size={24} />,
       title: "Retiro",
       content: (
-        <div className="ps-8">
-          <ol className="list-disc">
+        // flex flex-col gap-2 sm:flex-row
+        <div className="space-y-2">
+          <ol className="list-disc list-inside">
             <li>
-              <p>
-                Puede retirar por 9 de julio 4900, S.M. de Tucumán, Tucumán
-                (Consulte Imanes Tucumán en{" "}
-                <CustomLink
-                  href={links?.googlemaps}
-                  title="Ir a ubicacion en Google Maps"
-                  text="Google Maps"
-                  icon={<SiGooglemaps />}
-                  className={link_class}
-                />
-                ). No es local ni showroom pero puede ver los productos aqui.
-              </p>
+              Puede retirar por 9 de julio 4900, S.M. de Tucumán, Tucumán
+              (Consulte Imanes Tucumán en{" "}
+              <CustomLink
+                href={links?.googlemaps}
+                title="Ir a ubicacion en Google Maps"
+                text="Google Maps"
+                icon={<SiGooglemaps />}
+                className={link_class}
+              />
+              ). No es local pero puede ver los productos aqui.
             </li>
             <li>
               Horarios: Lunes a Sábados (
@@ -46,19 +68,34 @@ function Envios({ links }) {
               ).
             </li>
             <li>
-              <p>
-                Indicaciones sugeridas de{" "}
-                <CustomLink
-                  href={links?.googlemaps_indicaciones}
-                  title="Ir a indicaciones en Google Maps"
-                  text="como llegar"
-                  icon={<FaDirections />}
-                  className={link_class}
-                />
-                .
-              </p>
+              Indicaciones sugeridas de{" "}
+              <CustomLink
+                href={links?.googlemaps_indicaciones}
+                title="Ir a indicaciones en Google Maps"
+                text="como llegar"
+                icon={<FaDirections />}
+                className={link_class}
+              />
+              .
             </li>
           </ol>
+
+          <motion.div
+            className="overflow-hidden max-w-[500px] drop-shadow-md "
+            initial={{ width: 75, height: 75 }}
+            animate={
+              mapImgObj.min ? null : { width: "100%", height: "fit-content" }
+            }
+            onClick={handleMapImg}
+          >
+            <Image
+              src={mapImgObj.src}
+              loading="lazy"
+              shadow=""
+              className="d"
+              classNames={{ wrapper: "" }}
+            />
+          </motion.div>
         </div>
       ),
     },
@@ -139,7 +176,7 @@ function Envios({ links }) {
   ];
 
   return (
-    <ol className="space-y-3">
+    <ol className="space-y-4">
       {lista_envios.map((item, i) => (
         <li key={i}>
           <div className="flex gap-2">

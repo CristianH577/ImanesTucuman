@@ -1,15 +1,15 @@
 // plantilla svg
-export const SVG = ({ fill, stroke, size, height, width, ...props }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 135 135"
-    fill={fill || "currentColor"}
-    stroke={stroke || "currentColor"}
-    width={size || width || 135}
-    height={size || height || 135}
-    {...props}
-  ></svg>
-);
+// export const SVG = ({ fill, stroke, size, height, width, ...props }) => (
+//   <svg
+//     xmlns="http://www.w3.org/2000/svg"
+//     viewBox="0 0 135 135"
+//     fill={fill || "currentColor"}
+//     stroke={stroke || "currentColor"}
+//     width={size || width || 135}
+//     height={size || height || 135}
+//     {...props}
+//   ></svg>
+// );
 
 export const SVGMancha = ({ size, height, width, id, ...props }) => {
   const stop0 = "var(--tw-gradient-from)";
@@ -1131,28 +1131,6 @@ export const SVGLogoPaypal = ({ fill, size, height, width, ...props }) => (
         c73.098,0,133.463-55.7,141.306-126.766c18.579,20.524,28.954,46.298,28.954,74.253
         C449.306,294.651,397.077,344.816,332.873,344.816z"
     />
-  </svg>
-);
-
-//imanes
-export const SVGEscarapela = ({ fill, size, height, width, ...props }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 512 512"
-    fill={fill || "currentColor"}
-    width={size || width || 512}
-    height={size || height || 512}
-    {...props}
-  >
-    <path
-      d="M256 336c-5.22 0-10.4-.24-15.51-.69a176.12 176.12 0 0 1-131.29-78.37L20 416h115l58 96 82.53-177.09A177.53 177.53 0 0 1 256 336zm147-79.26a176.9 176.9 0 0 1-88.18 69.14L273.7 415.5 319 512l58-96h115z"
-      fill="#75aadb"
-    ></path>
-    <circle cx="256.02" cy="160" r="48" fill="#fcbf49"></circle>
-    <path
-      d="M256 16c-79.4 0-144 64.6-144 144s64.6 144 144 144 144-64.6 144-144S335.4 16 256 16zm0 224a80 80 0 1 1 80-80 80.09 80.09 0 0 1-80 80z"
-      fill="white"
-    ></path>
   </svg>
 );
 

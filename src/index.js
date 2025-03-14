@@ -1,15 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import { NextUIProvider } from "@nextui-org/react";
+
+import { createRoot } from "react-dom/client";
 // import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import { NextUIProvider } from "@nextui-org/react";
+import { HashRouter } from "react-router";
+
+import App from "./App";
+
+const root = createRoot(document.getElementById("root"));
 root.render(
-  <NextUIProvider>
-    <App />
-  </NextUIProvider>
+  <HashRouter>
+    <NextUIProvider>
+      <App />
+    </NextUIProvider>
+  </HashRouter>
 );
 
 // reportWebVitals(console.log);

@@ -82,27 +82,30 @@ function Fotos({ link }) {
               radius="lg"
               shadow="none"
               className="w-full h-full bg-transparent items-center"
-              style={{
-                filter: "drop-shadow(0px 0px 10px rgba(0,0,0,.8))",
-              }}
             >
               <Image
                 src={contextImg(`./fotos/${e?.medida}.webp`)}
                 loading="lazy"
                 width={200}
                 height={200}
-                className="object-cover h-full w-full max-h-[200px] max-w-[200px] "
-                removeWrapper
+                className="object-cover"
+                classNames={{
+                  wrapper:
+                    "h-full w-full max-h-[200px] max-w-[200px] shadow-lg",
+                }}
+                style={{
+                  filter: "drop-shadow(2px 4px 4px rgba(0,0,0,.6))",
+                }}
               />
-              <CardFooter className="border-divider border-3 border-t-0 capitalize w-fit">
-                <p
-                  className="text-white text-2xl"
+              <CardFooter className="border-divider border-3 border-t-0 capitalize w-fit bg-content3">
+                <span
+                  className="text-white text-2xl font-bold"
                   style={{
-                    textShadow: `0 2px 3px black`,
+                    textShadow: `0 1px 2px black`,
                   }}
                 >
                   {e?.medida.replace(/-/g, " ")}
-                </p>
+                </span>
               </CardFooter>
             </Card>
           </motion.div>
@@ -125,7 +128,7 @@ function Fotos({ link }) {
             title="Ver fotos en Google Drive"
             aria-label="Ver fotos en Google Drive"
             style={{
-              filter: "drop-shadow(2px 4px 6px rgba(0,0,0,.5))",
+              filter: "drop-shadow(2px 4px 4px rgba(0,0,0,.6))",
             }}
           >
             <Image

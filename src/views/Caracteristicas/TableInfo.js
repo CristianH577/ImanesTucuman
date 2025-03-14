@@ -1,4 +1,4 @@
-import { Button, ScrollShadow } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 
 function TableInfo({ cat, formas_data, data, showMore }) {
   const columns = [
@@ -82,14 +82,13 @@ function TableInfo({ cat, formas_data, data, showMore }) {
   };
 
   return (
-    <ScrollShadow
+    <div
       data-slot="table-container"
-      size="100"
-      className="overflow-auto pb-16 px-2 sm:px-8 h-[800px] w-full max-w-[900px] scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6"
+      className="pb-4 w-full overflow-x-auto scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6"
     >
       <table
         aria-label={`Tabla de precios: ${formas_data?.[cat]?.label}`}
-        className="w-full text-[20px] xs:text-[24px] font-semibold min-w-[750px]"
+        className="w-full max-w-[900px] text-[20px] xs:text-[24px] font-semibold min-w-[750px]"
       >
         <thead className="border-b-3">
           <tr>
@@ -103,7 +102,7 @@ function TableInfo({ cat, formas_data, data, showMore }) {
           {data?.rows?.map((row, i) => (
             <tr
               key={row?.[0]}
-              className="text-center even:text-custom1 navidad:even:text-custom1-2 border-t"
+              className="text-center even:text-custom1 border-t"
             >
               {columns.map((col) => (
                 <td key={`${row?.[0]}_${col?.key}`} className="py-2">
@@ -132,7 +131,7 @@ function TableInfo({ cat, formas_data, data, showMore }) {
           </tr>
         </tbody>
       </table>
-    </ScrollShadow>
+    </div>
   );
 }
 

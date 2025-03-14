@@ -1,49 +1,61 @@
 import { motion } from "framer-motion";
+import { useOutletContext } from "react-router";
 
-import { Tabs, Tab } from "@nextui-org/react";
+import { Tabs, Tab, Link } from "@nextui-org/react";
 
-import SectionView from "../components/SectionView";
 import Envios from "./Faqs/Envios";
 import Pagos from "./Faqs/Pagos";
-import CustomLink from "../components/CustomLink";
 import Consideraciones from "./Faqs/Consideraciones";
 import Usos from "./Faqs/Usos";
 import Info from "./Faqs/Info";
 
-function Faqs({ links }) {
+function Faqs() {
+  const context = useOutletContext();
+
   return (
-    <SectionView id="faqs" title="FAQS" className="px-4 sm:px-16 py-24">
-      <motion.p
+    <>
+      <motion.div
         className="max-w-[80%] text-center"
         variants={{
-          hidden: { opacity: 0, scale: 0 },
-          visible: { opacity: 1, scale: 1 },
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
         }}
       >
         Cualquier duda que no se responda en esta sección puede consultarla por
         las{" "}
-        <CustomLink
+        <Link
+          title="Ir a redes"
+          className="cursor-pointer text-custom1--8 dark:text-custom1"
+          onPress={() => {
+            const e = document.querySelector("#footer");
+            if (e) e.scrollIntoView();
+            // if (e) e.scrollTo({ top: e.scrollHeight });
+          }}
+        >
+          redes
+        </Link>
+        {/* <CustomLink
           href="#contacto"
           title="Ver los links de las redes"
           text="redes"
           target="_self"
           className="text-custom1--8 dark:text-custom1"
-        />
+        /> */}
         .
-      </motion.p>
+      </motion.div>
 
       <motion.article
         className="w-full text-center"
         variants={{
-          hidden: { opacity: 0, x: "-100%" },
-          visible: { opacity: 1, x: 0 },
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
         }}
       >
         <Tabs
           aria-label="Secciones de FAQS"
           classNames={{
             tabList:
-              "bg-gradient-to-t from-custom1 to-custom1-3 navidad:from-custom1--8 navidad:to-custom1 flex-wrap justify-center shadow-md",
+              "bg-gradient-to-t from-custom1 to-custom1-3 flex-wrap justify-center shadow-md",
             tabContent:
               "text-custom2 font-bold group-data-[selected=true]:text-white",
             cursor: "bg-gradient-to-t from-custom2 to-custom2-10",
@@ -53,7 +65,7 @@ function Faqs({ links }) {
           }}
         >
           <Tab key="envios" title="Envíos">
-            <Envios links={links} />
+            <Envios links={context?.links} />
           </Tab>
 
           <Tab key="pagos" title="Pagos">
@@ -61,7 +73,7 @@ function Faqs({ links }) {
           </Tab>
 
           <Tab key="usos" title="Usos">
-            <Usos links={links} />
+            <Usos links={context?.links} />
           </Tab>
 
           <Tab key="considerations" title="Consideraciones">
@@ -73,7 +85,7 @@ function Faqs({ links }) {
           </Tab>
         </Tabs>
       </motion.article>
-    </SectionView>
+    </>
   );
 }
 

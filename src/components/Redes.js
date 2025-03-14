@@ -13,13 +13,11 @@ import {
   SiGooglestreetview,
   SiMercadopago,
 } from "react-icons/si";
-import { FaSignalMessenger } from "react-icons/fa6";
+import { FaSignalMessenger, FaXTwitter } from "react-icons/fa6";
 
-import { links } from "../consts/consts";
+import { links } from "../consts/siteConfig";
 
-function Redes({ classNames, className, slice, variants }) {
-  // const contextImgs = require.context("../assets/redes/", true);
-
+function Redes({ classNames, className, slice }) {
   const redes = [
     {
       id: "facebook",
@@ -31,6 +29,11 @@ function Redes({ classNames, className, slice, variants }) {
       icon: <FaInstagram />,
       // src: contextImgs("./logo-insta.webp"),
       label: "Instagram",
+    },
+    {
+      id: "x",
+      icon: <FaXTwitter />,
+      label: "X",
     },
     {
       id: "googlemaps",
@@ -71,41 +74,43 @@ function Redes({ classNames, className, slice, variants }) {
   ];
 
   return (
-    <motion.div
-      className={`flex gap-2 justify-center items-center ${className || ""}`}
-      variants={{
-        hidden: {
-          scale: 0,
-          opacity: 0,
-        },
-        visible: {
-          scale: 1,
-          opacity: 1,
-          transition: {
-            delayChildren: 0.1,
-            staggerChildren: 0.1,
-          },
-        },
-      }}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
+    <div
+      className={`flex gap-2 justify-center items-center flex-wrap ${
+        className || ""
+      }`}
+      // variants={{
+      //   hidden: {
+      //     scale: 0,
+      //     opacity: 0,
+      //   },
+      //   visible: {
+      //     scale: 1,
+      //     opacity: 1,
+      //     transition: {
+      //       delayChildren: 0.1,
+      //       staggerChildren: 0.1,
+      //     },
+      //   },
+      // }}
+      // initial="hidden"
+      // whileInView="visible"
+      // viewport={{ once: true }}
     >
       {redes.slice(0, slice || redes.length).map((item, i) => (
         <motion.div
           key={i}
-          variants={
-            variants || {
-              hidden: {
-                opacity: 0,
-                scale: 1.5,
-              },
-              visible: {
-                opacity: 1,
-                scale: 1,
-              },
-            }
-          }
+          // variants={
+          //   variants || {
+          //     hidden: {
+          //       opacity: 0,
+          //       scale: 1.5,
+          //     },
+          //     visible: {
+          //       opacity: 1,
+          //       scale: 1,
+          //     },
+          //   }
+          // }
           whileTap={{
             rotate: 360,
           }}
@@ -121,7 +126,7 @@ function Redes({ classNames, className, slice, variants }) {
             <Link
               href={links?.[item?.id] || "#contacto"}
               target={links?.[item?.id] ? "_blank" : "_self"}
-              className={`bg-neutral-200/20 rounded-full text-white p-2 cursor-pointer transition-all shadow-md hover:bg-custom1 hover:text-custom2 ${
+              className={`text-neutral-500 transition-all hover:text-custom1 ${
                 classNames?.link || ""
               }`}
               aria-label={item?.label}
@@ -144,7 +149,7 @@ function Redes({ classNames, className, slice, variants }) {
           </Tooltip>
         </motion.div>
       ))}
-    </motion.div>
+    </div>
   );
 }
 

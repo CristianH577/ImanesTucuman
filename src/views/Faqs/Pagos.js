@@ -4,7 +4,7 @@ import { SiMercadopago } from "react-icons/si";
 import { HiOutlineBanknotes } from "react-icons/hi2";
 
 function Pagos() {
-  const text_class = "text-custom1 navidad:text-custom1-4";
+  const text_class = "text-custom1 ";
 
   // const impuestos = [
   //   {
@@ -113,9 +113,20 @@ function Pagos() {
       </article>
 
       <article>
+        <b className="border-b w-fit pe-8">Garantía</b>
+
+        <p>
+          Los productos no son reembolsables pero pueden tienen 1 semana de
+          garantía para cambios siempre y cuando no hayan sido usados y estén en
+          condiciones. Esto no aplica para las tiras de imán que deben ser
+          cortadas.
+        </p>
+      </article>
+
+      <article>
         <b className="border-b w-fit pe-8">Pedidos grandes</b>
 
-        <p> El stock es limitado por lo que para estos:</p>
+        <p>El stock es limitado por lo que para estos:</p>
 
         <ul className="list-decimal list-inside space-y-2">
           <li>Debera abonar entre un 20-40% en forma de seña.</li>

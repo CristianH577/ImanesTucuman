@@ -1,10 +1,56 @@
-export const handleLink = (id) => {
-  const element = document.querySelector("#" + id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
+// export const handleLink = (id) => {
+//   const element = document.querySelector("#" + id);
 
-    setTimeout(() => {
-      element.scrollIntoView({ behavior: "smooth" });
-    }, 500);
-  }
+//   if (element) {
+//     element.scrollIntoView();
+
+//     setTimeout(() => {
+//       element.scrollIntoView();
+//     }, 500);
+//   }
+// };
+
+export const definePriceToUse = (pricesObj, makeDiscountFollow = false) => {
+  let price_key = "base";
+
+  Object.entries(pricesObj).forEach(([key, val]) => {
+    let compare = Boolean(pricesObj?.[key]);
+
+    if (compare && key === "follow") compare = makeDiscountFollow;
+
+    if (compare) {
+      if (val < pricesObj[price_key]) price_key = key;
+    }
+  });
+
+  return price_key;
+};
+
+export const defineDiscountToUse = (obj = {}, makeDiscountFollow = false) => {
+  let current = {
+    key: "",
+    val: 0,
+  };
+
+  Object.entries(obj).forEach(([key, val]) => {
+    let compare = val > 0;
+    if (compare && key === "follow") compare = makeDiscountFollow;
+
+    if (compare) {
+      if (current.val > 0) {
+        if (val > current.val)
+          current = {
+            key: key,
+            val: val,
+          };
+      } else {
+        current = {
+          key: key,
+          val: val,
+        };
+      }
+    }
+  });
+
+  return current.key;
 };
