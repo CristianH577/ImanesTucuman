@@ -38,13 +38,13 @@ function Otros() {
 
     const contextImgs = require.context("../assets/otros", true);
 
-    const data_ = [];
+    let data_ = [];
 
     categorias.forEach((cat) => {
-      const item_ = { ...cat };
+      const cat_ = { ...cat };
       const items = Object.entries(cat.items)
         .reduce((acum, [id, item]) => {
-          if (!item?.noStock) {
+          if (!item?.hidden) {
             item.id = id;
             item.img = contextImgs(`./${cat.id}/${item?.img_name}.webp`);
 
@@ -71,8 +71,8 @@ function Otros() {
         }, [])
         .sort((a, b) => a.name.localeCompare(b.name));
 
-      item_.items = items;
-      data_.push(item_);
+      cat_.items = items;
+      data_ = [...data_, cat_];
     });
 
     setData(data_);
@@ -80,7 +80,7 @@ function Otros() {
 
   return (
     <>
-      <motion.div
+      <motion.section
         className="max-w-[80%] text-center space-y-4 font-semibold"
         variants={{
           hidden: { opacity: 0 },
@@ -107,9 +107,9 @@ function Otros() {
               redes
             </a>
           </p> */}
-      </motion.div>
+      </motion.section>
 
-      <motion.div
+      <motion.section
         className="w-full text-center"
         variants={{
           hidden: { opacity: 0 },
@@ -139,7 +139,7 @@ function Otros() {
             </Tab>
           ))}
         </Tabs>
-      </motion.div>
+      </motion.section>
     </>
   );
 }

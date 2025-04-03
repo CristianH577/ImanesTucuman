@@ -14,11 +14,12 @@ import {
   SVGEsfera,
   SVGRedondo,
   SVGCuadradoFresado,
-} from "../consts/svgs";
+} from "../assets/imanes/svgs";
+
 const ModalSize = lazy(() => import("./Imanes/ModalSize"));
 
 function Imanes() {
-  const date_price = "20/01/25";
+  const date_price = "29/03/25";
 
   const formas_data = {
     redondos: {
@@ -50,14 +51,13 @@ function Imanes() {
 
   const context = useOutletContext();
   const [comparative, setComparative] = useState(false);
-  const [tab, setTab] = useState("redondos");
   const [data, setData] = useState(false);
 
   const showMore = (cat) => {
     const data_ = structuredClone(data);
     data_[cat].rows = Object.entries(context.db?.[cat]).slice(
       0,
-      data_[cat].rows.length + 10
+      data_[cat].rows.length + 20
     );
     setData(data_);
   };
@@ -68,7 +68,7 @@ function Imanes() {
     Object.entries(context.db).forEach(([cat, items]) => {
       new_data[cat] = {
         total: Object.entries(items).length,
-        rows: Object.entries(items).slice(0, 10),
+        rows: Object.entries(items).slice(0, 20),
       };
     });
 
@@ -77,7 +77,7 @@ function Imanes() {
 
   return (
     <>
-      <motion.article
+      <motion.section
         className="max-w-[80%] text-center space-y-4 font-semibold"
         variants={{
           hidden: { opacity: 0 },
@@ -119,9 +119,9 @@ function Imanes() {
               redes
             </a>{" "}
           </p> */}
-      </motion.article>
+      </motion.section>
 
-      <motion.article
+      <motion.section
         className="w-full text-center md:flex flex-col items-center"
         variants={{
           hidden: { opacity: 0 },
@@ -139,8 +139,6 @@ function Imanes() {
             panel: "mt-4 flex flex-col items-center gap-2 w-full",
             tab: "w-fit",
           }}
-          selectedKey={tab}
-          onSelectionChange={setTab}
         >
           {Object.keys(context.db).map((cat) => (
             <Tab key={cat} title={formas_data?.[cat]?.label}>
@@ -178,7 +176,7 @@ function Imanes() {
             <Fotos link={context?.links?.fotos} />
           </Tab>
         </Tabs>
-      </motion.article>
+      </motion.section>
 
       {comparative && (
         <Suspense

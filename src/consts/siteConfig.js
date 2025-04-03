@@ -2,21 +2,15 @@ import { LuMagnet } from "react-icons/lu";
 import { MdOutlineMore } from "react-icons/md";
 import { AiOutlineNumber } from "react-icons/ai";
 import { FaRegCircleQuestion } from "react-icons/fa6";
-
-export const sectionsID = [
-  "formas",
-  "imanes",
-  "otros",
-  "caracteristicas",
-  "faqs",
-  "contacto",
-];
+import { GoBook } from "react-icons/go";
+import { IoHomeOutline } from "react-icons/io5";
 
 export const navItems = [
-  // { id: "inicio", label: "Inicio" },
+  { id: "", label: "Inicio", icon: IoHomeOutline },
   { id: "imanes", label: "imanes", icon: LuMagnet },
   { id: "otros", label: "otros", icon: MdOutlineMore },
   { id: "caracteristicas", label: "Características", icon: AiOutlineNumber },
+  { id: "uya", label: "U&A", icon: GoBook },
   { id: "faqs", label: "FAQs", icon: FaRegCircleQuestion },
   // { id: "contacto", label: "contacto" },
 ];
@@ -48,6 +42,7 @@ export const links = {
     mercadoshops: "https://tinyurl.com/3mfpadr8",
     web: "https://tinyurl.com/3ace3xj8",
     fotos: "https://tinyurl.com/cjb6z65z",
+    googlemaps_indicaciones: "https://tinyurl.com/yc65a8dj",
   },
 };
 

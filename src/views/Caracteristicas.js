@@ -57,7 +57,7 @@ function Caracteristicas() {
 
   return (
     <>
-      <motion.article
+      <motion.section
         className="max-w-[80%] text-center space-y-4 font-semibold"
         variants={{
           hidden: { opacity: 0 },
@@ -72,9 +72,9 @@ function Caracteristicas() {
           de <span className={text_class}>dudosa</span> procedencia; utilizar
           solo a modo de referencia.
         </p>
-      </motion.article>
+      </motion.section>
 
-      <motion.article
+      <motion.section
         className="w-full text-center sm:flex flex-col items-center"
         variants={{
           hidden: { opacity: 0 },
@@ -112,7 +112,7 @@ function Caracteristicas() {
             return null;
           })}
         </Tabs>
-      </motion.article>
+      </motion.section>
     </>
   );
 }

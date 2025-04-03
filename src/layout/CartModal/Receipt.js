@@ -1,7 +1,7 @@
 import { Select, SelectItem, Divider } from "@nextui-org/react";
 
+import Logo from "../components/Logo";
 import List from "./List";
-import Logo from "../../components/Logo";
 
 import { SiMercadopago } from "react-icons/si";
 import { PiMoneyWavy } from "react-icons/pi";
@@ -11,7 +11,7 @@ import {
   SVGLogoGalicia,
   SVGLogoPaypal,
   SVGLogoSantander,
-} from "../../consts/svgs";
+} from "../../assets/layout/svgs";
 
 function Receipt({ downloading, cart, refReceipt, setConditions, conditions }) {
   const entrega_items = {

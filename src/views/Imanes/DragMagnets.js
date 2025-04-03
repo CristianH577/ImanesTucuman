@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import { TbHandClick } from "react-icons/tb";
 
-import { SVGDragMagnet } from "../../consts/svgs";
+import { SVGDragMagnet } from "../../assets/imanes/svgs";
 
 import { dbImanesArrastre } from "../../consts/dbs";
 
@@ -23,8 +23,8 @@ function DragMagnets({ handleAdd, setComparative }) {
       <motion.div
         className="flex items-center justify-center h-[250px] font-bold"
         variants={{
-          hidden: { opacity: 0, scale: 0 },
-          visible: { opacity: 1, scale: 1 },
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
         }}
         initial="hidden"
         whileInView="visible"

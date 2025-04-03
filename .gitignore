@@ -34,6 +34,8 @@ src/assets/redes
 src/views/Home/Banners
 src/views/Home/Banners.js
 src/assets/banners
+src/assets/uya/neocube-v20.mp4
+src/views/Uya/Video.js
 
 back
 postcss.config.js

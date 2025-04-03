@@ -8,8 +8,9 @@ import {
   ModalFooter,
   Button,
   ModalBody,
-  Image,
 } from "@nextui-org/react";
+
+import ImageCustom from "../../layout/components/ImageCustom";
 
 import { IoMdArrowRoundBack, IoIosRefresh } from "react-icons/io";
 
@@ -141,6 +142,24 @@ function ModalSize({ isOpen, setIsOpen }) {
       });
     }
 
+    // let content_test = null;
+    // if (obj?.r && obj?.label === "Tapa") {
+    //   content_test = [];
+    //   obj?.r.forEach((item) => {
+    //     content_test.push(
+    //       <circle
+    //         key={item}
+    //         cx="50%"
+    //         cy="50%"
+    //         r={Number(item) + 1}
+    //         stroke={"black"}
+    //         strokeWidth={1}
+    //         strokeDasharray="5,2"
+    //       />
+    //     );
+    //   });
+    // }
+
     if (item?.form === "redondos_fresados" && ["front", "lat"].includes(view)) {
       content.push([
         <polygon
@@ -219,6 +238,8 @@ function ModalSize({ isOpen, setIsOpen }) {
         }`}
       >
         {content}
+
+        {/* {content_test ? content_test : null} */}
       </svg>
     );
   };
@@ -352,10 +373,8 @@ function ModalSize({ isOpen, setIsOpen }) {
                 {[tapa, magnet].map((e, i) => (
                   <article key={i} className="flex flex-col items-center">
                     <div className="bg-neutral-500/20 rounded-lg p-4 sm:h-full select-none flex items-center justify-center place-self-center border-3 border-divider">
-                      <Image
+                      <ImageCustom
                         src={e?.img?.src}
-                        removeWrapper
-                        loading="lazy"
                         width={200}
                         className="w-full max-w-[200px]"
                         alt={e?.alt?.alt || ""}
@@ -379,7 +398,7 @@ function ModalSize({ isOpen, setIsOpen }) {
               <h2 className="text-center text-xl font-semibold">Vistas</h2>
 
               {magnet && (
-                <motion.section
+                <section
                   ref={constraintsRef}
                   key={count}
                   className="flex flex-col items-center gap-6 sm:flex-row text-center bg-custom2-10/30 pt-2 pb-6 px-4 rounded-lg relative overflow-y-hidden overflow-x-auto scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6 shadow-small"
@@ -404,7 +423,7 @@ function ModalSize({ isOpen, setIsOpen }) {
                     >
                       <p>{view.label}</p>
 
-                      <div className="flex flex-col items-start min-[250px]:items-center gap-8 w-full">
+                      <div className="flex flex-col items-start xs:items-center gap-8 w-full">
                         {[tapa, magnet].map((item, i) => (
                           <motion.span
                             key={i}
@@ -427,7 +446,7 @@ function ModalSize({ isOpen, setIsOpen }) {
                       </div>
                     </article>
                   ))}
-                </motion.section>
+                </section>
               )}
 
               <p className="max-sm:text-center text-neutral-400 text-sm">

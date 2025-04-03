@@ -11,7 +11,7 @@ import {
   Spinner,
 } from "@nextui-org/react";
 
-import ButtonCustom from "./CartModal/ButtonCustom";
+import ButtonCart from "./CartModal/ButtonCart";
 import Receipt from "./CartModal/Receipt";
 
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -133,19 +133,19 @@ function CartModal({ isOpen, onOpenChange, links, cart }) {
   const buttonConsole = [
     {
       label: "Limpiar lista",
-      icon: <GiBroom />,
+      icon: GiBroom,
       color: "default",
       onPress: () => cart?.set({}),
     },
     {
       label: "Descargar como imagen",
-      icon: <MdOutlineSimCardDownload />,
+      icon: MdOutlineSimCardDownload,
       color: "secondary",
       onPress: downloadReceipt,
     },
     {
       label: "Continuar por WhatsApp",
-      icon: <IoSend />,
+      icon: IoSend,
       color: "primary",
       onPress: handleSend,
     },
@@ -162,7 +162,7 @@ function CartModal({ isOpen, onOpenChange, links, cart }) {
           "scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6",
       }}
     >
-      <ModalContent className="!my-auto max-sm:max-w-none max-sm:mx-0 max-sm:mb-0 max-sm:rounded-none overflow-y-auto self-start max-sm:min-h-full">
+      <ModalContent className="!my-auto max-sm:max-w-none max-sm:mx-0 max-sm:mb-0 max-sm:rounded-none overflow-y-auto self-start max-sm:min-h-full max-sm:text-center">
         {(onClose) => (
           <>
             <ModalHeader className="text-2xl">Carrito</ModalHeader>
@@ -211,7 +211,7 @@ function CartModal({ isOpen, onOpenChange, links, cart }) {
               </Button>
 
               {buttonConsole.map((button, i) => (
-                <ButtonCustom
+                <ButtonCart
                   key={i}
                   isDisabled={
                     Object.keys(cart?.value)?.length < 1 || downloading

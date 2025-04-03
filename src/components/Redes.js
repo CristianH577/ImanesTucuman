@@ -132,19 +132,6 @@ function Redes({ classNames, className, slice }) {
               aria-label={item?.label}
             >
               {item?.icon}
-              {/* {showImgs && item?.src ? (
-                <img
-                  src={item?.src}
-                  alt={`Logo de ${item?.id}`}
-                  className="object-contain"
-                  style={{
-                    width: 36,
-                    height: 36,
-                  }}
-                />
-              ) : (
-                item?.icon
-              )} */}
             </Link>
           </Tooltip>
         </motion.div>

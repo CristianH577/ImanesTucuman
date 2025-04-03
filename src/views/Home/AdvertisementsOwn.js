@@ -4,6 +4,8 @@ import { Image, Link } from "@nextui-org/react";
 
 import { GiBallPyramid, GiFishingHook, GiVibratingBall } from "react-icons/gi";
 import { PiMagnet } from "react-icons/pi";
+import { TbWallpaper } from "react-icons/tb";
+import { FaRibbon } from "react-icons/fa6";
 
 const contextImg = require.context("../../assets/home/AdvertisementsOwn", true);
 
@@ -29,6 +31,24 @@ export const items = [
   {
     image: {
       href: "otros",
+      src: "tira_flexible-13",
+    },
+    title: "Imán en tira",
+    text: "Usado frecuentemente para hacer mosquiteros y manualidades",
+    icon: FaRibbon,
+  },
+  {
+    image: {
+      href: "otros",
+      src: "plancha-31",
+    },
+    title: "Imán en plancha",
+    text: "Puede pegarse para hacer souvenirs, calendarios, imanes publicitarios, etc",
+    icon: TbWallpaper,
+  },
+  {
+    image: {
+      href: "otros",
       src: "kluster",
     },
     title: "kluster",
@@ -48,7 +68,7 @@ export const items = [
 
 export function AdvertisementsOwn() {
   return (
-    <div className="grid grid-cols-1 2xl:grid-cols-2">
+    <section className="grid grid-cols-1 2xl:grid-cols-2">
       {items.map((item, i) => (
         <article
           key={i}
@@ -58,6 +78,7 @@ export function AdvertisementsOwn() {
         >
           <Image
             src={contextImg(`./${item.image?.src}.webp`)}
+            loading="lazy"
             alt={item.title}
             className="drop-shadow-custom"
             // classNames={{ wrapper: "w-full" }}
@@ -100,7 +121,7 @@ export function AdvertisementsOwn() {
           </div>
         </article>
       ))}
-    </div>
+    </section>
   );
 }
 

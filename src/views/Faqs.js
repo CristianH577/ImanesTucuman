@@ -1,20 +1,34 @@
 import { motion } from "framer-motion";
 import { useOutletContext } from "react-router";
 
-import { Tabs, Tab, Link } from "@nextui-org/react";
+import { Tabs, Tab } from "@nextui-org/react";
 
 import Envios from "./Faqs/Envios";
 import Pagos from "./Faqs/Pagos";
 import Consideraciones from "./Faqs/Consideraciones";
 import Usos from "./Faqs/Usos";
-import Info from "./Faqs/Info";
 
 function Faqs() {
   const context = useOutletContext();
 
+  const tabs = [
+    {
+      id: "envios",
+      title: "Envíos",
+      content: <Envios links={context?.links} />,
+    },
+    { id: "pagos", title: "Pagos", content: <Pagos /> },
+    {
+      id: "consideraciones",
+      title: "Consideraciones",
+      content: <Consideraciones />,
+    },
+    { id: "usos", title: "Usos", content: <Usos links={context?.links} /> },
+  ];
+
   return (
     <>
-      <motion.div
+      <motion.section
         className="max-w-[80%] text-center"
         variants={{
           hidden: { opacity: 0 },
@@ -23,28 +37,20 @@ function Faqs() {
       >
         Cualquier duda que no se responda en esta sección puede consultarla por
         las{" "}
-        <Link
+        <span
           title="Ir a redes"
-          className="cursor-pointer text-custom1--8 dark:text-custom1"
-          onPress={() => {
+          className="font-bold text-custom1--9 dark:text-custom1 hover:underline cursor-pointer"
+          onClick={() => {
             const e = document.querySelector("#footer");
             if (e) e.scrollIntoView();
-            // if (e) e.scrollTo({ top: e.scrollHeight });
           }}
         >
           redes
-        </Link>
-        {/* <CustomLink
-          href="#contacto"
-          title="Ver los links de las redes"
-          text="redes"
-          target="_self"
-          className="text-custom1--8 dark:text-custom1"
-        /> */}
+        </span>
         .
-      </motion.div>
+      </motion.section>
 
-      <motion.article
+      <motion.section
         className="w-full text-center"
         variants={{
           hidden: { opacity: 0 },
@@ -64,27 +70,13 @@ function Faqs() {
             tab: "w-fit",
           }}
         >
-          <Tab key="envios" title="Envíos">
-            <Envios links={context?.links} />
-          </Tab>
-
-          <Tab key="pagos" title="Pagos">
-            <Pagos />
-          </Tab>
-
-          <Tab key="usos" title="Usos">
-            <Usos links={context?.links} />
-          </Tab>
-
-          <Tab key="considerations" title="Consideraciones">
-            <Consideraciones />
-          </Tab>
-
-          <Tab key="info" title="Info.">
-            <Info />
-          </Tab>
+          {tabs.map((tab) => (
+            <Tab key={tab.id} title={tab.title}>
+              {tab.content}
+            </Tab>
+          ))}
         </Tabs>
-      </motion.article>
+      </motion.section>
     </>
   );
 }

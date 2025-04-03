@@ -33,7 +33,8 @@ export default function LayoutDefault() {
   return (
     <div
       id="app"
-      className="min-h-screen h-[100vh] bg-gradient-to-b from-background to-content3 dark:from-content2 dark:to-content1 text-foreground font-[menulis] overflow-x-hidden overflow-y-auto scroll-smooth sm:scrollbar scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6 flex flex-col justify-between bg-danger-50"
+      className="min-h-screen h-[100vh] bg-background text-foreground dark:bg-content2 font-[menulis] overflow-x-hidden overflow-y-auto scroll-smooth sm:scrollbar scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6 flex flex-col justify-between"
+      // bg-gradient-to-b from-background to-content3 dark:from-content2 dark:to-content1
     >
       <Suspense>
         <NavbarCustom
@@ -62,7 +63,7 @@ export default function LayoutDefault() {
         </Suspense>
       )}
 
-      <main className="flex-grow pb-12 px-2 xs:px-4 sm:px-10 lg:px-12">
+      <main className="pb-12 px-2 xs:px-4 sm:px-10 lg:px-12">
         <Suspense
           fallback={
             <span className="w-full h-screen flex items-center justify-center">

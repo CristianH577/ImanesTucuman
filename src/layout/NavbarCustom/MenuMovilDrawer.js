@@ -1,7 +1,4 @@
-// import { motion } from "framer-motion";
-
 import {
-  Link,
   Drawer,
   DrawerContent,
   DrawerHeader,
@@ -12,28 +9,27 @@ import {
 } from "@nextui-org/react";
 
 import Redes from "../../components/Redes";
-import Logo from "../../components/Logo";
+import Logo from "../components/Logo";
 
 import { FaArrowLeft } from "react-icons/fa";
 
 function MenuMovilDrawer({ isOpen, onOpenChange, navItems }) {
-  const text_class = "text-custom2 dark:text-custom1";
-
   return (
     <Drawer
       isOpen={isOpen}
       onOpenChange={() => onOpenChange(!isOpen)}
       placement="left"
-      className={`max-xs:rounded-none xs:max-w-[250px]`}
+      className={`max-xs:rounded-none w-full xs:max-w-[255px] ps-[3%]`}
       backdrop="transparent"
       classNames={{
+        wrapper: "max-xs:ms-[3%]",
         closeButton: "test text-2xl top-5 end-3",
       }}
       motionProps={{
         variants: {
           enter: {
             opacity: 1,
-            x: 0,
+            x: "-3%",
             duration: 0.3,
           },
           exit: {
@@ -48,59 +44,47 @@ function MenuMovilDrawer({ isOpen, onOpenChange, navItems }) {
         {() => (
           <>
             <DrawerHeader>
-              <Link
+              {/* <Link
                 className="hover:scale-105 transition-all"
                 href="#"
                 onPress={() => {
+                  navigate("/");
                   onOpenChange(!isOpen);
                 }}
                 aria-label="Ir al inicio de la pagina"
-              >
-                <Logo
-                  id="menu_movil_logo"
-                  classNames={{
-                    svgA: "h-full w-auto max-h-[44px]",
-                  }}
-                />
-              </Link>
+              > */}
+              <Logo
+                id="menu_movil_logo"
+                classNames={{
+                  svgA: "h-full w-auto max-h-[44px]",
+                }}
+              />
+              {/* </Link> */}
             </DrawerHeader>
 
             <Divider className="w-4/5 self-center" />
 
             <DrawerBody className="h-fit px-2">
-              <div
-              // variants={{
-              //   hidden: {},
-              //   visible: {
-              //     transition: {
-              //       delayChildren: 0.1,
-              //       staggerChildren: 0.1,
-              //     },
-              //   },
-              // }}
-              // initial="hidden"
-              // whileInView="visible"
+              <Listbox
+                aria-label="Lista de secciones"
+                variant="faded"
+                onAction={(id) => {
+                  onOpenChange(!isOpen);
+                }}
+                classNames={{}}
               >
-                <Listbox
-                  aria-label="Lista de secciones"
-                  variant="faded"
-                  onAction={(id) => {
-                    onOpenChange(!isOpen);
-                  }}
-                  classNames={{}}
-                >
-                  {navItems.map((item) => (
-                    <ListboxItem
-                      key={item.id}
-                      textValue={item.label}
-                      className={`${text_class} capitalize py-2 transition-all hover:shadow-md`}
-                      classNames={{ title: "text-lg font-semibold" }}
-                      href={`#${item.id}`}
-                      startContent={
-                        item?.icon ? <item.icon className="h-fit w-6" /> : null
-                      }
-                    >
-                      {/* <motion.p
+                {navItems.map((item) => (
+                  <ListboxItem
+                    key={item.id}
+                    textValue={item.label}
+                    className="text-custom2 dark:text-custom1 capitalize py-2 transition-all hover:shadow-md"
+                    classNames={{ title: "text-lg font-semibold" }}
+                    href={`#${item.id}`}
+                    startContent={
+                      item?.icon ? <item.icon className="h-fit w-6" /> : null
+                    }
+                  >
+                    {/* <motion.p
                         variants={{
                           hidden: {
                             opacity: 0,
@@ -114,23 +98,22 @@ function MenuMovilDrawer({ isOpen, onOpenChange, navItems }) {
                       >
                         {item.label}
                       </motion.p> */}
-                      {item.label}
-                    </ListboxItem>
-                  ))}
-
-                  <ListboxItem
-                    key="Cerrar"
-                    textValue="Cerrar"
-                    className="dark:text-white py-2 transition-all hover:shadow-md"
-                    classNames={{
-                      title: "text-lg font-semibold flex gap-2 items-center",
-                    }}
-                  >
-                    <FaArrowLeft />
-                    Cerrar
+                    {item.label}
                   </ListboxItem>
-                </Listbox>
-              </div>
+                ))}
+
+                <ListboxItem
+                  key="Cerrar"
+                  textValue="Cerrar"
+                  className="dark:text-white py-2 transition-all hover:shadow-md"
+                  classNames={{
+                    title: "text-lg font-semibold flex gap-2 items-center",
+                  }}
+                >
+                  <FaArrowLeft />
+                  Cerrar
+                </ListboxItem>
+              </Listbox>
 
               <Divider className="w-4/5 self-center" />
 

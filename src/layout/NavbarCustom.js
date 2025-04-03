@@ -18,7 +18,7 @@ import {
   Tooltip,
 } from "@nextui-org/react";
 
-import Logo from "../components/Logo";
+import Logo from "./components/Logo";
 import Redes from "../components/Redes";
 import MenuMovilDrawer from "./NavbarCustom/MenuMovilDrawer";
 import ThemeSwitch from "./NavbarCustom/ThemeSwitch";
@@ -28,8 +28,6 @@ import { FaGear } from "react-icons/fa6";
 import { IoMenu } from "react-icons/io5";
 
 function NavbarCustom({ cartLength, onOpenCart }) {
-  const text_class = "text-custom1";
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState("light");
   const [font, setFont] = useState("md");
@@ -63,13 +61,13 @@ function NavbarCustom({ cartLength, onOpenCart }) {
       }}
     >
       <NavbarContent>
-        {/* <li className="h-full"> */}
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Cerrar menu" : "Abrir menu"}
-          className={`md:hidden w-10 hover:text-secondary-700 transition-all ${text_class}`}
-          icon={<IoMenu className="h-full w-fit" />}
-        />
-        {/* </li> */}
+        <li className="h-full">
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Cerrar menu" : "Abrir menu"}
+            className="md:hidden w-10 hover:text-secondary-700 transition-all text-custom1"
+            icon={<IoMenu className="h-full w-fit" />}
+          />
+        </li>
 
         <NavbarItem>
           <NavbarBrand className="hidden xs:block">
@@ -97,7 +95,7 @@ function NavbarCustom({ cartLength, onOpenCart }) {
           <NavbarItem key={item.id}>
             <Link
               href={`#${item.id}`}
-              className={`hover:scale-110 transition-all capitalize ${text_class}`}
+              className="hover:scale-110 transition-all capitalize text-custom1"
               style={{
                 textShadow: "1px 1px 1px black",
               }}

@@ -13,7 +13,7 @@ import {
   dbImanesArrastre,
 } from "../../consts/dbs";
 
-function List({ cart = {}, makeDiscountFollow = false, downloading }) {
+function List({ cart = {}, makeDiscountFollow = false, downloading = false }) {
   const priceTableCategories = {
     1: [1, 20, 50, 100],
     2: [1, 10, 25, 50],
@@ -76,7 +76,7 @@ function List({ cart = {}, makeDiscountFollow = false, downloading }) {
           const db_data = dbOtros?.[drt[0]][drt[1]];
 
           if (db_data?.prices) {
-            const qtts = db_data?.qtts_cat || [0];
+            const qtts = db_data?.qtts || [1];
             for (let i = qtts.length - 1; i >= 0; i--) {
               if (qtt >= qtts[i]) {
                 price_qtt = db_data?.prices[i];
@@ -85,6 +85,7 @@ function List({ cart = {}, makeDiscountFollow = false, downloading }) {
             }
           }
         }
+        console.log(item.prices);
 
         item.qtt = qtt;
 
@@ -190,7 +191,7 @@ function List({ cart = {}, makeDiscountFollow = false, downloading }) {
           prices_obj.base = db_data?.price || db_data?.prices[0] || 0;
 
           if (db_data?.prices) {
-            const qtts = db_data?.qtts_cat || [0];
+            const qtts = db_data?.qtts || [1];
             for (let i = qtts.length - 1; i >= 0; i--) {
               if (itemObj.qtt >= qtts[i]) {
                 prices_obj.qtt = db_data?.prices[i];
@@ -247,18 +248,18 @@ function List({ cart = {}, makeDiscountFollow = false, downloading }) {
 
   return (
     <section
-      className="w-full max-sm:pb-4 sm:flex justify-center scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6"
+      className="w-full max-sm:pb-4 sm:flex justify-center self scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6"
       style={{
         overflow: downloading ? "visible" : "auto",
       }}
     >
-      <table className="table-auto border-separate border-spacing-x-4 w-fit">
+      <table className="table-auto border-separate border-spacing-x-4 w-full sm:w-fit">
         <thead>
           <tr className="space-x-2">
-            <th className="text-start">Medida/Nombre</th>
-            <th className="text-start">Cantidad</th>
-            <th className="text-start">Precio</th>
-            <th className="text-start">Subtotal</th>
+            <th>Medida/Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Subtotal</th>
           </tr>
         </thead>
 

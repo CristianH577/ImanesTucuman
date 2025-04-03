@@ -2,12 +2,14 @@ import { motion } from "framer-motion";
 
 import { spanDiscount } from "../../libs/tvs";
 
-import { Image, Divider, Button } from "@nextui-org/react";
+import { Divider, Button } from "@nextui-org/react";
 
-export default function TableOthers({ items = [], handleAdd }) {
+import ImageCustom from "../../layout/components/ImageCustom";
+
+export default function TableOthers({ items = [], handleAdd = null }) {
   return (
     <motion.article
-      className="place-self-center space-y-6"
+      className="xs:place-self-center space-y-6"
       variants={{
         hidden: {},
         visible: {
@@ -28,21 +30,18 @@ export default function TableOthers({ items = [], handleAdd }) {
         return (
           <motion.div
             key={i}
-            className="flex flex-col items-center sm:flex-row sm:items-start gap-6 py-4 min-w-[250px] max-w-[900px] "
+            className="flex flex-col items-center sm:grid sm:grid-cols-5 sm:items-start gap-6 px-2 py-4 xs:min-w-[250px] max-w-[900px]"
             variants={{
               hidden: { opacity: 0, y: -200 },
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <div className="flex flex-col items-center justify-center rounded-lg gap-3 sm:ps-2">
+            <div className="flex flex-col items-center gap-4 sm:col-span-2">
               {item?.img_name && (
-                <Image
+                <ImageCustom
                   src={item?.img}
-                  loading="lazy"
                   alt={item?.name}
-                  width={200}
-                  className="max-w-[200px] object-contain "
-                  removeWrapper
+                  width={300}
                   style={{
                     filter: "drop-shadow(2px 4px 6px black)",
                   }}
@@ -51,10 +50,14 @@ export default function TableOthers({ items = [], handleAdd }) {
 
               <Button
                 variant=""
-                className="bg-gradient-to-r py-2 px-3 text-center font-semibold text-xl shadow-lg flex gap-1 from-custom1 to-custom1-6 max-h-none h-fit hover:scale-110"
+                className={`py-2 px-3 text-center font-semibold text-xl shadow-lg flex gap-1 max-h-none h-fit hover:scale-110 bg-gradient-to-r ${
+                  item?.noStock
+                    ? "from-neutral-400 to-neutral-300 line-through text-neutral-500"
+                    : "from-custom1 to-custom1-6 text-black"
+                }`}
                 onPress={() => handleAdd && handleAdd(item.id, item.cartData)}
               >
-                <div className="flex flex-col text-black">
+                <div className="flex flex-col text-">
                   <span
                     className={`${
                       discount_ && "line-through text-neutral-600 text-sm"
@@ -102,20 +105,50 @@ export default function TableOthers({ items = [], handleAdd }) {
               </Button>
             </div>
 
-            <div className="w-full flex flex-col justify-between pe-4 py-2">
+            <div className="flex flex-col justify-between py-2 sm:col-span-3">
               <div className="text-start">
-                <h1 className="capitalize text-3xl font-bold border-b  border-neutral-500 pe-4 mb-2 gap-2">
+                <h1 className="capitalize text-3xl font-bold border-b border-neutral-400 mb-2 gap-2">
                   {item?.name}
                 </h1>
+
+                {item?.caracteristicas && (
+                  <div className="flex flex-wrap gap-4">
+                    {item?.caracteristicas.map((caract) => (
+                      <b key={caract} className="capitalize break-words italic">
+                        {caract}
+                      </b>
+                    ))}
+                  </div>
+                )}
 
                 {item?.info &&
                   Object.entries(item?.info).map(([key, value]) => (
                     <p key={key} className="break-words">
-                      <b className="capitalize">{key}</b>
-                      {value && <b>: </b>}
+                      <b className="capitalize">{key}: </b>
                       {value}
                     </p>
                   ))}
+
+                {item?.prices && (
+                  <div className="flex flex-wrap gap-x-4">
+                    {item?.prices
+                      .slice(1, item.prices.length)
+                      .map((price, i) => (
+                        <p key={price}>
+                          <b className="capitalize break-words">
+                            x{item.qtts[i + 1]}
+                            {item?.price_measure || ""}:{" "}
+                          </b>
+                          {Intl.NumberFormat("es-AR", {
+                            style: "currency",
+                            currency: "ARS",
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0,
+                          }).format(price)}
+                        </p>
+                      ))}
+                  </div>
+                )}
 
                 {item?.description ? item?.description + "." : ""}
               </div>

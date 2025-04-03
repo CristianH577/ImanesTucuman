@@ -17,8 +17,8 @@ function Usos({ links }) {
   return (
     <>
       <ol className="list-disc list-inside">
-        {conditions.map((e, i) => (
-          <li key={i}>{e}.</li>
+        {conditions.map((cond, i) => (
+          <li key={i}>{cond}.</li>
         ))}
       </ol>
 
@@ -29,7 +29,13 @@ function Usos({ links }) {
           href={links?.facebook}
           title="Ir a la pagina de Facebook"
           text="Facebook"
-          className="cursor-pointer"
+        />{" "}
+        o en la pagina de{" "}
+        <CustomLink
+          href="#uya"
+          title="Ir a U&A"
+          text="Usos y aplicaciones"
+          target="_self"
         />
         .
       </p>

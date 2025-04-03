@@ -1,7 +1,8 @@
+import { useState } from "react";
+
 import { motion } from "framer-motion";
 
-import { Image } from "@nextui-org/react";
-
+import ImageCustom from "../../layout/components/ImageCustom";
 import CustomLink from "../../components/CustomLink";
 
 import { MdOutlineMapsHomeWork } from "react-icons/md";
@@ -14,7 +15,6 @@ import { FiExternalLink } from "react-icons/fi";
 
 import mapImg from "../../assets/faqs/map.webp";
 import mapImgMin from "../../assets/faqs/map-min.webp";
-import { useState } from "react";
 
 function Envios({ links }) {
   const imgObj_default = { src: mapImgMin, min: true };
@@ -88,13 +88,7 @@ function Envios({ links }) {
             }
             onClick={handleMapImg}
           >
-            <Image
-              src={mapImgObj.src}
-              loading="lazy"
-              shadow=""
-              className="d"
-              classNames={{ wrapper: "" }}
-            />
+            <ImageCustom src={mapImgObj.src} className="sm:min-h-0" />
           </motion.div>
         </div>
       ),
@@ -120,9 +114,9 @@ function Envios({ links }) {
     },
     {
       icon: <PiCity size={24} />,
-      title: "Envío a zona centro ($3000)",
+      title: "Envío a zona centro ($3500)",
       description:
-        "Deberá efectuar el pago del envío por transferencia antes de realizarlo, el resto lo pago en la entrega.",
+        "Deberá efectuar el pago del envío por transferencia antes de realizarlo, el resto lo paga en la entrega.",
     },
     {
       icon: <FaMotorcycle size={24} />,
@@ -133,9 +127,9 @@ function Envios({ links }) {
         <div className=" ps-8">
           <ol className=" list-disc">
             <li>
-              Si quiere enviar uno usted deberá solo transferir el costo del
-              pedido antes de entregarlo al cadete. La ubicación aparece como
-              Imanes Tucumán.
+              Si quiere enviar uno deberá solo transferir el pago del pedido
+              antes de entregarlo al cadete. La ubicación aparece como Imanes
+              Tucumán.
             </li>
           </ol>
         </div>

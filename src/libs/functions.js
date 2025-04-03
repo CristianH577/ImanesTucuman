@@ -1,16 +1,12 @@
-// export const handleLink = (id) => {
-//   const element = document.querySelector("#" + id);
+export const scrollTop = () => {
+  const app = document.querySelector("#app");
+  if (app) app.scrollTo(0, 0);
+};
 
-//   if (element) {
-//     element.scrollIntoView();
-
-//     setTimeout(() => {
-//       element.scrollIntoView();
-//     }, 500);
-//   }
-// };
-
-export const definePriceToUse = (pricesObj, makeDiscountFollow = false) => {
+export const definePriceToUse = (
+  pricesObj = {},
+  makeDiscountFollow = false
+) => {
   let price_key = "base";
 
   Object.entries(pricesObj).forEach(([key, val]) => {

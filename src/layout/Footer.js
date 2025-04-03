@@ -1,15 +1,16 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { scrollTop } from "../libs/functions";
 
 import { Button, Card, Divider, Image } from "@nextui-org/react";
 
-import Logo from "../components/Logo";
+import Logo from "./components/Logo";
 import Redes from "../components/Redes";
 import CustomLink from "../components/CustomLink";
 
 import { FaMapMarkedAlt, FaRegCalendar, FaWhatsapp } from "react-icons/fa";
-import { SiGoogleforms } from "react-icons/si";
-import { FaArrowUp } from "react-icons/fa6";
+import { SiGoogleforms, SiGooglemaps } from "react-icons/si";
+import { LuArrowBigUpDash } from "react-icons/lu";
 
 import qr from "../assets/footer/wp.webp";
 
@@ -61,26 +62,24 @@ function Footer({ links }) {
       id="footer"
       ref={ref}
       className="bg-gradient-to-b from-custom2-4 to-custom2 text-white w-full flex flex-col items-center px-2 pt-20 pb-4 sm:pt-4 gap-4 shadow-inner relative min-h-fit mt-auto"
-      style={{
-        minHeight: isInView ? 0 : "100vh",
-      }}
+      // style={{
+      //   minHeight: isInView ? 0 : "100vh",
+      // }}
     >
       <Redes
         className={"my-4 px-2 gap-6"}
         classNames={{ link: "text-4xl text-neutral-300" }}
       />
+
       {isInView && (
         <>
           <Button
             isIconOnly
             title="Ir arriba"
-            className="absolute top-4 sm:right-4 sm:top-7 shadow-medium bg-custom1 border-2 border-foreground"
-            onPress={() => {
-              const element = document.querySelector("#app");
-              if (element) element.scrollTo(0, 0);
-            }}
+            className="absolute top-4 sm:right-4 sm:top-7 shadow-medium bg-custom1 border-3 border-divider"
+            onPress={scrollTop}
           >
-            <FaArrowUp />
+            <LuArrowBigUpDash className="w-full h-fit" />
           </Button>
 
           <Divider className="self-center w-3/5 bg-neutral-500/80" />
@@ -88,13 +87,19 @@ function Footer({ links }) {
           <Logo id="logo_footer" className="w-fit max-h-64 place-self-center" />
 
           <div className="text-xl max-w-[500px] text-center font-semibold bg-custom2-10/50 p-4 rounded-lg mb-2 shadow-md">
-            Para mejorar, lo invitamos a realizar una breve encuesta sobre el
-            sitio{" "}
+            Para mejorar, lo invitamos a realizar una breve{" "}
             <CustomLink
               href={links?.["form_encuesta-20250109"]}
               title="Link a encuesta"
               icon={<SiGoogleforms />}
-              text="visitando este enlace"
+              text="Encuesta"
+            />{" "}
+            sobre el sitio o a dejar una reseña publica en{" "}
+            <CustomLink
+              href={links?.googlemaps}
+              title="Link a Google Maps"
+              icon={<SiGooglemaps />}
+              text="Google Maps"
             />
             .
           </div>

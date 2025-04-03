@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { Image } from "@nextui-org/react";
+import ImageCustom from "../../layout/components/ImageCustom";
 
 function Formas() {
   const contextImg = require.context("../../assets/formas", true);
@@ -24,7 +24,7 @@ function Formas() {
   ];
 
   return (
-    <>
+    <section className="space-y-4">
       <motion.div
         className="text-center"
         variants={{
@@ -55,13 +55,13 @@ function Formas() {
                 filter: "drop-shadow(-2px 4px 6px black)",
               }}
             >
-              <Image
+              <ImageCustom
                 src={contextImg(`./${item.id}.webp`)}
                 removeWrapper
                 loading="lazy"
                 width="100%"
                 height="fit-content"
-                className="group-hover/item:blur-sm"
+                className="object-contain group-hover/item:blur-sm"
                 alt={`Iman ${item.label}`}
               />
             </motion.div>
@@ -77,7 +77,7 @@ function Formas() {
           </div>
         ))}
       </article>
-    </>
+    </section>
   );
 }
 

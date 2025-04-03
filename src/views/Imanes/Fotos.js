@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { Image, CardFooter, Card } from "@nextui-org/react";
+import ImageCustom from "../../layout/components/ImageCustom";
 
 import { FaArrowUp } from "react-icons/fa";
 
@@ -55,59 +55,46 @@ function Fotos({ link }) {
 
   return (
     <motion.div
-      className="grid xs:grid-cols-2 xs:grid-rows-6 sm:grid-cols-3 sm:grid-rows-4 lg:grid-cols-4 lg:grid-rows-3 gap-6 max-w-[900px] "
+      className="grid sm:grid-cols-2 sm:grid-rows-6 md:grid-cols-3 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-3 gap-6"
       variants={{
         hidden: {},
         visible: {
           transition: {
             delayChildren: 0.1,
-            staggerChildren: 0.2,
+            staggerChildren: 0.1,
           },
         },
       }}
       initial="hidden"
       whileInView="visible"
     >
-      {fotos.map((e, i) => {
+      {fotos.map((foto) => {
         return (
           <motion.div
-            key={i}
+            key={foto.medida}
+            className="flex flex-col items-center gap-2 hover:text-custom1"
             variants={{
               hidden: { opacity: 0, scale: 0 },
               visible: { opacity: 1, scale: 1 },
             }}
           >
-            <Card
-              isFooterBlurred
-              radius="lg"
-              shadow="none"
-              className="w-full h-full bg-transparent items-center"
-            >
-              <Image
-                src={contextImg(`./fotos/${e?.medida}.webp`)}
-                loading="lazy"
-                width={200}
-                height={200}
-                className="object-cover"
-                classNames={{
-                  wrapper:
-                    "h-full w-full max-h-[200px] max-w-[200px] shadow-lg",
-                }}
-                style={{
-                  filter: "drop-shadow(2px 4px 4px rgba(0,0,0,.6))",
-                }}
-              />
-              <CardFooter className="border-divider border-3 border-t-0 capitalize w-fit bg-content3">
-                <span
-                  className="text-white text-2xl font-bold"
-                  style={{
-                    textShadow: `0 1px 2px black`,
-                  }}
-                >
-                  {e?.medida.replace(/-/g, " ")}
-                </span>
-              </CardFooter>
-            </Card>
+            <ImageCustom
+              src={contextImg(`./fotos/${foto.medida}.webp`)}
+              width={200}
+              height={200}
+              className="rounded-none object-cover"
+              classNames={{
+                wrapper:
+                  "drop-shadow-md border-divider border-5 overflow-hidden h-full w-full max-h-[200px] max-w-[200px]",
+              }}
+              // style={{
+              //   filter: "drop-shadow(2px 4px 4px rgba(0,0,0,1))",
+              // }}
+            />
+
+            <b className="text-2xl capitalize transition-all">
+              {foto?.medida.replace(/-/g, " ")}
+            </b>
           </motion.div>
         );
       })}
@@ -131,10 +118,8 @@ function Fotos({ link }) {
               filter: "drop-shadow(2px 4px 4px rgba(0,0,0,.6))",
             }}
           >
-            <Image
+            <ImageCustom
               src={contextImg(`./more-imgs.svg`)}
-              removeWrapper
-              loading="lazy"
               width={120}
               height={120}
             />

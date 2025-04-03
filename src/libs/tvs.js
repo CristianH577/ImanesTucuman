@@ -22,7 +22,7 @@ export const spanDiscount = tv({
 });
 
 export const title = tv({
-  base: "uppercase font-[calvera] text-custom1 drop-shadow-custom",
+  base: "uppercase font-[calvera] drop-shadow-custom",
   variants: {
     size: {
       sm: "text-2xl sm:text-3xl lg:text-5xl",
@@ -30,11 +30,12 @@ export const title = tv({
     },
     color: {
       custom1: "from-custom1 to-custom1-3",
-      custom2: "from-custom2 to-custom2-10",
+      custom2: "from-custom2-5 to-custom2-10",
     },
   },
   defaultVariants: {
     size: "sm",
+    color: "custom1",
   },
   compoundVariants: [
     {
@@ -55,6 +56,8 @@ export const title1 = tv({
       green: "from-[#6FEE8D] to-[#17c964]",
       pink: "from-[#FF72E1] to-[#F54C7A]",
       foreground: "dark:from-[#FFFFFF] dark:to-[#4B4B4B]",
+      custom1: "from-custom1 to-custom1-3",
+      custom2: "from-custom2-5 to-custom2-10",
     },
     size: {
       sm: "text-xl sm:text-2xl",
@@ -77,6 +80,8 @@ export const title1 = tv({
         "green",
         "pink",
         "foreground",
+        "custom1",
+        "custom2",
       ],
       class: "bg-clip-text text-transparent bg-gradient-to-t",
     },
