@@ -1,5 +1,7 @@
 import { useOutletContext } from "react-router";
 
+import { title1 } from "../../libs/tvs";
+
 import { Link } from "@nextui-org/react";
 
 import ImageCustom from "../../layout/components/ImageCustom";
@@ -7,29 +9,28 @@ import ImageCustom from "../../layout/components/ImageCustom";
 import { SiFacebook, SiGoogleforms, SiGooglemaps } from "react-icons/si";
 
 import imgOpinions from "../../assets/home/Opiniones/people-text-baloon.webp";
-import { title1 } from "../../libs/tvs";
 
 export default function Opiniones() {
   const context = useOutletContext();
 
-  const links = [
+  const linksObj = [
     {
-      href: context?.links?.googlemaps,
+      href: context?.LINKS_SITES?.googlemaps,
       color: "success",
       label: "Google Maps",
       icon: <SiGooglemaps />,
     },
     {
-      href: context?.links?.["form_encuesta-20250109"],
-      color: "secondary",
-      label: "Encuesta",
-      icon: <SiGoogleforms />,
-    },
-    {
-      href: context?.links?.facebook,
+      href: context?.LINKS_SITES?.facebook,
       color: "primary",
       label: "Facebook",
       icon: <SiFacebook />,
+    },
+    {
+      href: context?.LINKS_SITES?.["form_encuesta-20250109"],
+      color: "secondary",
+      label: "Encuesta",
+      icon: <SiGoogleforms />,
     },
   ];
 
@@ -42,7 +43,7 @@ export default function Opiniones() {
         classNames={{ wrapper: "w-full" }}
       />
 
-      <article className="max-sm:text-center flex flex-col items-center gap-4">
+      <article className="max-lg:text-center flex flex-col items-center gap-4">
         <p className={title1({ color: "yellow", size: "sm" })}>
           {" "}
           ¡Su opinión es importante para nosotros!
@@ -67,7 +68,7 @@ export default function Opiniones() {
         </p>
 
         <ol className="font-bold max-lg:space-y-2 lg:flex items-center gap-4 justify-center">
-          {links.map((link) => (
+          {linksObj.map((link) => (
             <li key={link.label}>
               <Link
                 href={link.href}

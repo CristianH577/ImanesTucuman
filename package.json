@@ -1,7 +1,7 @@
 {
   "name": "imanestuc-app",
   "homepage": "https://imanestucuman.com.ar",
-  "version": "0.6.3",
+  "version": "0.6.33",
   "private": true,
   "dependencies": {
     "@nextui-org/react": "^2.6.10",
@@ -11,9 +11,11 @@
     "framer-motion": "^11.12.0",
     "html-to-image": "^1.11.11",
     "js-cookie": "^3.0.5",
+    "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
+    "react-leaflet": "^4.2.1",
     "react-router": "^7.3.0",
     "react-scripts": "5.0.1",
     "tailwind-variants": "^0.3.1",
@@ -26,12 +28,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -f"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [

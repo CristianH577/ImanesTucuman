@@ -29,13 +29,10 @@ setupTests.js
 src/z
 src/PDF
 src/components/Component.js
-src/assets/redes
 
-src/views/Home/Banners
-src/views/Home/Banners.js
-src/assets/banners
 src/assets/uya/neocube-v20.mp4
-src/views/Uya/Video.js
+src/assets/uya/como-usar-empalme-clip.mp4
+src/views/Uya/VideoComponent.js
+src/layout/NavbarCustom/SearchDrawer.js
 
 back
-postcss.config.js

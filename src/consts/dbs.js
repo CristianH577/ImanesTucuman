@@ -1,4 +1,4 @@
-export const dbImanes = {
+export const DB_IMANES = {
   redondos: {
     "2x2": {
       A: 2,
@@ -1071,321 +1071,321 @@ export const dbImanes = {
   },
 };
 
-// export const dbImanes = Object.fromEntries(
-//   Object.entries(dbImanesBase).map(([cat, items]) => [
-//     cat,
-//     Object.fromEntries(
-//       Object.entries(items).filter(([_, value]) => !value.noStock)
-//     ),
-//   ])
-//   // .filter(([_, items]) => Object.keys(items).length > 0) // Elimina categorías vacías
-// );
-
-export const dbImanesPrices = {
+export const DB_IMANES_PRICES = {
   redondos: {
     "2x2": {
       prices: [120, 110, 100, 85],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "2x4": {
       prices: [135, 130, 115, 100],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "3x1": {
       prices: [115, 110, 95, 85],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "3x2": {
       prices: [120, 115, 100, 90],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "4x1": {
       prices: [125, 120, 105, 90],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "4x2": {
       prices: [125, 120, 105, 90],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "5x1": {
       prices: [125, 120, 105, 90],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "5x2": {
       prices: [140, 130, 115, 100],
-      date: "10/2/25",
+      update: "10/2/25",
     },
     "5x4": {
       prices: [195, 185, 165, 145],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "5x5": {
       prices: [225, 215, 190, 165],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "6x3": {
       prices: [220, 205, 185, 160],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "7x1.5": {
       prices: [180, 170, 150, 130],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "7x5": {
       prices: [510, 475, 420, 365],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "8x3": {
       prices: [355, 340, 300, 260],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "8x4": {
       prices: [440, 420, 370, 320],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "8x5": {
       prices: [485, 460, 405, 350],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "9x1.5": {
       prices: [270, 255, 225, 195],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "9x2.5": {
       prices: [360, 340, 300, 260],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "10x2": {
       prices: [395, 375, 330, 285],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "10x3": {
       prices: [495, 470, 415, 360],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "10x4": {
       prices: [680, 640, 560, 490],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "10x5": {
       prices: [830, 780, 690, 600],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "10x10": {
       prices: [1170, 1110, 980, 850],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "10x20": {
       prices: [2000, 1900, 1700, 1550],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "11x4": {
       prices: [860, 810, 720, 620],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "11x5": {
-      prices: [990, 930, 820, 710],
-      date: "17/1/25",
+      prices: [960, 900, 800, 690],
+      update: "17/1/25",
     },
     "12x3": {
       prices: [860, 810, 720, 620],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "12x5": {
-      prices: [960, 900, 800, 690],
-      date: "13/3/25",
+      prices: [990, 930, 820, 710],
+      update: "13/3/25",
     },
     "15x2": {
       prices: [790, 750, 660, 570],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "15x5": {
       prices: [1410, 1330, 1170, 1020],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "20x2": {
       prices: [1260, 1190, 1050, 910],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "20x5": {
       prices: [2400, 2250, 2050, 1800],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "25x2": {
       prices: [1900, 1800, 1600, 1370],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "25x2.5": {
       prices: [1650, 1550, 1410, 1260],
-      date: "23/7/25",
+      update: "23/7/25",
     },
     "25x5": {
       prices: [3050, 2850, 2600, 2350],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "30x3": {
       prices: [2500, 2350, 2100, 1800],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "30x5": {
       prices: [5150, 4800, 4600, 4450],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "35x4": {
       prices: [5350, 5000, 4800, 4650],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "35x5": {
       prices: [5800, 5400, 5200, 5000],
-      date: "23/7/25",
+      update: "23/7/25",
     },
     "37x5": {
       prices: [5800, 5400, 5200, 5000],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "38x8": {
       prices: [9250, 8650, 8350, 8050],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "40x5": {
       prices: [6850, 6400, 6200, 5950],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "54x3": {
       prices: [7500, 7000, 6750, 6500],
-      date: "25/3/25",
+      update: "25/3/25",
     },
   },
   cuadrados: {
     "10x5x2": {
       prices: [380, 360, 315, 275],
-      date: "23/7/25",
+      update: "23/7/25",
     },
     "10x8x3": {
       prices: [510, 475, 420, 365],
-      date: "13/3/25",
+      update: "13/3/25",
     },
     "10x10x2": {
       prices: [360, 340, 300, 260],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "14.5x7x2": {
       prices: [600, 560, 495, 430],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "15x10x5": {
       prices: [1440, 1360, 1200, 1040],
-      date: "25/3/25",
+      update: "25/3/25",
     },
     "20x10x10": {
       prices: [3250, 3050, 2750, 2450],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "25x10x2": {
       prices: [1240, 1170, 1040, 900],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "28x20x3": {
       prices: [1800, 1700, 1500, 1370],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "30x10x10": {
       prices: [3700, 3450, 3200, 3000],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "30x20x5": {
       prices: [4950, 4600, 4450, 4300],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "40x10x5": {
       prices: [4650, 4350, 4050, 3750],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "40x20x5": {
       prices: [8250, 7700, 7400, 7150],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "45x25x10": {
       prices: [16650, 16050, 15450, 14900],
-      date: "23/7/25",
+      update: "23/7/25",
     },
     "50x10x3": {
       prices: [3500, 3300, 3050, 2850],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "50x20x10": {
       prices: [16800, 16200, 15600, 15000],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "50x24x10": {
       prices: [21000, 20250, 19500, 18750],
-      date: "17/1/25",
+      update: "17/1/25",
     },
   },
   redondos_fresados: {
     "8x3_6a3.5": {
       prices: [450, 425, 375, 325],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "12x3_6a3.5": {
       prices: [700, 660, 590, 510],
-      date: "17/1/25",
+      update: "17/1/25",
     },
     "15x3_7a3.5": {
       prices: [940, 890, 780, 680],
-      date: "25/3/25",
+      update: "25/3/25",
     },
     "20x4_11a4.5": {
       prices: [1700, 1600, 1430, 1240],
-      date: "17/1/25",
+      update: "17/1/25",
     },
   },
   cuadrados_fresados: {
     "20x10x5_8a4": {
       prices: [3700, 3450, 3200, 3000],
-      date: "17/1/25",
+      update: "17/1/25",
     },
   },
 };
 
-export const dbImanesArrastre = {
+export const DB_IMANES_ARRASTRE = {
   20: {
-    price: 9500,
+    price: 9000,
     fuerza: 7,
     peso: 23,
     B: 6,
     C: 26,
+    upupdate: "16/4/25",
   },
   25: {
-    noStock: true,
-    price: 11500,
+    price: 13500,
     fuerza: 22,
     peso: 42,
     B: 7,
     C: 31,
+    upupdate: "16/4/25",
   },
   32: {
-    noStock: true,
-    price: 14500,
+    price: 16000,
     fuerza: 28,
     peso: 70,
     B: 7,
     C: 31,
+    upupdate: "16/4/25",
   },
   36: {
-    noStock: true,
-    price: 16500,
+    price: 17000,
     fuerza: 31,
     peso: 85,
     B: 7.3,
     C: 38,
+    upupdate: "16/4/25",
   },
   42: {
-    price: 19500,
+    price: 20500,
     fuerza: 39,
     peso: 118,
     B: 7.5,
     C: 38,
+    upupdate: "16/4/25",
+  },
+  48: {
+    price: 32000,
+    fuerza: 64,
+    peso: 249,
+    B: 11.5,
+    C: 46,
+    upupdate: "16/4/25",
   },
   75: {
     price: 40000,
@@ -1396,150 +1396,176 @@ export const dbImanesArrastre = {
   },
 };
 
-export const dbOtros = {
+export const DB_OTROS = {
   electricidad: {
     1: {
       noStock: true,
-      name: "Bornera Botón 2 Vías",
+      label: "Bornera Botón 2 Vías",
       img_name: "bornera_boton-2",
-      price: "150",
+      prices: [180, 150],
+      qtts: [1, 10],
       info: {
         medidas: "20x17x13mm",
         cables: "0.5-2.5mm",
         amperaje: "10A",
         materiales: "PVC",
+        // peso: "1.75g",
       },
       caracteristicas: ["reutilizable"],
-      peso: "1.75g",
+      description:
+        "Se recomienda su uso para conexiones de baja tensión, como lámparas",
     },
     2: {
-      name: "Bornera Clip 2 Vías",
+      label: "Bornera Clip 2 Vías",
       img_name: "bornera_clip-2",
-      price: "1450",
+      prices: [1500, 1250],
+      qtts: [1, 3],
       info: {
         medidas: "40x25x15mm",
         cables: "0.5-2.5mm",
-        amperaje: "25A",
+        amperaje: "32A",
+        voltaje: "450v",
         materiales: "ABS",
+        // peso: "8g",
       },
       caracteristicas: ["reutilizable"],
-      peso: "8g",
     },
     3: {
-      name: "Bornera Clip 3 Vías",
+      label: "Bornera Clip 3 Vías",
       img_name: "bornera_clip-3",
-      price: "2020",
+      prices: [2000, 1850, 1700],
+      qtts: [1, 3, 5],
       info: {
         medidas: "41x31x15mm",
         cables: "0.5-2.5mm",
-        amperaje: "25A",
+        amperaje: "32A",
+        voltaje: "450v",
         materiales: "ABS",
+        // peso: "11.4g",
       },
       caracteristicas: ["reutilizable"],
-      peso: "11.4g",
     },
     4: {
-      name: "Empalme Clip 2 Bocas",
+      label: "Empalme Clip 2 Bocas",
       img_name: "empalme_clip-2",
-      price: "580",
+      prices: [580, 500, 450],
+      qtts: [1, 10, 20],
       info: {
         medidas: "20x12x14mm",
-        cables: "0.5-2.5mm",
-        amperaje: "25A",
+        cables: "0.2-2.5mm",
+        amperaje: "32A",
+        voltaje: "250v",
         materiales: "ABS",
       },
       caracteristicas: ["reutilizable"],
     },
     5: {
-      name: "Empalme Clip 3 Bocas",
+      label: "Empalme Clip 3 Bocas",
       img_name: "empalme_clip-3",
-      price: "760",
+      prices: [800, 700],
+      qtts: [1, 10],
       info: {
         medidas: "20x16x14mm",
-        cables: "0.5-2.5mm",
-        amperaje: "25A",
+        cables: "0.2-2.5mm",
+        amperaje: "32A",
+        voltaje: "250v",
         materiales: "ABS",
       },
       caracteristicas: ["reutilizable"],
     },
     6: {
-      name: "Empalme Clip 5 Bocas",
+      label: "Empalme Clip 5 Bocas",
       img_name: "empalme_clip-5",
-      price: "1150",
+      prices: [1200, 1000],
+      qtts: [1, 10],
       info: {
         medidas: "20x26x14mm",
-        cables: "0.5-2.5mm",
-        amperaje: "25A",
+        cables: "0.2-2.5mm",
+        amperaje: "32A",
+        voltaje: "250v",
         materiales: "ABS",
       },
       caracteristicas: ["reutilizable"],
     },
     7: {
-      name: "Empalme Rápido 1 a 2 Cables",
+      label: "Empalme Rápido Derivador",
       img_name: "empalme-1a2",
-      price: "400",
+      prices: [600, 500],
+      qtts: [1, 10],
+      upupdate: "16/4/25",
       info: {
         medidas: "27x24x16mm",
-        cables: "0.5-2.5mm",
-        amperaje: "25A",
+        cables: "1-2.5mm",
+        amperaje: "1.5-17.5A/1-13.5A",
         materiales: "PVC",
+        // peso: "3g",
       },
-      caracteristicas: ["reutilizable"],
-      peso: "3g",
+      caracteristicas: ["exterior"],
+      description: "Deriva un cable de 1.5-2.5 a uno de 1-1.5",
     },
     8: {
-      name: "Empalme Rápido 3 Bocas",
+      label: "Empalme Rápido 3 Bocas",
       img_name: "empalme_rapido_3",
-      prices: [750, 6000],
-      qtts: [1, 10],
-      discount: 0.2,
+      prices: [750, 700, 600],
+      qtts: [1, 10, 20],
+      // discount: 0.2,
       info: {
         // marca: "Hellermann Tyton",
         medidas: "16.5x16.5x7.7mm",
-        cables: "0.5-2.5mm",
-        amperaje: "24A",
+        cables: "1-2.5mm",
+        amperaje: "20A",
+        voltaje: "450V",
         materiales: "Policarbonato",
       },
-      modelo: "Helacon Plus",
+      // modelo: "Helacon Plus",
     },
   },
   imanes: {
     1: {
-      name: "Imán en tira 9x2mm",
+      label: "Imán en tira 9x2mm",
       img_name: "tira_flexible",
       prices: [1800, 1500, 1300, 1100],
       qtts: [1, 5, 10, 50],
       price_measure: "m",
       info: {
-        fuerza: "28gr/cm",
+        fuerza: (
+          <>
+            <span className="font-sans">~</span>28g/cm
+          </>
+        ),
       },
       caracteristicas: ["flexible"],
       description:
         "Imantado de una cara. Usado frecuentemente para hacer mosquiteros y manualidades",
     },
     2: {
-      name: "Imán en tira 13x1,7mm",
+      label: "Imán en tira 13x1,7mm",
       img_name: "tira_flexible-13",
       prices: [1900, 1600, 1400, 1200],
       qtts: [1, 5, 10, 50],
       price_measure: "m",
       info: {
-        fuerza: "32gr/cm",
+        fuerza: (
+          <>
+            <span className="font-sans">~</span>32g/cm
+          </>
+        ),
       },
       caracteristicas: ["flexible"],
       description:
         "Imantado de una cara. Usado frecuentemente para hacer mosquiteros y manualidades",
     },
     3: {
-      name: "Kluster",
+      label: "Kluster",
       img_name: "kluster",
       price: 13500,
       description:
         "Juego de 20 piedras de hematita magnetizadas y pulidas de 35mm de largo y 13mm de diámetro central + cuerda de polipropileno",
+      tags: ["juguetes"],
     },
     4: {
       noStock: true,
-      name: "Neocube",
+      label: "Neocube",
       img_name: "neocube",
       price: 18500,
       info: {
@@ -1547,22 +1573,24 @@ export const dbOtros = {
       },
       description:
         "216 imanes esféricos de 5mm de diámetro. Multicolor(6 distintos)",
+      tags: ["juguetes"],
     },
     5: {
-      name: "Neocube Dorado",
+      label: "Neocube Dorado",
       img_name: "neocube-dorado",
       price: 18500,
       info: {
         medidas: "3x3x3cm",
       },
       description: "216 imanes esféricos de 5mm de diámetro de color dorado",
+      tags: ["juguetes"],
     },
     6: {
-      name: "Imán cerámico 60x8x6mm",
+      label: "Imán cerámico 60x8x6mm",
       // price: 4450,
-      prices: [4450, 12000],
+      prices: [4450, 4000],
       qtts: [1, 3],
-      discount: 0.1012,
+      // discount: 0.1012,
       img_name: "iman-ceramico-60",
       info: {
         gauss: 4000,
@@ -1572,7 +1600,7 @@ export const dbOtros = {
         "Frecuentemente usado para soportar puertas de hornos que no cierran bien",
     },
     7: {
-      name: "Imán cerámico 25x14x5mm",
+      label: "Imán cerámico 25x14x5mm",
       price: 2100,
       discount: 0.0475,
       img_name: "iman-ceramico-25",
@@ -1582,32 +1610,40 @@ export const dbOtros = {
       },
     },
     8: {
-      name: "Imán en plancha 31cmx0.3mm",
+      label: "Imán en plancha 31cmx0.3mm",
       img_name: "plancha-31",
-      prices: [8250, 7500, 7000],
-      qtts: [1, 3, 5],
+      prices: [8000, 7400, 6800, 6200, 5600],
+      qtts: [1, 3, 5, 10, 20],
       price_measure: "m",
       caracteristicas: ["flexible", "adhesivo"],
+      info: {
+        fuerza: (
+          <>
+            <span className="font-sans">~</span>20g/cm
+          </>
+        ),
+      },
       description:
         "Usada generalmente en souvenirs, manualidades, calendarios, imanes publicitarios, etc",
     },
   },
   otros: {
     1: {
-      name: "Sales de polifosfato alemanas",
+      label: "Sales de polifosfato alemanas",
       img_name: "sales_polifosfato",
-      price: 26000,
+      prices: [26000, 24500],
+      qtts: [1, 3],
       price_measure: "kg",
       info: {
         modelo: "Alemana",
         // marca: "Siliphos",
         diámetro: "20mm",
-        rendimiento: "8-12meses en tanque de 1000L y 6-8 meses en boya",
+        rendimiento: "8-12meses en tanque de 1000L y 6-8 meses en boya(aprox.)",
       },
       caracteristicas: ["Calidad Alimentaria"],
     },
     2: {
-      name: "Sales de polifosfato italianas",
+      label: "Sales de polifosfato italianas",
       img_name: "sales_polifosfato-italiana",
       price: 23000,
       price_measure: "kg",
@@ -1617,7 +1653,7 @@ export const dbOtros = {
       caracteristicas: ["Calidad Alimentaria"],
     },
     3: {
-      name: "Sales de polifosfato alemanas(Outlet)",
+      label: "Sales de polifosfato alemanas(Outlet)",
       img_name: "sales_polifosfato",
       price: 23000,
       price_measure: "kg",
@@ -1627,18 +1663,8 @@ export const dbOtros = {
         modelo: "Alemana",
         // marca: "Siliphos",
         diámetro: "20mm",
-        rendimiento: "8-12meses en tanque de 1000L y 6-8 meses en boya",
+        rendimiento: "8-12meses en tanque de 1000L y 6-8 meses en boya(aprox.)",
       },
     },
   },
 };
-
-// export const dbOtrosSort = Object.entries(dbOtros).reduce(
-//   (acc, [key, value]) => {
-//     acc[key] = Object.fromEntries(
-//       Object.entries(value).sort(([, a], [, b]) => a.name.localeCompare(b.name))
-//     );
-//     return acc;
-//   },
-//   {}
-// );

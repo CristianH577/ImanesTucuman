@@ -18,8 +18,9 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { GiBroom } from "react-icons/gi";
 import { IoSend } from "react-icons/io5";
 import { MdOutlineSimCardDownload } from "react-icons/md";
+import { TbHandClick } from "react-icons/tb";
 
-function CartModal({ isOpen, onOpenChange, links, cart }) {
+function CartModal({ isOpen, onOpenChange, linkWhatsApp = "", cart = {} }) {
   const refReceipt = useRef(null);
   const [downloading, setDownloading] = useState(false);
   const [conditions, setConditions] = useState({
@@ -88,7 +89,7 @@ function CartModal({ isOpen, onOpenChange, links, cart }) {
 
     const msg = items_msg.join("\n");
     const encoded_message = encodeURIComponent(msg);
-    const url = `${links?.whatsapp}&text=${encoded_message}`;
+    const url = `${linkWhatsApp}&text=${encoded_message}`;
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
     if (newWindow) newWindow.focus();
     // console.log(decodeURIComponent(encoded_message));
@@ -173,7 +174,12 @@ function CartModal({ isOpen, onOpenChange, links, cart }) {
               }`}
             >
               <section>
-                <b>Presione en los precios para agregar artículos.</b>
+                <b>
+                  <span className="inline-block align-middle">
+                    <TbHandClick />
+                  </span>
+                  Presione en los precios para agregar artículos.
+                </b>
                 <p>
                   Cuanto termine de revisar la lista envié el pedido y será
                   redirigido a whatsapp para continuar.
@@ -193,7 +199,7 @@ function CartModal({ isOpen, onOpenChange, links, cart }) {
                 </span>
               )}
 
-              <p className="text-sm text-neutral-400 sm:hidden">
+              <p className="font-size-secondary text-neutral-400 sm:hidden">
                 Si esta usando un dispositivo móvil y quiere descargar el pedido
                 en una imagen es recomendable estar conectado a una red wifi
                 dado que la imagen generada tendrá un peso considerable.

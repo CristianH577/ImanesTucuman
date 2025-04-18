@@ -66,18 +66,32 @@ export default function Hero() {
                 ${contextImg(`./1280/${i + 1}.webp`)} 1280w,
               `}
               alt={`Iman de neodimio ${i + 1}`}
-              className={`object-contain h-full absolute inset-0 mx-auto pb-2 sm:pb-4 z-${
+              className={`hidden sm:block object-contain h-full absolute inset-0 mx-auto pb-2 sm:pb-4 drop-shadow-custom z-${
                 i * 10
               }`}
-              style={{
-                filter: "drop-shadow(2px 4px 6px black)",
-              }}
               whileInView={{ y: [0, (i + 1) * 6, 0] }}
               transition={{
                 duration: i + 2,
                 repeat: Infinity,
                 repeatType: "loop",
               }}
+            />
+          ))}
+
+          {Array.from({ length: 5 }).map((_, i) => (
+            <img
+              key={i}
+              loading="eager"
+              src={contextImg(`./360/${i + 1}.webp`)}
+              srcSet={`
+                ${contextImg(`./360/${i + 1}.webp`)} 360w,
+                ${contextImg(`./640/${i + 1}.webp`)} 640w,
+                ${contextImg(`./768/${i + 1}.webp`)} 768w,
+                ${contextImg(`./1024/${i + 1}.webp`)} 1024w,
+                ${contextImg(`./1280/${i + 1}.webp`)} 1280w,
+              `}
+              alt={`Iman de neodimio ${i + 1}`}
+              className="sm:hidden object-contain h-full absolute inset-0 mx-auto pb-2 sm:pb-4 drop-shadow-custom"
             />
           ))}
         </article>

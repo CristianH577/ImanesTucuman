@@ -1,7 +1,7 @@
 const { nextui } = require("@nextui-org/react");
 const plugin = require("tailwindcss/plugin");
 
-const { colorsCustom } = require("./src/consts/siteConfig");
+const { COLORS_CUSTOM } = require("./src/consts/siteConfig");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -21,6 +21,7 @@ module.exports = {
       fontSize: {
         dinamic: "var(--font-size)",
       },
+      colors: { ...COLORS_CUSTOM },
     },
   },
   themes: {},
@@ -29,14 +30,14 @@ module.exports = {
   plugins: [
     nextui({
       themes: {
-        light: {
-          extend: "default",
-          colors: { ...colorsCustom },
-        },
-        dark: {
-          extend: "default",
-          colors: { ...colorsCustom },
-        },
+        // light: {
+        //   extend: "default",
+        //   colors: { ...COLORS_CUSTOM },
+        // },
+        // dark: {
+        //   extend: "default",
+        //   colors: { ...COLORS_CUSTOM },
+        // },
         // navidad: {
         //   // extend: "light",
         //   colors: colors_navidad,

@@ -8,6 +8,7 @@ import TablePrices from "./Imanes/TablePrices";
 import Fotos from "./Imanes/Fotos";
 import DragMagnets from "./Imanes/DragMagnets";
 
+import { TbHandClick } from "react-icons/tb";
 import {
   SVGRedondoFresado,
   SVGCuadrado,
@@ -18,9 +19,7 @@ import {
 
 const ModalSize = lazy(() => import("./Imanes/ModalSize"));
 
-function Imanes() {
-  const date_price = "29/03/25";
-
+export default function Imanes() {
   const formas_data = {
     redondos: {
       label: "Redondos",
@@ -89,36 +88,28 @@ function Imanes() {
           <i>neodimio</i> de alta potencia y sus medidas están en{" "}
           <i>milímetros</i>.
           <br />
-          <br />
           Las medidas que están <span className="line-through">
             tachadas
           </span>{" "}
           es por falta de stock.
           <br />
-          <br />
           Seleccione la forma que le interese y revise las medidas y precios. En
           la tabla podrá ver que varia el precio por unidad según la cantidad.
-          <br />
           <br />
           Consulte por medidas no listadas.
         </p>
 
-        <p className="text-secondary-700 inline-flex">
+        <p className="text-secondary-700">
+          <span className="inline-block align-middle">
+            <TbHandClick />
+          </span>
           Presione en las medidas para ver una comparación de tamaños en
           pantalla o en los precios para agregar artículos al carrito.
         </p>
 
-        <p className="text-sm text-neutral-400">
-          Los precios pueden variar: {date_price}.
+        <p className="font-size-secondary text-neutral-400">
+          Los precios pueden variar.
         </p>
-
-        {/* <p className="text-yellow-400">
-            Los descuentos son validos para aquellos que sigan ImanesTucuman en
-            cualquiera de las{" "}
-            <a href="#contacto" className="italic hover:text-custom1-4">
-              redes
-            </a>{" "}
-          </p> */}
       </motion.section>
 
       <motion.section
@@ -173,7 +164,7 @@ function Imanes() {
           </Tab>
 
           <Tab key="photos" title="FOTOS">
-            <Fotos link={context?.links?.fotos} />
+            <Fotos linkFotos={context?.LINKS_SITES?.fotos} />
           </Tab>
         </Tabs>
       </motion.section>
@@ -192,5 +183,3 @@ function Imanes() {
     </>
   );
 }
-
-export default Imanes;

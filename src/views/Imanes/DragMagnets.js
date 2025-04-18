@@ -4,7 +4,7 @@ import { TbHandClick } from "react-icons/tb";
 
 import { SVGDragMagnet } from "../../assets/imanes/svgs";
 
-import { dbImanesArrastre } from "../../consts/dbs";
+import { DB_IMANES_ARRASTRE } from "../../consts/dbs";
 
 function DragMagnets({ handleAdd, setComparative }) {
   const cols = ["B", "C", "peso", "fuerza"];
@@ -43,9 +43,12 @@ function DragMagnets({ handleAdd, setComparative }) {
           <thead className="border-b-3 text-2xl">
             <tr>
               <td className="py-2">
-                <div className="flex items-center justify-center gap-1">
-                  <TbHandClick className="text-secondary-700 self-center" />A
-                </div>
+                <p>
+                  <span className="inline-block align-middle">
+                    <TbHandClick className="text-secondary-700" />
+                  </span>
+                  A
+                </p>
                 (mm)
               </td>
 
@@ -59,16 +62,18 @@ function DragMagnets({ handleAdd, setComparative }) {
               ))}
 
               <td>
-                <div className="flex flex-col gap-1">
+                <p>
+                  <span className="inline-block align-middle">
+                    <TbHandClick className="text-secondary-700" />
+                  </span>
                   Precio
-                  <TbHandClick className="text-secondary-700 self-center" />
-                </div>
+                </p>
               </td>
             </tr>
           </thead>
 
           <tbody>
-            {Object.entries(dbImanesArrastre)?.map(([size, info]) => {
+            {Object.entries(DB_IMANES_ARRASTRE)?.map(([size, info]) => {
               const noStock = info?.noStock || false;
 
               return (

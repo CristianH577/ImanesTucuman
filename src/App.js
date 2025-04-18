@@ -1,13 +1,13 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 
-import { navItems } from "./consts/siteConfig";
-import { scrollTop } from "./libs/functions.js";
+import { NAV_ITEMS } from "./consts/siteConfig";
 
-import { Route, Routes, useLocation } from "react-router";
+import { Route, Routes } from "react-router";
 
 import LayoutDefault from "./layout/LayoutDefault";
 import NotFound from "./layout/NotFound";
 import ViewDefault from "./layout/components/ViewDefault.js";
+import { Spinner } from "@nextui-org/react";
 
 const Home = lazy(() => import("./views/Home"));
 const Imanes = lazy(() => import("./views/Imanes"));
@@ -25,23 +25,29 @@ function App() {
     faqs: <Faqs />,
   };
 
-  const { pathname } = useLocation();
-  useEffect(scrollTop, [pathname]);
-
   return (
     <Routes>
       <Route path="" element={<LayoutDefault />}>
         <Route index element={<Home />} />
 
-        {navItems.map((route) => {
+        {NAV_ITEMS.map((route) => {
           if (route?.id in routesComponent) {
             return (
               <Route
                 key={route?.id}
                 path={`${route?.id}`}
                 element={
-                  <Suspense>
-                    <ViewDefault title={route?.label}>
+                  <Suspense
+                    fallback={
+                      <span className="w-full h-screen flex items-center justify-center">
+                        <Spinner color="secondary" />
+                      </span>
+                    }
+                  >
+                    <ViewDefault
+                      id={route?.id}
+                      title={route?.title || route?.label}
+                    >
                       {routesComponent?.[route?.id]}
                     </ViewDefault>
                   </Suspense>
@@ -59,9 +65,6 @@ function App() {
             <ViewDefault
               title="pagina no encontrada"
               className="justify-center h-screen"
-              // classNames={{
-              //   content: "justify-center h-screen",
-              // }}
             >
               <NotFound />
             </ViewDefault>

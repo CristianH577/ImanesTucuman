@@ -1,4 +1,4 @@
-function CustomLink({ href, title, text, className, target, icon }) {
+function LinkCustom({ href, title, text, className, target, icon }) {
   return (
     <a
       href={href || null}
@@ -16,4 +16,4 @@ function CustomLink({ href, title, text, className, target, icon }) {
   );
 }
 
-export default CustomLink;
+export default LinkCustom;

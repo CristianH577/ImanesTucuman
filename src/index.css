@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @import "tailwindcss"; */
 
 @layer base {
   @font-face {
@@ -19,6 +18,7 @@
 
 :root {
   --font-size: medium;
+  --font-size-secondary: small;
 }
 
 html {
@@ -28,6 +28,12 @@ html {
 body {
   margin: 0;
   font-size: var(--font-size);
+}
+.font-size-primary {
+  font-size: var(--font-size);
+}
+.font-size-secondary {
+  font-size: var(--font-size-secondary);
 }
 
 .bg-radial {

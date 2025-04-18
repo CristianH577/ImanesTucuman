@@ -15,7 +15,7 @@ import {
 } from "react-icons/si";
 import { FaSignalMessenger, FaXTwitter } from "react-icons/fa6";
 
-import { links } from "../consts/siteConfig";
+import { LINKS_SITES } from "../consts/siteConfig";
 
 function Redes({ classNames, className, slice }) {
   const redes = [
@@ -117,15 +117,15 @@ function Redes({ classNames, className, slice }) {
         >
           <Tooltip
             content={item?.label}
-            className="border-2 border-custom1-5"
+            className="border-2 border-custom1-2"
             classNames={{
               content: "dark:text-white text-center font-semibold",
             }}
             hidden={!item?.label}
           >
             <Link
-              href={links?.[item?.id] || "#contacto"}
-              target={links?.[item?.id] ? "_blank" : "_self"}
+              href={LINKS_SITES?.[item?.id] || "#contacto"}
+              target={LINKS_SITES?.[item?.id] ? "_blank" : "_self"}
               className={`text-neutral-500 transition-all hover:text-custom1 ${
                 classNames?.link || ""
               }`}

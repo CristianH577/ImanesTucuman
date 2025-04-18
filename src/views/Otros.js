@@ -4,14 +4,15 @@ import { useOutletContext } from "react-router";
 
 import { defineDiscountToUse } from "../libs/functions";
 
-import { dbOtros } from "../consts/dbs";
+import { DB_OTROS } from "../consts/dbs";
 
 import { Tabs, Tab } from "@nextui-org/react";
 
 import TableOthers from "./Otros/TableOthers";
 
+import { TbHandClick } from "react-icons/tb";
+
 function Otros() {
-  const date_price = "23/2/25";
   const discount_follow = 0;
 
   const context = useOutletContext();
@@ -22,17 +23,17 @@ function Otros() {
       {
         id: "imanes",
         label: "Imanes: Otros",
-        items: dbOtros?.imanes,
+        items: DB_OTROS?.imanes,
       },
       {
         id: "electricidad",
         label: "Electricidad",
-        items: dbOtros?.electricidad,
+        items: DB_OTROS?.electricidad,
       },
       {
         id: "otros",
         label: "Otros",
-        items: dbOtros?.otros,
+        items: DB_OTROS?.otros,
       },
     ];
 
@@ -69,7 +70,7 @@ function Otros() {
           }
           return acum;
         }, [])
-        .sort((a, b) => a.name.localeCompare(b.name));
+        .sort((a, b) => a.label.localeCompare(b.label));
 
       cat_.items = items;
       data_ = [...data_, cat_];
@@ -90,23 +91,16 @@ function Otros() {
         <p>
           Además de imanes de neodimio también ofrecemos otros artículos que
           podrían interesarle.
+          <br />
+          Los precios que están <span className="line-through">
+            tachados
+          </span>{" "}
+          es por falta de stock o tienen descuento.
         </p>
 
-        <p className="text-secondary-700">
-          Presione en los precios para agregar artículos.
+        <p className="font-size-secondary text-neutral-400">
+          Los precios pueden variar.
         </p>
-
-        <p className="text-sm text-neutral-400">
-          Los precios pueden variar: {date_price}.
-        </p>
-
-        {/* <p className="text-yellow-600 dark:text-yellow-400">
-            Los descuentos son validos para aquellos que sigan ImanesTucuman en
-            cualquiera de las{" "}
-            <a href="#contacto" className="italic hover:text-custom1-4">
-              redes
-            </a>
-          </p> */}
       </motion.section>
 
       <motion.section
@@ -120,11 +114,11 @@ function Otros() {
           aria-label="Otros articulos"
           classNames={{
             tabList:
-              "bg-gradient-to-t from-custom2 to-custom2-10 flex-wrap justify-center shadow-md",
+              "bg-gradient-to-t from-custom1 to-custom1-3 flex-wrap justify-center shadow-md ",
             tabContent:
-              "text-white group-data-[selected=true]:font-semibold group-data-[selected=true]:text-black",
-            cursor: "bg-gradient-to-t from-custom1 to-custom1-10",
-            panel: "w-full mt-4",
+              "text-custom2 font-bold group-data-[selected=true]:text-white",
+            cursor: "bg-gradient-to-t from-custom2 to-custom2-10",
+            panel: "mt-4 flex flex-col items-center gap-2 w-full",
             tab: "w-fit",
           }}
         >

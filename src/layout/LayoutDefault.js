@@ -1,8 +1,11 @@
-import { lazy, Suspense, useState } from "react";
-import { Outlet } from "react-router";
+import { lazy, Suspense, useEffect } from "react";
+import { Outlet, useLocation } from "react-router";
 
-import { links } from "../consts/siteConfig";
-import { dbImanes } from "../consts/dbs";
+import { LINKS_SITES } from "../consts/siteConfig";
+import { DB_IMANES } from "../consts/dbs";
+
+import { scrollTop } from "../libs/functions.js";
+import { useCart } from "../hooks/useCart.js";
 
 import { Spinner, useDisclosure } from "@nextui-org/react";
 
@@ -10,36 +13,38 @@ import Footer from "./Footer.js";
 
 const NavbarCustom = lazy(() => import("./NavbarCustom"));
 const CartModal = lazy(() => import("./CartModal"));
-// const Footer = lazy(() => import("./Footer"));
 
 export default function LayoutDefault() {
-  const [cart, setCart] = useState({});
+  const cart = useCart();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { search, pathname } = useLocation();
 
-  const addToCart = (cat, itemId, itemCartData = {}) => {
-    const cart_ = structuredClone(cart);
-    const itemCartData_ = structuredClone(itemCartData);
+  useEffect(scrollTop, [pathname]);
+  useEffect(() => {
+    if (search) {
+      const params = new URLSearchParams(search);
+      const paramsObj = {};
+      Array.from(params.entries()).map(([k, v]) => (paramsObj[k] = v));
 
-    if (!cart_.hasOwnProperty(cat)) cart_[cat] = {};
-    if (!itemCartData_.hasOwnProperty("qtt")) itemCartData_.qtt = 1;
+      if ("view" in paramsObj) {
+        setTimeout(() => {
+          const element = document.querySelector("#" + paramsObj.view);
 
-    itemCartData_.priceToUse = "base";
-
-    cart_[cat][itemId] = itemCartData_;
-
-    setCart(cart_);
-  };
+          if (element) element.scrollIntoView({ block: "nearest" });
+        }, 1000);
+      }
+    }
+  }, [search]);
 
   return (
     <div
       id="app"
       className="min-h-screen h-[100vh] bg-background text-foreground dark:bg-content2 font-[menulis] overflow-x-hidden overflow-y-auto scroll-smooth sm:scrollbar scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6 flex flex-col justify-between"
-      // bg-gradient-to-b from-background to-content3 dark:from-content2 dark:to-content1
     >
       <Suspense>
         <NavbarCustom
           onOpenCart={onOpen}
-          cartLength={Object.values(cart).reduce(
+          cartLength={Object.values(cart.value).reduce(
             (acc, obj) => acc + Object.keys(obj).length,
             0
           )}
@@ -57,8 +62,8 @@ export default function LayoutDefault() {
           <CartModal
             isOpen={isOpen}
             onOpenChange={onOpenChange}
-            cart={{ value: cart, set: setCart }}
-            links={links}
+            cart={cart}
+            linkWhatsApp={LINKS_SITES?.whatsapp}
           />
         </Suspense>
       )}
@@ -73,15 +78,15 @@ export default function LayoutDefault() {
         >
           <Outlet
             context={{
-              cart: { value: cart, set: setCart, add: addToCart },
-              links: links,
-              db: dbImanes,
+              cart: cart,
+              LINKS_SITES: LINKS_SITES,
+              db: DB_IMANES,
             }}
           />
         </Suspense>
       </main>
 
-      <Footer links={links} />
+      <Footer LINKS_SITES={LINKS_SITES} />
     </div>
   );
 }

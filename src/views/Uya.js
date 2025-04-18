@@ -191,23 +191,6 @@ export default function UyA() {
       },
     ],
   };
-  // const YouTubeEmbed = ({ videoUrl }) => {
-  //   const videoId = new URL(videoUrl).searchParams.get("v");
-  //   const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
-
-  //   return (
-  //     <div className="w-full aspect-video">
-  //       <iframe
-  //         className="w-full h-full"
-  //         src={embedUrl}
-  //         title="YouTube video player"
-  //         frameBorder="0"
-  //         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  //         allowFullScreen
-  //       ></iframe>
-  //     </div>
-  //   );
-  // };
 
   return (
     <motion.div
@@ -217,16 +200,6 @@ export default function UyA() {
         visible: { opacity: 1 },
       }}
     >
-      {/* <motion.section
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-      >
-        <video src={vid} autoPlay controls />
-
-        <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=wlsuwhU2zA8" />
-      </motion.section> */}
       <Tabs
         aria-label="Usos y aplicaciones"
         classNames={{

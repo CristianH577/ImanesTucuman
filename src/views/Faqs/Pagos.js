@@ -65,12 +65,17 @@ function Pagos() {
         <ol className="ps-12 list-disc">
           <li>
             <p>
-              Hasta $12.000: <b className={text_class}>+$900</b>
+              Hasta $15.000: <b className={text_class}>+$1000</b>
             </p>
           </li>
           <li>
             <p>
-              Entre $12.000-$30.000: <b className={text_class}>+$1800</b>
+              Hasta $25.000: <b className={text_class}>+$2000</b>
+            </p>
+          </li>
+          <li>
+            <p>
+              Hasta $33.000: <b className={text_class}>+$2400</b>
             </p>
           </li>
         </ol>
@@ -107,8 +112,8 @@ function Pagos() {
           ))}
         </ol>
 
-        <p className="text-sm text-neutral-400 mb-4">
-          Los porcentajes pueden variar
+        <p className="font-size-secondary text-neutral-400 mb-4">
+          Los valores pueden variar.
         </p>
       </article>
 
@@ -116,10 +121,13 @@ function Pagos() {
         <b className="border-b w-fit pe-8">Garantía</b>
 
         <p>
-          Los productos no son reembolsables pero pueden tienen 1 semana de
-          garantía para cambios siempre y cuando no hayan sido usados y estén en
-          condiciones. Esto no aplica para las tiras de imán que deben ser
-          cortadas.
+          Los productos no son reembolsables pero tienen 1 semana de garantía
+          para cambios siempre y cuando no hayan sido usados y estén en
+          condiciones. Esto no aplica para el iman en tira y plancha que deben
+          ser cortados.
+          <br />
+          Los imanes pueden traer algún pequeño defecto de forma de fabrica,
+          recuerde revisar o avisar si esto es un problema.
         </p>
       </article>
 

@@ -7,10 +7,10 @@ import { Button, Input } from "@nextui-org/react";
 import { MdDelete } from "react-icons/md";
 
 import {
-  dbImanes,
-  dbImanesPrices,
-  dbOtros,
-  dbImanesArrastre,
+  DB_IMANES,
+  DB_IMANES_PRICES,
+  DB_OTROS,
+  DB_IMANES_ARRASTRE,
 } from "../../consts/dbs";
 
 function List({ cart = {}, makeDiscountFollow = false, downloading = false }) {
@@ -61,10 +61,10 @@ function List({ cart = {}, makeDiscountFollow = false, downloading = false }) {
       } else {
         let price_qtt = 0;
 
-        if (drt[0] in dbImanes) {
-          const db_data = dbImanes?.[drt[0]][drt[1]];
+        if (drt[0] in DB_IMANES) {
+          const db_data = DB_IMANES?.[drt[0]][drt[1]];
           const qtts = priceTableCategories?.[db_data?.qtts_cat || 1];
-          const prices = dbImanesPrices?.[drt[0]][drt[1]]?.prices;
+          const prices = DB_IMANES_PRICES?.[drt[0]][drt[1]]?.prices;
 
           for (let i = qtts.length - 1; i >= 0; i--) {
             if (qtt >= qtts[i]) {
@@ -72,8 +72,8 @@ function List({ cart = {}, makeDiscountFollow = false, downloading = false }) {
               break;
             }
           }
-        } else if (drt[0] in dbOtros) {
-          const db_data = dbOtros?.[drt[0]][drt[1]];
+        } else if (drt[0] in DB_OTROS) {
+          const db_data = DB_OTROS?.[drt[0]][drt[1]];
 
           if (db_data?.prices) {
             const qtts = db_data?.qtts || [1];
@@ -85,7 +85,6 @@ function List({ cart = {}, makeDiscountFollow = false, downloading = false }) {
             }
           }
         }
-        console.log(item.prices);
 
         item.qtt = qtt;
 
@@ -134,9 +133,9 @@ function List({ cart = {}, makeDiscountFollow = false, downloading = false }) {
   useEffect(() => {
     const sorts = {
       imanes: (a, b, cat) =>
-        dbImanes[cat][a]?.A - dbImanes[cat][b]?.A ||
-        dbImanes[cat][a]?.B - dbImanes[cat][b]?.B,
-      otros: (a, b) => a?.name?.localeCompare(b?.name),
+        DB_IMANES[cat][a]?.A - DB_IMANES[cat][b]?.A ||
+        DB_IMANES[cat][a]?.B - DB_IMANES[cat][b]?.B,
+      otros: (a, b) => a?.label?.localeCompare(b?.label),
       de_arrastre: (a, b) => a - b,
     };
 
@@ -146,9 +145,9 @@ function List({ cart = {}, makeDiscountFollow = false, downloading = false }) {
       .reduce((acc, cat) => {
         const items_ = Object.keys(cart.value[cat])
           .sort((a, b) =>
-            cat in dbImanes
+            cat in DB_IMANES
               ? sorts.imanes(a, b, cat)
-              : cat in dbOtros
+              : cat in DB_OTROS
               ? sorts.otros(a, b)
               : cat === "de_arrastre"
               ? sorts.de_arrastre(a, b)
@@ -173,10 +172,10 @@ function List({ cart = {}, makeDiscountFollow = false, downloading = false }) {
         };
         let subtotal_obj = { ...subTotalDefault };
 
-        if (cat in dbImanes) {
-          const db_data = dbImanes?.[cat]?.[itemKey];
+        if (cat in DB_IMANES) {
+          const db_data = DB_IMANES?.[cat]?.[itemKey];
           const qtts = priceTableCategories?.[db_data?.qtts_cat || 1];
-          const prices = dbImanesPrices?.[cat]?.[itemKey]?.prices;
+          const prices = DB_IMANES_PRICES?.[cat]?.[itemKey]?.prices;
 
           prices_obj.base = prices[0];
 
@@ -186,8 +185,8 @@ function List({ cart = {}, makeDiscountFollow = false, downloading = false }) {
               break;
             }
           }
-        } else if (cat in dbOtros) {
-          const db_data = dbOtros?.[cat]?.[itemKey];
+        } else if (cat in DB_OTROS) {
+          const db_data = DB_OTROS?.[cat]?.[itemKey];
           prices_obj.base = db_data?.price || db_data?.prices[0] || 0;
 
           if (db_data?.prices) {
@@ -200,16 +199,16 @@ function List({ cart = {}, makeDiscountFollow = false, downloading = false }) {
             }
           }
 
-          cart_[cat][itemKey].name = db_data?.name;
+          cart_[cat][itemKey].label = db_data?.label;
 
           if (db_data?.price_measure) {
             cart_[cat][itemKey].price_measure = db_data?.price_measure;
           }
         } else if (cat === "de_arrastre") {
-          const db_data = dbImanesArrastre?.[itemKey];
+          const db_data = DB_IMANES_ARRASTRE?.[itemKey];
           prices_obj.base = db_data?.price || 0;
 
-          cart_[cat][itemKey].name = itemKey + "mm";
+          cart_[cat][itemKey].label = itemKey + "mm";
         }
 
         // precios por descuentos
@@ -292,8 +291,8 @@ function List({ cart = {}, makeDiscountFollow = false, downloading = false }) {
                   Object.entries(cart.value[cat]).map(([itemKey, itemData]) => (
                     <tr key={itemKey}>
                       <td>
-                        {itemData?.name || itemKey?.replace("_", " ")}
-                        {cat in dbImanes && "mm"}
+                        {itemData?.label || itemKey?.replace("_", " ")}
+                        {cat in DB_IMANES && "mm"}
                       </td>
 
                       <td>

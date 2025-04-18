@@ -13,7 +13,7 @@ import Logo from "../components/Logo";
 
 import { FaArrowLeft } from "react-icons/fa";
 
-function MenuMovilDrawer({ isOpen, onOpenChange, navItems }) {
+function MenuMovilDrawer({ isOpen, onOpenChange, NAV_ITEMS }) {
   return (
     <Drawer
       isOpen={isOpen}
@@ -23,7 +23,7 @@ function MenuMovilDrawer({ isOpen, onOpenChange, navItems }) {
       backdrop="transparent"
       classNames={{
         wrapper: "max-xs:ms-[3%]",
-        closeButton: "test text-2xl top-5 end-3",
+        closeButton: "text-2xl top-5 end-3",
       }}
       motionProps={{
         variants: {
@@ -73,7 +73,7 @@ function MenuMovilDrawer({ isOpen, onOpenChange, navItems }) {
                 }}
                 classNames={{}}
               >
-                {navItems.map((item) => (
+                {NAV_ITEMS.map((item) => (
                   <ListboxItem
                     key={item.id}
                     textValue={item.label}
@@ -105,7 +105,7 @@ function MenuMovilDrawer({ isOpen, onOpenChange, navItems }) {
                 <ListboxItem
                   key="Cerrar"
                   textValue="Cerrar"
-                  className="dark:text-white py-2 transition-all hover:shadow-md"
+                  className="text-neutral-400 py-2 transition-all hover:shadow-md"
                   classNames={{
                     title: "text-lg font-semibold flex gap-2 items-center",
                   }}

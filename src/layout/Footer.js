@@ -6,7 +6,7 @@ import { Button, Card, Divider, Image } from "@nextui-org/react";
 
 import Logo from "./components/Logo";
 import Redes from "../components/Redes";
-import CustomLink from "../components/CustomLink";
+import LinkCustom from "../layout/components/LinkCustom";
 
 import { FaMapMarkedAlt, FaRegCalendar, FaWhatsapp } from "react-icons/fa";
 import { SiGoogleforms, SiGooglemaps } from "react-icons/si";
@@ -14,34 +14,28 @@ import { LuArrowBigUpDash } from "react-icons/lu";
 
 import qr from "../assets/footer/wp.webp";
 
-function Footer({ links }) {
-  const icon_size = 20;
-  const items = [
+function Footer({ LINKS_SITES }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { threshold: 0.2, once: true });
+
+  const info_items = [
     {
-      icon: <FaMapMarkedAlt size={icon_size} />,
-      text: (
-        <>
-          9 de julio 4900, S.M. de Tucumán, Tucumán
-          {/* <br />{" "}
-          <span className="text-small text-neutral-400">
-            No es local. Solo retiro.
-          </span> */}
-        </>
-      ),
+      icon: FaMapMarkedAlt,
+      text: <>9 de julio 4900, S.M. de Tucumán, Tucumán</>,
       subtext: (
-        <span className="text-small text-neutral-400">
+        <span className="font-size-secondary text-neutral-400">
           No es local. Solo retiro.
         </span>
       ),
     },
     {
-      icon: <FaRegCalendar size={icon_size} />,
+      icon: FaRegCalendar,
       text: (
         <>
           Lunes a Sábados(
-          <CustomLink
+          <LinkCustom
             href={
-              links?.whatsapp +
+              LINKS_SITES?.whatsapp +
               "&text=Hola. Quiero consultar por los horarios de atención."
             }
             title="Consultar horarios por Wharsapp"
@@ -52,19 +46,21 @@ function Footer({ links }) {
         </>
       ),
     },
+    { text: "Esta empresa sigue el principio de imputación de Menger." },
   ];
 
-  const ref = useRef(null);
-  const isInView = useInView(ref, { threshold: 0.2, once: true });
+  const sections = [
+    { label: "Ubicacion", href: "#faqs?view=ubicacion" },
+    { label: "Opiniones", href: "#?view=opiniones" },
+    { label: "Fotos", href: "#imanes?view=fotos" },
+    { label: "Consideraciones", href: "#faqs" },
+  ];
 
   return (
     <footer
       id="footer"
       ref={ref}
       className="bg-gradient-to-b from-custom2-4 to-custom2 text-white w-full flex flex-col items-center px-2 pt-20 pb-4 sm:pt-4 gap-4 shadow-inner relative min-h-fit mt-auto"
-      // style={{
-      //   minHeight: isInView ? 0 : "100vh",
-      // }}
     >
       <Redes
         className={"my-4 px-2 gap-6"}
@@ -82,21 +78,21 @@ function Footer({ links }) {
             <LuArrowBigUpDash className="w-full h-fit" />
           </Button>
 
-          <Divider className="self-center w-3/5 bg-neutral-500/80" />
+          <Divider className="self-center w-4/6 bg-neutral-500/80" />
 
           <Logo id="logo_footer" className="w-fit max-h-64 place-self-center" />
 
           <div className="text-xl max-w-[500px] text-center font-semibold bg-custom2-10/50 p-4 rounded-lg mb-2 shadow-md">
             Para mejorar, lo invitamos a realizar una breve{" "}
-            <CustomLink
-              href={links?.["form_encuesta-20250109"]}
+            <LinkCustom
+              href={LINKS_SITES?.["form_encuesta-20250109"]}
               title="Link a encuesta"
               icon={<SiGoogleforms />}
               text="Encuesta"
             />{" "}
             sobre el sitio o a dejar una reseña publica en{" "}
-            <CustomLink
-              href={links?.googlemaps}
+            <LinkCustom
+              href={LINKS_SITES?.googlemaps}
               title="Link a Google Maps"
               icon={<SiGooglemaps />}
               text="Google Maps"
@@ -117,7 +113,7 @@ function Footer({ links }) {
                 title="Ir al chat de Whatsapp"
                 onPress={() => {
                   const newWindow = window.open(
-                    links?.whatsapp,
+                    LINKS_SITES?.whatsapp,
                     "_blank",
                     "noopener,noreferrer"
                   );
@@ -153,10 +149,9 @@ function Footer({ links }) {
               initial="hidden"
               whileInView="visible"
             >
-              {items.map((item, i) => (
+              {info_items.map((item, i) => (
                 <motion.div
                   key={i}
-                  className="flex flex-col justify-self-center"
                   variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 1, y: 0 },
@@ -164,26 +159,47 @@ function Footer({ links }) {
                   initial="hidden"
                   whileInView="visible"
                 >
-                  <span className="flex max-xs:flex-col gap-2 items-center">
-                    {item.icon}
-                    <p>{item.text}</p>
-                  </span>
+                  <p>
+                    {item?.icon && (
+                      <>
+                        <span className="inline-block align-middle">
+                          <item.icon size={20} />
+                        </span>{" "}
+                      </>
+                    )}
+                    {item.text}
+                  </p>
                   {item?.subtext && item?.subtext}
                 </motion.div>
               ))}
             </motion.div>
           </div>
 
-          <Divider className="self-center w-2/3 bg-neutral-500/80 " />
+          <Divider className="self-center w-3/5 bg-neutral-500/80" />
+
+          <div className="flex flex-wrap justify-evenly gap-4 text-neutral-400 font-size-secondary">
+            {sections.map((section) => (
+              <a
+                key={section?.label}
+                href={section?.href}
+                target="_self"
+                className="hover:underline"
+              >
+                {section.label}
+              </a>
+            ))}
+          </div>
+
+          <Divider className="self-center w-5/6 bg-neutral-500/80" />
 
           <div className="flex gap-1 text-neutral-500 ">
             <p>2024</p>
 
             <div>
               Diseñado por{" "}
-              <CustomLink
+              <LinkCustom
                 href="https://github.com/CristianH577"
-                className="hover:boder-b border-neutral-400 text-inherit"
+                className="hover:boder-b border-neutral-400 text-inherit dark:text-inherit"
                 title="Ir a perfil de Github"
                 text={
                   <>

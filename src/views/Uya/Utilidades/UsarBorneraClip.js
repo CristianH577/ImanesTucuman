@@ -29,6 +29,8 @@ export default function UsarBorneraClip() {
           </p>
         </div>
       ))}
+
+      {/* <VideoComponent className="sm:col-span-2 max-w-64 drop-shadow-custom" /> */}
     </div>
   );
 }

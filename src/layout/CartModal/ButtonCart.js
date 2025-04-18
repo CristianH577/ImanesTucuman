@@ -4,7 +4,7 @@ function ButtonCart(props) {
   return (
     <Tooltip
       content={props?.label}
-      className="border-2 border-custom1-5"
+      className="border-2 border-custom1-2"
       classNames={{
         content: "dark:text-white text-center font-semibold",
       }}

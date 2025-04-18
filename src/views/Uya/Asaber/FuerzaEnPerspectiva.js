@@ -29,7 +29,7 @@ export default function FuerzaEnPerspectiva() {
           mm de espesor) generalmente pueden contener alrededor del{" "}
           <b>30% de la fuerza</b> de tracción indicada debido a los efectos de
           la gravedad y la falta de tracción entre la superficie de acero y la
-          superficie lisa o brillante del imán.
+          superficie lisa del imán.
         </p>
         <p>
           <b>Cualquier espacio</b> creado por un material (como el papel) entre

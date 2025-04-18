@@ -1,6 +1,6 @@
-import CustomLink from "../../components/CustomLink";
+import LinkCustom from "../../layout/components/LinkCustom";
 
-function Usos({ links }) {
+function Usos({ linkFacebook = "#" }) {
   const conditions = [
     "Sostener o colgar objetos",
     "Separación de materiales",
@@ -25,13 +25,13 @@ function Usos({ links }) {
       <p className="mt-4">
         Encuentre algunas ideas sobre lo que se puede hacer con imanes en la
         pagina de{" "}
-        <CustomLink
-          href={links?.facebook}
+        <LinkCustom
+          href={linkFacebook}
           title="Ir a la pagina de Facebook"
           text="Facebook"
         />{" "}
         o en la pagina de{" "}
-        <CustomLink
+        <LinkCustom
           href="#uya"
           title="Ir a U&A"
           text="Usos y aplicaciones"

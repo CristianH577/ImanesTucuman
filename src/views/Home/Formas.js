@@ -34,7 +34,9 @@ function Formas() {
       >
         <p>Aquí tiene una muestra de las formas con las que trabajamos.</p>
 
-        <p className="text-sm text-neutral-400">Imágenes a modo ilustrativo.</p>
+        <p className="font-size-secondary text-neutral-400">
+          Imágenes a modo ilustrativo.
+        </p>
       </motion.div>
 
       <article className="w-full grid xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-8">

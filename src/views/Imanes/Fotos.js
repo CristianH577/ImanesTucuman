@@ -4,7 +4,7 @@ import ImageCustom from "../../layout/components/ImageCustom";
 
 import { FaArrowUp } from "react-icons/fa";
 
-function Fotos({ link }) {
+function Fotos({ linkFotos }) {
   const contextImg = require.context("../../assets/imanes", true);
   const fotos = [
     {
@@ -55,6 +55,7 @@ function Fotos({ link }) {
 
   return (
     <motion.div
+      id="fotos"
       className="grid sm:grid-cols-2 sm:grid-rows-6 md:grid-cols-3 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-3 gap-6"
       variants={{
         hidden: {},
@@ -99,7 +100,7 @@ function Fotos({ link }) {
         );
       })}
 
-      {link && (
+      {linkFotos && (
         <motion.div
           className="flex flex-col items-center justify-center"
           variants={{
@@ -108,7 +109,7 @@ function Fotos({ link }) {
           }}
         >
           <a
-            href={link}
+            href={linkFotos}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 transition-all"

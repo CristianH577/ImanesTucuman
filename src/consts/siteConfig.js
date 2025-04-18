@@ -5,17 +5,22 @@ import { FaRegCircleQuestion } from "react-icons/fa6";
 import { GoBook } from "react-icons/go";
 import { IoHomeOutline } from "react-icons/io5";
 
-export const navItems = [
+export const NAV_ITEMS = [
   { id: "", label: "Inicio", icon: IoHomeOutline },
   { id: "imanes", label: "imanes", icon: LuMagnet },
   { id: "otros", label: "otros", icon: MdOutlineMore },
   { id: "caracteristicas", label: "Características", icon: AiOutlineNumber },
-  { id: "uya", label: "U&A", icon: GoBook },
-  { id: "faqs", label: "FAQs", icon: FaRegCircleQuestion },
+  { id: "uya", label: "U&A", title: "Usos y Aplicaciones", icon: GoBook },
+  {
+    id: "faqs",
+    label: "FAQs",
+    title: "Preguntas Frecuentes",
+    icon: FaRegCircleQuestion,
+  },
   // { id: "contacto", label: "contacto" },
 ];
 
-export const links = {
+export const LINKS_SITES = {
   whatsapp: "https://api.whatsapp.com/send?phone=543813156907",
   googlemaps:
     "https://www.google.com.ar/maps/place/Imanes+Tucum%C3%A1n/@-26.8887704,-65.2256411,17.54z/data=!4m6!3m5!1s0x94225b001419003b:0x46095acd3879452e!8m2!3d-26.8894591!4d-65.2246928!16s%2Fg%2F11wb1cdws9?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D",
@@ -46,13 +51,18 @@ export const links = {
   },
 };
 
-export const fontsValues = [
-  { key: "md", value: "medium" },
-  { key: "lg", value: "large" },
-  { key: "xl", value: "x-large" },
-];
+// export const FONTS_VALUES = [
+//   { key: "md", value: "medium" },
+//   { key: "lg", value: "large" },
+//   { key: "xl", value: "x-large" },
+// ];
+export const FONTS_VALUES = {
+  md: "medium",
+  lg: "large",
+  xl: "x-large",
+};
 
-export const colorsCustom = {
+export const COLORS_CUSTOM = {
   custom1: {
     DEFAULT: "#FF8B00",
     1: "rgba(255, 153, 0, 1)",
@@ -117,7 +127,7 @@ export const colorsCustom = {
   },
 };
 
-// export const colorsNavidad = {
+// export const COLORS_NAVIDAD = {
 //   custom1: {
 //     DEFAULT: "#17c964",
 //     1: "rgba(25, 221, 110, 1)",

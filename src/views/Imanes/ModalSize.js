@@ -364,7 +364,7 @@ function ModalSize({ isOpen, setIsOpen }) {
                 que lo tenga.
               </p>
 
-              <p className="text-sm text-neutral-400 text-center">
+              <p className="font-size-secondary text-neutral-400 text-center">
                 Las imágenes y esquemas son solo a modo ilustrativo y pueden no
                 coincidir con la realidad.
               </p>
@@ -449,7 +449,7 @@ function ModalSize({ isOpen, setIsOpen }) {
                 </section>
               )}
 
-              <p className="max-sm:text-center text-neutral-400 text-sm">
+              <p className="max-sm:text-center text-neutral-400 font-size-secondary">
                 Los tamaños son aproximados y pueden tener errores de medidas.
                 <br />
                 Puede arrastrar los iconos para sobreponerlos.

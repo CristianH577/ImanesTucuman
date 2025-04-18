@@ -1,9 +1,4 @@
-import { useState } from "react";
-
-import { motion } from "framer-motion";
-
-import ImageCustom from "../../layout/components/ImageCustom";
-import CustomLink from "../../components/CustomLink";
+import LinkCustom from "../../layout/components/LinkCustom";
 
 import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { BsBoxSeam } from "react-icons/bs";
@@ -13,39 +8,22 @@ import { FaMotorcycle } from "react-icons/fa6";
 import { SiGooglemaps } from "react-icons/si";
 import { FiExternalLink } from "react-icons/fi";
 
-import mapImg from "../../assets/faqs/map.webp";
-import mapImgMin from "../../assets/faqs/map-min.webp";
+import MapUbication from "./Envios/MapUbication";
 
-function Envios({ links }) {
-  const imgObj_default = { src: mapImgMin, min: true };
-  const [mapImgObj, setMapImgObj] = useState(imgObj_default);
-
-  const handleMapImg = () => {
-    let set = imgObj_default;
-    if (mapImgObj.min) {
-      set = {
-        src: mapImg,
-        min: false,
-      };
-    }
-
-    setMapImgObj(set);
-  };
-
+function Envios({ LINKS_SITES = {} }) {
   const link_class = "text-custom1--8 dark:text-custom1";
   const lista_envios = [
     {
       icon: <MdOutlineMapsHomeWork size={24} />,
       title: "Retiro",
       content: (
-        // flex flex-col gap-2 sm:flex-row
         <div className="space-y-2">
           <ol className="list-disc list-inside">
             <li>
               Puede retirar por 9 de julio 4900, S.M. de Tucumán, Tucumán
               (Consulte Imanes Tucumán en{" "}
-              <CustomLink
-                href={links?.googlemaps}
+              <LinkCustom
+                href={LINKS_SITES?.googlemaps}
                 title="Ir a ubicacion en Google Maps"
                 text="Google Maps"
                 icon={<SiGooglemaps />}
@@ -55,9 +33,9 @@ function Envios({ links }) {
             </li>
             <li>
               Horarios: Lunes a Sábados (
-              <CustomLink
+              <LinkCustom
                 href={
-                  links?.whatsapp +
+                  LINKS_SITES?.whatsapp +
                   "&text=Hola. Quiero consultar por los horarios de atención."
                 }
                 title="Consultar horarios por Wharsapp"
@@ -69,8 +47,8 @@ function Envios({ links }) {
             </li>
             <li>
               Indicaciones sugeridas de{" "}
-              <CustomLink
-                href={links?.googlemaps_indicaciones}
+              <LinkCustom
+                href={LINKS_SITES?.googlemaps_indicaciones}
                 title="Ir a indicaciones en Google Maps"
                 text="como llegar"
                 icon={<FaDirections />}
@@ -79,29 +57,19 @@ function Envios({ links }) {
               .
             </li>
           </ol>
-
-          <motion.div
-            className="overflow-hidden max-w-[500px] drop-shadow-md "
-            initial={{ width: 75, height: 75 }}
-            animate={
-              mapImgObj.min ? null : { width: "100%", height: "fit-content" }
-            }
-            onClick={handleMapImg}
-          >
-            <ImageCustom src={mapImgObj.src} className="sm:min-h-0" />
-          </motion.div>
         </div>
       ),
     },
     {
       icon: <FaRegCalendar size={24} />,
       title: "Entrega en zona centro",
-      description: (
-        <>
+      content: (
+        <p>
           Se puede coordinar en los días de entrega (
-          <CustomLink
+          <LinkCustom
             href={
-              links?.whatsapp + "&text=Hola. Quiero coordinar para un entrega."
+              LINKS_SITES?.whatsapp +
+              "&text=Hola. Quiero coordinar para un entrega."
             }
             title="Coordinar por Wharsapp"
             text="Consultar"
@@ -109,23 +77,27 @@ function Envios({ links }) {
             className={link_class}
           />
           ).
-        </>
+        </p>
       ),
     },
     {
       icon: <PiCity size={24} />,
       title: "Envío a zona centro ($3500)",
-      description:
-        "Deberá efectuar el pago del envío por transferencia antes de realizarlo, el resto lo paga en la entrega.",
+      content: (
+        <p>
+          Deberá efectuar el pago del envío por transferencia antes de
+          realizarlo, el resto lo paga en la entrega.
+        </p>
+      ),
     },
     {
       icon: <FaMotorcycle size={24} />,
       title: "Uber",
-      description:
-        "Deberá efectuar el pago del pedido+envío por transferencia.",
       content: (
-        <div className=" ps-8">
-          <ol className=" list-disc">
+        <div>
+          <p>Deberá efectuar el pago del pedido+envío por transferencia.</p>
+
+          <ol className="list-disc list-inside">
             <li>
               Si quiere enviar uno deberá solo transferir el pago del pedido
               antes de entregarlo al cadete. La ubicación aparece como Imanes
@@ -139,8 +111,8 @@ function Envios({ links }) {
       icon: <BsBoxSeam size={24} />,
       title: "Encomienda",
       content: (
-        <div className="ps-8">
-          <ol className=" list-disc">
+        <div>
+          <ol className="list-disc list-inside">
             <li>A cotizar por empresa, destino, tamaño y peso.</li>
             <li>+$3000 Envío prioritario(opcional).</li>
             <li>
@@ -151,7 +123,7 @@ function Envios({ links }) {
             <li>
               Andreani: Paga el pedido por transferencia y el envio se paga por
               un link de pago de la empresa. Puede cotizar en la{" "}
-              <CustomLink
+              <LinkCustom
                 href="https://www.andreani.com/?tab=cotizar-envio"
                 text="web de Andreani"
                 icon={<FiExternalLink />}
@@ -170,21 +142,22 @@ function Envios({ links }) {
   ];
 
   return (
-    <ol className="space-y-4">
-      {lista_envios.map((item, i) => (
-        <li key={i}>
-          <div className="flex gap-2">
-            <span>{item?.icon}</span>
-            <p>
-              <strong>{item?.title} </strong>
-              {item?.description}
-            </p>
-          </div>
+    <article className="space-y-6">
+      <ol className="space-y-4">
+        {lista_envios.map((item, i) => (
+          <li key={i}>
+            <div className="flex gap-2">
+              <span>{item?.icon}</span>
+              <b>{item?.title}</b>
+            </div>
 
-          {item?.content}
-        </li>
-      ))}
-    </ol>
+            {item?.content}
+          </li>
+        ))}
+      </ol>
+
+      <MapUbication />
+    </article>
   );
 }
 

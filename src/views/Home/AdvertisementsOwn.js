@@ -1,6 +1,8 @@
-import { buttonCustom, title, title1 } from "../../libs/tvs";
+import { buttonCustom, title } from "../../libs/tvs";
 
-import { Image, Link } from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
+
+import ImageCustom from "../../layout/components/ImageCustom";
 
 import { GiBallPyramid, GiFishingHook, GiVibratingBall } from "react-icons/gi";
 import { PiMagnet } from "react-icons/pi";
@@ -76,9 +78,8 @@ export function AdvertisementsOwn() {
             i % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse 2xl:flex-row"
           }`}
         >
-          <Image
+          <ImageCustom
             src={contextImg(`./${item.image?.src}.webp`)}
-            loading="lazy"
             alt={item.title}
             className="drop-shadow-custom"
             // classNames={{ wrapper: "w-full" }}
@@ -102,7 +103,7 @@ export function AdvertisementsOwn() {
             >
               {item.title}
             </h1>
-            <p className={`${title1()} max-sm:text-center`}>{item.text}.</p>
+            <p className="font-semibold max-sm:text-center">{item.text}.</p>
 
             <Link
               href={`#${item?.image?.href}`}

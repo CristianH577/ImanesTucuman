@@ -3,7 +3,7 @@ import { tv } from "tailwind-variants";
 import { button as buttonStyles } from "@nextui-org/theme";
 
 export const spanDiscount = tv({
-  base: "text-sm bg-radial text-custom1-5 font-bold rounded-full px-1 py-3 shadow-md min-w-11",
+  base: "h-fit font-size-secondary bg-radial text-custom1-5 font-bold rounded-xl px-2 shadow-md",
   variants: {
     color: {
       secondary:
@@ -57,9 +57,13 @@ export const title1 = tv({
       pink: "from-[#FF72E1] to-[#F54C7A]",
       foreground: "dark:from-[#FFFFFF] dark:to-[#4B4B4B]",
       custom1: "from-custom1 to-custom1-3",
-      custom2: "from-custom2-5 to-custom2-10",
+      custom2: "from-custom2-5 to-custom2-10/80",
+    },
+    darkColor: {
+      custom1: "dark:from-custom1 dark:to-custom1-3",
     },
     size: {
+      "": "font-size-primary",
       sm: "text-xl sm:text-2xl",
       md: "text-2xl lg:text-3xl leading-9",
     },

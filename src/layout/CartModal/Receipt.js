@@ -17,23 +17,33 @@ function Receipt({ downloading, cart, refReceipt, setConditions, conditions }) {
   const entrega_items = {
     retiro: {
       label: "Voy a retirar",
-      description: "Quiero pasar a retirar",
+      description_item: "Quiero pasar a retirar",
+      description_select: "Debe coordinar cuando quiera pasar.",
     },
     coordinar: {
       label: "Quiero coordinar",
-      description: "Quiero saber cuando se hagan entregas en el centro",
-    },
-    envio_uber: {
-      label: "Envío: Uber",
-      description: "Quiero que me lo envíen por uber",
+      description_item: "Quiero saber cuando se hagan entregas en el centro",
     },
     cadete: {
       label: "Mando a buscarlo",
-      description: "Quiero enviar a que lo busquen",
+      description_item: "Quiero enviar a que lo busquen",
+      description_select:
+        "Si es un Uber, se transfiere el pago antes de entregar.",
+    },
+    envio_uber: {
+      label: "Envío: Uber",
+      description_item: "Quiero que me lo envíen por Uber",
+      description_select: "Se transfiere el pago + envio antes.",
+    },
+    envio_online: {
+      label: "Envío: Tienda Online",
+      description_item: "Quiero intermediar con Mercado Libre",
+      description_select:
+        "Puede comprar y arreglar por medio de ML(se pagan comisiones).",
     },
     envio_encomienda: {
       label: "Envío: Encomienda",
-      description: "Quiero arreglar un envío por correo",
+      description_item: "Quiero arreglar un envío por correo",
     },
   };
 
@@ -56,6 +66,7 @@ function Receipt({ downloading, cart, refReceipt, setConditions, conditions }) {
             listbox: "dark:text-white",
             trigger: "border-2 border-custom1",
             popoverContent: "border-2 border-custom1",
+            description: "text-neutral-400",
           }}
           selectedKeys={[conditions?.entrega?.value]}
           onSelectionChange={(e) =>
@@ -67,9 +78,12 @@ function Receipt({ downloading, cart, refReceipt, setConditions, conditions }) {
               },
             })
           }
+          description={
+            entrega_items?.[conditions?.entrega?.value]?.description_select
+          }
         >
           {Object.entries(entrega_items).map(([key, obj]) => (
-            <SelectItem key={key} description={obj?.description}>
+            <SelectItem key={key} description={obj?.description_item}>
               {obj?.label}
             </SelectItem>
           ))}

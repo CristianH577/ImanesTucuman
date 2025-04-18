@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
 
-import { spanDiscount } from "../../libs/tvs";
+import { spanDiscount, title1 } from "../../libs/tvs";
+import { toPriceFormat } from "../../libs/functions";
 
 import { Divider, Button } from "@nextui-org/react";
 
 import ImageCustom from "../../layout/components/ImageCustom";
+import AccordionPrices from "./AccordionPrices";
+
+import { FaCartPlus } from "react-icons/fa";
 
 export default function TableOthers({ items = [], handleAdd = null }) {
   return (
@@ -25,7 +29,9 @@ export default function TableOthers({ items = [], handleAdd = null }) {
       {items?.map((item, i) => {
         let price = item?.price;
         if (item?.prices) price = item?.prices[0];
-        let discount_ = item.cartData.discounts?.[item?.discountToUse] || false;
+        const discount_ =
+          item.cartData.discounts?.[item?.discountToUse] || false;
+        const price_measure = item?.price_measure || "u";
 
         return (
           <motion.div
@@ -36,80 +42,32 @@ export default function TableOthers({ items = [], handleAdd = null }) {
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <div className="flex flex-col items-center gap-4 sm:col-span-2">
+            <div className="sm:self-center sm:col-span-2">
               {item?.img_name && (
                 <ImageCustom
                   src={item?.img}
-                  alt={item?.name}
+                  alt={item?.label}
                   width={300}
+                  className="sm:max-h-[250px] sm:object-contain"
                   style={{
                     filter: "drop-shadow(2px 4px 6px black)",
                   }}
                 />
               )}
-
-              <Button
-                variant=""
-                className={`py-2 px-3 text-center font-semibold text-xl shadow-lg flex gap-1 max-h-none h-fit hover:scale-110 bg-gradient-to-r ${
-                  item?.noStock
-                    ? "from-neutral-400 to-neutral-300 line-through text-neutral-500"
-                    : "from-custom1 to-custom1-6 text-black"
-                }`}
-                onPress={() => handleAdd && handleAdd(item.id, item.cartData)}
-              >
-                <div className="flex flex-col text-">
-                  <span
-                    className={`${
-                      discount_ && "line-through text-neutral-600 text-sm"
-                    }`}
-                  >
-                    {Intl.NumberFormat("es-AR", {
-                      style: "currency",
-                      currency: "ARS",
-                      minimumFractionDigits: 0,
-                      maximumFractionDigits: 0,
-                    }).format(price)}
-                    {item?.price_measure && "/" + item?.price_measure}
-                  </span>
-
-                  {discount_ && (
-                    <span>
-                      {Intl.NumberFormat("es-AR", {
-                        style: "currency",
-                        currency: "ARS",
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 0,
-                      }).format(price * (discount_ ? 1 - discount_ : 1))}
-                      {item?.price_measure && "/" + item?.price_measure}
-                    </span>
-                  )}
-                </div>
-
-                {discount_ && (
-                  <span
-                    className={spanDiscount({
-                      color:
-                        item?.discountToUse === "follow"
-                          ? "danger"
-                          : "secondary",
-                    })}
-                  >
-                    -
-                    {Intl.NumberFormat("es-AR", {
-                      style: "percent",
-                      minimumFractionDigits: 0,
-                      maximumFractionDigits: 0,
-                    }).format(discount_)}
-                  </span>
-                )}
-              </Button>
             </div>
 
-            <div className="flex flex-col justify-between py-2 sm:col-span-3">
+            <div className="w-full flex flex-col justify-between py-2 sm:col-span-3">
               <div className="text-start">
-                <h1 className="capitalize text-3xl font-bold border-b border-neutral-400 mb-2 gap-2">
-                  {item?.name}
+                <h1
+                  className={`${title1({
+                    color: "custom2",
+                    darkColor: "custom1",
+                  })} capitalize pe-4 max-xs:break-all`}
+                >
+                  {item?.label}
                 </h1>
+
+                <Divider className="mb-2" />
 
                 {item?.caracteristicas && (
                   <div className="flex flex-wrap gap-4">
@@ -129,7 +87,7 @@ export default function TableOthers({ items = [], handleAdd = null }) {
                     </p>
                   ))}
 
-                {item?.prices && (
+                {/* {item?.prices && (
                   <div className="flex flex-wrap gap-x-4">
                     {item?.prices
                       .slice(1, item.prices.length)
@@ -137,7 +95,7 @@ export default function TableOthers({ items = [], handleAdd = null }) {
                         <p key={price}>
                           <b className="capitalize break-words">
                             x{item.qtts[i + 1]}
-                            {item?.price_measure || ""}:{" "}
+                            {item?.price_measure || "u"}:{" "}
                           </b>
                           {Intl.NumberFormat("es-AR", {
                             style: "currency",
@@ -145,13 +103,108 @@ export default function TableOthers({ items = [], handleAdd = null }) {
                             minimumFractionDigits: 0,
                             maximumFractionDigits: 0,
                           }).format(price)}
+                          /{item?.price_measure || "u"}
                         </p>
                       ))}
                   </div>
-                )}
+                )} */}
 
                 {item?.description ? item?.description + "." : ""}
               </div>
+            </div>
+
+            <div className="w-full sm:col-span-5">
+              <AccordionPrices
+                className={`w-full sm:w-fit xs:place-self-end shadow-md${
+                  item?.noStock ? " line-through text-neutral-500" : ""
+                }`}
+                classNames={{ content: "mt-2 space-y-2" }}
+                title={
+                  <div className="w-full text-xl flex flex-col items-center gap-2 xs:flex-row xs:flex-wrap xs:gap-4 max-xs:break-all hover:text-custom1 transition-color">
+                    {discount_ && (
+                      <div className="flex gap-2 items-center">
+                        <span>
+                          {toPriceFormat(
+                            price * (discount_ ? 1 - discount_ : 1)
+                          )}
+                          {item?.price_measure && "/" + item?.price_measure}
+                        </span>
+
+                        <span
+                          className={spanDiscount({
+                            color:
+                              item?.discountToUse === "follow"
+                                ? "danger"
+                                : "secondary",
+                          })}
+                        >
+                          -
+                          {Intl.NumberFormat("es-AR", {
+                            style: "percent",
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0,
+                          }).format(discount_)}
+                        </span>
+                      </div>
+                    )}
+
+                    <span
+                      className={`${
+                        discount_ && "line-through text-neutral-500"
+                      }`}
+                    >
+                      {toPriceFormat(price)}
+                      {item?.price_measure && "/" + item?.price_measure}
+                    </span>
+
+                    <Button
+                      color={item?.noStock ? "default" : "warning"}
+                      variant="ghost"
+                      isIconOnly
+                      size="sm"
+                      className="hover:scale-110"
+                      onPress={() =>
+                        handleAdd && handleAdd(item.id, item.cartData)
+                      }
+                    >
+                      <FaCartPlus className="h-3/5 w-fit" />
+                    </Button>
+                  </div>
+                }
+              >
+                {item?.prices &&
+                  item.prices.map(
+                    (p, i) =>
+                      i > 0 && (
+                        <div
+                          key={i}
+                          className="text-xl flex flex-col items-center gap-2 max-xs:break-all hover:text-custom1 transition-colors xs:flex-row"
+                        >
+                          <span>
+                            {toPriceFormat(p)}/{price_measure}
+                          </span>
+
+                          <span>x{item?.qtts[i] + price_measure}</span>
+
+                          <Button
+                            color={item?.noStock ? "default" : "warning"}
+                            variant="ghost"
+                            isIconOnly
+                            size="sm"
+                            className="hover:scale-110"
+                            onPress={() => {
+                              if (handleAdd) {
+                                item.cartData.qtt = item.qtts[i];
+                                handleAdd(item.id, item.cartData);
+                              }
+                            }}
+                          >
+                            <FaCartPlus className="h-3/5 w-fit" />
+                          </Button>
+                        </div>
+                      )
+                  )}
+              </AccordionPrices>
             </div>
 
             {i !== items?.length - 1 && (

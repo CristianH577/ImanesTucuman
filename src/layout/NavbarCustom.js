@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
+import { motion } from "framer-motion";
 
-import { links, fontsValues, navItems } from "../consts/siteConfig";
+import { LINKS_SITES, FONTS_VALUES, NAV_ITEMS } from "../consts/siteConfig";
+
+import { useConfigs } from "../hooks/useConfigs";
 
 import {
   Navbar,
@@ -16,6 +19,7 @@ import {
   DropdownMenu,
   DropdownItem,
   Tooltip,
+  Spinner,
 } from "@nextui-org/react";
 
 import Logo from "./components/Logo";
@@ -23,31 +27,42 @@ import Redes from "../components/Redes";
 import MenuMovilDrawer from "./NavbarCustom/MenuMovilDrawer";
 import ThemeSwitch from "./NavbarCustom/ThemeSwitch";
 
+// const SearchDrawer = lazy(() => import("./NavbarCustom/SearchDrawer"));
+
 import { FaShoppingCart, FaWhatsapp } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
 import { IoMenu } from "react-icons/io5";
+import { SiSearxng } from "react-icons/si";
 
 function NavbarCustom({ cartLength, onOpenCart }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState("light");
-  const [font, setFont] = useState("md");
+  // const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const configs = useConfigs();
 
-  const handleTheme = (val) => {
-    if (val) {
-      document.body.classList?.remove(theme);
-      setTheme(val);
-      document.body.classList?.add(val);
-    }
+  const switchTheme = (e) => {
+    const theme_ = e ? "dark" : "light";
+    configs.set({ ...configs.value, theme: theme_ });
   };
-  const handleFont = () => {
-    let i = fontsValues.findIndex((e) => e.key === font);
-    i += 1;
-    if (i > fontsValues.length - 1) i = 0;
-    setFont(fontsValues[i].key);
-    document.documentElement.style.setProperty(
-      "--font-size",
-      fontsValues[i].value
-    );
+
+  const switchFont = (next = false) => {
+    const array = Object.keys(FONTS_VALUES);
+    let font_ = configs.value.font;
+    let fontSecondary_ = "small";
+
+    if (next) {
+      let i = array.findIndex((key) => key === configs.value.font);
+      i += 1;
+      if (i > array.length - 1) i = 0;
+      font_ = array[i];
+
+      if (font_ !== "md") fontSecondary_ = FONTS_VALUES[array[i - 1]];
+    }
+
+    configs.set({
+      ...configs.value,
+      font: font_,
+      fontSecondary: fontSecondary_,
+    });
   };
 
   return (
@@ -61,13 +76,26 @@ function NavbarCustom({ cartLength, onOpenCart }) {
       }}
     >
       <NavbarContent>
-        <li className="h-full">
+        <motion.li
+          className="h-full hover:text-secondary-700 text-custom1"
+          style={{
+            filter: "drop-shadow(1px 1px 1px rgba(0,0,0,.5))",
+          }}
+          // animate={{
+          //   scale: [1, 1.1, 1],
+          // }}
+          // transition={{
+          //   repeat: Infinity,
+          //   duration: 2,
+          //   ease: "linear",
+          // }}
+        >
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Cerrar menu" : "Abrir menu"}
-            className="md:hidden w-10 hover:text-secondary-700 transition-all text-custom1"
+            className="md:hidden w-10 transition-all"
             icon={<IoMenu className="h-full w-fit" />}
           />
-        </li>
+        </motion.li>
 
         <NavbarItem>
           <NavbarBrand className="hidden xs:block">
@@ -91,14 +119,11 @@ function NavbarCustom({ cartLength, onOpenCart }) {
       </NavbarContent>
 
       <NavbarContent className="hidden md:flex gap-4" justify="center">
-        {navItems.map((item) => (
+        {NAV_ITEMS.map((item) => (
           <NavbarItem key={item.id}>
             <Link
               href={`#${item.id}`}
-              className="hover:scale-110 transition-all capitalize text-custom1"
-              style={{
-                textShadow: "1px 1px 1px black",
-              }}
+              className="hover:scale-110 transition-all capitalize text-custom2 dark:text-custom1"
             >
               {item.label}
             </Link>
@@ -119,7 +144,7 @@ function NavbarCustom({ cartLength, onOpenCart }) {
         <NavbarItem>
           <Dropdown
             classNames={{
-              content: "min-w-0 p-0 border-2 border-custom1-5 overflow-hidden",
+              content: "min-w-0 p-0 border-2 border-custom1-2 overflow-hidden",
             }}
           >
             <DropdownTrigger>
@@ -142,11 +167,8 @@ function NavbarCustom({ cartLength, onOpenCart }) {
             >
               <DropdownItem textValue="theme">
                 <ThemeSwitch
-                  isSelected={theme === "dark"}
-                  onValueChange={(e) => {
-                    const theme_ = e ? "dark" : "light";
-                    handleTheme(theme_);
-                  }}
+                  isSelected={configs.value.theme}
+                  onValueChange={switchTheme}
                 />
               </DropdownItem>
 
@@ -154,9 +176,9 @@ function NavbarCustom({ cartLength, onOpenCart }) {
                 <Button
                   isIconOnly
                   className="uppercase font-bold bg-transparent w-full"
-                  onPress={handleFont}
+                  onPress={() => switchFont(true)}
                 >
-                  {font}
+                  {configs.value.font}
                 </Button>
               </DropdownItem>
             </DropdownMenu>
@@ -166,7 +188,7 @@ function NavbarCustom({ cartLength, onOpenCart }) {
         <NavbarItem>
           <Tooltip
             content="Carrito"
-            className="border-2 border-custom1-5"
+            className="border-2 border-custom1-2"
             classNames={{
               content: "dark:text-white text-center font-semibold",
             }}
@@ -192,9 +214,20 @@ function NavbarCustom({ cartLength, onOpenCart }) {
           </Tooltip>
         </NavbarItem>
 
+        {/* <NavbarItem>
+          <Button
+            isIconOnly
+            variant=""
+            className="hover:scale-110 text-custom1 hover:text-custom1-3 transition-all"
+            onPress={() => setIsSearchOpen(!isSearchOpen)}
+          >
+            <SiSearxng className="text-2xl" />
+          </Button>
+        </NavbarItem> */}
+
         <NavbarItem>
           <Link
-            href={links?.whatsapp}
+            href={LINKS_SITES?.whatsapp}
             target="_blank"
             className="flex items-center cursor-pointer hover:scale-110 transition-all"
             aria-label="Consulte por Whatsapp"
@@ -205,10 +238,25 @@ function NavbarCustom({ cartLength, onOpenCart }) {
       </NavbarContent>
 
       <MenuMovilDrawer
-        navItems={navItems}
         isOpen={isMenuOpen}
         onOpenChange={() => setIsMenuOpen(!isMenuOpen)}
+        NAV_ITEMS={NAV_ITEMS}
       />
+
+      {/* {isSearchOpen && (
+        <Suspense
+          fallback={
+            <span className="absolute w-full h-full flex items-center justify-center bg-black/50 inset-0 z-[999]">
+              <Spinner color="secondary" />
+            </span>
+          }
+        >
+          <SearchDrawer
+            isOpen={isSearchOpen}
+            onOpenChange={() => setIsSearchOpen(!isSearchOpen)}
+          />
+        </Suspense>
+      )} */}
     </Navbar>
   );
 }

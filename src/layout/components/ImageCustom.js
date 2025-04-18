@@ -18,7 +18,7 @@ export default function ImageCustom({ src, alt, className, ...props }) {
       src={isInView && src ? src : UnknowImg}
       loading="lazy"
       decoding="async"
-      className={"xs:min-h-[150px] " + (className || null)}
+      className={"" + (className || null)}
       alt={alt || "Imagen desconocida"}
       {...props}
       classNames={{

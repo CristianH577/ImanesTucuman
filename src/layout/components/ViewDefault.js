@@ -19,12 +19,12 @@ function ViewDefault({ children, disabledInView, ...props }) {
         props?.className ? props?.className : ""
       }`}
       style={{
-        minHeight: isInView_ ? "" : "100vh",
         ...(props?.style || {}),
       }}
       variants={{
-        hidden: {},
+        hidden: { minHeight: "100vh" },
         visible: {
+          minHeight: "none",
           transition: {
             delayChildren: 0.1,
             staggerChildren: 0.2,
@@ -32,9 +32,9 @@ function ViewDefault({ children, disabledInView, ...props }) {
         },
       }}
       initial="hidden"
-      animate={isInView_ && "visible"}
+      animate={isInView_ ? "visible" : "hidden"}
     >
-      {isInView_ && props?.title && (
+      {props?.title && (
         <TitleCustom
           title={props?.title}
           animation={{

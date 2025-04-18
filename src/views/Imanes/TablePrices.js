@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/react";
 
 import { TbHandClick } from "react-icons/tb";
 
-import { dbImanesPrices } from "../../consts/dbs";
+import { DB_IMANES_PRICES } from "../../consts/dbs";
 
 function TablePrices({
   cat,
@@ -43,19 +43,23 @@ function TablePrices({
         <thead className="border-b-3">
           <tr>
             <td className="py-2 px-4">
-              <div className="flex items-center justify-center gap-1">
-                <TbHandClick className="text-secondary-700" />
+              <p>
+                <span className="inline-block align-middle">
+                  <TbHandClick className="text-secondary-700" />
+                </span>
                 Medida
-              </div>
+              </p>
               {formas_data?.[cat]?.medidas}(mm)
             </td>
 
             <td colSpan={4} className="border-s-3">
-              <div className="flex items-end justify-center gap-1 text-3xl">
-                <TbHandClick className="text-secondary-700 self-center" />
+              <p>
+                <span className="inline-block align-middle">
+                  <TbHandClick className="text-secondary-700" />
+                </span>
                 Precio(xU)
-                <span className="text-sm">Unidades minimas</span>
-              </div>
+                <span className="font-size-secondary">Unidades minimas</span>
+              </p>
             </td>
           </tr>
         </thead>
@@ -84,7 +88,7 @@ function TablePrices({
                 </td>
 
                 {[1, 2, 3, 4].map((key, i) => {
-                  const price = dbImanesPrices?.[cat]?.[size]?.prices?.[i];
+                  const price = DB_IMANES_PRICES?.[cat]?.[size]?.prices?.[i];
                   const umin = priceTableCategories?.[info?.qtts_cat]?.[i];
                   const discount_ = discounts
                     ? discounts?.[info?.catPrices] || 0
@@ -136,7 +140,7 @@ function TablePrices({
                               }).format(discount_)}
                             </span>
 
-                            <span className="text-sm">{umin}u</span>
+                            <span className="font-size-secondary">{umin}u</span>
                           </div>
                         </div>
                       ) : (
@@ -147,7 +151,7 @@ function TablePrices({
                             minimumFractionDigits: 0,
                             maximumFractionDigits: 0,
                           }).format(price)}
-                          <span className="text-sm">{umin}u</span>
+                          <span className="font-size-secondary">{umin}u</span>
                         </div>
                       )}
                     </td>
