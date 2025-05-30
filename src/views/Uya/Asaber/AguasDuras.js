@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import ImageCustom from "../../../layout/components/ImageCustom";
+import ImageCustom from "../../../components/ImageCustom";
 
 export default function AguasDuras() {
   const contextImgs = require.context(
@@ -76,11 +76,13 @@ export default function AguasDuras() {
       title: "Que problemas causan?",
       text: "Generan sarro que puede acumularse en las cañerías generando obstrucciones y corrosión que a su vez favorecen a la aparición de membranas orgánicas que pueden albergar gérmenes y bacterias",
       src: contextImgs("./1.webp"),
+      alt: "Tubo de cañeria con sarro",
     },
     {
       title: "Que hacen las sales de polifosfato?",
       text: "Las sales inhiben la formación de sarro previniendo las obstrucciones y reduciendo la corrosión alargando la vida útil de la instalación de agua. Además no modifican el sabor ni el olor del agua",
       src: contextImgs("./2.webp"),
+      alt: "Sales de polifosfato",
     },
     {
       title: "Como se usan?",
@@ -96,16 +98,16 @@ export default function AguasDuras() {
       ),
       img: (
         <span className="grid grid-cols-1 justify-items-center gap-4 max-w-xs xs:grid-cols-2 xs:items-center drop-shadow-custom">
-          <ImageCustom src={contextImgs("./3.webp")} />
+          <ImageCustom alt="Filtro largo" src={contextImgs("./3.webp")} />
 
-          <ImageCustom src={contextImgs("./4.webp")} />
+          <ImageCustom alt="Filtro boya" src={contextImgs("./4.webp")} />
         </span>
       ),
     },
   ];
 
   return (
-    <ol className="sm:text-start">
+    <ol className="sm:text-start prose dark:prose-invert">
       {items.map((item, i) => (
         <li
           key={i}
@@ -125,6 +127,7 @@ export default function AguasDuras() {
               src={item.src}
               className="w-full max-w-xs"
               classNames={{ wrapper: "w-full drop-shadow-custom" }}
+              alt={item.alt}
             />
           )}
 

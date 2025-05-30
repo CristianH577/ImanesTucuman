@@ -1,187 +1,155 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
+
+import { toPriceFormat } from "../../libs/functions";
 
 import { Button } from "@nextui-org/react";
 
-import { TbHandClick } from "react-icons/tb";
+import ButtonAddCart from "../../components/ButtonAddCart";
 
-import { DB_IMANES_PRICES } from "../../consts/dbs";
+import { GrCompare } from "react-icons/gr";
+import { scrollStyle } from "../../libs/tvs";
 
-function TablePrices({
-  cat,
-  setComparative,
-  handleAdd,
-  formas_data,
-  data,
-  showMore,
+const rowsPerView = 10;
+
+export default function TablePrices({
+  setItemToComparate = () => {},
+  tableAriaLabel = "",
+  measureFormat = "",
+  rows = [],
+  cart = {},
+  handleAdd = () => {},
 }) {
-  const discounts = false;
-  // {
-  //   8: 0.2,
-  //   7: 0.2,
-  //   6: 0.15,
-  //   5: 0.1,
-  //   4: 0.05,
-  // };
-  const priceTableCategories = {
-    1: [1, 20, 50, 100],
-    2: [1, 10, 25, 50],
-    3: [1, 5, 15, 30],
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  const [totalVisibleRows, setTotalVisibleRows] = useState(rowsPerView);
+  const visibleRows = rows.slice(0, totalVisibleRows);
+
+  const showMore = () => {
+    const total_ = totalVisibleRows + rowsPerView;
+    setTotalVisibleRows(total_);
   };
 
-  const hover_class =
-    "hover:text-secondary-700 hover:scale-105 cursor-pointer transition-all";
+  useEffect(() => {
+    if (isInView) showMore();
+  }, [isInView]);
 
   return (
     <div
       data-slot="table-container"
-      className="pb-4 w-full overflow-x-auto scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6"
+      className={"w-full overflow-x-auto " + scrollStyle}
     >
       <table
-        aria-label={`Tabla de precios: ${formas_data?.[cat]?.label}`}
-        className="w-full min-w-[750px] max-w-[900px] text-xl xs:text-2xl font-semibold lg:place-self-center"
+        aria-label={tableAriaLabel || null}
+        className="w-full sm:min-w-[750px] text-tert table- max-sm:border-separate border-spacing-y-3"
       >
-        <thead className="border-b-3">
+        <thead className="border-b-3 max-sm:hidden">
           <tr>
-            <td className="py-2 px-4">
-              <p>
-                <span className="inline-block align-middle">
-                  <TbHandClick className="text-secondary-700" />
-                </span>
-                Medida
-              </p>
-              {formas_data?.[cat]?.medidas}(mm)
-            </td>
+            <th className="p-2 border-e-3">
+              <p>Medida</p>
+              {measureFormat || null}
+            </th>
 
-            <td colSpan={4} className="border-s-3">
+            <th colSpan={4} className="p-2">
               <p>
-                <span className="inline-block align-middle">
-                  <TbHandClick className="text-secondary-700" />
-                </span>
                 Precio(xU)
                 <span className="font-size-secondary">Unidades minimas</span>
               </p>
-            </td>
+            </th>
           </tr>
         </thead>
 
         <tbody>
-          {data?.rows?.map(([size, info]) => {
-            const noStock = info?.noStock || false;
+          {visibleRows?.map((item) => {
+            const noStock = item?.noStock || false;
+            const inCart = item.id in cart;
+
             return (
-              <motion.tr
-                key={size}
-                className={`text-center${
-                  noStock
-                    ? " line-through text-neutral-500"
-                    : " even:text-custom1"
-                }`}
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 },
-                }}
+              <tr
+                key={item.id}
+                className="group hover:font-semibold hover:bg-secondary/30 data-[incart=false]:data-[nostock=true]:bg-divider data-[incart=true]:!bg-success/30 max-sm:grid max-xs:grid-cols-1 max-sm:grid-cols-2 max-sm:border-3 max-sm:rounded-lg max-sm:mb-3 sm:even:text-custom2-10 sm:dark:even:text-custom1"
+                data-nostock={noStock}
+                data-incart={inCart}
               >
-                <td
-                  className={`${hover_class}`}
-                  onClick={() => setComparative({ form: cat, size: size })}
-                >
-                  {size.replace("_", " ")}
+                <td className="px-2 py-1 xs:py-2 whitespace-nowrap xs:col-span-2 max-sm:border-b-3 sm:border-e-3 sm:text-start">
+                  <div className="flex gap-1 xs:gap-2 justify-end items-center w-full max-xs:flex-col sm:flex-row-reverse break-all">
+                    <a
+                      href={"#search/" + item.id}
+                      title="Ver producto"
+                      className="max-sm:whitespace-normal"
+                    >
+                      {item.label}
+                    </a>
+
+                    <Button
+                      color="secondary"
+                      isIconOnly
+                      className="shadow-md"
+                      title="Ver referencia de tamaños"
+                      onPress={() => setItemToComparate(item)}
+                    >
+                      <GrCompare size={22} />
+                    </Button>
+                  </div>
                 </td>
 
-                {[1, 2, 3, 4].map((key, i) => {
-                  const price = DB_IMANES_PRICES?.[cat]?.[size]?.prices?.[i];
-                  const umin = priceTableCategories?.[info?.qtts_cat]?.[i];
-                  const discount_ = discounts
-                    ? discounts?.[info?.catPrices] || 0
-                    : 0;
+                {item?.price_data?.prices_qtts &&
+                  Object.entries(item.price_data.prices_qtts).map(
+                    ([qtt, price]) => {
+                      const inCart_qtt =
+                        inCart && cart[item.id].qtt === Number(qtt);
+                      return (
+                        <td
+                          key={`precio_x${qtt}`}
+                          className="px-2 py-1 xs:py-2"
+                        >
+                          <div className="flex flex-col xs:flex-row sm:flex-col gap-1 xs:gap-2 justify-end items-center">
+                            <p className="max-sm:break-all">
+                              {toPriceFormat(price)}
+                              <span className="font-size-secondary">
+                                ({qtt}u)
+                              </span>
+                            </p>
 
-                  return (
-                    <td
-                      key={`precio_${key}`}
-                      className={`p-2 ${hover_class} ${
-                        i === 0 && "border-s-3 ps-4"
-                      }`}
-                      onClick={() =>
-                        handleAdd(cat, size, {
-                          qtt: umin,
-                          discounts: {
-                            follow: discount_,
-                          },
-                        })
-                      }
-                    >
-                      {i === 0 && discount_ ? (
-                        <div className="flex items-center justify-center gap-1">
-                          <div className="flex gap-1">
-                            <span className="line-through text-neutral-300">
-                              {Intl.NumberFormat("es-AR", {
-                                style: "currency",
-                                currency: "ARS",
-                                minimumFractionDigits: 0,
-                                maximumFractionDigits: 0,
-                              }).format(price)}
-                            </span>
+                            <ButtonAddCart
+                              size="sm"
+                              inCart={inCart_qtt}
+                              itemData={item}
+                              handleAdd={() => {
+                                let qtt_ = 0;
+                                if (!inCart_qtt) qtt_ = Number(qtt);
+                                item.qtt = qtt_;
 
-                            {Intl.NumberFormat("es-AR", {
-                              style: "currency",
-                              currency: "ARS",
-                              minimumFractionDigits: 0,
-                              maximumFractionDigits: 0,
-                            }).format(price * (1 - discount_))}
+                                handleAdd(item);
+                              }}
+                            />
                           </div>
-
-                          <div className="text-xs">
-                            <span className="text-yellow-400 font-semibold">
-                              -
-                              {Intl.NumberFormat("es-AR", {
-                                style: "percent",
-
-                                minimumFractionDigits: 0,
-                                maximumFractionDigits: 0,
-                              }).format(discount_)}
-                            </span>
-
-                            <span className="font-size-secondary">{umin}u</span>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="flex items-end justify-center">
-                          {Intl.NumberFormat("es-AR", {
-                            style: "currency",
-                            currency: "ARS",
-                            minimumFractionDigits: 0,
-                            maximumFractionDigits: 0,
-                          }).format(price)}
-                          <span className="font-size-secondary">{umin}u</span>
-                        </div>
-                      )}
-                    </td>
-                  );
-                })}
-              </motion.tr>
+                        </td>
+                      );
+                    }
+                  )}
+              </tr>
             );
           })}
 
           <tr>
-            <td className="text-center">
-              {data?.rows?.length < data?.total && (
+            <td className="pt-4">
+              {totalVisibleRows < rows.length && (
                 <Button
+                  ref={ref}
                   size="lg"
-                  className="m-2 bg-custom1-2 text-custom2--2 font-bold text-xl hover:scale-110"
-                  onPress={() => showMore(cat)}
-                  style={{
-                    filter: "drop-shadow(0px 0px 8px black )",
-                  }}
+                  className="bg-custom1-2 text-custom2--2 font-bold text-xl hover:scale-105"
+                  title="Mostrar mas"
+                  onPress={() => showMore()}
                 >
                   +Mas
                 </Button>
               )}
             </td>
-            <td colSpan={4}></td>
           </tr>
         </tbody>
       </table>
     </div>
   );
 }
-
-export default TablePrices;

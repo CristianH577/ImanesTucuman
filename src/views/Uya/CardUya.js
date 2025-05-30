@@ -1,11 +1,11 @@
-import ImageCustom from "../../layout/components/ImageCustom";
+import ImageCustom from "../../components/ImageCustom";
 
 export default function CardUya({
   src = null,
   text = "",
-  className,
-  classNames,
-  alt,
+  className = "",
+  classNames = {},
+  alt = "",
   id = null,
   contentPlus = null,
   widht = 300,
@@ -27,7 +27,7 @@ export default function CardUya({
         }
         classNames={{
           wrapper:
-            "border-5 border-divider shadow-md overflow-hidden" +
+            "border-5 border-divider overflow-hidden" +
             (classNames?.wrapper ? ` ${classNames.wrapper}` : ""),
         }}
         widht={widht}

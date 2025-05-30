@@ -2,27 +2,8 @@ import { tv } from "tailwind-variants";
 
 import { button as buttonStyles } from "@nextui-org/theme";
 
-export const spanDiscount = tv({
-  base: "h-fit font-size-secondary bg-radial text-custom1-5 font-bold rounded-xl px-2 shadow-md",
-  variants: {
-    color: {
-      secondary:
-        "from-secondary-600 to-secondary dark:from-secondary dark:to-secondary-300",
-      danger: "from-danger-600 to-danger dark:from-danger dark:to-danger-300",
-    },
-  },
-  defaultVariants: {
-    color: "secondary",
-  },
-  compoundVariants: [
-    {
-      color: ["secondary", "danger"],
-    },
-  ],
-});
-
 export const title = tv({
-  base: "uppercase font-[calvera] drop-shadow-custom",
+  base: "uppercase font-[calvera]",
   variants: {
     size: {
       sm: "text-2xl sm:text-3xl lg:text-5xl",
@@ -30,7 +11,16 @@ export const title = tv({
     },
     color: {
       custom1: "from-custom1 to-custom1-3",
-      custom2: "from-custom2-5 to-custom2-10",
+      custom2: "from-custom2-8 to-custom2-10/80",
+    },
+    shadow: {
+      sm: "drop-shadow-sm",
+      md: "drop-shadow-md",
+      lg: "drop-shadow-lg",
+      custom: "drop-shadow-custom",
+    },
+    darkColor: {
+      custom1: "dark:from-custom1 dark:to-custom1-3",
     },
   },
   defaultVariants: {
@@ -57,7 +47,7 @@ export const title1 = tv({
       pink: "from-[#FF72E1] to-[#F54C7A]",
       foreground: "dark:from-[#FFFFFF] dark:to-[#4B4B4B]",
       custom1: "from-custom1 to-custom1-3",
-      custom2: "from-custom2-5 to-custom2-10/80",
+      custom2: "from-custom2-8 to-custom2-10/80",
     },
     darkColor: {
       custom1: "dark:from-custom1 dark:to-custom1-3",
@@ -92,16 +82,16 @@ export const title1 = tv({
   ],
 });
 
-export const subtitle = tv({
-  base: "my-2 text-lg lg:text-xl text-default-400 dark:text-default-600",
-});
-
 export const buttonCustom = tv({
   extend: buttonStyles,
   variants: {
     color: {
+      custom1: "bg-custom1 hover:bg-custom1-2 from-custom1 to-custom1-3",
+      custom2: "bg-custom2 hover:bg-custom2-2 from-custom2 to-custom2-10",
+    },
+    darkColor: {
       custom1:
-        "bg-custom1 text-white hover:bg-bustom1-2 from-custom1 to-custom1-3",
+        "dark:text-black dark:bg-custom1 dark:hover:bg-custom1-2 dark:from-custom1 dark:to-custom1-5",
     },
     skew: {
       false: "",
@@ -110,10 +100,8 @@ export const buttonCustom = tv({
     variant: {
       degree: "bg-gradient-to-tr hover:to-50%",
     },
-    shadow: {
-      sm: "shadow-sm",
-      md: "shadow-md",
-      lg: "shadow-lg",
-    },
   },
 });
+
+export const scrollStyle =
+  "scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-2 scrollbar-h-2 sm:scrollbar-w-3 sm:scrollbar-h-3 hover:scrollbar-thumb-custom1-6";

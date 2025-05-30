@@ -4,12 +4,8 @@ import { IoIosSunny, IoMdMoon } from "react-icons/io";
 
 export default function ThemeSwitch({
   isSelected = false,
-  onValueChange = null,
+  onValueChange = () => {},
 }) {
-  const handleSwitch = (e) => {
-    onValueChange && onValueChange(e);
-  };
-
   return (
     <Switch
       name="theme-swith"
@@ -21,7 +17,7 @@ export default function ThemeSwitch({
         endContent: "text-custom1-10",
         wrapper: "bg-custom1 group-data-[selected=true]:bg-custom2-10",
       }}
-      onValueChange={handleSwitch}
+      onValueChange={onValueChange}
     />
   );
 }

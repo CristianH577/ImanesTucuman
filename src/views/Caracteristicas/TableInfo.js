@@ -1,133 +1,145 @@
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
+
+import { scrollStyle } from "../../libs/tvs";
+
 import { Button } from "@nextui-org/react";
 
-function TableInfo({ cat, formas_data, data, showMore }) {
-  const columns = [
-    {
-      key: "medida",
-      label: (
-        <>
-          Medida
-          <br />
-          (mm)
-        </>
-      ),
-    },
-    {
-      key: "peso",
-      label: (
-        <>
-          Peso
-          <br />
-          (g)
-        </>
-      ),
-    },
-    {
-      key: "grade",
-      label: (
-        <>
-          Grado
-          <br />N
-        </>
-      ),
-    },
-    {
-      key: "fuerza",
-      label: (
-        <>
-          Fuerza
-          <br />
-          (kg)
-        </>
-      ),
-    },
-    {
-      key: "gauss",
-      label: (
-        <>
-          Campo
-          <br />
-          (Gauss)
-        </>
-      ),
-    },
-  ];
+const columns = [
+  {
+    key: "label",
+    label: "Medida",
+  },
+  {
+    key: "peso",
+    label: "Peso",
+    measure: "g",
+  },
+  {
+    key: "fuerza_experimental",
+    label: "F. exp.",
+  },
+  {
+    key: "grade",
+    label: "Grado",
+  },
+  {
+    key: "fuerza",
+    label: "Fuerza",
+    measure: "kg",
+  },
+  {
+    key: "gauss",
+    label: "Campo",
+    measure: "gauss",
+  },
+];
+
+function TableInfo({ tableAriaLabel = "", measureFormat = "", rows = [] }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  const rowsPerView = 10;
+  const [totalVisibleRows, setTotalVisibleRows] = useState(rowsPerView);
+  const visibleRows = rows.slice(0, totalVisibleRows);
 
   const makeCell = (row, key) => {
-    const val = row[1]?.[key];
+    const val = row?.[key] || "";
+    const caract = row?.fuerza_N;
 
     switch (key) {
-      case "medida":
-        return row[0].replace("_", " ");
+      case "label":
+        return (
+          <a
+            href={"#search/" + row.id}
+            title="Ver producto"
+            className="max-sm:whitespace-normal"
+          >
+            {val}
+          </a>
+        );
       case "peso":
-        return val ? `${val}g` : "-";
+        return row?.measures?.peso || "-";
+      case "fuerza_experimental":
+        return row?.info?.fuerza_experimental || "-";
       case "grade":
-        return row[1]?.N
-          ? Object.keys(row[1]?.N).map((g, i) => <p key={i}>N{g}</p>)
-          : 35;
+        return caract
+          ? Object.keys(caract).map((g, i) => <p key={i}>N{g}</p>)
+          : "-";
       case "fuerza":
       case "gauss":
-        return row[1]?.N
-          ? Object.values(row[1]?.N).map((v, i) => (
-              <div key={i}>
-                {v?.[key]}
-                {key === "fuerza" && "kg"}
-              </div>
-            ))
+        return caract
+          ? Object.values(caract).map((v, i) => <div key={i}>{v?.[key]}</div>)
           : "-";
 
       default:
-        return val;
+        return val ? val : "-";
     }
   };
+
+  const showMore = () => {
+    const total_ = totalVisibleRows + rowsPerView;
+    setTotalVisibleRows(total_);
+  };
+
+  useEffect(() => {
+    if (isInView) showMore();
+  }, [isInView]);
 
   return (
     <div
       data-slot="table-container"
-      className="pb-4 w-full overflow-x-auto scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6"
+      className={`w-full overflow-x-auto ${scrollStyle}`}
     >
       <table
-        aria-label={`Tabla de precios: ${formas_data?.[cat]?.label}`}
-        className="w-full max-w-[900px] text-[20px] xs:text-[24px] font-semibold min-w-[750px]"
+        aria-label={tableAriaLabel || null}
+        className="w-full sm:min-w-[750px] max-w-[900px] lg:place-self-center table-dinamic max-sm:border-separate border-spacing-y-3"
       >
         <thead className="border-b-3">
           <tr>
             {columns.map((col) => (
-              <td key={col?.key}>{col?.label}</td>
+              <th key={col.key} className="p-2">
+                {col?.label}
+                {col?.measure ? <div>({col?.measure})</div> : null}
+              </th>
             ))}
           </tr>
         </thead>
 
         <tbody>
-          {data?.rows?.map((row, i) => (
+          {visibleRows.map((row) => (
             <tr
-              key={row?.[0]}
-              className="text-center even:text-custom1 border-t"
+              key={row.id}
+              className="sm:even:text-custom2-10 sm:dark:even:text-custom1 group hover:font-semibold sm:hover:bg-secondary/30"
             >
               {columns.map((col) => (
-                <td key={`${row?.[0]}_${col?.key}`} className="py-2">
-                  {makeCell(row, col?.key)}
+                <td
+                  key={`${row?.[0]}_${col?.key}`}
+                  data-label={
+                    col?.label + (col?.measure ? `(${col?.measure})` : "")
+                  }
+                  className="p-2 max-sm:first:border-y-3 max-sm:last:border-b-3 max-sm:border-x-3 max-sm:last:rounded-b-lg max-sm:first:rounded-t-lg whitespace-nowrap"
+                >
+                  {makeCell(row, col.key)}
                 </td>
               ))}
             </tr>
           ))}
 
           <tr>
-            <td colSpan={1} className="text-center">
-              {data?.rows?.length < data?.total && (
+            <td className="pt-4">
+              {totalVisibleRows < rows.length && (
                 <Button
+                  ref={ref}
                   size="lg"
-                  className="m-2 bg-custom1-2 text-custom2--2 font-bold text-xl hover:scale-110"
-                  onPress={() => showMore(cat)}
-                  style={{
-                    filter: "drop-shadow(0px 0px 8px black )",
-                  }}
+                  className="bg-custom1-2 text-custom2--2 font-bold text-xl hover:scale-105"
+                  title="Mostrar mas"
+                  onPress={() => showMore()}
                 >
                   +Mas
                 </Button>
               )}
             </td>
-            <td colSpan={4}></td>
           </tr>
         </tbody>
       </table>

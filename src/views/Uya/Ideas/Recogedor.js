@@ -1,4 +1,4 @@
-import ImageCustom from "../../../layout/components/ImageCustom";
+import ImageCustom from "../../../components/ImageCustom";
 import LinkToFont from "../components/LinkToFont";
 
 import {

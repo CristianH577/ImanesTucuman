@@ -4,7 +4,7 @@ import { title1 } from "../../libs/tvs";
 
 import { Link } from "@nextui-org/react";
 
-import ImageCustom from "../../layout/components/ImageCustom";
+import ImageCustom from "../../components/ImageCustom";
 
 import { SiFacebook, SiGoogleforms, SiGooglemaps } from "react-icons/si";
 
@@ -15,19 +15,19 @@ export default function Opiniones() {
 
   const linksObj = [
     {
-      href: context?.LINKS_SITES?.googlemaps,
+      href: context?.links?.googlemaps,
       color: "success",
       label: "Google Maps",
       icon: <SiGooglemaps />,
     },
     {
-      href: context?.LINKS_SITES?.facebook,
+      href: context?.links?.facebook,
       color: "primary",
       label: "Facebook",
       icon: <SiFacebook />,
     },
     {
-      href: context?.LINKS_SITES?.["form_encuesta-20250109"],
+      href: context?.links?.["form_encuesta-20250109"],
       color: "secondary",
       label: "Encuesta",
       icon: <SiGoogleforms />,
@@ -38,17 +38,17 @@ export default function Opiniones() {
     <section className="flex flex-col items-center sm:flex-row gap-4 sm:gap-8 w-full max-w-[900px]">
       <ImageCustom
         src={imgOpinions}
-        shadow="sm"
         className="border-3 border-divider"
         classNames={{ wrapper: "w-full" }}
+        alt="Imagen de opiniones"
+        width={300}
       />
 
-      <article className="max-lg:text-center flex flex-col items-center gap-4">
-        <p className={title1({ color: "yellow", size: "sm" })}>
-          {" "}
+      <article className="text-center prose dark:prose-invert">
+        <h2 className={title1({ color: "custom2", darkColor: "custom1" })}>
           ¡Su opinión es importante para nosotros!
-        </p>
-        <span>⭐⭐⭐⭐⭐</span>
+        </h2>
+        <div>⭐⭐⭐⭐⭐</div>
 
         <p>
           Ayúdenos a mejorar y ofrecerle la mejor experiencia posible. Dedique
@@ -56,7 +56,7 @@ export default function Opiniones() {
           nuestra breve encuesta.
         </p>
 
-        <ol className="text-start">
+        <ol className="list-none text-start">
           <li>✅ Su opinion nos ayuda a crecer</li>
           <li>✅ Mejoramos gracias a usted</li>
           <li>✅ Es rápido y sencillo</li>
@@ -67,7 +67,7 @@ export default function Opiniones() {
           experiencia. Lo leemos con atención! 📢💬
         </p>
 
-        <ol className="font-bold max-lg:space-y-2 lg:flex items-center gap-4 justify-center">
+        <ol className="list-none">
           {linksObj.map((link) => (
             <li key={link.label}>
               <Link

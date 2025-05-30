@@ -1,20 +1,27 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { scrollTop } from "../libs/functions";
+import { scrollToBottom, scrollToTop } from "../libs/functions";
 
-import { Button, Card, Divider, Image } from "@nextui-org/react";
+import {
+  Button,
+  ButtonGroup,
+  Card,
+  Divider,
+  Image,
+  Link,
+} from "@nextui-org/react";
 
-import Logo from "./components/Logo";
+import Logo from "../components/Logo";
 import Redes from "../components/Redes";
-import LinkCustom from "../layout/components/LinkCustom";
+import LinkCustom from "../components/LinkCustom";
 
 import { FaMapMarkedAlt, FaRegCalendar, FaWhatsapp } from "react-icons/fa";
 import { SiGoogleforms, SiGooglemaps } from "react-icons/si";
-import { LuArrowBigUpDash } from "react-icons/lu";
+import { LuArrowBigDownDash, LuArrowBigUpDash } from "react-icons/lu";
 
 import qr from "../assets/footer/wp.webp";
 
-function Footer({ LINKS_SITES }) {
+function Footer({ links = {} }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { threshold: 0.2, once: true });
 
@@ -35,7 +42,7 @@ function Footer({ LINKS_SITES }) {
           Lunes a Sábados(
           <LinkCustom
             href={
-              LINKS_SITES?.whatsapp +
+              links?.whatsapp +
               "&text=Hola. Quiero consultar por los horarios de atención."
             }
             title="Consultar horarios por Wharsapp"
@@ -50,9 +57,9 @@ function Footer({ LINKS_SITES }) {
   ];
 
   const sections = [
+    { label: "Fotos", href: links?.fotos, isExternal: true },
     { label: "Ubicacion", href: "#faqs?view=ubicacion" },
     { label: "Opiniones", href: "#?view=opiniones" },
-    { label: "Fotos", href: "#imanes?view=fotos" },
     { label: "Consideraciones", href: "#faqs" },
   ];
 
@@ -60,39 +67,53 @@ function Footer({ LINKS_SITES }) {
     <footer
       id="footer"
       ref={ref}
-      className="bg-gradient-to-b from-custom2-4 to-custom2 text-white w-full flex flex-col items-center px-2 pt-20 pb-4 sm:pt-4 gap-4 shadow-inner relative min-h-fit mt-auto"
+      className="bg-gradient-to-b from-custom2-4 to-custom2 text-white w-full flex flex-col items-center px-2 py-4 gap-4 shadow-inner min-h-fit mt-auto"
     >
+      <ButtonGroup className="absolute bottom-2 right-6 z-20">
+        <Button
+          isIconOnly
+          title="Ir arriba"
+          color="warning"
+          variant="ghost"
+          onPress={scrollToBottom}
+        >
+          <LuArrowBigDownDash className="h-4/5 w-full" />
+        </Button>
+        <Button
+          isIconOnly
+          title="Ir arriba"
+          color="warning"
+          variant="ghost"
+          onPress={scrollToTop}
+        >
+          <LuArrowBigUpDash className="h-4/5 w-full" />
+        </Button>
+      </ButtonGroup>
+
       <Redes
         className={"my-4 px-2 gap-6"}
-        classNames={{ link: "text-4xl text-neutral-300" }}
+        classNames={{
+          link: "text-4xl text-neutral-300 hover:text-custom1",
+        }}
       />
 
       {isInView && (
         <>
-          <Button
-            isIconOnly
-            title="Ir arriba"
-            className="absolute top-4 sm:right-4 sm:top-7 shadow-medium bg-custom1 border-3 border-divider"
-            onPress={scrollTop}
-          >
-            <LuArrowBigUpDash className="w-full h-fit" />
-          </Button>
-
           <Divider className="self-center w-4/6 bg-neutral-500/80" />
 
-          <Logo id="logo_footer" className="w-fit max-h-64 place-self-center" />
+          <Logo id="footer_logo" className="w-fit max-h-64 place-self-center" />
 
           <div className="text-xl max-w-[500px] text-center font-semibold bg-custom2-10/50 p-4 rounded-lg mb-2 shadow-md">
             Para mejorar, lo invitamos a realizar una breve{" "}
             <LinkCustom
-              href={LINKS_SITES?.["form_encuesta-20250109"]}
+              href={links?.["form_encuesta-20250109"]}
               title="Link a encuesta"
               icon={<SiGoogleforms />}
               text="Encuesta"
             />{" "}
             sobre el sitio o a dejar una reseña publica en{" "}
             <LinkCustom
-              href={LINKS_SITES?.googlemaps}
+              href={links?.googlemaps}
               title="Link a Google Maps"
               icon={<SiGooglemaps />}
               text="Google Maps"
@@ -113,7 +134,7 @@ function Footer({ LINKS_SITES }) {
                 title="Ir al chat de Whatsapp"
                 onPress={() => {
                   const newWindow = window.open(
-                    LINKS_SITES?.whatsapp,
+                    links?.whatsapp,
                     "_blank",
                     "noopener,noreferrer"
                   );
@@ -177,16 +198,19 @@ function Footer({ LINKS_SITES }) {
 
           <Divider className="self-center w-3/5 bg-neutral-500/80" />
 
-          <div className="flex flex-wrap justify-evenly gap-4 text-neutral-400 font-size-secondary">
+          <div className="flex flex-wrap justify-evenly gap-4 font-size-secondary">
             {sections.map((section) => (
-              <a
+              <Link
                 key={section?.label}
                 href={section?.href}
-                target="_self"
-                className="hover:underline"
+                isExternal={section?.isExternal}
+                target={section?.isExternal ? "_blank" : "_self"}
+                className="text-neutral-400"
+                underline="hover"
+                showAnchorIcon={section?.isExternal}
               >
                 {section.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -197,17 +221,17 @@ function Footer({ LINKS_SITES }) {
 
             <div>
               Diseñado por{" "}
-              <LinkCustom
+              <Link
+                isExternal
                 href="https://github.com/CristianH577"
-                className="hover:boder-b border-neutral-400 text-inherit dark:text-inherit"
-                title="Ir a perfil de Github"
-                text={
-                  <>
-                    <span className="font-mono">©</span>
-                    VerdeAve
-                  </>
-                }
-              />
+                className="text-neutral-400"
+                underline="hover"
+                showAnchorIcon
+                title="Ir al perfil de Github"
+              >
+                <span className="font-mono">©</span>
+                VerdeAve
+              </Link>
             </div>
           </div>
         </>

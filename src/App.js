@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 
 import { NAV_ITEMS } from "./consts/siteConfig";
 
@@ -6,51 +6,64 @@ import { Route, Routes } from "react-router";
 
 import LayoutDefault from "./layout/LayoutDefault";
 import NotFound from "./layout/NotFound";
-import ViewDefault from "./layout/components/ViewDefault.js";
-import { Spinner } from "@nextui-org/react";
+import ViewDefault from "./components/ViewDefault.js";
+import SuspenseCustom from "./components/SuspenseCustom.js";
+import ItemView from "./views/ItemView.js";
 
 const Home = lazy(() => import("./views/Home"));
 const Imanes = lazy(() => import("./views/Imanes"));
-const Otros = lazy(() => import("./views/Otros"));
 const Caracteristicas = lazy(() => import("./views/Caracteristicas"));
 const UyA = lazy(() => import("./views/Uya.js"));
 const Faqs = lazy(() => import("./views/Faqs"));
+const SearchView = lazy(() => import("./views/SearchView"));
+const CartView = lazy(() => import("./views/CartView"));
+
+const routesComponent = {
+  imanes: <Imanes />,
+  caracteristicas: <Caracteristicas />,
+  uya: <UyA />,
+  faqs: <Faqs />,
+  search_view: <SearchView />,
+  cart: <CartView />,
+  view: <ItemView />,
+};
+const views = [
+  {
+    id: "cart",
+    href: "cart",
+    label: "Carrito",
+  },
+  {
+    id: "view",
+    href: "/search/:id",
+  },
+];
 
 function App() {
-  const routesComponent = {
-    imanes: <Imanes />,
-    otros: <Otros />,
-    caracteristicas: <Caracteristicas />,
-    uya: <UyA />,
-    faqs: <Faqs />,
-  };
-
   return (
     <Routes>
       <Route path="" element={<LayoutDefault />}>
         <Route index element={<Home />} />
 
-        {NAV_ITEMS.map((route) => {
+        {[...NAV_ITEMS, ...views].map((route) => {
           if (route?.id in routesComponent) {
             return (
               <Route
                 key={route?.id}
-                path={`${route?.id}`}
+                path={route?.href}
                 element={
-                  <Suspense
-                    fallback={
-                      <span className="w-full h-screen flex items-center justify-center">
-                        <Spinner color="secondary" />
-                      </span>
-                    }
+                  <SuspenseCustom
+                    classnames={{
+                      suspenseFall: "h-screen",
+                    }}
                   >
                     <ViewDefault
                       id={route?.id}
-                      title={route?.title || route?.label}
+                      title={route?.title || route?.label || null}
                     >
                       {routesComponent?.[route?.id]}
                     </ViewDefault>
-                  </Suspense>
+                  </SuspenseCustom>
                 }
               />
             );

@@ -1,4 +1,4 @@
-import ImageCustom from "../../../layout/components/ImageCustom";
+import ImageCustom from "../../../components/ImageCustom";
 
 export default function Puertas() {
   const contextImgs = require.context("../../../assets/uya/utilidades", true);

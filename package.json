@@ -1,7 +1,7 @@
 {
   "name": "imanestuc-app",
   "homepage": "https://imanestucuman.com.ar",
-  "version": "0.6.33",
+  "version": "0.7.12",
   "private": true,
   "dependencies": {
     "@nextui-org/react": "^2.6.10",
@@ -10,7 +10,6 @@
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^11.12.0",
     "html-to-image": "^1.11.11",
-    "js-cookie": "^3.0.5",
     "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -42,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "gh-pages": "^6.2.0",
     "tailwind-scrollbar": "^3.1.0",
     "tailwindcss": "^3.4.15"

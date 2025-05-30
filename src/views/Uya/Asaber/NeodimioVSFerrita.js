@@ -1,6 +1,6 @@
 import TableCustom from "../../../components/TableCustom";
 
-import ImageCustom from "../../../layout/components/ImageCustom";
+import ImageCustom from "../../../components/ImageCustom";
 
 import neodimioImg from "../../../assets/uya/asaber/vs-n.webp";
 import ferritaImg from "../../../assets/uya/asaber/vs-f.webp";

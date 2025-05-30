@@ -1,11 +1,9 @@
 import { lazy } from "react";
-import { motion } from "framer-motion";
 
 import { Tabs, Tab } from "@nextui-org/react";
 
 import ArticleView from "./Uya/ArticleView";
 import ArticlesList from "./Uya/ArticlesList";
-// import vid from "../assets/uya/neocube-v20.mp4";
 
 const NeodimioVSFerrita = lazy(() => import("./Uya/Asaber/NeodimioVSFerrita"));
 const SeparacionSegura = lazy(() => import("./Uya/Asaber/SeparacionSegura"));
@@ -17,6 +15,10 @@ const AguasDuras = lazy(() => import("./Uya/Asaber/AguasDuras"));
 const PeligroVsSeguridad = lazy(() =>
   import("./Uya/Asaber/PeligroVsSeguridad")
 );
+const DireccionMagnetica = lazy(() =>
+  import("./Uya/Asaber/DireccionMagnetica")
+);
+const Revestimientos = lazy(() => import("./Uya/Asaber/Revestimientos"));
 
 const Colgar = lazy(() => import("./Uya/Sujecion/Colgar"));
 const Cortinas = lazy(() => import("./Uya/Sujecion/Cortinas"));
@@ -92,6 +94,16 @@ export default function UyA() {
         id: "aguas_duras",
         title: "Aguas duras",
         content: <AguasDuras />,
+      },
+      {
+        id: "direccion_magnetica",
+        title: "Dirección magnética",
+        content: <DireccionMagnetica />,
+      },
+      {
+        id: "revestimientos",
+        title: "Revestimientos",
+        content: <Revestimientos />,
       },
     ],
     sujecion: [
@@ -193,18 +205,12 @@ export default function UyA() {
   };
 
   return (
-    <motion.div
-      className="w-full max-w-4xl text-center md:flex flex-col items-center"
-      variants={{
-        hidden: { opacity: 0 },
-        visible: { opacity: 1 },
-      }}
-    >
+    <div className="w-full max-w-4xl text-center md:flex flex-col items-center">
       <Tabs
         aria-label="Usos y aplicaciones"
         classNames={{
           tabList:
-            "bg-gradient-to-t from-custom1 to-custom1-3 flex-wrap justify-center shadow-md",
+            "bg-gradient-to-t from-custom1 to-custom1-3 flex-wrap justify-center",
           tabContent:
             "text-custom2 font-bold group-data-[selected=true]:text-white",
           cursor: "bg-gradient-to-t from-custom2 to-custom2-10",
@@ -224,6 +230,6 @@ export default function UyA() {
           </Tab>
         ))}
       </Tabs>
-    </motion.div>
+    </div>
   );
 }

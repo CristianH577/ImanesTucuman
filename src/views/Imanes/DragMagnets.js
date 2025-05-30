@@ -1,122 +1,137 @@
-import { motion } from "framer-motion";
+import { Button } from "@nextui-org/react";
 
-import { TbHandClick } from "react-icons/tb";
+import { scrollStyle } from "../../libs/tvs";
 
-import { SVGDragMagnet } from "../../assets/imanes/svgs";
+import ButtonAddCart from "../../components/ButtonAddCart";
+import PriceLabel from "../../components/PriceLabel";
 
-import { DB_IMANES_ARRASTRE } from "../../consts/dbs";
+import { GrCompare } from "react-icons/gr";
 
-function DragMagnets({ handleAdd, setComparative }) {
-  const cols = ["B", "C", "peso", "fuerza"];
+import { SVGDragMagnetMeasures } from "../../assets/imanes/svgs";
+
+function DragMagnets({
+  setItemToComparate = () => {},
+  rows = [],
+  cart = {},
+  handleAdd = () => {},
+}) {
+  const cols = [
+    { id: "alto", label: "B" },
+    { id: "alto total", label: "C" },
+    { id: "peso", label: "Peso" },
+    { id: "fuerza", label: "Fuerza" },
+  ];
   const cols_measure = {
-    B: "mm",
-    C: "mm",
+    alto: "mm",
+    "alto total": "mm",
     peso: "g",
     fuerza: "kg",
   };
 
-  const hover_class =
-    "hover:text-secondary-700 hover:scale-105 cursor-pointer transition-all";
-
   return (
     <>
-      <motion.div
-        className="flex items-center justify-center h-[250px] font-bold"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-        initial="hidden"
-        whileInView="visible"
-      >
-        <SVGDragMagnet className="h-full w-full max-h-[250px]" />
-      </motion.div>
+      <div className="flex items-center justify-center h-[250px]">
+        <SVGDragMagnetMeasures className="h-full w-full max-h-[250px]" />
+      </div>
 
       <div
         data-slot="table-container"
-        className="pb-4 w-full overflow-x-auto scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6"
+        className={"w-full overflow-x-auto " + scrollStyle}
       >
         <table
           aria-label="Tabla de precios: imanes de arrastre"
-          className="w-full max-w-[800px] text-xl xs:text-2xl font-semibold min-w-[600px] md:place-self-center"
+          className="w-full sm:min-w-[750px] text-tert table-dinamic max-sm:border-separate border-spacing-y-3 lg:w-fit lg:place-self-center"
         >
-          <thead className="border-b-3 text-2xl">
+          <thead className="border-b-3">
             <tr>
-              <td className="py-2">
-                <p>
-                  <span className="inline-block align-middle">
-                    <TbHandClick className="text-secondary-700" />
-                  </span>
-                  A
-                </p>
-                (mm)
-              </td>
+              <th className="p-2 border-e-3">A</th>
 
               {cols.map((col) => (
-                <td key={col} className="px-2">
+                <th key={col.id} className="p-2">
                   <div className="flex flex-col gap-1">
-                    <span className="capitalize">{col}</span>(
-                    {cols_measure?.[col]})
+                    <span className="capitalize">{col.label}</span>(
+                    {cols_measure?.[col.id]})
                   </div>
-                </td>
+                </th>
               ))}
 
-              <td>
-                <p>
-                  <span className="inline-block align-middle">
-                    <TbHandClick className="text-secondary-700" />
-                  </span>
-                  Precio
-                </p>
-              </td>
+              <th className="p-2 text-end">Precio</th>
+              <th className="p-2"></th>
             </tr>
           </thead>
 
           <tbody>
-            {Object.entries(DB_IMANES_ARRASTRE)?.map(([size, info]) => {
-              const noStock = info?.noStock || false;
+            {rows.map((item) => {
+              const noStock = item?.noStock;
+              const inCart = item.id in cart;
 
               return (
                 <tr
-                  key={size}
-                  className={`text-center${
-                    noStock
-                      ? " line-through text-neutral-500"
-                      : " even:text-custom1"
-                  }`}
+                  key={item.id}
+                  className="even:text-custom2-10 dark:even:text-custom1 group hover:text-white hover:font-semibold"
                 >
                   <td
-                    className={`${hover_class}`}
-                    onClick={() =>
-                      setComparative({
-                        form: "de_arrastre",
-                        size: `${size}x${info?.B}`,
-                      })
-                    }
+                    className="p-2 text-start whitespace-nowrap sm:border-e-3 max-sm:border-3 max-sm:rounded-t-lg data-[incart=false]:group-hover:bg-custom2 data-[nostock=true]:bg-divider data-[incart=true]:!bg-success/30"
+                    data-incart={inCart}
+                    data-nostock={noStock}
                   >
-                    {size}
+                    <div className="flex gap-2 justify-end items-center w-full sm:flex-row-reverse">
+                      <span>{item.label}</span>
+                      <Button
+                        color="secondary"
+                        isIconOnly
+                        className="shadow-md"
+                        title="Ver referencia de tamaños"
+                        onPress={() => setItemToComparate(item)}
+                      >
+                        <GrCompare size={22} />
+                      </Button>
+                    </div>
                   </td>
 
                   {cols.map((col) => (
-                    <td key={`${size}_${col}`} className="p-2">
-                      {info?.[col]}
+                    <td
+                      key={`${item.id}_${col.id}`}
+                      className="p-2 hover:!text-custom1-5 max-sm:last:border-b-3 max-sm:border-x-3 max-sm:last:rounded-b-lg group-hover:bg-custom2 data-[nostock=true]:bg-divider"
+                      data-nostock={noStock}
+                      data-label={`${col.label}(${cols_measure?.[col.id]})`}
+                    >
+                      {item.measures?.[col.id] || "-"}
                     </td>
                   ))}
 
                   <td
-                    className={`py-2 ${hover_class}`}
-                    onClick={() => handleAdd("de_arrastre", size)}
+                    className="p-2 hover:!text-custom1-5 max-sm:last:border-b-3 max-sm:border-x-3 max-sm:last:rounded-b-lg group-hover:bg-custom2 data-[nostock=true]:bg-divider"
+                    data-nostock={noStock}
+                    data-label="Precio"
                   >
-                    {Intl.NumberFormat("es-AR", {
-                      style: "currency",
-                      currency: "ARS",
-                      minimumFractionDigits: 0,
-                      maximumFractionDigits: 0,
-                    }).format(info?.price)}
+                    <PriceLabel itemData={item} />
+                  </td>
+
+                  <td
+                    className="p-2 hover:!text-custom1-5 max-sm:last:border-b-3 max-sm:border-x-3 max-sm:last:rounded-b-lg group-hover:bg-custom2 data-[nostock=true]:bg-divider"
+                    data-nostock={noStock}
+                    data-label=""
+                  >
+                    <ButtonAddCart
+                      inCart={inCart}
+                      itemData={item}
+                      handleAdd={() => {
+                        let qtt_ = 0;
+                        if (!inCart) qtt_ = 1;
+                        item.qtt = qtt_;
+
+                        handleAdd(item);
+                      }}
+                    />
                   </td>
                 </tr>
               );
             })}
+
+            <tr>
+              <td colSpan="full" className="pt-4"></td>
+            </tr>
           </tbody>
         </table>
       </div>

@@ -4,79 +4,48 @@ import { SiMercadopago } from "react-icons/si";
 import { HiOutlineBanknotes } from "react-icons/hi2";
 
 function Pagos() {
-  const text_class = "text-custom1 ";
-
-  // const impuestos = [
-  //   {
-  //     nombre: "IVA",
-  //     valor: "8%",
-  //   },
-  //   {
-  //     nombre: "IIBB(Tuc.)",
-  //     valor: "6%",
-  //   },
-  // ];
   const lista_pago = [
     {
-      icon: <HiOutlineBanknotes size={24} />,
+      icon: HiOutlineBanknotes,
       title: "Efectivo",
     },
     {
-      icon: <FaMoneyBillTransfer size={24} />,
+      icon: FaMoneyBillTransfer,
       title: "Transferencia",
     },
     {
-      icon: <IoCardOutline size={24} />,
+      icon: IoCardOutline,
       title: "Debito",
-      description: (
-        <>
-          +3.25%(Comisión) +IVA+IIBB = <b className={text_class}>+17.25%</b>
-        </>
-      ),
+      commission: "3.25",
+      percentage_total: "17.25",
     },
     {
-      icon: <FaRegCreditCard size={22} />,
+      icon: FaRegCreditCard,
       title: "Credito - 1 Pago",
-      description: (
-        <>
-          +6.5%(Comisión) +IVA+IIBB = <b className={text_class}>+20.5%</b>
-        </>
-      ),
+      commission: "6.5",
+      percentage_total: "20.5",
     },
     {
-      // icon: <SiMercadopago size={24} />,
-      icon: <FaStore size={24} />,
+      icon: FaStore,
       title: "Mercado Shops",
-      description: (
-        <>
-          +4.8%(Comisión) +IVA+IIBB = <b className={text_class}>+18.8%</b>
-        </>
-      ),
+      commission: "4.8",
+      percentage_total: "18.8",
     },
     {
-      icon: <SiMercadopago size={24} />,
+      icon: SiMercadopago,
       title: "Mercado Libre",
-      description: (
-        <>
-          +14.5%(Comisión) +IVA+IIBB = <b className={text_class}>+28.5%</b>
-        </>
-      ),
+      commission: "14.5",
+      percentage_total: "28.5",
       content: (
-        <ol className="ps-12 list-disc">
+        <ol className="list-disc">
           <li>
-            <p>
-              Hasta $15.000: <b className={text_class}>+$1000</b>
-            </p>
+            Hasta $15.000: <b className="text-custom1">+$1000</b>
           </li>
           <li>
-            <p>
-              Hasta $25.000: <b className={text_class}>+$2000</b>
-            </p>
+            Hasta $25.000: <b className="text-custom1">+$2000</b>
           </li>
           <li>
-            <p>
-              Hasta $33.000: <b className={text_class}>+$2400</b>
-            </p>
+            Hasta $33.000: <b className="text-custom1">+$2400</b>
           </li>
         </ol>
       ),
@@ -84,68 +53,33 @@ function Pagos() {
   ];
 
   return (
-    <section className="space-y-4">
-      <article className="space-y-2">
-        {/* <div className="flex flex-wrap gap-x-4 border-b w-fit pe-8 mb-1">
-          <b>Impuestos:</b>
+    <article>
+      <ol className="list-none ps-0">
+        {lista_pago.map((item, i) => (
+          <li key={i}>
+            <div className="flex items-center gap-2">
+              <item.icon size={24} />
 
-          {impuestos.map((item) => (
-            <p key={item?.nombre}>
-              {item?.nombre} = {item?.valor}
-            </p>
-          ))}
-        </div> */}
+              <span>
+                <strong>{item?.title} </strong>
+                {item?.commission ? (
+                  <>
+                    {item?.commission}%(Comisión) +IVA+IIBB =
+                    <b className="text-custom1"> +{item.percentage_total}%</b>
+                  </>
+                ) : null}
+              </span>
+            </div>
 
-        <ol className="space-y-2">
-          {lista_pago.map((item, i) => (
-            <li key={i}>
-              <div className="flex gap-2">
-                <span>{item?.icon}</span>
-                <p>
-                  <strong>{item?.title} </strong>
-                  {item?.description}
-                </p>
-              </div>
-
-              {item?.content}
-            </li>
-          ))}
-        </ol>
-
-        <p className="font-size-secondary text-neutral-400 mb-4">
-          Los valores pueden variar.
-        </p>
-      </article>
-
-      <article>
-        <b className="border-b w-fit pe-8">Garantía</b>
-
-        <p>
-          Los productos no son reembolsables pero tienen 1 semana de garantía
-          para cambios siempre y cuando no hayan sido usados y estén en
-          condiciones. Esto no aplica para el iman en tira y plancha que deben
-          ser cortados.
-          <br />
-          Los imanes pueden traer algún pequeño defecto de forma de fabrica,
-          recuerde revisar o avisar si esto es un problema.
-        </p>
-      </article>
-
-      <article>
-        <b className="border-b w-fit pe-8">Pedidos grandes</b>
-
-        <p>El stock es limitado por lo que para estos:</p>
-
-        <ul className="list-decimal list-inside space-y-2">
-          <li>Debera abonar entre un 20-40% en forma de seña.</li>
-          <li>
-            Dependiendo el tamaño del mismo pordria tener que abonar el envio.
-            Entre $7000-$10000 aprox.
+            {item?.content}
           </li>
-          <li>Tiene un tiempo de entrega de 1 a 3 semanas.</li>
-        </ul>
-      </article>
-    </section>
+        ))}
+      </ol>
+
+      <p className="font-size-secondary text-neutral-400">
+        Los valores pueden variar.
+      </p>
+    </article>
   );
 }
 

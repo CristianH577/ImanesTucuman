@@ -1,93 +1,93 @@
 import { useEffect, useState } from "react";
-import { useOutletContext } from "react-router";
-import { motion } from "framer-motion";
+
+import { DB_ALL } from "../consts/dbs";
 
 import { Tabs, Tab } from "@nextui-org/react";
 
 import TableInfo from "./Caracteristicas/TableInfo";
 
+const text_class = "text-danger-300 dark:text-danger-600";
+const tables_default = [
+  {
+    form: "redondo",
+    measure_format: "AxB",
+    items: [],
+  },
+  {
+    form: "cuadrado",
+    measure_format: "AxBxC",
+    items: [],
+  },
+  {
+    form: "redondo fresado",
+    measure_format: "AxB D-d",
+    items: [],
+  },
+  {
+    form: "cuadrado fresado",
+    measure_format: "AxBxC D-d",
+    items: [],
+  },
+];
+
 function Caracteristicas() {
-  const text_class = "text-danger-300 dark:text-danger-600";
-  const formas_data = {
-    redondos: {
-      label: "Redondos",
-      medidas: "AxB",
-    },
-    cuadrados: {
-      label: "Cuadrados",
-      medidas: "AxBxC",
-    },
-    redondos_fresados: {
-      label: "Redondos Fresados",
-      medidas: "AxB D-d",
-    },
-    esferas: {
-      label: "Esferas",
-      medidas: "D",
-    },
-    cuadrados_fresados: {
-      label: "Cuadrados Fresados",
-      medidas: "AxBxC D-d",
-    },
-  };
-
-  const context = useOutletContext();
   const [tab, setTab] = useState("redondos");
-  const [data, setData] = useState(false);
-
-  const showMore = (cat) => {
-    const new_data = structuredClone(data);
-    new_data[cat].rows = Object.entries(context.db?.[cat]).slice(
-      0,
-      new_data[cat].rows.length + 10
-    );
-    setData(new_data);
-  };
+  const [tables, setTables] = useState(tables_default);
 
   useEffect(() => {
-    const new_data = {};
-    Object.entries(context.db).forEach(([cat, items]) => {
-      new_data[cat] = {
-        total: Object.entries(items).length,
-        rows: Object.entries(items).slice(0, 10),
-      };
+    const tables_ = [...tables_default];
+
+    tables_.map((table) => {
+      const items_ = DB_ALL.filter(
+        (item) =>
+          item.categorie === "imanes" &&
+          item.subcategorie === "neodimio" &&
+          item.info?.forma === table.form
+      );
+
+      items_.sort((a, b) => {
+        return (
+          a?.measures?.largo - b?.measures?.largo ||
+          a?.measures?.ancho - b?.measures?.ancho ||
+          a?.measures?.alto - b?.measures?.alto
+        );
+      });
+
+      table.items = items_;
+
+      return table;
     });
-    setData(new_data);
-  }, [context.db]);
+
+    setTables(tables_);
+  }, []);
 
   return (
     <>
-      <motion.section
-        className="max-w-[80%] text-center space-y-4 font-semibold"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-      >
+      <section className="max-w-[80%] text-center space-y-4 font-semibold prose dark:prose-invert">
         <p>
-          Los valores son <span className={text_class}>aproximados</span> y bajo{" "}
-          <span className={text_class}>condiciones ideales</span>.
+          No contamos con la informacion tecnica precisa.
           <br />
-          La información es <span className={text_class}>inchequeable</span> y
-          de <span className={text_class}>dudosa</span> procedencia; utilizar
-          solo a modo de referencia.
+          La fuerza experimental esta medida mediante la adhesión magnética de
+          un peso al imán que a su vez esta adherido a una placa de metal de
+          casi 10mm en un sentido vertical.
+          <br />
+          Los valores de fuerza y gauss por grado son{" "}
+          <span className={text_class}>aproximados</span> y bajo{" "}
+          <span className={text_class}>condiciones ideales</span>. La
+          información es <span className={text_class}>inchequeable</span> y de{" "}
+          <span className={text_class}>dudosa</span> procedencia; utilizar solo
+          a modo de referencia.
         </p>
-      </motion.section>
+      </section>
 
-      <motion.section
-        className="w-full text-center sm:flex flex-col items-center"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-      >
+      <section className="w-full text-center sm:flex flex-col items-center">
         <Tabs
           aria-label="Categorias del imanes"
           classNames={{
             tabList:
               "bg-gradient-to-t from-custom1 to-custom1-3 flex-wrap justify-center shadow-md ",
             tabContent:
-              "text-custom2 font-bold group-data-[selected=true]:text-white",
+              "text-custom2 font-bold group-data-[selected=true]:text-white capitalize",
             cursor: "bg-gradient-to-t from-custom2 to-custom2-10",
             panel: "mt-4 flex flex-col md:items-center w-full md:w-fit",
             tab: "w-fit",
@@ -96,23 +96,17 @@ function Caracteristicas() {
           onSelectionChange={setTab}
           destroyInactiveTabPanel={false}
         >
-          {Object.keys(context.db).map((cat) => {
-            if (cat !== "esferas") {
-              return (
-                <Tab key={cat} title={formas_data?.[cat]?.label}>
-                  <TableInfo
-                    cat={cat}
-                    formas_data={formas_data}
-                    data={data?.[cat] || []}
-                    showMore={showMore}
-                  />
-                </Tab>
-              );
-            }
-            return null;
-          })}
+          {tables.map((table) => (
+            <Tab key={table.form} title={table.form}>
+              <TableInfo
+                tableAriaLabel={`Tabla de precios: ${table.form}`}
+                measureFormat={table.measure_format}
+                rows={table.items}
+              />
+            </Tab>
+          ))}
         </Tabs>
-      </motion.section>
+      </section>
     </>
   );
 }

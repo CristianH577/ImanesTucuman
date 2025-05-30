@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import { LINKS_SITES } from "../consts/siteConfig";
+
 import { Link, Tooltip } from "@nextui-org/react";
 
 import {
@@ -8,16 +10,14 @@ import {
   FaTelegramPlane,
   FaRegFilePdf,
 } from "react-icons/fa";
+import { FaSignalMessenger, FaXTwitter } from "react-icons/fa6";
 import {
   SiGoogleforms,
   SiGooglestreetview,
   SiMercadopago,
 } from "react-icons/si";
-import { FaSignalMessenger, FaXTwitter } from "react-icons/fa6";
 
-import { LINKS_SITES } from "../consts/siteConfig";
-
-function Redes({ classNames, className, slice }) {
+export default function Redes({ classNames = {}, className = "", slice = 0 }) {
   const redes = [
     {
       id: "facebook",
@@ -75,42 +75,13 @@ function Redes({ classNames, className, slice }) {
 
   return (
     <div
-      className={`flex gap-2 justify-center items-center flex-wrap ${
-        className || ""
+      className={`flex gap-2 justify-center items-center flex-wrap${
+        className ? " " + className : ""
       }`}
-      // variants={{
-      //   hidden: {
-      //     scale: 0,
-      //     opacity: 0,
-      //   },
-      //   visible: {
-      //     scale: 1,
-      //     opacity: 1,
-      //     transition: {
-      //       delayChildren: 0.1,
-      //       staggerChildren: 0.1,
-      //     },
-      //   },
-      // }}
-      // initial="hidden"
-      // whileInView="visible"
-      // viewport={{ once: true }}
     >
       {redes.slice(0, slice || redes.length).map((item, i) => (
         <motion.div
           key={i}
-          // variants={
-          //   variants || {
-          //     hidden: {
-          //       opacity: 0,
-          //       scale: 1.5,
-          //     },
-          //     visible: {
-          //       opacity: 1,
-          //       scale: 1,
-          //     },
-          //   }
-          // }
           whileTap={{
             rotate: 360,
           }}
@@ -126,8 +97,8 @@ function Redes({ classNames, className, slice }) {
             <Link
               href={LINKS_SITES?.[item?.id] || "#contacto"}
               target={LINKS_SITES?.[item?.id] ? "_blank" : "_self"}
-              className={`text-neutral-500 transition-all hover:text-custom1 ${
-                classNames?.link || ""
+              className={`text-neutral-400 transition-all hover:text-custom2 dark:hover:text-custom1${
+                classNames?.link ? " " + classNames?.link : ""
               }`}
               aria-label={item?.label}
             >
@@ -139,5 +110,3 @@ function Redes({ classNames, className, slice }) {
     </div>
   );
 }
-
-export default Redes;

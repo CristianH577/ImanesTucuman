@@ -9,7 +9,7 @@ import {
 } from "@nextui-org/react";
 
 import Redes from "../../components/Redes";
-import Logo from "../components/Logo";
+import Logo from "../../components/Logo";
 
 import { FaArrowLeft } from "react-icons/fa";
 
@@ -79,25 +79,11 @@ function MenuMovilDrawer({ isOpen, onOpenChange, NAV_ITEMS }) {
                     textValue={item.label}
                     className="text-custom2 dark:text-custom1 capitalize py-2 transition-all hover:shadow-md"
                     classNames={{ title: "text-lg font-semibold" }}
-                    href={`#${item.id}`}
+                    href={`#${item.href}`}
                     startContent={
                       item?.icon ? <item.icon className="h-fit w-6" /> : null
                     }
                   >
-                    {/* <motion.p
-                        variants={{
-                          hidden: {
-                            opacity: 0,
-                            scale: 1.5,
-                          },
-                          visible: {
-                            opacity: 1,
-                            scale: 1,
-                          },
-                        }}
-                      >
-                        {item.label}
-                      </motion.p> */}
                     {item.label}
                   </ListboxItem>
                 ))}

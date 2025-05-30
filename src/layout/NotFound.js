@@ -1,16 +1,17 @@
-import { Button, Link } from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
+import { button as buttonStyles } from "@nextui-org/theme";
 
 export default function NotFound() {
   return (
-    <Button
-      as={Link}
+    <Link
       href="#"
-      color="warning"
-      variant="ghost"
-      size="lg"
-      className="font-semibold"
+      className={buttonStyles({
+        variant: "ghost",
+        color: "warning",
+        size: "lg",
+      })}
     >
       Ir al inicio
-    </Button>
+    </Link>
   );
 }

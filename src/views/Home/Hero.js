@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import { Button } from "@nextui-org/react";
 
-import { subtitle, title, title1 } from "../../libs/tvs";
+import { title, title1 } from "../../libs/tvs";
 
 import { GiMagnetBlast } from "react-icons/gi";
 import { IoMagnetOutline } from "react-icons/io5";
@@ -35,7 +35,7 @@ export default function Hero() {
     <section
       className="w-screen relative right-2 xs:right-4 sm:right-10 lg:right-12 bg-gradient-to-t from-custom2 to-custom2-10 overflow-hidden shadow-md min-[2000px]:h-[1200px] mt-16 mb-10 pt-2"
       style={{
-        height: "calc(100vh - 4rem)",
+        height: "calc(100dvh - 4rem)",
       }}
     >
       <div className="relative flex flex-col gap-4 items-center w-full h-full max-w-7xl place-self-center">
@@ -98,7 +98,7 @@ export default function Hero() {
 
         <article className="relative z-10 flex flex-col items-center justify-center gap-2 sm:gap-4 h-fit px-4 pb-8">
           <div className="text-center max-w-[900px]">
-            <h1 className={title({ size: "md", color: "custom1" })}>
+            <h1 className={title({ size: "md", shadow: "custom" })}>
               Imanes tucuman
             </h1>
             <h2 className={title1({ size: "sm" }) + " text-white"}>
@@ -109,14 +109,17 @@ export default function Hero() {
               dedicado a la comercialización de imanes de{" "}
               <span className={title1({ color: "yellow" })}>neodimio</span>.
             </h2>
-            <h3 className={subtitle()}>Atencion, calidad y precio.</h3>
+            <h3 className="my-2 text-lg lg:text-xl text-default-400 dark:text-default-600">
+              Atencion, calidad y precio.
+            </h3>
           </div>
 
           <Button
             radius="full"
             variant="bordered"
             size="lg"
-            className="text-custom1 border-custom1 hover:bg-custom1 hover:text-white font-bold"
+            className="text-custom1 border-custom1 hover:bg-custom1 hover:text-custom2 font-bold"
+            title="Ver sección de formas"
             onPress={() => {
               const section = document.querySelector("#formas");
               if (section) section.scrollIntoView();

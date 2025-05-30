@@ -17,8 +17,9 @@
 }
 
 :root {
-  --font-size: medium;
+  --font-size-primary: medium;
   --font-size-secondary: small;
+  --font-size-tertiary: large;
 }
 
 html {
@@ -27,13 +28,16 @@ html {
 }
 body {
   margin: 0;
-  font-size: var(--font-size);
+  font-size: var(--font-size-primary);
 }
 .font-size-primary {
-  font-size: var(--font-size);
+  font-size: var(--font-size-primary);
 }
 .font-size-secondary {
   font-size: var(--font-size-secondary);
+}
+.font-size-tertiary {
+  font-size: var(--font-size-tertiary);
 }
 
 .bg-radial {
@@ -44,25 +48,12 @@ body {
   clip-path: polygon(0 0, 100% 4rem, 100% calc(100% - 4rem), 0 100%);
 }
 
-.fix-input {
-  font-size: var(--font-size) !important;
-}
-
 .drop-shadow-custom {
   filter: drop-shadow(2px 4px 6px black);
 }
 
 @media (max-width: 640px) {
   .table-dinamic {
-    /* table,
-    thead,
-    tbody,
-    th,
-    td,
-    tr {
-      display: block;
-    } */
-
     thead {
       display: none;
     }
@@ -74,7 +65,6 @@ body {
 
     td:before {
       content: attr(data-label);
-      font-weight: bold;
       text-transform: uppercase;
       align-self: center;
       margin-right: 0.5rem;

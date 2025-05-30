@@ -1,4 +1,4 @@
-import ImageCustom from "../../../layout/components/ImageCustom";
+import ImageCustom from "../../../components/ImageCustom";
 
 export default function Perfiles() {
   const contextImgs = require.context("../../../assets/uya/utilidades", true);
@@ -15,6 +15,7 @@ export default function Perfiles() {
             "w-[300px] h-[300px] place-self-center border-5 border-divider",
         }}
         height={300}
+        alt="Pared de perfiles de aluminio sin tapar"
       />
       <p>
         Utilizando imanes se puede fácilmente encontrar la ubicación de los
@@ -36,6 +37,7 @@ export default function Perfiles() {
             "w-[300px] h-[300px] place-self-center border-5 border-divider",
         }}
         height={300}
+        alt="Dedo señalando un iman sobre pared de drywall"
       />
     </div>
   );

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Cookies from "js-cookie";
 
 import { FONTS_VALUES } from "../consts/siteConfig";
 
@@ -7,7 +6,6 @@ export function useConfigs() {
   const [configs, setConfigs] = useState({
     theme: "light",
     font: "md",
-    fontSecondary: "small",
   });
 
   const handleSet = (configs_) => {
@@ -21,30 +19,27 @@ export function useConfigs() {
     const theme_remove = configs_.theme === "dark" ? "light" : "dark";
     document.body.classList?.remove(theme_remove);
     document.body.classList?.add(configs_.theme);
-    Cookies.set("theme", configs_.theme, { expires: 365 });
+
+    localStorage.setItem("theme", configs_.theme);
   };
 
   const handleFont = (configs_) => {
-    document.documentElement.style.setProperty(
-      "--font-size",
-      FONTS_VALUES[configs_.font]
-    );
+    const fonts = FONTS_VALUES[configs_.font];
 
-    document.documentElement.style.setProperty(
-      "--font-size-secondary",
-      configs_.fontSecondary
-    );
+    Object.entries(fonts).forEach(([key, val]) => {
+      document.documentElement.style.setProperty("--font-size-" + key, val);
+    });
 
-    Cookies.set("font", configs_.font, { expires: 365 });
+    localStorage.setItem("font", configs_.font);
   };
 
   useEffect(() => {
     const configs_ = structuredClone(configs);
 
-    const theme_ = Cookies.get("theme");
+    const theme_ = localStorage.getItem("theme");
     if (theme_ && theme_ === "dark") configs_.theme = theme_;
 
-    const font_ = Cookies.get("font");
+    const font_ = localStorage.getItem("font");
     if (font_ && font_ !== "md") configs_.font = font_;
 
     handleSet(configs_);

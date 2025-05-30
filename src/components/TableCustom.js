@@ -19,16 +19,17 @@ function TableCustom({
   onSelectedRows,
   isLoading,
   emptyMessage,
+  tdLabel,
 }) {
   const classNames_ = {
-    className: className || null,
-    table: null,
-    thead: null,
-    theadRow: null,
-    th: null,
-    tbody: null,
-    row: null,
-    td: null,
+    className: className || "",
+    table: "",
+    thead: "",
+    theadRow: "",
+    th: "",
+    tbody: "",
+    row: "",
+    td: "",
     ...classNames,
   };
   const columns_ = columns?.length ? columns : [];
@@ -70,13 +71,15 @@ function TableCustom({
         const idCol = col?.key || col?.id || col;
 
         var td = <td></td>;
-        if (makeCell) td = makeCell(row, idCol);
-
-        td = React.cloneElement(td, {
+        const tdObj = {
           key: id + "_" + idCol,
           ...mergedData,
           className: `py-2 px-3 first:rounded-l-lg last:rounded-r-lg ${classNames_.td}`,
-        });
+        };
+        if (makeCell) td = makeCell(row, idCol);
+        if (tdLabel) tdObj["data-label"] = col?.label || "";
+
+        td = React.cloneElement(td, tdObj);
 
         return React.cloneElement(
           td,
@@ -133,14 +136,14 @@ function TableCustom({
                 label = col?.label;
               }
 
-              if (makeHeaderCell) label = makeHeaderCell(key);
+              if (makeHeaderCell) label = makeHeaderCell(col);
 
               return (
                 <th
                   key={key}
                   data-slot="th"
                   className={
-                    "px-3 h-10 text-left align-middle bg-default-200 whitespace-nowrap font-semibold first:rounded-l-lg last:rounded-r-lg " +
+                    "p-3 text- align-middle bg-default-200 whitespace-nowrap font-semibold first:rounded-l-lg last:rounded-r-lg " +
                     classNames_.th
                   }
                 >

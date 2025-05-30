@@ -1,9 +1,7 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 
-import { Skeleton } from "@nextui-org/react";
-
-import ViewDefault from "../layout/components/ViewDefault";
-import Test from "../z/Test";
+import SuspenseCustom from "../components/SuspenseCustom";
+import TitleCustom from "../components/TitleCustom";
 
 const Hero = lazy(() => import("./Home/Hero"));
 const Formas = lazy(() => import("./Home/Formas"));
@@ -26,23 +24,28 @@ export default function Home() {
   ];
 
   return (
-    <div>
-      {/* <Test /> */}
-      <Suspense fallback={<Skeleton className="w-screen h-[150vh]" />}>
+    <>
+      <SuspenseCustom
+        classnames={{
+          suspenseFall: "w-screen h-[150vh]",
+        }}
+      >
         <Hero />
-      </Suspense>
+      </SuspenseCustom>
 
-      {sections.map((section) => (
-        <ViewDefault
-          key={section.label}
-          id={section?.id}
-          title={section.label}
-          className={section?.className || ""}
-          disabledInView
+      {sections.map((section, i) => (
+        <div
+          key={i}
+          id={section?.id || null}
+          className={`w-full max-w-[1200px] flex flex-col items-center gap-4 place-self-center pt-16 ${
+            section?.className ? section?.className : ""
+          }`}
         >
-          <Suspense>{section.content}</Suspense>
-        </ViewDefault>
+          <TitleCustom title={section?.label} />
+
+          {section.content}
+        </div>
       ))}
-    </div>
+    </>
   );
 }

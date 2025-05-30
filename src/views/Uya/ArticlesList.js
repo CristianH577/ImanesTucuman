@@ -7,6 +7,10 @@ export default function ArticlesList({ list }) {
       const article = document.querySelector("#" + id);
       if (article) {
         article.scrollIntoView();
+      } else {
+        setTimeout(() => {
+          if (article) article.scrollIntoView();
+        }, 500);
       }
     }
   };

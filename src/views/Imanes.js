@@ -1,185 +1,150 @@
-import { lazy, Suspense, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router";
 
-import { Tabs, Tab, Spinner } from "@nextui-org/react";
+import { handlePriceData } from "../libs/functions";
+
+import { DB_ALL } from "../consts/dbs";
+
+import { Tabs, Tab } from "@nextui-org/react";
 
 import TablePrices from "./Imanes/TablePrices";
-import Fotos from "./Imanes/Fotos";
 import DragMagnets from "./Imanes/DragMagnets";
 
-import { TbHandClick } from "react-icons/tb";
 import {
-  SVGRedondoFresado,
-  SVGCuadrado,
-  SVGEsfera,
-  SVGRedondo,
-  SVGCuadradoFresado,
+  SVGRedondoFresadoMeasures,
+  SVGCuadradoMeasures,
+  SVGRedondoMeasures,
+  SVGCuadradoFresadoMeasures,
 } from "../assets/imanes/svgs";
 
-const ModalSize = lazy(() => import("./Imanes/ModalSize"));
+const tables_default = [
+  {
+    form: "redondo",
+    measure_format: "AxB",
+    svg: SVGRedondoMeasures,
+    items: [],
+  },
+  {
+    form: "cuadrado",
+    measure_format: "AxBxC",
+    svg: SVGCuadradoMeasures,
+    items: [],
+  },
+  {
+    form: "redondo fresado",
+    measure_format: "AxB D-d",
+    svg: SVGRedondoFresadoMeasures,
+    items: [],
+  },
+  {
+    form: "cuadrado fresado",
+    measure_format: "AxBxC D-d",
+    svg: SVGCuadradoFresadoMeasures,
+    items: [],
+  },
+];
 
 export default function Imanes() {
-  const formas_data = {
-    redondos: {
-      label: "Redondos",
-      medidas: "AxB",
-      img: <SVGRedondo className="h-full w-full max-h-[200px]" />,
-    },
-    cuadrados: {
-      label: "Cuadrados",
-      medidas: "AxBxC",
-      img: <SVGCuadrado className="h-full w-full" />,
-    },
-    redondos_fresados: {
-      label: "Redondos Fresados",
-      medidas: "AxB D-d",
-      img: <SVGRedondoFresado className="h-full w-full" />,
-    },
-    esferas: {
-      label: "Esferas",
-      medidas: "D",
-      img: <SVGEsfera className="h-full w-full max-h-[200px]" />,
-    },
-    cuadrados_fresados: {
-      label: "Cuadrados Fresados",
-      medidas: "AxBxC D-d",
-      img: <SVGCuadradoFresado className="h-full w-full" />,
-    },
-  };
-
   const context = useOutletContext();
-  const [comparative, setComparative] = useState(false);
-  const [data, setData] = useState(false);
 
-  const showMore = (cat) => {
-    const data_ = structuredClone(data);
-    data_[cat].rows = Object.entries(context.db?.[cat]).slice(
-      0,
-      data_[cat].rows.length + 20
-    );
-    setData(data_);
-  };
+  const [tables, setTables] = useState(tables_default);
+  const [arrastreItems, setArrastreItems] = useState([]);
 
   useEffect(() => {
-    const new_data = {};
+    const tables_ = [...tables_default];
+    const DB = structuredClone(DB_ALL);
 
-    Object.entries(context.db).forEach(([cat, items]) => {
-      new_data[cat] = {
-        total: Object.entries(items).length,
-        rows: Object.entries(items).slice(0, 20),
-      };
+    tables_.map((table) => {
+      const items_ = DB.filter(
+        (item) =>
+          item.categorie === "imanes" &&
+          item.subcategorie === "neodimio" &&
+          item.info?.forma === table.form
+      );
+
+      items_.sort((a, b) => {
+        return (
+          a?.measures?.largo - b?.measures?.largo ||
+          a?.measures?.ancho - b?.measures?.ancho ||
+          a?.measures?.alto - b?.measures?.alto
+        );
+      });
+
+      table.items = items_;
+
+      return table;
     });
 
-    setData(new_data);
-  }, [context.db]);
+    const arrastre_ = DB.filter(
+      (item) => item.categorie === "imanes" && item.subcategorie === "arrastre"
+    );
+
+    setTables(tables_);
+    setArrastreItems(arrastre_);
+  }, []);
 
   return (
     <>
-      <motion.section
-        className="max-w-[80%] text-center space-y-4 font-semibold"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-      >
+      <section className="max-w-[80%] text-center space-y-4 font-semibold prose dark:prose-invert">
         <p>
           <i>Todos</i> los imanes presentados en las tablas son de{" "}
           <i>neodimio</i> de alta potencia y sus medidas están en{" "}
           <i>milímetros</i>.
           <br />
-          Las medidas que están <span className="line-through">
-            tachadas
-          </span>{" "}
-          es por falta de stock.
-          <br />
           Seleccione la forma que le interese y revise las medidas y precios. En
           la tabla podrá ver que varia el precio por unidad según la cantidad.
           <br />
+          Las medidas con <span className="bg-divider px-1">fondo gris</span> es
+          por falta de stock.
+          <br />
           Consulte por medidas no listadas.
-        </p>
-
-        <p className="text-secondary-700">
-          <span className="inline-block align-middle">
-            <TbHandClick />
-          </span>
-          Presione en las medidas para ver una comparación de tamaños en
-          pantalla o en los precios para agregar artículos al carrito.
         </p>
 
         <p className="font-size-secondary text-neutral-400">
           Los precios pueden variar.
         </p>
-      </motion.section>
+      </section>
 
-      <motion.section
-        className="w-full text-center md:flex flex-col items-center"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-      >
+      <section className="w-full text-center md:flex flex-col items-center">
         <Tabs
           aria-label="Categorias del imanes"
           classNames={{
             tabList:
-              "bg-gradient-to-t from-custom1 to-custom1-3 flex-wrap justify-center shadow-md ",
+              "bg-gradient-to-t from-custom1 to-custom1-3 flex-wrap justify-center w-full",
             tabContent:
-              "text-custom2 font-bold group-data-[selected=true]:text-white",
+              "text-custom2 font-bold group-data-[selected=true]:text-white capitalize whitespace-normal",
             cursor: "bg-gradient-to-t from-custom2 to-custom2-10",
             panel: "mt-4 flex flex-col items-center gap-2 w-full",
             tab: "w-fit",
           }}
         >
-          {Object.keys(context.db).map((cat) => (
-            <Tab key={cat} title={formas_data?.[cat]?.label}>
-              <motion.div
-                className="flex items-center justify-center h-[250px] font-bold"
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 },
-                }}
-                initial="hidden"
-                whileInView="visible"
-              >
-                {formas_data?.[cat]?.img}
-              </motion.div>
+          {tables.map((table) => (
+            <Tab key={table.form} title={table.form}>
+              <div className="flex items-center justify-center h-[250px]">
+                <table.svg className="w-full h-full" />
+              </div>
 
               <TablePrices
-                cat={cat}
-                setComparative={setComparative}
-                handleAdd={context?.cart?.add}
-                formas_data={formas_data}
-                data={data?.[cat]}
-                showMore={showMore}
+                tableAriaLabel={`Tabla de precios: ${table.form}`}
+                measureFormat={table.measure_format}
+                rows={table.items}
+                cart={context.cart.value}
+                handleAdd={context.cart.add}
+                setItemToComparate={context.setMagnetData}
               />
             </Tab>
           ))}
 
           <Tab key="drag" title="De arrastre">
             <DragMagnets
-              handleAdd={context?.cart?.add}
-              setComparative={setComparative}
+              rows={arrastreItems}
+              cart={context.cart.value}
+              handleAdd={context.cart.add}
+              setItemToComparate={context.setMagnetData}
             />
           </Tab>
-
-          <Tab key="photos" title="FOTOS">
-            <Fotos linkFotos={context?.LINKS_SITES?.fotos} />
-          </Tab>
         </Tabs>
-      </motion.section>
-
-      {comparative && (
-        <Suspense
-          fallback={
-            <span className="absolute w-full h-full flex items-center justify-center bg-black/50 inset-0 z-50 rounded-xl">
-              <Spinner color="secondary" />
-            </span>
-          }
-        >
-          <ModalSize isOpen={comparative} setIsOpen={setComparative} />
-        </Suspense>
-      )}
+      </section>
     </>
   );
 }

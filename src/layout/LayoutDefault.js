@@ -1,25 +1,23 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router";
 
 import { LINKS_SITES } from "../consts/siteConfig";
-import { DB_IMANES } from "../consts/dbs";
 
-import { scrollTop } from "../libs/functions.js";
+import { scrollToTop } from "../libs/functions.js";
 import { useCart } from "../hooks/useCart.js";
 
-import { Spinner, useDisclosure } from "@nextui-org/react";
-
 import Footer from "./Footer.js";
+import SuspenseCustom from "../components/SuspenseCustom.js";
 
 const NavbarCustom = lazy(() => import("./NavbarCustom"));
-const CartModal = lazy(() => import("./CartModal"));
+const ModalComparativeMagnet = lazy(() => import("./ModalComparativeMagnet"));
 
 export default function LayoutDefault() {
   const cart = useCart();
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const { search, pathname } = useLocation();
+  const [magnetData, setMagnetData] = useState({});
 
-  useEffect(scrollTop, [pathname]);
+  useEffect(scrollToTop, [pathname]);
   useEffect(() => {
     if (search) {
       const params = new URLSearchParams(search);
@@ -39,54 +37,49 @@ export default function LayoutDefault() {
   return (
     <div
       id="app"
-      className="min-h-screen h-[100vh] bg-background text-foreground dark:bg-content2 font-[menulis] overflow-x-hidden overflow-y-auto scroll-smooth sm:scrollbar scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6 flex flex-col justify-between"
+      className="min-h-screen h-[100dvh] bg-background text-foreground dark:bg-content2 font-[menulis] flex flex-col justify-between overflow-x-hidden overflow-y-auto scroll-smooth sm:scrollbar scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6"
     >
-      <Suspense>
+      <SuspenseCustom
+        classnames={{
+          suspenseFall: "absolute h-14 bg-black/50 inset-0 z-50",
+        }}
+      >
         <NavbarCustom
-          onOpenCart={onOpen}
-          cartLength={Object.values(cart.value).reduce(
-            (acc, obj) => acc + Object.keys(obj).length,
-            0
-          )}
+          cartLength={Object.keys(cart.value).length}
+          links={LINKS_SITES}
         />
-      </Suspense>
+      </SuspenseCustom>
 
-      {isOpen && (
-        <Suspense
-          fallback={
-            <span className="absolute w-full h-screen flex items-center justify-center bg-black/50 inset-0 z-50">
-              <Spinner color="secondary" />
-            </span>
-          }
+      {JSON.stringify(magnetData) !== "{}" && (
+        <SuspenseCustom
+          classnames={{
+            suspenseFall: "absolute h-screen bg-black/50 inset-0 z-50",
+          }}
         >
-          <CartModal
-            isOpen={isOpen}
-            onOpenChange={onOpenChange}
-            cart={cart}
-            linkWhatsApp={LINKS_SITES?.whatsapp}
+          <ModalComparativeMagnet
+            magnetData={magnetData}
+            onClose={() => setMagnetData({})}
           />
-        </Suspense>
+        </SuspenseCustom>
       )}
 
       <main className="pb-12 px-2 xs:px-4 sm:px-10 lg:px-12">
-        <Suspense
-          fallback={
-            <span className="w-full h-screen flex items-center justify-center">
-              <Spinner color="secondary" />
-            </span>
-          }
+        <SuspenseCustom
+          classnames={{
+            suspenseFall: "h-screen",
+          }}
         >
           <Outlet
             context={{
               cart: cart,
-              LINKS_SITES: LINKS_SITES,
-              db: DB_IMANES,
+              links: LINKS_SITES,
+              setMagnetData: setMagnetData,
             }}
           />
-        </Suspense>
+        </SuspenseCustom>
       </main>
 
-      <Footer LINKS_SITES={LINKS_SITES} />
+      <Footer links={LINKS_SITES} />
     </div>
   );
 }

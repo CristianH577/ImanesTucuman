@@ -19,9 +19,18 @@ module.exports = {
         screen: "100vw",
       },
       fontSize: {
-        dinamic: "var(--font-size)",
+        prima: "var(--font-size-primary)",
+        second: "var(--font-size-secondary)",
+        tert: "var(--font-size-tertiary)",
       },
       colors: { ...COLORS_CUSTOM },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            fontSize: "var(--font-size-primary)",
+          },
+        },
+      }),
     },
   },
   themes: {},
@@ -29,20 +38,7 @@ module.exports = {
   important: true,
   plugins: [
     nextui({
-      themes: {
-        // light: {
-        //   extend: "default",
-        //   colors: { ...COLORS_CUSTOM },
-        // },
-        // dark: {
-        //   extend: "default",
-        //   colors: { ...COLORS_CUSTOM },
-        // },
-        // navidad: {
-        //   // extend: "light",
-        //   colors: colors_navidad,
-        // },
-      },
+      themes: {},
     }),
     plugin(function ({ addVariant }) {
       addVariant("navidad", ".navidad &");
@@ -51,5 +47,6 @@ module.exports = {
       nocompatible: true,
       preferredStrategy: "pseudoelements",
     }),
+    require("@tailwindcss/typography"),
   ],
 };
