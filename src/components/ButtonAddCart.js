@@ -1,5 +1,7 @@
 import { Button } from "@nextui-org/react";
-import { FaCartPlus } from "react-icons/fa";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 
 export default function ButtonAddCart({
   itemData = {},
@@ -8,8 +10,6 @@ export default function ButtonAddCart({
   className = "",
   ...props
 }) {
-  const color = inCart ? "success" : "secondary";
-
   if (inCart) {
     itemData.qtt = 0;
   } else {
@@ -18,14 +18,23 @@ export default function ButtonAddCart({
 
   return (
     <Button
-      color={color}
+      color={inCart ? "success" : "secondary"}
       isIconOnly
-      title="Agregar al carrito"
-      className={`shadow-md${className ? " " + className : ""}`}
+      title={inCart ? "Quitar del carrito" : "Agregar al carrito"}
+      className={`group shadow-md ${inCart ? "hover:bg-danger" : ""}${
+        className ? " " + className : ""
+      }`}
       onPress={() => handleAdd(itemData)}
       {...props}
     >
-      <FaCartPlus size={18} />
+      {inCart ? (
+        <>
+          <ShoppingCartIcon className="group-hover:hidden" />
+          <RemoveShoppingCartIcon className="hidden group-hover:block" />
+        </>
+      ) : (
+        <AddShoppingCartIcon />
+      )}
     </Button>
   );
 }

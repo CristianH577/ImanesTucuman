@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 import {
   FILTERS_INPUTS,
@@ -14,22 +15,25 @@ import {
   DrawerFooter,
   DrawerHeader,
   Input,
+  Link,
   Select,
   SelectItem,
 } from "@nextui-org/react";
 
-import { IoMdArrowRoundForward } from "react-icons/io";
-import { GiBroom } from "react-icons/gi";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+
+import { SVGBroom } from "../../assets/layout/svgs";
 
 export default function DrawerFilters({
   isOpen = false,
   onOpenChange = () => {},
   filtersValues = {},
-  setFiltersValues = () => {},
 }) {
-  const [filtersValuesTemp, setFiltersValuesTemp] = useState({
-    ...FILTERS_VALUES_DEFAULT,
-  });
+  const navigate = useNavigate();
+
+  const [filtersValuesTemp, setFiltersValuesTemp] = useState(
+    FILTERS_VALUES_DEFAULT
+  );
 
   const handleFilterChange = (e) => {
     const filters_values_ = structuredClone(filtersValuesTemp);
@@ -38,9 +42,7 @@ export default function DrawerFilters({
     const type = e.target.type;
 
     if (type === "number") {
-      const [name_, key] = name.split("-");
-
-      filters_values_[name_][key] = Number(value);
+      filters_values_[name] = Number(value);
     } else {
       filters_values_[name] = value;
     }
@@ -59,23 +61,29 @@ export default function DrawerFilters({
   };
 
   const handleApply = () => {
-    const fvt = structuredClone(filtersValuesTemp);
-    const fvd = structuredClone(FILTERS_VALUES_DEFAULT);
+    const add = [];
+    for (const key in filtersValuesTemp) {
+      if (!["apply", "page"].includes(key)) {
+        const val = filtersValuesTemp[key];
+        if (val) add.push([key, val]);
+      }
+    }
 
-    delete fvt.apply;
+    if (add.length > 0) {
+      let href = "";
+      add.forEach((e, i) => {
+        href += i === 0 ? "?" : "&";
+        href += e[0] + "=" + e[1];
+      });
 
-    delete fvd.apply;
+      navigate(href);
+    }
 
-    const isApply = JSON.stringify(fvt) !== JSON.stringify(fvd);
-    filtersValuesTemp.apply = isApply;
-
-    setFiltersValues(structuredClone(filtersValuesTemp));
     onOpenChange();
   };
 
   const handleClean = () => {
     setFiltersValuesTemp(structuredClone(FILTERS_VALUES_DEFAULT));
-    setFiltersValues(structuredClone(FILTERS_VALUES_DEFAULT));
     onOpenChange();
   };
 
@@ -111,16 +119,16 @@ export default function DrawerFilters({
             <p>{input.label}</p>
 
             <div className="xs:flex gap-1">
-              {["min", "max"].map((key) => (
+              {["Min", "Max"].map((key) => (
                 <Input
                   key={key}
                   type="number"
                   className="capitalize"
                   variant="standard"
-                  id={`input-${input.id}-${key}`}
+                  id={`input-${input.id + key}`}
                   label={key}
-                  name={`${input.id}-${key}`}
-                  value={filtersValuesTemp[input.id][key] || ""}
+                  name={`${input.id + key}`}
+                  value={filtersValuesTemp[input.id + key] || ""}
                   onChange={handleFilterChange}
                 />
               ))}
@@ -176,11 +184,17 @@ export default function DrawerFilters({
             onPress={onOpenChange}
             title="Cerrar lista de filtros"
           >
-            <IoMdArrowRoundForward className="h-4/5 w-fit" />
+            <ArrowBackIcon className="h-4/5 w-fit" />
           </Button>
 
-          <Button isIconOnly onPress={handleClean} title="Limpiar filtros">
-            <GiBroom className="h-3/5 w-fit" />
+          <Button
+            isIconOnly
+            title="Limpiar filtros"
+            as={Link}
+            href="#search?orderBy=price-asc"
+            onPress={handleClean}
+          >
+            <SVGBroom className="h-3/5 w-fit" />
           </Button>
 
           <Button color="primary" onPress={handleApply} title="Aplicar filtros">

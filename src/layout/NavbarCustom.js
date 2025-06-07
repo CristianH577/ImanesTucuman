@@ -25,9 +25,10 @@ import Redes from "../components/Redes";
 import ThemeSwitch from "./NavbarCustom/ThemeSwitch";
 import SuspenseCustom from "../components/SuspenseCustom";
 
-import { FaShoppingCart, FaWhatsapp } from "react-icons/fa";
-import { FaGear } from "react-icons/fa6";
-import { IoMenu } from "react-icons/io5";
+import MenuIcon from "@mui/icons-material/Menu";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import SettingsIcon from "@mui/icons-material/Settings";
 
 const MenuMovilDrawer = lazy(() => import("./NavbarCustom/MenuMovilDrawer"));
 
@@ -74,7 +75,7 @@ function NavbarCustom({ cartLength = 0, links = {} }) {
             className="md:hidden w- transition-all"
             icon={
               <div className="h-full flex flex-col justify-center">
-                <IoMenu className="h-full w-full xs:h-fit" />
+                <MenuIcon className="h-3/5 w-fit xs:h-fit" />
                 <span className="hidden xs:block text-xs font-bold">MENU</span>
               </div>
             }
@@ -106,7 +107,7 @@ function NavbarCustom({ cartLength = 0, links = {} }) {
         {NAV_ITEMS.map((item) => (
           <NavbarItem key={item.id}>
             <Link
-              href={`#${item.href}`}
+              href={`#${item.href}${item?.search || ""}`}
               className="hover:scale-110 transition-all capitalize text-custom2 dark:text-custom1"
             >
               {item.label}
@@ -119,7 +120,7 @@ function NavbarCustom({ cartLength = 0, links = {} }) {
         <NavbarItem className="hidden sm:block md:hidden lg:block">
           <Redes
             classNames={{
-              link: `p-1 bg-transparent shadow-none text-2xl`,
+              link: "text-neutral-400",
             }}
             slice={2}
           />
@@ -139,7 +140,7 @@ function NavbarCustom({ cartLength = 0, links = {} }) {
                 aria-label="Configuraciones"
                 title="Configuraciones"
               >
-                <FaGear className="text-2xl" />
+                <SettingsIcon className="text-2xl" />
               </Button>
             </DropdownTrigger>
 
@@ -190,7 +191,7 @@ function NavbarCustom({ cartLength = 0, links = {} }) {
                 size="sm"
                 className="border-custom1-2 bg-custom2-10 text-white"
               >
-                <FaShoppingCart
+                <ShoppingCartIcon
                   className="text-neutral-500 data-[active=true]:text-custom1 text-2xl"
                   data-active={cartLength > 0}
                 />
@@ -206,7 +207,7 @@ function NavbarCustom({ cartLength = 0, links = {} }) {
             className="flex items-center hover:scale-110 transition-all"
             aria-label="Consulte por Whatsapp"
           >
-            <FaWhatsapp className="text-success text-2xl" />
+            <WhatsAppIcon className="text-success text-2xl" />
           </Link>
         </NavbarItem>
       </NavbarContent>

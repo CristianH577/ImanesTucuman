@@ -8,7 +8,7 @@ import Pagos from "./Faqs/Pagos";
 import Envios from "./Faqs/Envios";
 import InputSearch from "../components/InputSearch";
 
-import { FaAsterisk } from "react-icons/fa";
+import EmergencyIcon from "@mui/icons-material/Emergency";
 
 function Faqs() {
   const context = useOutletContext();
@@ -219,7 +219,7 @@ function Faqs() {
           que sube los precios sin razon se va tener que meter lo que vende en
           el{" "}
           <span className="inline-block align-middle">
-            <FaAsterisk />
+            <EmergencyIcon />
           </span>
           .
         </p>

@@ -1,6 +1,6 @@
 import CardUya from "../CardUya";
 
-import { FaArrowCircleDown } from "react-icons/fa";
+import ArrowDropDownCircleIcon from "@mui/icons-material/ArrowDropDownCircle";
 
 export default function Juguetes() {
   const contextImgs = require.context(
@@ -42,7 +42,7 @@ export default function Juguetes() {
             className="col-span-3 place-self-center"
           />
 
-          <FaArrowCircleDown className="w-1/5 sm:w-full h-auto sm:-rotate-90" />
+          <ArrowDropDownCircleIcon className="w-1/5 sm:w-full h-auto sm:-rotate-90" />
 
           <CardUya
             src={contextImgs(`./300/5.webp`)}

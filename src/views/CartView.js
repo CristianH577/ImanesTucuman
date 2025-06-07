@@ -7,9 +7,10 @@ import { Spinner } from "@nextui-org/react";
 import ButtonCart from "./CartView/ButtonCart";
 import Estimate from "./CartView/Estimate";
 
-import { GiBroom } from "react-icons/gi";
-import { IoSend } from "react-icons/io5";
-import { MdOutlineSimCardDownload } from "react-icons/md";
+import SendIcon from "@mui/icons-material/Send";
+import SimCardDownloadOutlinedIcon from "@mui/icons-material/SimCardDownloadOutlined";
+
+import { SVGBroom } from "../assets/layout/svgs";
 
 export default function CartView() {
   const context = useOutletContext();
@@ -108,7 +109,7 @@ export default function CartView() {
   const buttonConsole = [
     {
       label: "Limpiar lista",
-      icon: GiBroom,
+      icon: SVGBroom,
       color: "default",
       onPress: () => {
         context.cart.set({});
@@ -116,13 +117,13 @@ export default function CartView() {
     },
     {
       label: "Descargar como imagen",
-      icon: MdOutlineSimCardDownload,
+      icon: SimCardDownloadOutlinedIcon,
       color: "secondary",
       onPress: downloadEstimate,
     },
     {
       label: "Continuar por WhatsApp",
-      icon: IoSend,
+      icon: SendIcon,
       color: "primary",
       onPress: handleSend,
     },

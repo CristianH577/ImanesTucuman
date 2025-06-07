@@ -1,4 +1,4 @@
-import { SVGMancha } from "../assets/layout/svgs";
+import { SVGMancha } from "../assets/layout/svgsLogo";
 
 export default function TitleCustom({ title = "", id = null }) {
   return (

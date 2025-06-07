@@ -6,7 +6,9 @@ import { Link } from "@nextui-org/react";
 
 import ImageCustom from "../../components/ImageCustom";
 
-import { SiFacebook, SiGoogleforms, SiGooglemaps } from "react-icons/si";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LocationPinIcon from "@mui/icons-material/LocationPin";
+import DescriptionIcon from "@mui/icons-material/Description";
 
 import imgOpinions from "../../assets/home/Opiniones/people-text-baloon.webp";
 
@@ -18,19 +20,19 @@ export default function Opiniones() {
       href: context?.links?.googlemaps,
       color: "success",
       label: "Google Maps",
-      icon: <SiGooglemaps />,
+      icon: <LocationPinIcon />,
     },
     {
       href: context?.links?.facebook,
       color: "primary",
       label: "Facebook",
-      icon: <SiFacebook />,
+      icon: <FacebookIcon />,
     },
     {
       href: context?.links?.["form_encuesta-20250109"],
       color: "secondary",
       label: "Encuesta",
-      icon: <SiGoogleforms />,
+      icon: <DescriptionIcon />,
     },
   ];
 

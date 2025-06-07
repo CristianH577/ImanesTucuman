@@ -2,18 +2,20 @@ import LinkCustom from "../../components/LinkCustom";
 
 import MapUbication from "./Envios/MapUbication";
 
-import { MdOutlineMapsHomeWork } from "react-icons/md";
-import { BsBoxSeam } from "react-icons/bs";
-import { FaDirections, FaRegCalendar, FaWhatsapp } from "react-icons/fa";
-import { PiCity } from "react-icons/pi";
-import { FaMotorcycle } from "react-icons/fa6";
-import { SiGooglemaps } from "react-icons/si";
-import { FiExternalLink } from "react-icons/fi";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import MopedIcon from "@mui/icons-material/Moped";
+import ApartmentIcon from "@mui/icons-material/Apartment";
+import StoreOutlinedIcon from "@mui/icons-material/StoreOutlined";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import OpenInNewSharpIcon from "@mui/icons-material/OpenInNewSharp";
+import AssistantDirectionSharpIcon from "@mui/icons-material/AssistantDirectionSharp";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 function Envios({ links = {} }) {
   const lista_envios = [
     {
-      icon: MdOutlineMapsHomeWork,
+      icon: StoreOutlinedIcon,
       title: "Retiro",
       content: (
         <ol className="list-disc">
@@ -24,7 +26,7 @@ function Envios({ links = {} }) {
               href={links?.googlemaps}
               title="Ir a ubicacion en Google Maps"
               text="Google Maps"
-              icon={<SiGooglemaps />}
+              icon={<LocationOnIcon />}
             />
             ). No es local pero puede ver los productos aqui.
           </li>
@@ -37,7 +39,7 @@ function Envios({ links = {} }) {
               }
               title="Consultar horarios por Wharsapp"
               text="Consultar"
-              icon={<FaWhatsapp />}
+              icon={<WhatsAppIcon />}
             />
             ).
           </li>
@@ -47,7 +49,7 @@ function Envios({ links = {} }) {
               href={links?.googlemaps_indicaciones}
               title="Ir a indicaciones en Google Maps"
               text="como llegar"
-              icon={<FaDirections />}
+              icon={<AssistantDirectionSharpIcon />}
             />
             .
           </li>
@@ -55,7 +57,7 @@ function Envios({ links = {} }) {
       ),
     },
     {
-      icon: FaRegCalendar,
+      icon: CalendarTodayIcon,
       title: "Entrega en zona centro",
       content: (
         <p>
@@ -66,14 +68,14 @@ function Envios({ links = {} }) {
             }
             title="Coordinar por Wharsapp"
             text="Consultar"
-            icon={<FaWhatsapp />}
+            icon={<WhatsAppIcon />}
           />
           ).
         </p>
       ),
     },
     {
-      icon: PiCity,
+      icon: ApartmentIcon,
       title: "Envío a zona centro ($3500)",
       content: (
         <p>
@@ -83,7 +85,7 @@ function Envios({ links = {} }) {
       ),
     },
     {
-      icon: FaMotorcycle,
+      icon: MopedIcon,
       title: "Uber",
       content: (
         <p>
@@ -95,7 +97,7 @@ function Envios({ links = {} }) {
       ),
     },
     {
-      icon: BsBoxSeam,
+      icon: LocalShippingOutlinedIcon,
       title: "Encomienda",
       content: (
         <div>
@@ -113,7 +115,7 @@ function Envios({ links = {} }) {
               <LinkCustom
                 href="https://www.andreani.com/?tab=cotizar-envio"
                 text="web de Andreani"
-                icon={<FiExternalLink />}
+                icon={<OpenInNewSharpIcon />}
               />
               .
             </li>
@@ -133,7 +135,7 @@ function Envios({ links = {} }) {
         {lista_envios.map((item, i) => (
           <li key={i}>
             <div className="flex items-center gap-2 text-tert">
-              <item.icon className="h-full w-fit" />
+              <item.icon className="h-6 w-fit" />
               <b>{item?.title}</b>
             </div>
 

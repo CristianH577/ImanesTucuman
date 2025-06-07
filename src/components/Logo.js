@@ -2,7 +2,7 @@ import {
   SVGMancha,
   SVGTextoImanes,
   SVGTextoTucuman,
-} from "../assets/layout/svgs";
+} from "../assets/layout/svgsLogo";
 
 function Logo({ id = null, classNames = {}, className = "" }) {
   return (

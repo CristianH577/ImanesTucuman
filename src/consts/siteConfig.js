@@ -1,38 +1,41 @@
-import { LuMagnet, LuPackageSearch } from "react-icons/lu";
-import { AiOutlineNumber } from "react-icons/ai";
-import { FaRegCircleQuestion } from "react-icons/fa6";
-import { GoBook } from "react-icons/go";
-import { IoHomeOutline } from "react-icons/io5";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import ContentPasteSearchOutlinedIcon from "@mui/icons-material/ContentPasteSearchOutlined";
+import TagIcon from "@mui/icons-material/Tag";
+import ImportContactsIcon from "@mui/icons-material/ImportContacts";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+
+import { SVGMagnet } from "../assets/layout/svgs";
 
 export const NAV_ITEMS = [
-  { id: "", href: "", label: "Inicio", icon: IoHomeOutline },
+  { id: "", href: "", label: "Inicio", icon: HomeOutlinedIcon },
   {
     id: "search_view",
     href: "search",
     label: "Buscar",
-    icon: LuPackageSearch,
+    icon: ContentPasteSearchOutlinedIcon,
+    search: "?orderBy=price-asc",
   },
-  { id: "imanes", href: "imanes", label: "imanes", icon: LuMagnet },
+  { id: "imanes", href: "imanes", label: "imanes", icon: SVGMagnet },
   // { id: "otros", href: "otros", label: "otros", icon: MdOutlineMore },
   {
     id: "caracteristicas",
     href: "caracteristicas",
     label: "Características",
-    icon: AiOutlineNumber,
+    icon: TagIcon,
   },
   {
     id: "uya",
     href: "uya",
     label: "U&A",
     title: "Usos y Aplicaciones",
-    icon: GoBook,
+    icon: ImportContactsIcon,
   },
   {
     id: "faqs",
     href: "faqs",
     label: "FAQs",
     title: "Preguntas Frecuentes",
-    icon: FaRegCircleQuestion,
+    icon: HelpOutlineIcon,
   },
   // { id: "contacto", label: "contacto" },
 ];
@@ -83,38 +86,6 @@ export const FONTS_VALUES = {
     primary: "x-large",
     secondary: "large",
     tertiary: "xx-large",
-  },
-};
-
-export const COLORS_CUSTOM = {
-  custom1: {
-    DEFAULT: "#FF8B00",
-    1: "rgba(255, 153, 0, 1)",
-    2: "rgba(255, 167, 0, 1)",
-    3: "rgba(255, 181, 0, 1)",
-    4: "rgba(255, 195, 0, 1)",
-    5: "rgba(255, 209, 0, 1)",
-    6: "rgba(255, 222, 0, 1)",
-    7: "rgba(255, 236, 0, 1)",
-    8: "rgba(255, 250, 0, 1)",
-    9: "rgba(255, 255, 0, 1)",
-    10: "rgba(255, 255, 0, 1)",
-
-    "-9": "rgba(230, 125, 0, 1)",
-    "-8": "rgba(204, 111, 0, 1)",
-  },
-  custom2: {
-    DEFAULT: "#202355",
-    1: "rgba(35, 39, 94, 1)",
-    2: "rgba(38, 42, 102, 1)",
-    3: "rgba(42, 46, 111, 1)",
-    4: "rgba(45, 49, 119, 1)",
-    5: "rgba(48, 53, 128, 1)",
-    6: "rgba(51, 56, 136, 1)",
-    7: "rgba(54, 60, 145, 1)",
-    8: "rgba(58, 63, 153, 1)",
-    9: "rgba(61, 67, 162, 1)",
-    10: "rgba(64, 70, 170, 1)",
   },
 };
 
@@ -178,13 +149,12 @@ export const FILTERS_INPUTS = [
 
 export const FILTERS_VALUES_DEFAULT = {
   apply: false,
+  page: 1,
   orderBy: "",
   text: "",
   categorie: "",
   subcategorie: "",
   forma: "",
-  price: {
-    min: "",
-    max: "",
-  },
+  priceMin: "",
+  priceMax: "",
 };

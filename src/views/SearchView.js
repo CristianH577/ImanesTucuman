@@ -1,40 +1,44 @@
 import { lazy, useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
-import { cartItemsComparator, loadImgsPreview } from "../libs/functions";
+import { cartItemsComparator } from "../libs/functions";
 
 import { DB_ALL } from "../consts/dbs";
 import { FILTERS_VALUES_DEFAULT } from "../consts/siteConfig";
 
-import { Button, ButtonGroup, Spinner, useDisclosure } from "@nextui-org/react";
+import {
+  Button,
+  ButtonGroup,
+  Link,
+  Spinner,
+  useDisclosure,
+} from "@nextui-org/react";
 
 import ItemsView from "./SearchView/ItemsView";
 import SuspenseCustom from "../components/SuspenseCustom";
 import InputSearch from "../components/InputSearch";
 
-import { TbFilter } from "react-icons/tb";
-import { GiBroom } from "react-icons/gi";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+
+import { SVGBroom } from "../assets/layout/svgs";
 
 const DrawerFilters = lazy(() => import("./SearchView/DrawerFilters"));
 
-const itemsPerView = 30;
+const itemsPerView = 15;
 
 export default function SearchView() {
   const { search } = useLocation();
+  const navigate = useNavigate();
 
   const [items, setItems] = useState([]);
-  const [filtersValues, setFiltersValues] = useState({
-    ...FILTERS_VALUES_DEFAULT,
-    apply: true,
-    orderBy: "price-asc",
-  });
-  const [totalVisibleItems, setTotalVisibleItems] = useState(itemsPerView);
+  const [filtersValues, setFiltersValues] = useState(FILTERS_VALUES_DEFAULT);
   const [visibleItems, setVisibleItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [inputText, setInputText] = useState("");
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const searhItems = () => {
+    setLoading(true);
     let items_ = structuredClone(DB_ALL);
 
     items_ = items_.filter((item) => !item?.hidden);
@@ -70,14 +74,20 @@ export default function SearchView() {
       }
     });
 
-    if (filtersValues?.price?.min || filtersValues?.price?.max) {
-      const min = Number(filtersValues?.price?.min);
-      const max = Number(filtersValues?.price?.max);
+    if (filtersValues?.priceMin) {
+      const min = Number(filtersValues?.priceMin);
       items_ = items_.filter((item) => {
-        let bool = true;
-        if (min) bool = Number(item.price) >= min;
-        if (max) bool = bool && Number(item.price) <= max;
-        return bool;
+        const usePrice = item.price_data.usePrice;
+        const price = item.price_data.prices[usePrice];
+        return Number(price) >= min;
+      });
+    }
+    if (filtersValues?.priceMax) {
+      const max = Number(filtersValues?.priceMax);
+      items_ = items_.filter((item) => {
+        const usePrice = item.price_data.usePrice;
+        const price = item.price_data.prices[usePrice];
+        return Number(price) <= max;
       });
     }
 
@@ -102,23 +112,35 @@ export default function SearchView() {
     }
 
     setItems(items_);
+    setVisibleItems(items_.slice(0, itemsPerView * filtersValues.page));
+    setLoading(false);
   };
 
   const handleSearch = () => {
-    const filters_values_ = structuredClone(filtersValues);
-    filters_values_.text = inputText;
-    setFiltersValues(filters_values_);
+    let href = "?orderBy=price-asc";
+    if (inputText) {
+      href += "&text=" + inputText;
+    }
+    navigate(href);
   };
   const handleClean = () => {
     setInputText("");
-    setFiltersValues(FILTERS_VALUES_DEFAULT);
   };
 
   const showMoreItems = () => {
-    setTotalVisibleItems(totalVisibleItems + itemsPerView);
+    let href = "";
+    if (search) {
+      href += search + "&";
+    } else {
+      href += "?";
+    }
+    href += "page=" + (Number(filtersValues.page) + 1);
+    navigate(href);
   };
 
   useEffect(() => {
+    const filters_values_ = structuredClone(FILTERS_VALUES_DEFAULT);
+
     if (search) {
       const params = new URLSearchParams(search);
       const paramsObj = {};
@@ -126,7 +148,6 @@ export default function SearchView() {
         ([k, v]) => (paramsObj[k] = v.replace(/%/g, " "))
       );
 
-      const filters_values_ = structuredClone(filtersValues);
       Object.keys(paramsObj).forEach((key) => {
         if (filters_values_.hasOwnProperty(key)) {
           filters_values_[key] = paramsObj[key];
@@ -136,42 +157,12 @@ export default function SearchView() {
 
       const text = filters_values_?.text;
       if (text) setInputText(text);
-
-      setFiltersValues(filters_values_);
     }
+
+    setFiltersValues(filters_values_);
   }, [search]);
 
   useEffect(searhItems, [filtersValues]);
-
-  useEffect(() => {
-    const loadImgs = async () => {
-      setLoading(true);
-
-      const visible_add = items.slice(visibleItems.length, totalVisibleItems);
-      const visible_add_imgs = await loadImgsPreview(visible_add);
-      const visible_ = [...visibleItems, ...visible_add_imgs];
-
-      setVisibleItems(visible_);
-      setLoading(false);
-    };
-
-    loadImgs();
-  }, [totalVisibleItems]);
-
-  useEffect(() => {
-    const loadImgs = async () => {
-      setLoading(true);
-      setTotalVisibleItems(itemsPerView);
-
-      const visible_ = items.slice(0, itemsPerView);
-      const visible_imgs = await loadImgsPreview(visible_);
-
-      setVisibleItems(visible_imgs);
-      setLoading(false);
-    };
-
-    loadImgs();
-  }, [items]);
 
   return (
     <>
@@ -184,8 +175,14 @@ export default function SearchView() {
           />
 
           <ButtonGroup variant="ghost">
-            <Button isIconOnly title="Limpiar filtros" onPress={handleClean}>
-              <GiBroom className="h-3/5 w-fit" />
+            <Button
+              isIconOnly
+              title="Limpiar filtros"
+              as={Link}
+              href="#search?orderBy=price-asc"
+              onPress={handleClean}
+            >
+              <SVGBroom className="h-3/5 w-fit" />
             </Button>
 
             <Button
@@ -194,7 +191,7 @@ export default function SearchView() {
               title="Abrir lista de filtros"
               onPress={onOpen}
             >
-              <TbFilter className="h-4/5 w-fit" />
+              <FilterAltIcon className="h-4/5 w-fit" />
             </Button>
           </ButtonGroup>
         </article>
@@ -214,7 +211,6 @@ export default function SearchView() {
             isOpen={isOpen}
             onOpenChange={onOpenChange}
             filtersValues={filtersValues}
-            setFiltersValues={setFiltersValues}
           />
         </SuspenseCustom>
       </section>

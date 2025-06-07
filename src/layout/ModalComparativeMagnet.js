@@ -14,7 +14,8 @@ import {
 
 import ImageCustom from "../components/ImageCustom";
 
-import { IoMdArrowRoundBack, IoIosRefresh } from "react-icons/io";
+import RestartAltOutlinedIcon from "@mui/icons-material/RestartAltOutlined";
+import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 
 import tapa_img from "../assets/imanes/tapa.webp";
 
@@ -385,7 +386,7 @@ export default function ModalComparativeMagnet({
                     className="text-xl absolute top-2 left-2"
                     title="Acomodar vista"
                   >
-                    <IoIosRefresh />
+                    <RestartAltOutlinedIcon />
                   </Button>
 
                   {views.map((view) => (
@@ -433,10 +434,9 @@ export default function ModalComparativeMagnet({
                 variant="light"
                 onPress={onClose}
                 isIconOnly
-                className="text-2xl"
                 title="Cerrar vista"
               >
-                <IoMdArrowRoundBack className="h-4/5 w-fit" />
+                <ArrowBackOutlinedIcon className="text-3xl" />
               </Button>
             </ModalFooter>
           </>

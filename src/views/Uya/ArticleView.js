@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/react";
 
 import SuspenseCustom from "../../components/SuspenseCustom";
 
-import { LuArrowBigUpDash } from "react-icons/lu";
+import { SVGArrowBigUpLine } from "../../assets/layout/svgs";
 
 export default function ArticleView({ children, h1, id }) {
   return (
@@ -28,7 +28,7 @@ export default function ArticleView({ children, h1, id }) {
           title="Ir al principia de la pagina"
           onPress={scrollToTop}
         >
-          <LuArrowBigUpDash className="w-full h-fit" />
+          <SVGArrowBigUpLine className="h-6 w-fit" />
         </Button>
       </span>
 

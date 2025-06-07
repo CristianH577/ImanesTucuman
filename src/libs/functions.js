@@ -1,18 +1,12 @@
-import {
-  SVGArrastre,
-  SVGCuadrado,
-  SVGCuadradoFresado,
-  SVGRedondo,
-  SVGRedondoFresado,
-} from "../assets/imanes/svgs";
-
 export const scrollToTop = () => {
   const app = document.querySelector("#app");
   if (app) app.scrollTo(0, 0);
 };
 export const scrollToBottom = () => {
-  const app = document.querySelector("#app");
-  if (app) app.scrollTo(0, app.scrollHeight);
+  // const app = document.querySelector("#app");
+  // if (app) app.scrollTo(0, app.scrollHeight);
+  const footer = document.querySelector("#footer");
+  if (footer) footer.scrollIntoView();
 };
 
 export const toPriceFormat = (price = 0) => {
@@ -93,125 +87,4 @@ export const handlePriceData = (itemData = {}) => {
   }
 
   return price_data;
-};
-
-export const loadImgsPreview = async (items = []) => {
-  const contextImg = require.context("../assets/items", true);
-
-  const formas = {
-    redondo: SVGRedondo,
-    cuadrado: SVGCuadrado,
-    "redondo fresado": SVGRedondoFresado,
-    "cuadrado fresado": SVGCuadradoFresado,
-    arrastre: SVGArrastre,
-  };
-
-  await Promise.all(
-    items.map((item) => {
-      return new Promise((resolve) => {
-        if (!item.imgs_data.preview?.src) {
-          if (item.imgs_data.preview.type === "svg") {
-            const forma = item?.info?.forma || "arrastre";
-            item.imgs_data.preview.src = formas[forma];
-          } else {
-            let src = "";
-            try {
-              src = contextImg(`./${item.id}/preview.webp`);
-            } catch (error) {
-              try {
-                src = contextImg(`./${item.id}.webp`);
-              } catch (error) {
-                src = "";
-              }
-            }
-
-            let thumbnails = "";
-            try {
-              thumbnails = contextImg(`./${item.id}/thumbnails/1.webp`);
-            } catch (error) {
-              thumbnails = src;
-            }
-
-            item.imgs_data.preview.src = src;
-            item.imgs_data.preview.thumbnails = thumbnails;
-          }
-        }
-
-        resolve();
-      });
-    })
-  );
-
-  return items;
-};
-
-export const loadImgsAll = async (itemData = {}) => {
-  const contextImg = require.context("../assets/items", true);
-  const itemData_ = structuredClone(itemData);
-
-  const formas = {
-    redondo: SVGRedondo,
-    cuadrado: SVGCuadrado,
-    "redondo fresado": SVGRedondoFresado,
-    "cuadrado fresado": SVGCuadradoFresado,
-    arrastre: SVGArrastre,
-  };
-
-  await new Promise((resolve) => {
-    let svgs = [];
-    if (itemData_.imgs_data.preview.type === "svg") {
-      const forma = itemData_?.info?.forma || "arrastre";
-      svgs = [
-        {
-          type: "svg",
-          src: formas[forma],
-        },
-      ];
-    }
-
-    let imgs_ = [];
-    let thumbnails_ = [];
-    try {
-      const keys = contextImg.keys();
-      const folder = keys.filter(
-        (path) =>
-          path.includes(`./${itemData_.id}/`) && !path.includes("preview")
-      );
-
-      const thumbnails_paths = folder.filter((path) =>
-        path.includes("thumbnails")
-      );
-      const imgs_paths = folder.filter((path) => !path.includes("thumbnails"));
-
-      thumbnails_ = thumbnails_paths.map((path) => {
-        return { type: "img", src: contextImg(path) };
-      });
-      imgs_ = imgs_paths.map((path) => {
-        return { type: "img", src: contextImg(path) };
-      });
-    } catch (error) {}
-
-    if (!imgs_.length) {
-      try {
-        imgs_ = [
-          {
-            type: "img",
-            src: contextImg(`./${itemData_.id}.webp`),
-          },
-        ];
-      } catch (error) {}
-    }
-
-    let imgs = [];
-    let thumbnails = [];
-    imgs = [...svgs, ...imgs_];
-    thumbnails = [...svgs, ...thumbnails_];
-
-    itemData_.imgs_data.thumbnails = thumbnails;
-    itemData_.imgs_data.imgs = imgs;
-
-    resolve();
-  });
-
-  return itemData_;
 };

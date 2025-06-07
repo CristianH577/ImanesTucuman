@@ -1,12 +1,8 @@
 import ImageCustom from "../../../components/ImageCustom";
 import LinkToFont from "../components/LinkToFont";
 
-import {
-  FaArrowDown,
-  FaLongArrowAltDown,
-  FaLongArrowAltUp,
-} from "react-icons/fa";
-import { FaArrowsUpDown } from "react-icons/fa6";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 import {
   SVGImanes,
@@ -37,20 +33,14 @@ export default function Recogedor() {
       desc: "En el mas chico introducir varios imanes con separadores y poner un tapón",
       img: (
         <div className="flex flex-col items-center gap-2 relative rotate-45 h-[200px]">
-          <FaLongArrowAltDown
-            size={44}
-            className="absolute top-2 -right-9 text-black"
-          />
+          <ArrowDownwardIcon className="absolute top-2 -right-10 text-black h-12 w-fit" />
 
           <SVGTapaB size={scale} className="from-slate-300 to-slate-400" />
           <SVGTuboB size={scale} className="from-slate-200 to-slate-300" />
           <SVGImanes size={scale - 1} className="from-gray-300 to-gray-500" />
           <SVGTaponB size={scale} />
 
-          <FaLongArrowAltUp
-            size={44}
-            className="absolute bottom-12 -right-9 text-black"
-          />
+          <ArrowUpwardIcon className="absolute bottom-12 -right-10 text-black h-12 w-fit" />
         </div>
       ),
     },
@@ -65,10 +55,7 @@ export default function Recogedor() {
           <SVGTuboA size={scale} className="from-slate-400 to-slate-500" />
           <SVGTapaA size={scale} className="from-slate-500 to-slate-600" />
 
-          <FaLongArrowAltUp
-            size={44}
-            className="absolute bottom-2 -right-9 text-black"
-          />
+          <ArrowUpwardIcon className="absolute bottom-2 -right-10 text-black h-14 w-fit" />
         </div>
       ),
     },
@@ -94,11 +81,6 @@ export default function Recogedor() {
             size={scale}
             className="from-yellow-200 to-yellow-500 absolute top-[4.2rem] z-10"
           />
-
-          <FaArrowsUpDown
-            size={64}
-            className="absolute bottom-[45%] -right-20 text-black"
-          />
         </div>
       ),
     },
@@ -114,7 +96,7 @@ export default function Recogedor() {
           width={290}
         />
 
-        <FaArrowDown size={36} />
+        <ArrowDownwardIcon className="h-12 w-fit" />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

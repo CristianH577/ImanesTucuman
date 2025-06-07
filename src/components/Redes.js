@@ -1,74 +1,66 @@
-import { motion } from "framer-motion";
-
 import { LINKS_SITES } from "../consts/siteConfig";
 
 import { Link, Tooltip } from "@nextui-org/react";
 
-import {
-  FaInstagram,
-  FaFacebook,
-  FaTelegramPlane,
-  FaRegFilePdf,
-} from "react-icons/fa";
-import { FaSignalMessenger, FaXTwitter } from "react-icons/fa6";
-import {
-  SiGoogleforms,
-  SiGooglestreetview,
-  SiMercadopago,
-} from "react-icons/si";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import XIcon from "@mui/icons-material/X";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import PinDropIcon from "@mui/icons-material/PinDrop";
+import DescriptionIcon from "@mui/icons-material/Description";
+
+import { SVGMercadoLibre, SVGSSignalMessenger } from "../assets/layout/svgs";
 
 export default function Redes({ classNames = {}, className = "", slice = 0 }) {
   const redes = [
     {
       id: "facebook",
-      icon: <FaFacebook />,
+      icon: FacebookIcon,
       label: "Facebook",
     },
     {
       id: "instagram",
-      icon: <FaInstagram />,
-      // src: contextImgs("./logo-insta.webp"),
+      icon: InstagramIcon,
       label: "Instagram",
     },
     {
       id: "x",
-      icon: <FaXTwitter />,
+      icon: XIcon,
       label: "X",
     },
     {
       id: "googlemaps",
-      icon: <SiGooglestreetview />,
-      // src: contextImgs("./logo-googlemaps.webp"),
+      icon: PinDropIcon,
       label: "Ubicación",
     },
     {
       id: "telegram",
-      icon: <FaTelegramPlane />,
+      icon: TelegramIcon,
       // className="text-[#0088cc]"
       label: "Telegram",
     },
     {
       id: "signal",
-      icon: <FaSignalMessenger />,
-      // className="text-sky-500"
+      icon: SVGSSignalMessenger,
       label: "Signal",
     },
     {
       id: "catalogo",
-      icon: <FaRegFilePdf />,
-
+      icon: PictureAsPdfIcon,
       label: "Catalogo",
     },
     {
       id: "mercadoshops",
-      icon: <SiMercadopago />,
-      // src: contextImgs("./logo-ms.webp"),
+      icon: SVGMercadoLibre,
       label: "Tienda Online",
+      classNames: {
+        icon: "h-full w-fit",
+      },
     },
     {
       id: "form_encuesta-20250109",
-      icon: <SiGoogleforms />,
-      // className="text-purple-500"
+      icon: DescriptionIcon,
       label: "Encuesta",
     },
   ];
@@ -80,32 +72,29 @@ export default function Redes({ classNames = {}, className = "", slice = 0 }) {
       }`}
     >
       {redes.slice(0, slice || redes.length).map((item, i) => (
-        <motion.div
+        <Tooltip
           key={i}
-          whileTap={{
-            rotate: 360,
+          content={item?.label}
+          className="border-2 border-custom1-2"
+          classNames={{
+            content: "dark:text-white text-center font-semibold",
           }}
+          hidden={!item?.label}
         >
-          <Tooltip
-            content={item?.label}
-            className="border-2 border-custom1-2"
-            classNames={{
-              content: "dark:text-white text-center font-semibold",
-            }}
-            hidden={!item?.label}
+          <Link
+            href={LINKS_SITES?.[item?.id] || "#contacto"}
+            // target={LINKS_SITES?.[item?.id] ? "_blank" : "_self"}
+            className={`text-neutral-400 transition-all hover:text-custom2 dark:hover:text-custom1${
+              classNames?.link ? " " + classNames?.link : ""
+            }`}
+            aria-label={item?.label}
+            isExternal
           >
-            <Link
-              href={LINKS_SITES?.[item?.id] || "#contacto"}
-              target={LINKS_SITES?.[item?.id] ? "_blank" : "_self"}
-              className={`text-neutral-400 transition-all hover:text-custom2 dark:hover:text-custom1${
-                classNames?.link ? " " + classNames?.link : ""
-              }`}
-              aria-label={item?.label}
-            >
-              {item?.icon}
-            </Link>
-          </Tooltip>
-        </motion.div>
+            <item.icon
+              className={"" + (classNames?.icon ? " " + classNames?.icon : "")}
+            />
+          </Link>
+        </Tooltip>
       ))}
     </div>
   );

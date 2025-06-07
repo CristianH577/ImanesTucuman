@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 
+import { scrollStyle } from "../../libs/tvs";
+
 import { toPriceFormat } from "../../libs/functions";
 
 import { Button } from "@nextui-org/react";
 
 import ButtonAddCart from "../../components/ButtonAddCart";
 
-import { GrCompare } from "react-icons/gr";
-import { scrollStyle } from "../../libs/tvs";
+import CompareIcon from "@mui/icons-material/Compare";
 
 const rowsPerView = 10;
 
@@ -42,9 +43,9 @@ export default function TablePrices({
     >
       <table
         aria-label={tableAriaLabel || null}
-        className="w-full sm:min-w-[750px] text-tert table- max-sm:border-separate border-spacing-y-3"
+        className="w-full xs:min-w-[750px] text-tert table- max-xs:border-separate border-spacing-y-3"
       >
-        <thead className="border-b-3 max-sm:hidden">
+        <thead className="border-b-3 max-xs:hidden">
           <tr>
             <th className="p-2 border-e-3">
               <p>Medida</p>
@@ -68,16 +69,16 @@ export default function TablePrices({
             return (
               <tr
                 key={item.id}
-                className="group hover:font-semibold hover:bg-secondary/30 data-[incart=false]:data-[nostock=true]:bg-divider data-[incart=true]:!bg-success/30 max-sm:grid max-xs:grid-cols-1 max-sm:grid-cols-2 max-sm:border-3 max-sm:rounded-lg max-sm:mb-3 sm:even:text-custom2-10 sm:dark:even:text-custom1"
+                className="group hover:font-semibold hover:bg-secondary/30 data-[incart=false]:data-[nostock=true]:bg-divider data-[incart=true]:!bg-success/30 max-xs:grid max-xs:grid-cols-1 max-xs:border-3 max-xs:rounded-lg max-xs:mb-3 xs:even:text-custom2-10 xs:dark:even:text-custom1"
                 data-nostock={noStock}
                 data-incart={inCart}
               >
-                <td className="px-2 py-1 xs:py-2 whitespace-nowrap xs:col-span-2 max-sm:border-b-3 sm:border-e-3 sm:text-start">
-                  <div className="flex gap-1 xs:gap-2 justify-end items-center w-full max-xs:flex-col sm:flex-row-reverse break-all">
+                <td className="px-2 py-1 xs:py-2 whitespace-nowrap xs:col-span-2 max-xs:border-b-3 xs:border-e-3 xs:text-start">
+                  <div className="flex gap-1 xs:gap-2 justify-end items-center w-full max-xs:flex-col xs:flex-row-reverse break-all">
                     <a
                       href={"#search/" + item.id}
                       title="Ver producto"
-                      className="max-sm:whitespace-normal"
+                      className="max-xs:whitespace-normal"
                     >
                       {item.label}
                     </a>
@@ -89,7 +90,7 @@ export default function TablePrices({
                       title="Ver referencia de tamaños"
                       onPress={() => setItemToComparate(item)}
                     >
-                      <GrCompare size={22} />
+                      <CompareIcon className="h-7 w-fit" />
                     </Button>
                   </div>
                 </td>
@@ -104,8 +105,8 @@ export default function TablePrices({
                           key={`precio_x${qtt}`}
                           className="px-2 py-1 xs:py-2"
                         >
-                          <div className="flex flex-col xs:flex-row sm:flex-col gap-1 xs:gap-2 justify-end items-center">
-                            <p className="max-sm:break-all">
+                          <div className="flex flex-col gap-1 xs:gap-2 justify-end items-center">
+                            <p className="max-xs:break-all">
                               {toPriceFormat(price)}
                               <span className="font-size-secondary">
                                 ({qtt}u)

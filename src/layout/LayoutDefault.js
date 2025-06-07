@@ -37,7 +37,7 @@ export default function LayoutDefault() {
   return (
     <div
       id="app"
-      className="min-h-screen h-[100dvh] bg-background text-foreground dark:bg-content2 font-[menulis] flex flex-col justify-between overflow-x-hidden overflow-y-auto scroll-smooth sm:scrollbar scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6"
+      className="min-h-screen h-[100dvh] text-foreground dark:bg-content2 font-[menulis] flex flex-col justify-between overflow-x-hidden overflow-y-auto scroll-smooth sm:scrollbar scrollbar-thumb-custom1 scrollbar-track-custom2-10 scrollbar-w-3 scrollbar-h-3 hover:scrollbar-thumb-custom1-6"
     >
       <SuspenseCustom
         classnames={{
@@ -63,7 +63,7 @@ export default function LayoutDefault() {
         </SuspenseCustom>
       )}
 
-      <main className="pb-12 px-2 xs:px-4 sm:px-10 lg:px-12">
+      <main className="pb-12 px-2 sm:px-10 lg:px-12">
         <SuspenseCustom
           classnames={{
             suspenseFall: "h-screen",

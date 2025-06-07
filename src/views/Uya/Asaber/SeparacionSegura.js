@@ -1,6 +1,7 @@
 import CardUya from "../CardUya";
 
-import { FaRegCheckCircle, FaRegTimesCircle } from "react-icons/fa";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export default function SeparacionSegura() {
   const contextImgs = require.context(
@@ -8,7 +9,7 @@ export default function SeparacionSegura() {
     true
   );
 
-  const class_icon = "absolute text-4xl z-10 left-3 top-3";
+  const class_icon = "absolute z-10 left-3 top-3 text-4xl";
 
   const items = [
     "Retirar el imán de la pila deslizándolo hacia un lado",
@@ -33,9 +34,11 @@ export default function SeparacionSegura() {
           }}
           contentPlus={
             i < 2 ? (
-              <FaRegCheckCircle className={`text-success ${class_icon}`} />
+              <CheckCircleOutlineIcon
+                className={`text-success ${class_icon}`}
+              />
             ) : (
-              <FaRegTimesCircle className={`text-danger ${class_icon}`} />
+              <HighlightOffIcon className={`text-danger ${class_icon}`} />
             )
           }
         />

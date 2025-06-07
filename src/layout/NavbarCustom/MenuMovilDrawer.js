@@ -11,7 +11,7 @@ import {
 import Redes from "../../components/Redes";
 import Logo from "../../components/Logo";
 
-import { FaArrowLeft } from "react-icons/fa";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function MenuMovilDrawer({ isOpen, onOpenChange, NAV_ITEMS }) {
   return (
@@ -44,22 +44,12 @@ function MenuMovilDrawer({ isOpen, onOpenChange, NAV_ITEMS }) {
         {() => (
           <>
             <DrawerHeader>
-              {/* <Link
-                className="hover:scale-105 transition-all"
-                href="#"
-                onPress={() => {
-                  navigate("/");
-                  onOpenChange(!isOpen);
-                }}
-                aria-label="Ir al inicio de la pagina"
-              > */}
               <Logo
                 id="menu_movil_logo"
                 classNames={{
                   svgA: "h-full w-auto max-h-[44px]",
                 }}
               />
-              {/* </Link> */}
             </DrawerHeader>
 
             <Divider className="w-4/5 self-center" />
@@ -79,7 +69,7 @@ function MenuMovilDrawer({ isOpen, onOpenChange, NAV_ITEMS }) {
                     textValue={item.label}
                     className="text-custom2 dark:text-custom1 capitalize py-2 transition-all hover:shadow-md"
                     classNames={{ title: "text-lg font-semibold" }}
-                    href={`#${item.href}`}
+                    href={`#${item.href}${item?.search || ""}`}
                     startContent={
                       item?.icon ? <item.icon className="h-fit w-6" /> : null
                     }
@@ -96,7 +86,7 @@ function MenuMovilDrawer({ isOpen, onOpenChange, NAV_ITEMS }) {
                     title: "text-lg font-semibold flex gap-2 items-center",
                   }}
                 >
-                  <FaArrowLeft />
+                  <ArrowBackIcon />
                   Cerrar
                 </ListboxItem>
               </Listbox>
@@ -104,9 +94,9 @@ function MenuMovilDrawer({ isOpen, onOpenChange, NAV_ITEMS }) {
               <Divider className="w-4/5 self-center" />
 
               <Redes
-                className="px-2"
+                className="px-2 gap-6"
                 classNames={{
-                  link: "p-3 text-3xl",
+                  icon: "h-8 w-fit",
                 }}
               />
             </DrawerBody>

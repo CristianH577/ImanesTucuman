@@ -5,7 +5,6 @@ import { scrollStyle } from "../../libs/tvs";
 import {
   cartItemsComparator,
   handlePriceData,
-  loadImgsPreview,
   toPercentageFormat,
   toPriceFormat,
 } from "../../libs/functions";
@@ -15,7 +14,24 @@ import { Button, Input, Spinner } from "@nextui-org/react";
 import ImageCustom from "../../components/ImageCustom";
 import PriceLabel from "../../components/PriceLabel";
 
-import { MdDelete } from "react-icons/md";
+import DeleteIcon from "@mui/icons-material/Delete";
+import {
+  SVGArrastre,
+  SVGCuadrado,
+  SVGCuadradoFresado,
+  SVGRedondo,
+  SVGRedondoFresado,
+} from "../../assets/imanes/svgs";
+
+const contextImg = require.context("../../assets/items");
+
+const SVG_FORMA = {
+  redondo: SVGRedondo,
+  cuadrado: SVGCuadrado,
+  "redondo fresado": SVGRedondoFresado,
+  "cuadrado fresado": SVGCuadradoFresado,
+  arrastre: SVGArrastre,
+};
 
 const cols = [
   {
@@ -73,15 +89,18 @@ export default function List({ downloading = false }) {
 
     switch (col) {
       case "img":
-        const imgs_data = row.imgs_data;
-        return imgs_data.preview.type === "svg" && imgs_data.preview?.src ? (
-          <imgs_data.preview.src className="w-[50px] h-fit self-center" />
+        const SvgForma =
+          row.imgs_data.preview.type === "svg" && row.imgs_data.preview.src
+            ? SVG_FORMA?.[row.imgs_data.preview.src]
+            : false;
+        return SvgForma ? (
+          <SvgForma className="w-[50px] h-fit self-center" />
         ) : (
           <ImageCustom
             alt={`Imagen de ${row.label}`}
             className="object-contain w-[50px] min-w-[50px]"
-            radius="lg"
-            src={imgs_data.preview?.thumbnails}
+            radius="none"
+            src={contextImg("./" + row.imgs_data.preview.thumbnails)}
           />
         );
       case "categorie":
@@ -123,7 +142,7 @@ export default function List({ downloading = false }) {
               data-id={row.id}
               onPress={handleDelete}
             >
-              <MdDelete className="text-danger text-2xl" />
+              <DeleteIcon className="text-danger text-2xl" />
             </Button>
           </div>
         );
@@ -203,23 +222,21 @@ export default function List({ downloading = false }) {
   };
 
   useEffect(() => {
-    const handleItems = async () => {
-      setLoading(true);
+    setLoading(true);
 
-      const items_ = items.map((item) => {
-        item.price_data = handlePriceData(item);
-        return item;
-      });
-      const items_imgs = await loadImgsPreview(items_);
+    const items_ = items.map((item) => {
+      item.price_data = handlePriceData(item);
+      return item;
+    });
 
-      setItems(items_imgs);
-      setLoading(false);
-    };
-
-    handleItems();
+    setItems(items_);
+    setLoading(false);
   }, []);
 
-  useEffect(getTotal, [cart]);
+  useEffect(() => {
+    getTotal();
+    setItems(Object.values(cart));
+  }, [cart]);
 
   useEffect(() => {
     if (downloading) setTotalVisibleItems(items.length);
@@ -312,12 +329,11 @@ export default function List({ downloading = false }) {
               <td>
                 {totalVisibleItems < items.length && (
                   <Button
-                    size="lg"
-                    className="bg-custom1-2 text-custom2--2 font-bold text-xl hover:scale-105 mt-2"
+                    className="bg-custom1-2 text-custom2 font-bold hover:scale-105"
                     title="Mostrar mas"
                     onPress={() => showMore()}
                   >
-                    +Mas
+                    Siguientes
                   </Button>
                 )}
               </td>

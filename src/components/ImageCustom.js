@@ -20,13 +20,13 @@ export default function ImageCustom({ src, alt, className, ...props }) {
       decoding="async"
       className={"" + (className || null)}
       alt={alt || "Imagen desconocida"}
-      {...props}
       classNames={{
         ...props?.classNames,
         wrapper: props?.classNames?.wrapper
           ? ` ${props.classNames.wrapper}`
           : "",
       }}
+      {...props}
     />
   );
 }

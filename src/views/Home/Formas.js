@@ -1,6 +1,6 @@
 import ImageCustom from "../../components/ImageCustom";
 
-import { FaArrowCircleRight } from "react-icons/fa";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 function Formas() {
   const contextImg = require.context("../../assets/formas", true);
@@ -66,10 +66,11 @@ function Formas() {
               >
                 <ImageCustom
                   src={contextImg(`./${item.id}.webp`)}
+                  alt={`Iman ${item.label}`}
                   removeWrapper
                   width={200}
+                  height={200}
                   className="object-contain group-hover/item:blur-sm h-fit"
-                  alt={`Iman ${item.label}`}
                 />
               </div>
 
@@ -83,7 +84,7 @@ function Formas() {
               </span>
 
               <span className="absolute bottom-4 right-4 opacity-50 group-hover/item:opacity-100 text-custom2 dark:text-custom1">
-                <FaArrowCircleRight size={32} />
+                <ArrowCircleRightIcon className="h-12 w-fit" />
               </span>
             </a>
           );

@@ -1,38 +1,40 @@
-import { FaMoneyBillTransfer, FaRegCreditCard, FaStore } from "react-icons/fa6";
-import { IoCardOutline } from "react-icons/io5";
-import { SiMercadopago } from "react-icons/si";
-import { HiOutlineBanknotes } from "react-icons/hi2";
+import StorefrontIcon from "@mui/icons-material/Storefront";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import PaymentsIcon from "@mui/icons-material/Payments";
+import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
+
+import { SVGMercadoLibre } from "../../assets/layout/svgs";
 
 function Pagos() {
   const lista_pago = [
     {
-      icon: HiOutlineBanknotes,
+      icon: PaymentsIcon,
       title: "Efectivo",
     },
     {
-      icon: FaMoneyBillTransfer,
+      icon: AccountBalanceOutlinedIcon,
       title: "Transferencia",
     },
     {
-      icon: IoCardOutline,
+      icon: CreditCardIcon,
       title: "Debito",
       commission: "3.25",
       percentage_total: "17.25",
     },
     {
-      icon: FaRegCreditCard,
+      icon: CreditCardIcon,
       title: "Credito - 1 Pago",
       commission: "6.5",
       percentage_total: "20.5",
     },
     {
-      icon: FaStore,
+      icon: StorefrontIcon,
       title: "Mercado Shops",
       commission: "4.8",
       percentage_total: "18.8",
     },
     {
-      icon: SiMercadopago,
+      icon: SVGMercadoLibre,
       title: "Mercado Libre",
       commission: "14.5",
       percentage_total: "28.5",
@@ -58,7 +60,7 @@ function Pagos() {
         {lista_pago.map((item, i) => (
           <li key={i}>
             <div className="flex items-center gap-2">
-              <item.icon size={24} />
+              <item.icon className="h-6 w-fit" />
 
               <span>
                 <strong>{item?.title} </strong>

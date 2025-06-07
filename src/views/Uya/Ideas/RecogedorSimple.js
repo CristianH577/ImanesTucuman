@@ -1,6 +1,8 @@
 import { Divider } from "@nextui-org/react";
+
 import ImageCustom from "../../../components/ImageCustom";
-import { FaArrowDown } from "react-icons/fa";
+
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 export default function RecogedorSimple() {
   const contextImgs = require.context("../../../assets/uya/ideas", true);
@@ -21,7 +23,7 @@ export default function RecogedorSimple() {
             tener un recogedor rígido para clavos, alambres, etc.
           </p>
 
-          <FaArrowDown size={32} />
+          <ArrowDownwardIcon className="h-10 w-fit" />
         </span>
 
         <ImageCustom
@@ -48,7 +50,7 @@ export default function RecogedorSimple() {
             una cuerda se puede hacer un recogedor flexible para levantar.
           </p>
 
-          <FaArrowDown size={32} />
+          <ArrowDownwardIcon className="h-10 w-fit" />
         </span>
 
         <ImageCustom

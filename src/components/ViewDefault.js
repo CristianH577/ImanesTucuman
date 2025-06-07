@@ -21,14 +21,14 @@ export default function ViewDefault({
     <div
       id={id}
       ref={ref}
-      className={`w-full max-w-[1200px] flex flex-col items-center gap-6 place-self-center pt-16${
+      className={`w-full max-w-[1200px] flex flex-col items-center gap-6 place-self-center pt-16 min-h-[100dvh]${
         className ? " " + className : ""
       }`}
-      style={{
-        minHeight: isInView_ ? "100dvh" : "none",
-      }}
+      // style={{
+      //   minHeight: isInView_ ? "100dvh" : "none",
+      // }}
     >
-      {title && <TitleCustom title={title} />}
+      {isInView_ && title && <TitleCustom title={title} />}
 
       {isInView_ && children}
     </div>

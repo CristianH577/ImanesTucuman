@@ -1,7 +1,8 @@
-import { Tooltip, Button } from "@nextui-org/react";
 import { useState } from "react";
 
-import { FaQuestionCircle } from "react-icons/fa";
+import { Tooltip, Button } from "@nextui-org/react";
+
+import HelpIcon from "@mui/icons-material/Help";
 
 export default function TooltipFuerzaExp() {
   const [open, setOpen] = useState(false);
@@ -18,14 +19,8 @@ export default function TooltipFuerzaExp() {
       title="Este es un tooltip"
       shadow="md"
     >
-      <Button
-        isIconOnly
-        variant=""
-        size="sm"
-        className=""
-        onPress={() => setOpen(!open)}
-      >
-        <FaQuestionCircle />
+      <Button isIconOnly variant="" size="sm" onPress={() => setOpen(!open)}>
+        <HelpIcon />
       </Button>
     </Tooltip>
   );

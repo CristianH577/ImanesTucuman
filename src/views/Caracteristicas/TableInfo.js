@@ -93,7 +93,7 @@ function TableInfo({ tableAriaLabel = "", measureFormat = "", rows = [] }) {
     >
       <table
         aria-label={tableAriaLabel || null}
-        className="w-full sm:min-w-[750px] max-w-[900px] lg:place-self-center table-dinamic max-sm:border-separate border-spacing-y-3"
+        className="w-full sm:min-w-[750px] max-w-[900px] lg:place-self-center table-dinamic-sm max-sm:border-separate border-spacing-y-3"
       >
         <thead className="border-b-3">
           <tr>

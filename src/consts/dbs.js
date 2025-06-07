@@ -25,9 +25,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 2,
       alto: 2,
       peso: 0.15,
-      largo: 2,
     },
     fuerza_N: {
       35: {
@@ -42,9 +42,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "1/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "1/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "1/thumbnails/3.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "1/1.webp",
+        },
+        {
+          type: "img",
+          src: "1/2.webp",
+        },
+        {
+          type: "img",
+          src: "1/3.webp",
+        },
+      ],
     },
   },
   {
@@ -73,9 +109,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 2,
       alto: 4,
       peso: 0.35,
-      largo: 2,
     },
     fuerza_N: {
       35: {
@@ -90,9 +126,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "2/thumbnails/2x4 (1).webp",
+        },
+        {
+          type: "img",
+          src: "2/thumbnails/2x4 (2).webp",
+        },
+        {
+          type: "img",
+          src: "2/thumbnails/2x4 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "2/2x4 (1).webp",
+        },
+        {
+          type: "img",
+          src: "2/2x4 (2).webp",
+        },
+        {
+          type: "img",
+          src: "2/2x4 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -121,9 +193,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 3,
       alto: 1,
       peso: 0.2,
-      largo: 3,
     },
     fuerza_N: {
       35: {
@@ -138,9 +210,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "3/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "3/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "3/thumbnails/3.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "3/1.webp",
+        },
+        {
+          type: "img",
+          src: "3/2.webp",
+        },
+        {
+          type: "img",
+          src: "3/3.webp",
+        },
+      ],
     },
   },
   {
@@ -169,9 +277,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 3,
       alto: 2,
       peso: 0.2,
-      largo: 3,
     },
     fuerza_N: {
       35: {
@@ -186,9 +294,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "4/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "4/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "4/thumbnails/3.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "4/1.webp",
+        },
+        {
+          type: "img",
+          src: "4/2.webp",
+        },
+        {
+          type: "img",
+          src: "4/3.webp",
+        },
+      ],
     },
   },
   {
@@ -217,9 +361,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 4,
       alto: 1,
       peso: 0.25,
-      largo: 4,
     },
     fuerza_N: {
       35: {
@@ -234,9 +378,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "5/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "5/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "5/thumbnails/3.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "5/1.webp",
+        },
+        {
+          type: "img",
+          src: "5/2.webp",
+        },
+        {
+          type: "img",
+          src: "5/3.webp",
+        },
+      ],
     },
   },
   {
@@ -265,9 +445,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 4,
       alto: 2,
       peso: 0.25,
-      largo: 4,
     },
     fuerza_N: {
       35: {
@@ -282,9 +462,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "6/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "6/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "6/thumbnails/3.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "6/1.webp",
+        },
+        {
+          type: "img",
+          src: "6/2.webp",
+        },
+        {
+          type: "img",
+          src: "6/3.webp",
+        },
+      ],
     },
   },
   {
@@ -313,9 +529,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 5,
       alto: 1,
       peso: 0.25,
-      largo: 5,
     },
     fuerza_N: {
       35: {
@@ -330,9 +546,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "7/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "7/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "7/thumbnails/3.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "7/1.webp",
+        },
+        {
+          type: "img",
+          src: "7/2.webp",
+        },
+        {
+          type: "img",
+          src: "7/3.webp",
+        },
+      ],
     },
   },
   {
@@ -361,9 +613,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 5,
       alto: 2,
       peso: 0.3,
-      largo: 5,
     },
     fuerza_N: {
       35: {
@@ -378,9 +630,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "8/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "8/thumbnails/2.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "8/1.webp",
+        },
+        {
+          type: "img",
+          src: "8/2.webp",
+        },
+      ],
     },
   },
   {
@@ -409,9 +689,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 5,
       alto: 4,
       peso: 0.6,
-      largo: 5,
     },
     fuerza_N: {
       35: {
@@ -426,9 +706,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "9/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "9/thumbnails/2.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "9/1.webp",
+        },
+        {
+          type: "img",
+          src: "9/2.webp",
+        },
+      ],
     },
   },
   {
@@ -457,9 +765,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 5,
       alto: 5,
       peso: 0.7,
-      largo: 5,
     },
     fuerza_N: {
       35: {
@@ -474,9 +782,21 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+      ],
     },
   },
   {
@@ -505,9 +825,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 6,
       alto: 3,
       peso: 0.65,
-      largo: 6,
     },
     fuerza_N: {
       35: {
@@ -522,9 +842,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "11/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "11/thumbnails/2.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "11/1.webp",
+        },
+        {
+          type: "img",
+          src: "11/2.webp",
+        },
+      ],
     },
   },
   {
@@ -553,9 +901,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 7,
       alto: 1.5,
       peso: 0.5,
-      largo: 7,
     },
     fuerza_N: {
       35: {
@@ -570,9 +918,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "12/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "12/thumbnails/2.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "12/1.webp",
+        },
+        {
+          type: "img",
+          src: "12/2.webp",
+        },
+      ],
     },
   },
   {
@@ -601,9 +977,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 7,
       alto: 5,
       peso: 1.6,
-      largo: 7,
     },
     fuerza_N: {
       35: {
@@ -618,10 +994,48 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "13/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "13/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "13/thumbnails/3.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "13/1.webp",
+        },
+        {
+          type: "img",
+          src: "13/2.webp",
+        },
+        {
+          type: "img",
+          src: "13/3.webp",
+        },
+      ],
     },
+    linkML:
+      "https://www.mercadolibre.com.ar/iman-neodimio-redondo/up/MLAU3009555105?pdp_filters=seller_id%3A177470483&highlight=false&headerTopBrand=false#polycard_client=search-nordic&searchVariation=MLAU3009555105&wid=MLA1476345237&position=6&search_layout=grid&type=product&tracking_id=cb434426-5d8a-4700-a496-d2c2b9c3b70f&sid=search",
   },
   {
     label: "8x3mm",
@@ -649,9 +1063,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 8,
       alto: 3,
       peso: 1.3,
-      largo: 8,
     },
     fuerza_N: {
       35: {
@@ -666,9 +1080,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "14/thumbnails/8x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "14/thumbnails/8x3 (2).webp",
+        },
+        {
+          type: "img",
+          src: "14/thumbnails/8x3 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "14/8x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "14/8x3 (2).webp",
+        },
+        {
+          type: "img",
+          src: "14/8x3 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -697,9 +1147,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 8,
       alto: 4,
       peso: 1.6,
-      largo: 8,
     },
     fuerza_N: {
       35: {
@@ -714,9 +1164,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "15/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "15/thumbnails/2.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "15/1.webp",
+        },
+        {
+          type: "img",
+          src: "15/2.webp",
+        },
+      ],
     },
   },
   {
@@ -745,9 +1223,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 8,
       alto: 5,
       peso: 1.9,
-      largo: 8,
     },
     fuerza_N: {
       35: {
@@ -762,9 +1240,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "16/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "16/thumbnails/2.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "16/1.webp",
+        },
+        {
+          type: "img",
+          src: "16/2.webp",
+        },
+      ],
     },
   },
   {
@@ -793,9 +1299,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 9,
       alto: 1.5,
       peso: 0.75,
-      largo: 9,
     },
     fuerza_N: {
       35: {
@@ -810,9 +1316,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "17/thumbnails/9x1,5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "17/thumbnails/9x1,5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "17/thumbnails/9x1,5 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "17/1.webp",
+        },
+        {
+          type: "img",
+          src: "17/9x1,5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "17/9x1,5 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -841,9 +1383,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 9,
       alto: 2.5,
       peso: 1.25,
-      largo: 9,
     },
     fuerza_N: {
       35: {
@@ -858,9 +1400,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "18/thumbnails/9x2,5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "18/thumbnails/9x2,5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "18/thumbnails/9x2,5 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "18/9x2,5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "18/9x2,5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "18/9x2,5 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -889,9 +1467,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 10,
       alto: 2,
       peso: 1.5,
-      largo: 10,
     },
     fuerza_N: {
       35: {
@@ -906,9 +1484,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "19/thumbnails/10x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "19/thumbnails/10x2 (2).webp",
+        },
+        {
+          type: "img",
+          src: "19/thumbnails/10x2 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "19/10x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "19/10x2 (2).webp",
+        },
+        {
+          type: "img",
+          src: "19/10x2 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -937,9 +1551,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 10,
       alto: 3,
       peso: 1.75,
-      largo: 10,
     },
     fuerza_N: {
       35: {
@@ -954,9 +1568,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "20/thumbnails/10x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "20/thumbnails/10x3 (2).webp",
+        },
+        {
+          type: "img",
+          src: "20/thumbnails/10x3 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "20/10x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "20/10x3 (2).webp",
+        },
+        {
+          type: "img",
+          src: "20/10x3 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -985,9 +1635,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 10,
       alto: 4,
       peso: 2.4,
-      largo: 10,
     },
     fuerza_N: {
       35: {
@@ -1002,9 +1652,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "21/thumbnails/10x4 (1).webp",
+        },
+        {
+          type: "img",
+          src: "21/thumbnails/10x4 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "21/10x4 (1).webp",
+        },
+        {
+          type: "img",
+          src: "21/10x4 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -1033,9 +1711,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 10,
       alto: 5,
       peso: 3,
-      largo: 10,
     },
     fuerza_N: {
       35: {
@@ -1050,9 +1728,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "22/thumbnails/10x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "22/thumbnails/10x5 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "22/10x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "22/10x5 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -1081,9 +1787,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 10,
       alto: 10,
       peso: 6,
-      largo: 10,
     },
     fuerza_N: {
       35: {
@@ -1098,9 +1804,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "23/thumbnails/10x10 (1).webp",
+        },
+        {
+          type: "img",
+          src: "23/thumbnails/10x10 (2).webp",
+        },
+        {
+          type: "img",
+          src: "23/thumbnails/10x10 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "23/10x10 (1).webp",
+        },
+        {
+          type: "img",
+          src: "23/10x10 (2).webp",
+        },
+        {
+          type: "img",
+          src: "23/10x10 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -1129,9 +1871,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 10,
       alto: 20,
       peso: 12,
-      largo: 10,
     },
     fuerza_N: {
       35: {
@@ -1146,9 +1888,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "24/thumbnails/10x20 (1).webp",
+        },
+        {
+          type: "img",
+          src: "24/thumbnails/10x20 (2).webp",
+        },
+        {
+          type: "img",
+          src: "24/thumbnails/10x20 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "24/10x20 (1).webp",
+        },
+        {
+          type: "img",
+          src: "24/10x20 (2).webp",
+        },
+        {
+          type: "img",
+          src: "24/10x20 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -1177,9 +1955,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 11,
       alto: 4,
       peso: 3,
-      largo: 11,
     },
     fuerza_N: {
       35: {
@@ -1194,9 +1972,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "25/thumbnails/11x4 (1).webp",
+        },
+        {
+          type: "img",
+          src: "25/thumbnails/11x4 (2).webp",
+        },
+        {
+          type: "img",
+          src: "25/thumbnails/11x4 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "25/11x4 (1).webp",
+        },
+        {
+          type: "img",
+          src: "25/11x4 (2).webp",
+        },
+        {
+          type: "img",
+          src: "25/11x4 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -1225,9 +2039,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 11,
       alto: 5,
       peso: 3.6,
-      largo: 11,
     },
     fuerza_N: {
       35: {
@@ -1242,9 +2056,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "26/thumbnails/11x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "26/thumbnails/11x5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "26/thumbnails/11x5 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "26/11x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "26/11x5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "26/11x5 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -1273,9 +2123,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 12,
       alto: 3,
       peso: 2.6,
-      largo: 12,
     },
     fuerza_N: {
       35: {
@@ -1290,9 +2140,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "27/thumbnails/12x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "27/thumbnails/12x3 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "27/12x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "27/12x3 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -1321,9 +2199,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 12,
       alto: 5,
       peso: 4.3,
-      largo: 12,
     },
     fuerza_N: {
       35: {
@@ -1338,9 +2216,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "28/thumbnails/12x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "28/thumbnails/12x5 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "28/12x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "28/12x5 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -1361,18 +2267,13 @@ export const DB_ALL = [
       discounts_percentages: {},
       prices_qtts: {
         1: 730,
-        // 25: 690,
-        // 50: 610,
-        // 100: 530,
-        // 500: 495,
-        // 1000: 465,
       },
       update: "17/5/25",
     },
     measures: {
+      largo: 15,
       alto: 2,
       peso: 2.65,
-      largo: 15,
     },
     fuerza_N: {
       35: {
@@ -1387,9 +2288,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "29/thumbnails/15x2_N35 (1).jpg",
+        },
+        {
+          type: "img",
+          src: "29/thumbnails/15x2_N35 (2).jpg",
+        },
+        {
+          type: "img",
+          src: "29/thumbnails/15x2_N35 (3).jpg",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "29/15x2_N35 (1).jpg",
+        },
+        {
+          type: "img",
+          src: "29/15x2_N35 (2).jpg",
+        },
+        {
+          type: "img",
+          src: "29/15x2_N35 (3).jpg",
+        },
+      ],
     },
   },
   {
@@ -1418,9 +2355,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 15,
       alto: 2,
       peso: 2.65,
-      largo: 15,
     },
     fuerza_N: {
       35: {
@@ -1435,9 +2372,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "30/thumbnails/15x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "30/thumbnails/15x2 (2).webp",
+        },
+        {
+          type: "img",
+          src: "30/thumbnails/15x2 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "30/15x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "30/15x2 (2).webp",
+        },
+        {
+          type: "img",
+          src: "30/15x2 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -1466,9 +2439,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 15,
       alto: 5,
       peso: 6.6,
-      largo: 15,
     },
     fuerza_N: {
       35: {
@@ -1483,9 +2456,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "31/thumbnails/15x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "31/thumbnails/15x5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "31/thumbnails/15x5 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "31/15x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "31/15x5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "31/15x5 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -1514,9 +2523,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 20,
       alto: 2,
       peso: 4.8,
-      largo: 20,
     },
     fuerza_N: {
       35: {
@@ -1531,9 +2540,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "32/thumbnails/20x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "32/thumbnails/20x2 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "32/20x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "32/20x2 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -1562,9 +2599,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 20,
       alto: 5,
       peso: 12,
-      largo: 20,
     },
     fuerza_N: {
       35: {
@@ -1579,9 +2616,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "33/thumbnails/20x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "33/thumbnails/20x5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "33/thumbnails/20x5 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "33/20x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "33/20x5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "33/20x5 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -1602,18 +2675,13 @@ export const DB_ALL = [
       discounts_percentages: {},
       prices_qtts: {
         1: 1750,
-        // 25: 1650,
-        // 50: 1480,
-        // 100: 1330,
-        // 500: 1250,
-        // 1000: 1180,
       },
       update: "17/5/25",
     },
     measures: {
+      largo: 25,
       alto: 2,
       peso: 5.76,
-      largo: 25,
     },
     fuerza_N: {
       35: {
@@ -1628,9 +2696,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "34/thumbnails/25x2_N35 (1).jpg",
+        },
+        {
+          type: "img",
+          src: "34/thumbnails/25x2_N35 (2).jpg",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "34/25x2_N35 (1).jpg",
+        },
+        {
+          type: "img",
+          src: "34/25x2_N35 (2).jpg",
+        },
+      ],
     },
   },
   {
@@ -1659,9 +2755,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 25,
       alto: 2,
       peso: 5.76,
-      largo: 25,
     },
     fuerza_N: {
       35: {
@@ -1676,9 +2772,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "35/thumbnails/25x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "35/thumbnails/25x2 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "35/25x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "35/25x2 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -1707,9 +2831,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 25,
       alto: 2.5,
       peso: 9.3,
-      largo: 25,
     },
     fuerza_N: {
       35: {
@@ -1724,9 +2848,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "36/thumbnails/25x2,5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "36/thumbnails/25x2,5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "36/thumbnails/25x2,5 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "36/25x2,5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "36/25x2,5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "36/25x2,5 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -1756,9 +2916,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 25,
       alto: 5,
       peso: 18,
-      largo: 25,
     },
     fuerza_N: {
       35: {
@@ -1773,9 +2933,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "37/thumbnails/25x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "37/thumbnails/25x5 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "37/25x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "37/25x5 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -1804,9 +2992,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 30,
       alto: 3,
       peso: 17.5,
-      largo: 30,
     },
     fuerza_N: {
       35: {
@@ -1821,9 +3009,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "38/thumbnails/30x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "38/thumbnails/30x3 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "38/30x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "38/30x3 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -1851,9 +3067,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 30,
       alto: 5,
       peso: 26.5,
-      largo: 30,
     },
     fuerza_N: {
       35: {
@@ -1868,9 +3084,45 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "39/thumbnails/30x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "39/thumbnails/30x5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "39/thumbnails/30x5 (3).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "39/30x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "39/30x5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "39/30x5 (3).webp",
+        },
+      ],
     },
   },
   {
@@ -1898,9 +3150,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 35,
       alto: 4,
       peso: 30,
-      largo: 35,
     },
     fuerza_N: {
       35: {
@@ -1915,9 +3167,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "40/thumbnails/35x4 (1).webp",
+        },
+        {
+          type: "img",
+          src: "40/thumbnails/35x4 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "40/35x4 (1).webp",
+        },
+        {
+          type: "img",
+          src: "40/35x4 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -1945,9 +3225,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 35,
       alto: 5,
       peso: 36,
-      largo: 35,
     },
     fuerza_N: {
       35: {
@@ -1962,9 +3242,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "41/thumbnails/35x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "41/thumbnails/35x5 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "41/35x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "41/35x5 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -1992,9 +3300,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 37,
       alto: 5,
       peso: 40.3,
-      largo: 37,
     },
     fuerza_N: {
       35: {
@@ -2009,9 +3317,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "42/thumbnails/37x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "42/thumbnails/37x5 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "42/37x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "42/37x5 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2039,9 +3375,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 38,
       alto: 8,
       peso: 65,
-      largo: 38,
     },
     fuerza_N: {
       35: {
@@ -2056,9 +3392,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "43/thumbnails/38x8 (1).webp",
+        },
+        {
+          type: "img",
+          src: "43/thumbnails/38x8 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "43/38x8 (1).webp",
+        },
+        {
+          type: "img",
+          src: "43/38x8 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2087,9 +3451,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 40,
       alto: 5,
       peso: 46.5,
-      largo: 40,
     },
     fuerza_N: {
       35: {
@@ -2104,9 +3468,21 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+      ],
     },
   },
   {
@@ -2134,9 +3510,9 @@ export const DB_ALL = [
       update: "17/5/25",
     },
     measures: {
+      largo: 54,
       alto: 3,
       peso: 74,
-      largo: 54,
     },
     fuerza_N: {
       35: {
@@ -2151,9 +3527,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "45/thumbnails/54x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "45/thumbnails/54x3 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "45/54x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "45/54x3 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2200,9 +3604,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "46/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "46/thumbnails/2.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "46/1.webp",
+        },
+        {
+          type: "img",
+          src: "46/2.webp",
+        },
+      ],
     },
   },
   {
@@ -2249,9 +3681,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "47/thumbnails/10x8x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "47/thumbnails/10x8x3 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "47/10x8x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "47/10x8x3 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2298,9 +3758,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "48/thumbnails/10x10x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "48/thumbnails/10x10x2 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "48/10x10x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "48/10x10x2 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2347,9 +3835,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "49/thumbnails/14,5x7x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "49/thumbnails/14,5x7x2 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "49/14,5x7x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "49/14,5x7x2 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2396,9 +3912,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "50/thumbnails/15x10x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "50/thumbnails/15x10x5 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "50/15x10x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "50/15x10x5 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2445,9 +3989,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "51/thumbnails/20x10x10 (1).webp",
+        },
+        {
+          type: "img",
+          src: "51/thumbnails/20x10x10 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "51/20x10x10 (1).webp",
+        },
+        {
+          type: "img",
+          src: "51/20x10x10 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2494,9 +4066,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "52/thumbnails/25x10x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "52/thumbnails/25x10x2 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "52/25x10x2 (1).webp",
+        },
+        {
+          type: "img",
+          src: "52/25x10x2 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2543,9 +4143,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "53/thumbnails/28x20x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "53/thumbnails/28x20x3 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "53/28x20x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "53/28x20x3 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2592,9 +4220,21 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+      ],
     },
   },
   {
@@ -2641,9 +4281,29 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "55/thumbnails/30x20x5.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "55/30x20x5.webp",
+        },
+      ],
     },
   },
   {
@@ -2690,9 +4350,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "56/thumbnails/40x10x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "56/thumbnails/40x10x5 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "56/40x10x5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "56/40x10x5 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2738,9 +4426,29 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "57/thumbnails/40x20x5.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "57/40x20x5.webp",
+        },
+      ],
     },
   },
   {
@@ -2786,9 +4494,29 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "58/thumbnails/40x25x10.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "58/40x25x10.webp",
+        },
+      ],
     },
   },
   {
@@ -2835,9 +4563,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "59/thumbnails/50x10x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "59/thumbnails/50x10x3 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "59/50x10x3 (1).webp",
+        },
+        {
+          type: "img",
+          src: "59/50x10x3 (2).webp",
+        },
+      ],
     },
   },
   {
@@ -2883,9 +4639,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "60/thumbnails/50x20x10.webp",
+        },
+        {
+          type: "img",
+          src: "60/thumbnails/50x20x10~1.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+        {
+          type: "img",
+          src: "60/50x20x10.webp",
+        },
+        {
+          type: "img",
+          src: "60/50x20x10~1.webp",
+        },
+      ],
     },
   },
   {
@@ -2932,9 +4716,21 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado",
+        },
+      ],
     },
   },
   {
@@ -2964,11 +4760,11 @@ export const DB_ALL = [
     },
     tags: ["arandela"],
     measures: {
+      largo: 8,
       alto: 3,
       "diametro superior": 6,
       "diametro inferior": 3.5,
       peso: 0.7,
-      largo: 8,
     },
     fuerza_N: {
       35: {
@@ -2983,9 +4779,65 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo fresado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo fresado",
+        },
+        {
+          type: "img",
+          src: "62/thumbnails/8x3-6a3.5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "62/thumbnails/8x3-6a3.5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "62/thumbnails/8x3-6a3.5 (3).webp",
+        },
+        {
+          type: "img",
+          src: "62/thumbnails/8x3-6a3.5 (4).webp",
+        },
+        {
+          type: "img",
+          src: "62/thumbnails/8x3-6a3.5 (5).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo fresado",
+        },
+        {
+          type: "img",
+          src: "62/8x3-6a3.5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "62/8x3-6a3.5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "62/8x3-6a3.5 (3).webp",
+        },
+        {
+          type: "img",
+          src: "62/8x3-6a3.5 (4).webp",
+        },
+        {
+          type: "img",
+          src: "62/8x3-6a3.5 (5).webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://www.mercadolibre.com.ar/iman-neodimio-redondo-fresado-x10u--arandela/up/MLAU2995880070?pdp_filters=item_id%3AMLA1474422881#origin%3Dshare%26sid%3Dshare%26wid%3DMLA1474422881",
+      MS: "https://imanestucuman.mercadoshops.com.ar/iman-neodimio-redondo-fresado-x10u--arandela/up/MLAU2995880070?highlight=false&pdp_filters=seller_id%3A177470483&headerTopBrand=false#polycard_client=search-nordic-mshops&position=5&search_layout=grid&type=item&tracking_id=f774d24c-dea5-4340-b673-b98bd2375e27&wid=MLA1474422881&sid=search",
     },
   },
   {
@@ -3015,11 +4867,11 @@ export const DB_ALL = [
     },
     tags: ["arandela"],
     measures: {
+      largo: 12,
       alto: 3,
       "diametro superior": 6,
       "diametro inferior": 3.5,
       peso: 2.3,
-      largo: 12,
     },
     fuerza_N: {
       35: {
@@ -3034,9 +4886,65 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo fresado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo fresado",
+        },
+        {
+          type: "img",
+          src: "63/thumbnails/12x3-6a3.5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "63/thumbnails/12x3-6a3.5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "63/thumbnails/12x3-6a3.5 (3).webp",
+        },
+        {
+          type: "img",
+          src: "63/thumbnails/12x3-6a3.5 (4).webp",
+        },
+        {
+          type: "img",
+          src: "63/thumbnails/12x3-6a3.5 (5).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo fresado",
+        },
+        {
+          type: "img",
+          src: "63/12x3-6a3.5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "63/12x3-6a3.5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "63/12x3-6a3.5 (3).webp",
+        },
+        {
+          type: "img",
+          src: "63/12x3-6a3.5 (4).webp",
+        },
+        {
+          type: "img",
+          src: "63/12x3-6a3.5 (5).webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://www.mercadolibre.com.ar/iman-neodimio-redondo-fresado-x10u--arandela/up/MLAU2990693417?pdp_filters=item_id%3AMLA1474422963&attributes=CUSTOM%3A12x3%206a3.5mm#origin%3Dshare%26sid%3Dshare%26wid%3DMLA1474422963",
+      MS: "https://imanestucuman.mercadoshops.com.ar/iman-neodimio-redondo-fresado-x10u--arandela/up/MLAU2990693417?product_trigger_id=MLA34178531&pdp_filters=seller_id%3A177470483%7Cseller_id%3A177470483&applied_product_filters=MLAU2995880070&highlight=false&headerTopBrand=false&quantity=1",
     },
   },
   {
@@ -3066,11 +4974,11 @@ export const DB_ALL = [
     },
     tags: ["arandela"],
     measures: {
+      largo: 15,
       alto: 3,
       "diametro superior": 7,
       "diametro inferior": 3.5,
       peso: 3.7,
-      largo: 15,
     },
     fuerza_N: {
       35: {
@@ -3085,9 +4993,65 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo fresado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo fresado",
+        },
+        {
+          type: "img",
+          src: "64/thumbnails/15x3-7a3.5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "64/thumbnails/15x3-7a3.5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "64/thumbnails/15x3-7a3.5 (3).webp",
+        },
+        {
+          type: "img",
+          src: "64/thumbnails/15x3-7a3.5 (4).webp",
+        },
+        {
+          type: "img",
+          src: "64/thumbnails/15x3-7a3.5 (5).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo fresado",
+        },
+        {
+          type: "img",
+          src: "64/15x3-7a3.5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "64/15x3-7a3.5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "64/15x3-7a3.5 (3).webp",
+        },
+        {
+          type: "img",
+          src: "64/15x3-7a3.5 (4).webp",
+        },
+        {
+          type: "img",
+          src: "64/15x3-7a3.5 (5).webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://www.mercadolibre.com.ar/iman-neodimio-redondo-fresado-x10u--arandela/up/MLAU2995893094?pdp_filters=item_id%3AMLA1474487295&attributes=CUSTOM%3A15x3%207a3.5#origin%3Dshare%26sid%3Dshare%26wid%3DMLA1474487295",
+      MS: "https://imanestucuman.mercadoshops.com.ar/iman-neodimio-redondo-fresado-x10u--arandela/up/MLAU2995893094?pdp_filters=seller_id%3A177470483%7Cseller_id%3A177470483&applied_product_filters=MLAU2995880070&product_trigger_id=MLA34178531&highlight=false&headerTopBrand=false&quantity=1",
     },
   },
   {
@@ -3117,11 +5081,11 @@ export const DB_ALL = [
     },
     tags: ["arandela"],
     measures: {
+      largo: 20,
       alto: 4,
       "diametro superior": 11,
       "diametro inferior": 4.5,
       peso: 9.4,
-      largo: 20,
     },
     fuerza_N: {
       35: {
@@ -3136,9 +5100,49 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo fresado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo fresado",
+        },
+        {
+          type: "img",
+          src: "65/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "65/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "65/thumbnails/3.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo fresado",
+        },
+        {
+          type: "img",
+          src: "65/1.webp",
+        },
+        {
+          type: "img",
+          src: "65/2.webp",
+        },
+        {
+          type: "img",
+          src: "65/3.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://www.mercadolibre.com.ar/iman-neodimio-redondo-fresado-x10u--arandela/up/MLAU2990699711?pdp_filters=item_id%3AMLA2006655184&attributes=CUSTOM%3A20x4%2011a4.5#origin%3Dshare%26sid%3Dshare%26wid%3DMLA2006655184",
+      MS: "https://imanestucuman.mercadoshops.com.ar/iman-neodimio-redondo-fresado-x10u--arandela/up/MLAU2990699711?pdp_filters=seller_id%3A177470483%7Cseller_id%3A177470483&applied_product_filters=MLAU2995880070&product_trigger_id=MLA34178531&highlight=false&headerTopBrand=false&quantity=1",
     },
   },
   {
@@ -3187,9 +5191,49 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "cuadrado fresado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "cuadrado fresado",
+        },
+        {
+          type: "img",
+          src: "66/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "66/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "66/thumbnails/3.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "cuadrado fresado",
+        },
+        {
+          type: "img",
+          src: "66/1.webp",
+        },
+        {
+          type: "img",
+          src: "66/2.webp",
+        },
+        {
+          type: "img",
+          src: "66/3.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://www.mercadolibre.com.ar/iman-neodimio-cuadrado-fresado/up/MLAU2991651617?pdp_filters=item_id%3AMLA2006886336#origin%3Dshare%26sid%3Dshare%26wid%3DMLA2006886336",
+      MS: "https://imanestucuman.mercadoshops.com.ar/iman-neodimio-cuadrado-fresado/up/MLAU2991651617?highlight=false&pdp_filters=seller_id%3A177470483&headerTopBrand=false#polycard_client=search-nordic-mshops&position=2&search_layout=grid&type=item&tracking_id=f774d24c-dea5-4340-b673-b98bd2375e27&wid=MLA2006886336&sid=search",
     },
   },
   {
@@ -3199,8 +5243,8 @@ export const DB_ALL = [
       largo: 20,
       alto: 6,
       "alto total": 26,
-      peso: 23,
       fuerza: 7,
+      peso: 23,
     },
     noStock: true,
     id: 67,
@@ -3219,9 +5263,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "arrastre",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "67/thumbnails/20 (1).webp",
+        },
+        {
+          type: "img",
+          src: "67/thumbnails/20 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "67/20 (1).webp",
+        },
+        {
+          type: "img",
+          src: "67/20 (2).webp",
+        },
+      ],
     },
     tags: ["pesca"],
   },
@@ -3232,8 +5304,8 @@ export const DB_ALL = [
       largo: 25,
       alto: 7,
       "alto total": 31,
-      peso: 42,
       fuerza: 22,
+      peso: 42,
     },
     id: 68,
     subcategorie: "arrastre",
@@ -3251,9 +5323,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "arrastre",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "68/thumbnails/25 (1).webp",
+        },
+        {
+          type: "img",
+          src: "68/thumbnails/25 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "68/25 (1).webp",
+        },
+        {
+          type: "img",
+          src: "68/25 (2).webp",
+        },
+      ],
     },
     tags: ["pesca"],
   },
@@ -3265,8 +5365,8 @@ export const DB_ALL = [
       largo: 32,
       alto: 7,
       "alto total": 31,
-      peso: 70,
       fuerza: 28,
+      peso: 70,
     },
     id: 69,
     price_data: {
@@ -3283,9 +5383,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "arrastre",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "69/thumbnails/32 (1).webp",
+        },
+        {
+          type: "img",
+          src: "69/thumbnails/32 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "69/32 (1).webp",
+        },
+        {
+          type: "img",
+          src: "69/32 (2).webp",
+        },
+      ],
     },
     tags: ["pesca"],
   },
@@ -3296,8 +5424,8 @@ export const DB_ALL = [
       largo: 36,
       alto: 7.3,
       "alto total": 38,
-      peso: 85,
       fuerza: 31,
+      peso: 85,
     },
     id: 70,
     subcategorie: "arrastre",
@@ -3315,9 +5443,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "arrastre",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "70/thumbnails/36 (1).webp",
+        },
+        {
+          type: "img",
+          src: "70/thumbnails/36 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "70/36 (1).webp",
+        },
+        {
+          type: "img",
+          src: "70/36 (2).webp",
+        },
+      ],
     },
     tags: ["pesca"],
   },
@@ -3328,8 +5484,8 @@ export const DB_ALL = [
       largo: 42,
       alto: 7.5,
       "alto total": 38,
-      peso: 118,
       fuerza: 39,
+      peso: 118,
     },
     id: 71,
     subcategorie: "arrastre",
@@ -3347,9 +5503,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "arrastre",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "71/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "71/thumbnails/2.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "71/1.webp",
+        },
+        {
+          type: "img",
+          src: "71/2.webp",
+        },
+      ],
     },
     tags: ["pesca"],
   },
@@ -3360,8 +5544,8 @@ export const DB_ALL = [
       largo: 48,
       alto: 11.5,
       "alto total": 46,
-      peso: 249,
       fuerza: 64,
+      peso: 249,
     },
     id: 72,
     subcategorie: "arrastre",
@@ -3379,9 +5563,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "arrastre",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "72/thumbnails/48 (1).webp",
+        },
+        {
+          type: "img",
+          src: "72/thumbnails/48 (2).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+        {
+          type: "img",
+          src: "72/48 (1).webp",
+        },
+        {
+          type: "img",
+          src: "72/48 (2).webp",
+        },
+      ],
     },
     tags: ["pesca"],
   },
@@ -3392,8 +5604,8 @@ export const DB_ALL = [
       largo: 75,
       alto: 18,
       "alto total": 62,
-      peso: 670,
       fuerza: 240,
+      peso: 670,
     },
     noStock: true,
     id: 73,
@@ -3408,9 +5620,21 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "arrastre",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "arrastre",
+        },
+      ],
     },
     tags: ["pesca"],
   },
@@ -3444,9 +5668,16 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "74.webp",
+        thumbnails: "74.webp",
       },
+      thumbnails: [],
+      imgs: [
+        {
+          type: "img",
+          src: "74.webp",
+        },
+      ],
     },
   },
   {
@@ -3476,9 +5707,25 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "75/preview.webp",
+        thumbnails: "75/preview.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "75/thumbnails/75.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "75/75.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://articulo.mercadolibre.com.ar/MLA-1877354416-borneraterminalconectorempalme-clip-2-vias-x3u-_JM#origin%3Dshare%26sid%3Dshare",
+      MS: "https://imanestucuman.mercadoshops.com.ar/MLA-1877354416-borneraterminalconectorempalme-clip-2-vias-x3u-_JM?searchVariation=181314142862&highlight=false&headerTopBrand=false#polycard_client=search-nordic-mshops&searchVariation=181314142862&position=5&search_layout=stack&type=item&tracking_id=a8b0d717-5644-4417-9259-673db246f796",
     },
   },
   {
@@ -3509,9 +5756,25 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "76/preview.webp",
+        thumbnails: "76/preview.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "76/thumbnails/76.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "76/76.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://articulo.mercadolibre.com.ar/MLA-1877316430-borneraterminalconectorempalme-clip-3-vias-x3u-_JM#origin%3Dshare%26sid%3Dshare",
+      MS: "https://imanestucuman.mercadoshops.com.ar/MLA-1877316430-borneraterminalconectorempalme-clip-3-vias-x3u-_JM?searchVariation=181314187502&highlight=false&headerTopBrand=false#polycard_client=search-nordic-mshops&searchVariation=181314187502&position=7&search_layout=stack&type=item&tracking_id=a8b0d717-5644-4417-9259-673db246f796",
     },
   },
   {
@@ -3541,9 +5804,25 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "77/preview.webp",
+        thumbnails: "77/preview.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "77/thumbnails/77.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "77/77.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://articulo.mercadolibre.com.ar/MLA-1877351970-borneraterminalconectorempalme-clip-2-cables-x5u-_JM#origin%3Dshare%26sid%3Dshare",
+      MS: "https://imanestucuman.mercadoshops.com.ar/MLA-1877351970-borneraterminalconectorempalme-clip-2-cables-x5u-_JM?searchVariation=181314138382&highlight=false&headerTopBrand=false#polycard_client=search-nordic-mshops&searchVariation=181314138382&position=2&search_layout=stack&type=item&tracking_id=a8b0d717-5644-4417-9259-673db246f796",
     },
   },
   {
@@ -3572,9 +5851,25 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "78/preview.webp",
+        thumbnails: "78/preview.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "78/thumbnails/78.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "78/78.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://articulo.mercadolibre.com.ar/MLA-1877326576-borneraterminalconectorempalme-clip-3-cables-x5u-_JM#origin%3Dshare%26sid%3Dshare",
+      MS: "https://imanestucuman.mercadoshops.com.ar/MLA-1877326576-borneraterminalconectorempalme-clip-3-cables-x5u-_JM?searchVariation=184148246937&highlight=false&headerTopBrand=false#polycard_client=search-nordic-mshops&searchVariation=184148246937&position=4&search_layout=stack&type=item&tracking_id=a8b0d717-5644-4417-9259-673db246f796",
     },
   },
   {
@@ -3603,9 +5898,25 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "79/preview.webp",
+        thumbnails: "79/preview.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "79/thumbnails/79.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "79/79.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://articulo.mercadolibre.com.ar/MLA-1877327498-borneraterminalconectorempalme-clip-5-cables-x5u-_JM#origin%3Dshare%26sid%3Dshare",
+      MS: "https://imanestucuman.mercadoshops.com.ar/MLA-1877327498-borneraterminalconectorempalme-clip-5-cables-x5u-_JM?searchVariation=184148250357&highlight=false&headerTopBrand=false#polycard_client=search-nordic-mshops&searchVariation=184148250357&position=6&search_layout=stack&type=item&tracking_id=a8b0d717-5644-4417-9259-673db246f796",
     },
   },
   {
@@ -3635,9 +5946,65 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "80/preview.webp",
+        thumbnails: "80/thumbnails/1.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "80/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "80/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "80/thumbnails/3.webp",
+        },
+        {
+          type: "img",
+          src: "80/thumbnails/4.webp",
+        },
+        {
+          type: "img",
+          src: "80/thumbnails/5.webp",
+        },
+        {
+          type: "img",
+          src: "80/thumbnails/6.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "80/1.webp",
+        },
+        {
+          type: "img",
+          src: "80/2.webp",
+        },
+        {
+          type: "img",
+          src: "80/3.webp",
+        },
+        {
+          type: "img",
+          src: "80/4.webp",
+        },
+        {
+          type: "img",
+          src: "80/5.webp",
+        },
+        {
+          type: "img",
+          src: "80/6.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://articulo.mercadolibre.com.ar/MLA-1877283648-empalme-rapido-exterior-1a2-cables-x5u-_JM#origin%3Dshare%26sid%3Dshare",
+      MS: "https://imanestucuman.mercadoshops.com.ar/MLA-1877283648-empalme-rapido-exterior-1a2-cables-x5u-_JM?utm_source=mercadoshops&utm_medium=referral&utm_campaign=twitter_share",
     },
   },
   {
@@ -3668,9 +6035,73 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "81/preview.webp",
+        thumbnails: "81/thumbnails/1.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "81/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "81/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "81/thumbnails/3.webp",
+        },
+        {
+          type: "img",
+          src: "81/thumbnails/4.webp",
+        },
+        {
+          type: "img",
+          src: "81/thumbnails/5.webp",
+        },
+        {
+          type: "img",
+          src: "81/thumbnails/6.webp",
+        },
+        {
+          type: "img",
+          src: "81/thumbnails/7.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "81/1.webp",
+        },
+        {
+          type: "img",
+          src: "81/2.webp",
+        },
+        {
+          type: "img",
+          src: "81/3.webp",
+        },
+        {
+          type: "img",
+          src: "81/4.webp",
+        },
+        {
+          type: "img",
+          src: "81/5.webp",
+        },
+        {
+          type: "img",
+          src: "81/6.webp",
+        },
+        {
+          type: "img",
+          src: "81/7.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://articulo.mercadolibre.com.ar/MLA-1877317474-empalme-rapido-3-cables-x5u-_JM#origin%3Dshare%26sid%3Dshare",
+      MS: "https://imanestucuman.mercadoshops.com.ar/MLA-1877317474-empalme-rapido-3-cables-x5u-_JM?searchVariation=181314194258&highlight=false&headerTopBrand=false#polycard_client=search-nordic-mshops&searchVariation=181314194258&position=3&search_layout=stack&type=item&tracking_id=a8b0d717-5644-4417-9259-673db246f796",
     },
   },
   {
@@ -3701,9 +6132,25 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "82/preview.webp",
+        thumbnails: "82/preview.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "82/thumbnails/50.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "82/320.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://articulo.mercadolibre.com.ar/MLA-1985406268-iman-tira-flexible-9x2mm-x10m-_JM#origin%3Dshare%26sid%3Dshare",
+      MS: "https://imanestucuman.mercadoshops.com.ar/MLA-1985406268-iman-tira-flexible-9x2mm-x10m-_JM#item_id=MLA1985406268&component=collection_grid&page_from=home&custom_categories=false",
     },
   },
   {
@@ -3734,9 +6181,25 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "83/preview.webp",
+        thumbnails: "83/preview.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "83/thumbnails/83.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "83/83.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://articulo.mercadolibre.com.ar/MLA-1985431476-iman-tira-flexible-13x17mm-x10m-_JM#origin%3Dshare%26sid%3Dshare",
+      MS: "https://imanestucuman.mercadoshops.com.ar/MLA-1985431476-iman-tira-flexible-13x17mm-x10m-_JM#item_id=MLA1985431476&component=collection_grid&page_from=home&custom_categories=false",
     },
   },
   {
@@ -3756,9 +6219,25 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "84/preview.webp",
+        thumbnails: "84/preview.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "84/thumbnails/84.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "84/84.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://www.mercadolibre.com.ar/juego-imanes-ovalados-x20piezaskluster/up/MLAU2480455379?pdp_filters=item_id%3AMLA1941241742#origin%3Dshare%26sid%3Dshare%26wid%3DMLA1941241742",
+      MS: "https://imanestucuman.mercadoshops.com.ar/juego-imanes-ovalados-x20piezaskluster/up/MLAU2480455379?pdp_filters=category%3AMLA1161%7Cseller_id%3A177470483%7Citem_id%3AMLA1941241742#item_id=MLA1941241742&component=collection_grid&page_from=home&custom_categories=false",
     },
   },
   {
@@ -3783,9 +6262,16 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "85.webp",
+        thumbnails: "85.webp",
       },
+      thumbnails: [],
+      imgs: [
+        {
+          type: "img",
+          src: "85.webp",
+        },
+      ],
     },
   },
   {
@@ -3807,9 +6293,21 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "86/preview.webp",
+        thumbnails: "86/preview.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "86/thumbnails/86.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "86/86.webp",
+        },
+      ],
     },
   },
   {
@@ -3824,8 +6322,8 @@ export const DB_ALL = [
     description:
       "Frecuentemente usado para soportar puertas de hornos que no cierran bien",
     measures: {
-      ancho: 8,
       largo: 60,
+      ancho: 8,
       alto: 6,
     },
     id: 87,
@@ -3847,9 +6345,29 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "87/preview.webp",
+        thumbnails: "87/thumbnails/1.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "87/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "87/thumbnails/2.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "87/1.webp",
+        },
+        {
+          type: "img",
+          src: "87/2.webp",
+        },
+      ],
     },
     tags: ["ceramico"],
   },
@@ -3863,8 +6381,8 @@ export const DB_ALL = [
       temperatura: "Hasta 200°C",
     },
     measures: {
-      ancho: 14,
       largo: 25,
+      ancho: 14,
       alto: 5,
     },
     id: 88,
@@ -3881,9 +6399,29 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "88/preview.webp",
+        thumbnails: "88/thumbnails/1.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "88/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "88/thumbnails/2.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "88/1.webp",
+        },
+        {
+          type: "img",
+          src: "88/2.webp",
+        },
+      ],
     },
     tags: ["ceramico"],
   },
@@ -3916,9 +6454,25 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "89/preview.webp",
+        thumbnails: "89/preview.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "89/thumbnails/89.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "89/89.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://www.mercadolibre.com.ar/iman-plancha-flexible-adhesivo-31cmx03mmx1mm/up/MLAU3114462818?pdp_filters=item_id%3AMLA1487776775#origin%3Dshare%26sid%3Dshare%26wid%3DMLA1487776775",
+      MS: "https://imanestucuman.mercadoshops.com.ar/iman-plancha-flexible-adhesivo-31cmx03mmx1mm/up/MLAU3114462818?pdp_filters=category%3AMLA378161%7Cseller_id%3A177470483%7Citem_id%3AMLA1487776775#item_id=MLA1487776775&component=collection_grid&page_from=home&custom_categories=false",
     },
   },
   {
@@ -3950,9 +6504,61 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "90/preview.webp",
+        thumbnails: "90/thumbnails/1.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "90/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "90/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "90/thumbnails/3.webp",
+        },
+        {
+          type: "img",
+          src: "90/thumbnails/4.webp",
+        },
+        {
+          type: "img",
+          src: "90/thumbnails/5.webp",
+        },
+        {
+          type: "img",
+          src: "90/thumbnails/6.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "90/1.webp",
+        },
+        {
+          type: "img",
+          src: "90/2.webp",
+        },
+        {
+          type: "img",
+          src: "90/3.webp",
+        },
+        {
+          type: "img",
+          src: "90/4.webp",
+        },
+        {
+          type: "img",
+          src: "90/5.webp",
+        },
+        {
+          type: "img",
+          src: "90/6.webp",
+        },
+      ],
     },
   },
   {
@@ -3974,9 +6580,61 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "91/preview.webp",
+        thumbnails: "91/thumbnails/1.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "91/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "91/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "91/thumbnails/3.webp",
+        },
+        {
+          type: "img",
+          src: "91/thumbnails/4.webp",
+        },
+        {
+          type: "img",
+          src: "91/thumbnails/5.webp",
+        },
+        {
+          type: "img",
+          src: "91/thumbnails/6.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "91/1.webp",
+        },
+        {
+          type: "img",
+          src: "91/2.webp",
+        },
+        {
+          type: "img",
+          src: "91/3.webp",
+        },
+        {
+          type: "img",
+          src: "91/4.webp",
+        },
+        {
+          type: "img",
+          src: "91/5.webp",
+        },
+        {
+          type: "img",
+          src: "91/6.webp",
+        },
+      ],
     },
   },
   {
@@ -4004,9 +6662,69 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "92/preview.webp",
+        thumbnails: "92/thumbnails/1.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "92/thumbnails/1.webp",
+        },
+        {
+          type: "img",
+          src: "92/thumbnails/2.webp",
+        },
+        {
+          type: "img",
+          src: "92/thumbnails/3.webp",
+        },
+        {
+          type: "img",
+          src: "92/thumbnails/4.webp",
+        },
+        {
+          type: "img",
+          src: "92/thumbnails/5.webp",
+        },
+        {
+          type: "img",
+          src: "92/thumbnails/6.webp",
+        },
+        {
+          type: "img",
+          src: "92/thumbnails/90.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "92/1.webp",
+        },
+        {
+          type: "img",
+          src: "92/2.webp",
+        },
+        {
+          type: "img",
+          src: "92/3.webp",
+        },
+        {
+          type: "img",
+          src: "92/4.webp",
+        },
+        {
+          type: "img",
+          src: "92/5.webp",
+        },
+        {
+          type: "img",
+          src: "92/6.webp",
+        },
+        {
+          type: "img",
+          src: "92/90.webp",
+        },
+      ],
     },
   },
   {
@@ -4036,18 +6754,70 @@ export const DB_ALL = [
     },
     tags: ["arandela"],
     measures: {
+      largo: 9.56,
       alto: 3.17,
       "diametro superior": 6,
       "diametro inferior": 3.5,
-      largo: 9.56,
       peso: 1.33,
     },
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo fresado",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo fresado",
+        },
+        {
+          type: "img",
+          src: "93/thumbnails/9.6x3_6a3.5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "93/thumbnails/9.6x3_6a3.5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "93/thumbnails/9.6x3_6a3.5 (3).webp",
+        },
+        {
+          type: "img",
+          src: "93/thumbnails/9.6x3_6a3.5 (4).webp",
+        },
+        {
+          type: "img",
+          src: "93/thumbnails/9.6x3_6a3.5 (5).webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo fresado",
+        },
+        {
+          type: "img",
+          src: "93/9.6x3_6a3.5 (1).webp",
+        },
+        {
+          type: "img",
+          src: "93/9.6x3_6a3.5 (2).webp",
+        },
+        {
+          type: "img",
+          src: "93/9.6x3_6a3.5 (3).webp",
+        },
+        {
+          type: "img",
+          src: "93/9.6x3_6a3.5 (4).webp",
+        },
+        {
+          type: "img",
+          src: "93/9.6x3_6a3.5 (5).webp",
+        },
+      ],
     },
   },
   {
@@ -4073,9 +6843,25 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "img",
-        src: "",
-        thumbnails: "",
+        src: "94/preview.webp",
+        thumbnails: "94/preview.webp",
       },
+      thumbnails: [
+        {
+          type: "img",
+          src: "94/thumbnails/50.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "img",
+          src: "94/320.webp",
+        },
+      ],
+    },
+    links: {
+      ML: "https://articulo.mercadolibre.com.ar/MLA-1989274886-pack-imanes-ovalados-x20-_JM#origin%3Dshare%26sid%3Dshare",
+      MS: "https://imanestucuman.mercadoshops.com.ar/MLA-1989274886-pack-imanes-ovalados-x20-_JM#item_id=MLA1989274886&component=collection_grid&page_from=home&custom_categories=false",
     },
   },
   {
@@ -4097,8 +6883,8 @@ export const DB_ALL = [
       },
     },
     measures: {
-      alto: 3,
       largo: 16,
+      alto: 3,
       peso: 2.7,
     },
     info: {
@@ -4110,13 +6896,50 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "95/thumbnails/16x3 (1).jpg",
+        },
+        {
+          type: "img",
+          src: "95/thumbnails/16x3 (2).jpg",
+        },
+        {
+          type: "img",
+          src: "95/thumbnails/50.webp",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "95/16x3 (1).jpg",
+        },
+        {
+          type: "img",
+          src: "95/16x3 (2).jpg",
+        },
+        {
+          type: "img",
+          src: "95/320.webp",
+        },
+      ],
     },
     tags: ["ceramico"],
   },
   {
+    noStock: true,
     label: "7x1.5mm N35",
     categorie: "imanes",
     info: {
@@ -4138,13 +6961,12 @@ export const DB_ALL = [
         50: 115,
         100: 100,
         500: 95,
-        // 1000: 90,
       },
       update: "17/5/25",
     },
     measures: {
-      alto: 1.5,
       largo: 7,
+      alto: 1.5,
       peso: 0.4,
     },
     fuerza_N: {
@@ -4160,9 +6982,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "96/thumbnails/7x1.5_N35 (1).jpg",
+        },
+        {
+          type: "img",
+          src: "96/thumbnails/7x1.5_N35 (2).jpg",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "96/7x1.5_N35 (1).jpg",
+        },
+        {
+          type: "img",
+          src: "96/7x1.5_N35 (2).jpg",
+        },
+      ],
     },
   },
   {
@@ -4187,13 +7037,12 @@ export const DB_ALL = [
         50: 130,
         100: 110,
         500: 105,
-        // 1000: 100,
       },
       update: "17/5/25",
     },
     measures: {
-      alto: 1.5,
       largo: 9,
+      alto: 1.5,
       peso: 0.7,
     },
     fuerza_N: {
@@ -4209,9 +7058,37 @@ export const DB_ALL = [
     imgs_data: {
       preview: {
         type: "svg",
-        src: "",
+        src: "redondo",
         thumbnails: "",
       },
+      thumbnails: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "97/thumbnails/9x1.5_N35 (1).jpg",
+        },
+        {
+          type: "img",
+          src: "97/thumbnails/9x1.5_N35 (2).jpg",
+        },
+      ],
+      imgs: [
+        {
+          type: "svg",
+          src: "redondo",
+        },
+        {
+          type: "img",
+          src: "97/9x1.5_N35 (1).jpg",
+        },
+        {
+          type: "img",
+          src: "97/9x1.5_N35 (2).jpg",
+        },
+      ],
     },
   },
 ];

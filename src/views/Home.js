@@ -2,11 +2,11 @@ import { lazy } from "react";
 
 import SuspenseCustom from "../components/SuspenseCustom";
 import TitleCustom from "../components/TitleCustom";
+import Formas from "./Home/Formas";
+import AdvertisementsOwn from "./Home/AdvertisementsOwn";
+import Opiniones from "./Home/Opiniones";
 
 const Hero = lazy(() => import("./Home/Hero"));
-const Formas = lazy(() => import("./Home/Formas"));
-const AdvertisementsOwn = lazy(() => import("./Home/AdvertisementsOwn"));
-const Opiniones = lazy(() => import("./Home/Opiniones"));
 
 export default function Home() {
   const sections = [
@@ -22,7 +22,6 @@ export default function Home() {
       content: <AdvertisementsOwn />,
     },
   ];
-
   return (
     <>
       <SuspenseCustom
@@ -37,8 +36,8 @@ export default function Home() {
         <div
           key={i}
           id={section?.id || null}
-          className={`w-full max-w-[1200px] flex flex-col items-center gap-4 place-self-center pt-16 ${
-            section?.className ? section?.className : ""
+          className={`w-full max-w-[1200px] flex flex-col items-center gap-4 place-self-center pt-16${
+            section?.className ? " " + section?.className : ""
           }`}
         >
           <TitleCustom title={section?.label} />

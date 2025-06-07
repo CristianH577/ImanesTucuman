@@ -4,26 +4,30 @@ import { Button } from "@nextui-org/react";
 
 import { title, title1 } from "../../libs/tvs";
 
-import { GiMagnetBlast } from "react-icons/gi";
-import { IoMagnetOutline } from "react-icons/io5";
-import { PiMagnet } from "react-icons/pi";
-import { SlEnergy } from "react-icons/sl";
-import { FaBarsStaggered, FaArrowDown } from "react-icons/fa6";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
+
+import {
+  SVGMagnet,
+  SVGMagnet2,
+  SVGBarsStaggered,
+  SVGMagnetBlast,
+} from "../../assets/layout/svgs";
 
 const class_icons_main =
   "absolute w-12 xs:w-14 sm:w-20 lg:w-28 h-auto transition-all text-custom1/90";
 
 const icons = [
-  <IoMagnetOutline
-    className={`top-0 left-6 sm:left-12 -rotate-[110deg] ${class_icons_main}`}
+  <SVGMagnet2
+    className={`top-0 left-6 sm:left-12 -rotate-[100deg] ${class_icons_main}`}
   />,
-  <PiMagnet
-    className={`bottom-0 right-0 sm:right-10 rotate-[70deg] ${class_icons_main}`}
+  <SVGMagnet
+    className={`bottom-0 right-0 sm:right-10 rotate-[80deg] ${class_icons_main}`}
   />,
-  <SlEnergy
+  <ElectricBoltIcon
     className={`top-0 sm:top-8 right-0 sm:right-16 rotate-[10deg] ${class_icons_main}`}
   />,
-  <FaBarsStaggered
+  <SVGBarsStaggered
     className={`bottom-0 left-2 sm:left-16 ${class_icons_main}`}
   />,
 ];
@@ -33,13 +37,13 @@ export default function Hero() {
 
   return (
     <section
-      className="w-screen relative right-2 xs:right-4 sm:right-10 lg:right-12 bg-gradient-to-t from-custom2 to-custom2-10 overflow-hidden shadow-md min-[2000px]:h-[1200px] mt-16 mb-10 pt-2"
+      className="w-screen relative right-2 xs:right-4 sm:right-10 lg:right-12 overflow-hidden shadow-md min-[2000px]:h-[1200px] mt-16 pt-2 bg-radial from-custom2-10 to-custom2"
       style={{
         height: "calc(100dvh - 4rem)",
       }}
     >
       <div className="relative flex flex-col gap-4 items-center w-full h-full max-w-7xl place-self-center">
-        <GiMagnetBlast className="absolute inset-0 w-fit h-[105%] lg:h-[110%] opacity-30 text-custom1 place-self-center" />
+        <SVGMagnetBlast className="absolute inset-0 w-fit h-[105%] lg:h-[110%] opacity-30 text-custom1 place-self-center" />
 
         <article className="relative w-full flex flex-grow items-center justify-center">
           {icons.map((icon, i) => (
@@ -56,7 +60,9 @@ export default function Hero() {
           {Array.from({ length: 5 }).map((_, i) => (
             <motion.img
               key={i}
-              loading="eager"
+              loading="lazy"
+              width={"100%"}
+              height={"100%"}
               src={contextImg(`./360/${i + 1}.webp`)}
               srcSet={`
                 ${contextImg(`./360/${i + 1}.webp`)} 360w,
@@ -81,7 +87,9 @@ export default function Hero() {
           {Array.from({ length: 5 }).map((_, i) => (
             <img
               key={i}
-              loading="eager"
+              loading="lazy"
+              width={"100%"}
+              height={"100%"}
               src={contextImg(`./360/${i + 1}.webp`)}
               srcSet={`
                 ${contextImg(`./360/${i + 1}.webp`)} 360w,
@@ -126,7 +134,7 @@ export default function Hero() {
             }}
           >
             Explorar
-            <FaArrowDown />
+            <ArrowDownwardIcon />
           </Button>
         </article>
       </div>

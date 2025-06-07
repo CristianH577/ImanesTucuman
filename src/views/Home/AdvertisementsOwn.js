@@ -4,64 +4,68 @@ import { Link } from "@nextui-org/react";
 
 import ImageCustom from "../../components/ImageCustom";
 
-import { GiBallPyramid, GiFishingHook, GiVibratingBall } from "react-icons/gi";
-import { PiMagnet } from "react-icons/pi";
-import { TbWallpaper } from "react-icons/tb";
-import { FaRibbon } from "react-icons/fa6";
-import { FaArrowCircleRight } from "react-icons/fa";
-import { LuCable } from "react-icons/lu";
+import PhishingIcon from "@mui/icons-material/Phishing";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import ElectricalServicesIcon from "@mui/icons-material/ElectricalServices";
+import {
+  SVGBallPyramid,
+  SVGMagnet,
+  SVGRibbon,
+  SVGVibratingBall,
+  SVGWallpaper,
+} from "../../assets/layout/svgs";
 
 const contextImg = require.context("../../assets/home/AdvertisementsOwn", true);
 
-export const items = [
+const items = [
   {
     src: "de_arrastre",
     href: "categorie=imanes&subcategorie=arrastre",
     title: "Imán de Arrastre",
     text: "O imán de pesca. Tiene un cáncamo cerrado que permite su sujeción y posterior tracción",
-    icon: GiFishingHook,
+    icon: PhishingIcon,
   },
   {
     src: "iman-ceramico-60",
     href: "categorie=imanes&subcategorie=ferrita",
     title: "Imán de ferrita",
     text: "Tienen alta resistencia a la temperatura y corrosión, esto le permiten ser usados en exteriores y hornos",
-    icon: PiMagnet,
+    icon: SVGMagnet,
   },
   {
     src: "tira_flexible-13",
     href: "categorie=imanes&subcategorie=otros&text=tira",
     title: "Imán en tira",
     text: "Usado frecuentemente para hacer mosquiteros y manualidades",
-    icon: FaRibbon,
+    icon: SVGRibbon,
   },
   {
     src: "plancha-31",
     href: "categorie=imanes&subcategorie=otros&text=plancha",
     title: "Imán en plancha",
     text: "Puede pegarse para hacer souvenirs, calendarios, imanes publicitarios, etc",
-    icon: TbWallpaper,
+    icon: SVGWallpaper,
   },
   {
     src: "kluster",
     href: "text=kluster",
     title: "kluster",
     text: "Juego de 20 piedras ovaladas de hematita magnetizadas y pulidas",
-    icon: GiVibratingBall,
+    icon: SVGVibratingBall,
   },
   {
     src: "neocube-dorado",
     href: "text=neocube%dorado",
     title: "neocube",
     text: "216 imanes esféricos de 5mm de diámetro",
-    icon: GiBallPyramid,
+    icon: SVGBallPyramid,
   },
   {
     src: "electricidad",
     href: "categorie=electricidad",
     title: "Accesorios Eléctricos",
     text: "Facilitan la instalación y conexión de cables",
-    icon: LuCable,
+    icon: ElectricalServicesIcon,
   },
 ];
 
@@ -78,6 +82,9 @@ export function AdvertisementsOwn() {
           <ImageCustom
             src={contextImg(`./${item.src}.webp`)}
             alt={item.title}
+            height={320}
+            widht={320}
+            className="object-contain h-full w-fit"
           />
 
           <item.icon
@@ -117,7 +124,7 @@ export function AdvertisementsOwn() {
               } font-bold text-white`}
             >
               <span className="skew-x-12">Ver mas</span>
-              <FaArrowCircleRight size={22} />
+              <ArrowCircleRightIcon className="h-10 w-fit" />
             </Link>
           </div>
         </article>

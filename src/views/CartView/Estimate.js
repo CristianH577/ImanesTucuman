@@ -3,14 +3,13 @@ import { Select, SelectItem, Divider } from "@nextui-org/react";
 import Logo from "../../components/Logo";
 import List from "./List";
 
-import { SiMercadopago } from "react-icons/si";
-import { PiMoneyWavy } from "react-icons/pi";
-import { CiBank } from "react-icons/ci";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import PaymentsIcon from "@mui/icons-material/Payments";
 
 import {
   SVGLogoGalicia,
   SVGLogoPaypal,
-  SVGLogoSantander,
+  SVGMercadoLibre,
 } from "../../assets/layout/svgs";
 
 const entrega_items = {
@@ -101,11 +100,10 @@ function Estimate({
 
       <section className="flex flex-col items-center gap-2 text-neutral-400 text-center">
         <div className="w-full flex flex-wrap items-center justify-center gap-3">
-          <PiMoneyWavy className="h-6 w-fit" />
-          <CiBank className="h-6 w-fit" />
-          <SVGLogoSantander className="h-6 w-fit" />
+          <PaymentsIcon className="h-6 w-fit" />
+          <AccountBalanceIcon className="h-6 w-fit" />
           <SVGLogoGalicia className="h-6 w-fit" />
-          <SiMercadopago className="h-6 w-fit" />
+          <SVGMercadoLibre className="h-6 w-fit" />
           <SVGLogoPaypal className="h-5 w-fit" />
         </div>
 

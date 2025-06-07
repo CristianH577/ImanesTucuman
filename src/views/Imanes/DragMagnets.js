@@ -5,7 +5,7 @@ import { scrollStyle } from "../../libs/tvs";
 import ButtonAddCart from "../../components/ButtonAddCart";
 import PriceLabel from "../../components/PriceLabel";
 
-import { GrCompare } from "react-icons/gr";
+import CompareIcon from "@mui/icons-material/Compare";
 
 import { SVGDragMagnetMeasures } from "../../assets/imanes/svgs";
 
@@ -84,7 +84,7 @@ function DragMagnets({
                         title="Ver referencia de tamaños"
                         onPress={() => setItemToComparate(item)}
                       >
-                        <GrCompare size={22} />
+                        <CompareIcon className="h-7 w-fit" />
                       </Button>
                     </div>
                   </td>

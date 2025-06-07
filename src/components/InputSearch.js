@@ -1,9 +1,9 @@
 import { Input, Button } from "@nextui-org/react";
 
-import { TbSearch } from "react-icons/tb";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function InputSearch({
-  value = "",
+  value = false,
   setValue = () => {},
   handleSearch = () => {},
 }) {
@@ -20,7 +20,7 @@ export default function InputSearch({
         className="border-3 border-custom1-3 border-e-0 rounded-e-none"
         onPress={handleSearch}
       >
-        <TbSearch className="h-3/5 w-fit" />
+        <SearchIcon className="h-3/5 w-fit" />
       </Button>
 
       <Input
